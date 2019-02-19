@@ -1,0 +1,188 @@
+EESchema Schematic File Version 4
+LIBS:Amplifier-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Position sensitive photodetector"
+Date "2019-02-18"
+Rev "0.0.1"
+Comp "Max-Planck Institute for Quantum Optics"
+Comment1 "Bodo Kaiser"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:+15V #PWR?
+U 1 1 5C6AEDCC
+P 1050 1750
+F 0 "#PWR?" H 1050 1600 50  0001 C CNN
+F 1 "+15V" H 1065 1923 50  0000 C CNN
+F 2 "" H 1050 1750 50  0001 C CNN
+F 3 "" H 1050 1750 50  0001 C CNN
+	1    1050 1750
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:-15V #PWR?
+U 1 1 5C6AEDFC
+P 1850 1750
+F 0 "#PWR?" H 1850 1850 50  0001 C CNN
+F 1 "-15V" H 1865 1923 50  0000 C CNN
+F 2 "" H 1850 1750 50  0001 C CNN
+F 3 "" H 1850 1750 50  0001 C CNN
+	1    1850 1750
+	1    0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5C6AEE50
+P 1450 1750
+F 0 "#PWR?" H 1450 1500 50  0001 C CNN
+F 1 "GND" H 1455 1577 50  0000 C CNN
+F 2 "" H 1450 1750 50  0001 C CNN
+F 3 "" H 1450 1750 50  0001 C CNN
+	1    1450 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J?
+U 1 1 5C6AEEFA
+P 1050 1300
+F 0 "J?" V 1110 1341 50  0000 L CNN
+F 1 "POWER +15V" H 500 1300 50  0000 L CNN
+F 2 "" H 1050 1300 50  0001 C CNN
+F 3 "~" H 1050 1300 50  0001 C CNN
+	1    1050 1300
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J?
+U 1 1 5C6AEF66
+P 1450 1300
+F 0 "J?" V 1510 1340 50  0000 L CNN
+F 1 "POWER GND" H 950 1300 50  0000 L CNN
+F 2 "" H 1450 1300 50  0001 C CNN
+F 3 "~" H 1450 1300 50  0001 C CNN
+	1    1450 1300
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J?
+U 1 1 5C6AEF8D
+P 1850 1300
+F 0 "J?" V 1910 1340 50  0000 L CNN
+F 1 "POWER -15V" H 1300 1300 50  0000 L CNN
+F 2 "" H 1850 1300 50  0001 C CNN
+F 3 "~" H 1850 1300 50  0001 C CNN
+	1    1850 1300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1850 1750 1850 1600
+Wire Wire Line
+	1450 1500 1450 1600
+Wire Wire Line
+	1050 1750 1050 1600
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 5C6AF677
+P 1050 1600
+F 0 "#FLG?" H 1050 1675 50  0001 C CNN
+F 1 "PWR_FLAG" H 850 1800 50  0000 L CNN
+F 2 "" H 1050 1600 50  0001 C CNN
+F 3 "~" H 1050 1600 50  0001 C CNN
+	1    1050 1600
+	0    -1   -1   0   
+$EndComp
+Connection ~ 1050 1600
+Wire Wire Line
+	1050 1600 1050 1500
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 5C6AF8D6
+P 1450 1600
+F 0 "#FLG?" H 1450 1675 50  0001 C CNN
+F 1 "PWR_FLAG" H 1250 1800 50  0000 L CNN
+F 2 "" H 1450 1600 50  0001 C CNN
+F 3 "~" H 1450 1600 50  0001 C CNN
+	1    1450 1600
+	0    -1   -1   0   
+$EndComp
+Connection ~ 1450 1600
+Wire Wire Line
+	1450 1600 1450 1750
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 5C6AF916
+P 1850 1600
+F 0 "#FLG?" H 1850 1675 50  0001 C CNN
+F 1 "PWR_FLAG" H 1650 1800 50  0000 L CNN
+F 2 "" H 1850 1600 50  0001 C CNN
+F 3 "~" H 1850 1600 50  0001 C CNN
+	1    1850 1600
+	0    -1   -1   0   
+$EndComp
+Connection ~ 1850 1600
+Wire Wire Line
+	1850 1600 1850 1500
+Wire Notes Line
+	2100 2050 650  2050
+Wire Notes Line
+	650  2050 650  650 
+Wire Notes Line
+	650  650  2100 650 
+Wire Notes Line
+	2100 650  2100 2050
+Text Notes 650  600  0    50   ~ 0
+POWER
+$Comp
+L photodiodes:S5990-01 U?
+U 1 1 5C6B1AFC
+P 10450 2150
+F 0 "U?" H 10400 2300 50  0000 L CNN
+F 1 "S5990-01" H 10250 2100 50  0000 L CNN
+F 2 "" V 10350 2450 50  0001 C CNN
+F 3 "" V 10350 2450 50  0001 C CNN
+	1    10450 2150
+	1    0    0    -1  
+$EndComp
+Text GLabel 10450 3150 3    50   Input ~ 0
+PD_BIAS
+Wire Wire Line
+	10450 3150 10450 2800
+Text GLabel 10150 1050 1    50   Input ~ 0
+PD_X1
+Wire Wire Line
+	10150 1050 10150 1450
+Text GLabel 10750 1050 1    50   Input ~ 0
+PD_Y1
+Wire Wire Line
+	10750 1050 10750 1450
+Text GLabel 10150 3150 3    50   Input ~ 0
+PD_Y2
+Wire Wire Line
+	10150 3150 10150 2800
+Text GLabel 10750 3150 3    50   Input ~ 0
+PD_X2
+Wire Wire Line
+	10750 3150 10750 2800
+Connection ~ 10150 1450
+Wire Wire Line
+	10150 1450 10150 1550
+Connection ~ 10750 1450
+Wire Wire Line
+	10750 1450 10750 1550
+Wire Notes Line
+	9850 650  11050 650 
+Wire Notes Line
+	11050 650  11050 3550
+Wire Notes Line
+	11050 3550 9850 3550
+Wire Notes Line
+	9850 3550 9850 650 
+Text Notes 9850 600  0    50   ~ 0
+PHOTODIODE
+$EndSCHEMATC

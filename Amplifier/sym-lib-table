@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name photodiodes)(type Legacy)(uri /Users/bodokaiser/Repositories/github.com/bodokaiser/position-sensitive-photodetector/Library/photodiodes.lib)(options "")(descr ""))
+)
