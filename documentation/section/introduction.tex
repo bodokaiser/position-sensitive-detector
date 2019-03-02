@@ -9,3 +9,31 @@ Given these circumstances it is therefore an obvious step to integrate a control
 The control loop comprises a position-sensitive device to gather the current state of the beam alignment as well as a mechanical mirror to compensate for errors. 
 
 In the present document we want to summarise the design process of such a position-sensitive device.
+
+\subsection{Requirements}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{llccc}
+		\toprule
+			\multirow{2}[3]{*}{Parameter} &
+			\multirow{2}[3]{*}{Symbol} &
+			\multicolumn{2}{c}{Values} &
+			\multirow{2}[3]{*}{Unit} \\
+			\cmidrule(lr){3-4} & & Best & Worst & \\
+		\midrule
+			Spatial resolution & $\Delta x$ & \num{0.7} & & \si{\micro\meter} \\
+		\bottomrule
+	\end{tabular}
+	\caption{Technical requirements of the position-sensitive device.}
+\end{table}
+
+\begin{enumerate}
+    \item Dual power supply $V_\pm=\pm\SI{15}{\volt}$
+    \item Ethernet network interface
+    \item Analogue interface
+\end{enumerate}
+
+\subsection{Overview}
+
+Components of the device.

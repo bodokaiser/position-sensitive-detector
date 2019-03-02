@@ -1,5 +1,6 @@
 \documentclass[
 	a4paper,
+	parskip,
 	emulatestandardclasses
 ]{scrartcl}
 
@@ -9,6 +10,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
+\usepackage{float}
 \usepackage{multirow}
 \usepackage{physics}
 \usepackage{siunitx}
@@ -38,9 +40,8 @@
 \tableofcontents
 
 \include{section/introduction}
-\include{section/requirements}
-\include{section/detector}
-\include{section/preamplifier}
+\include{section/position-sensitive-detector}
+\include{section/analogue-signal-processing}
 
 \printglossaries
 \printbibliography

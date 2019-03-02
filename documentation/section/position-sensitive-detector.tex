@@ -1,0 +1,69 @@
+\section{Position-sensitive detector}
+
+The \gls{psd} constitutes the heart of the position-sensitive device.
+Its characteristics give the upper bound of the performance of our device.
+In the following section we will give an overview of the available methods for optical position measurement in order to motivate the selection of a tetra-lateral \gls{psd} photodiode.
+The arguments given are an excerpt of Ref.~\cite{Noorlag74}.
+To the end of this section we describe how the \gls{psd} can be integrated into the framework of electrical circuit analysis.
+
+\subsection{Detector overview}
+
+
+
+\subsection{Operating principle}
+
+Motivate the choice of the \gls{psd} to be an improved tetra-lateral PSD photodiode compared to i.e.\ quadrant diodes and explain the working principle~\cite{Noorlag74}.
+
+For high speed applications one usually connects the cathode to a reverse bias voltage.
+However, in our case we are interested in a high spatial resolution. In this case ...ref... the \gls{psd} cathode should be connected to ground.
+
+\subsection{Detector selection}
+
+We have chosen the \gls{s5990} as the position-sensitive detector.
+The parameters of the \gls{s5990} are reported in \Cref{tab:s5990}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lllll}
+		\toprule
+			\multirow{2}[3]{*}{Parameter} &
+			\multirow{2}[3]{*}{Symbol} &
+			\multicolumn{2}{c}{Values} &
+			\multirow{2}[3]{*}{Unit} \\
+			\cmidrule(lr){3-4} & & Typical & Maximum & \\
+		\midrule
+		Dark current & $I_\text{dark}$ & \num{0.5} & \num{10} & \si{\nano\ampere}\\
+		Interelectrode resistance & $R_\text{ie}$ & \num{7} & \num{15} & \si{\kilo\ohm}\\
+		Terminal capacitance & $C_t$ & \num{150} & \num{300} & \si{\pico\farad}\\
+		Position resolution & $\Delta x$ & \num{0.7} & & \si{\micro\meter}\\
+		\bottomrule	
+	\end{tabular}
+	\caption{Important parameters of the \gls{s5990} extracted from the datasheet~\cite{HamamatsuPSD}.}\label{tab:s5990}
+\end{table}
+
+\subsection{Equivalent circuit}
+
+The output terminals of the \gls{psd} can be modelled as a current source with internal resistance and capacitance~\cite{HamamatsuPSD}.
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (0, 0)
+			node[ground] {}
+			to[american current source, l=$I_\text{photo}$] (0, 4)
+			to[short, -*] (2, 4)
+			to[short, -*] (4, 4)
+			to[short] (6, 4)
+			to[short] (6, 0)
+			to[short, -*] (4, 0)
+			to[short, -*] (2, 0)
+			to[short] (0, 0);
+		\draw (2, 0)
+			to[american current source, l=$I_\text{dark}$] (2, 4);
+		\draw (4, 0)
+			to[european resistor, l=$R_\text{ie}$] (4, 4);
+		\draw (6, 0)
+			to[capacitor, l=$C_\text{t}$] (6, 4);
+		\draw (6, 4)
+			to[short, -o] (6, 5);
+	\end{circuitikz}
+	\caption{Equivalent circuit of one of the \gls{psd} output terminals according to~\cite{HamamatsuPSD}.}\label{fig:circuit:psd}
+\end{figure}
