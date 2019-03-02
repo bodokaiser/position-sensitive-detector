@@ -1,0 +1,48 @@
+\documentclass[
+	a4paper,
+	emulatestandardclasses
+]{scrartcl}
+
+\usepackage[english]{babel}
+\usepackage{authblk}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage[
+  backend=biber,
+  sorting=none
+]{biblatex}
+\usepackage{glossaries}
+\usepackage{circuitikz}
+
+\addbibresource{literature.bib}
+
+\makeglossaries
+\newglossaryentry{s5990}{name=S5990, description={Hamamatsu two-dimensional PSD}}
+\newacronym{psd}{PSD}{position-sensitive detector}
+
+\title{Position-sensitive device}
+\author{Bodo Kaiser}
+\affil{Ludwig-Maximilians-Universität München}
+\affil{\textit{bodo.kaiser@physik.uni-muenchen.de}}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\include{section/introduction}
+\include{section/requirements}
+\include{section/detector}
+\include{section/preamplifier}
+
+\printglossaries
+\printbibliography
+	
+\end{document}
