@@ -1,3 +1,39 @@
 \section{Analogue signal processing}
 
+In the former section we explained how the photo currents $I_{X1},I_{X2},I_{Y1},I_{Y2}$ from the anode output terminals of the \gls{psd} relate to the center-of-mass position of the incident optical signal.
+We closed the section with an equivalent circuit for the output terminals.
+In the present section we design the analogue signal processing required to convert the photo currents to a voltage signal that relates to the center-of-mass position of the optical signal.
+
 \subsection{Preamplifier}
+
+The first stage of our analogue signal processing converts the current signal of each of the output terminals to a voltage signal.
+Current to voltage conversion is typically implemented using a transimpedance amplifier circuit.
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw
+			(0, 0)
+				node[op amp] (opamp) {}
+			(opamp.-)
+				to[short] (-1, 0.5)
+				to[american current source, invert, label=$I$] (-4, 0.5)
+				to[short] (-4, -1.5)
+				node[ground] {}
+			(opamp.-)
+				to[short, *-] ++(0, 1.5)
+				coordinate (left)
+				to[resistor, label=$R$] (left -| opamp.out)
+				to[short, -*] (opamp.out)
+			(opamp.+)
+				to[short] +(0, -1)
+				node[ground] {}
+			(opamp.out)
+				to[short] (3, 0)
+				node[ocirc, label=$V$] {}
+	;
+	\end{circuitikz}
+	\caption{Transimpedance amplifier circuit.}\label{fig:circuit_transimpedance_amp}
+\end{figure}
+\Cref{fig:circuit_transimpedance_amp} illustrates a transimpedance amplifier circuit.
+An ideal operational amplifier outputs a voltage proportional to the voltage difference between the inverting $-$ and non-inverting input $+$.
+The output of the operational amplifier is coupled by a feedback resistor $R$ with the non-inverting input.
