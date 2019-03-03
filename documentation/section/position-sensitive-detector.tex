@@ -81,13 +81,75 @@ In general we can use an additional lens in front of the \gls{psd} in order to p
 
 \subsection{Equivalent circuit}
 
-
-For high speed applications one usually connects the cathode to a reverse bias voltage.
-However, in our case we are interested in a high spatial resolution. In this case ...ref... the \gls{psd} cathode should be connected to ground.
-
-
-We have chosen the \gls{s5990} as the position-sensitive detector.
-The parameters of the \gls{s5990} are reported in \Cref{tab:psd_s5990}.
+\Cref{fig:psd_symbol} shows the abstract schematic symbol for a two-dimensional \gls{psd} with the four anode terminals on the right hand side and a common cathode terminal on the left hand side.
+We can apply a reverse bias voltage to the common cathode terminal in order to reduce the response time of the \gls{psd}.
+According to Ref.~\cite{Noorlag74,HamamatsuPSD} highest spatial resolution is achieved with no reverse bias --- the common cathode terminal connected to ground --- as the reverse bias voltage increases the dark current of the \gls{psd}.
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (0, 0)
+			node[ocirc, label=CC] {}
+			to[short, -*] ++(1, 0)
+			+(4, 1)
+			node[ocirc, label=X2] {}
+			to[photodiode] +(0, 1)
+			to[short, *-] +(0, -1)
+			+(4, 3)
+			node[ocirc, label=X1] {}
+			to[photodiode] +(0, 3)
+			to[short, *-] +(0, -3)
+			+(4, -1)
+			node[ocirc, label=Y1] {}
+			to[photodiode] +(0, -1)
+			to[short, *-] +(0, 1)
+			+(4, -3)
+			node[ocirc, label=Y2] {}
+			to[photodiode] +(0,-3)
+			to[short, *-] +(0, 3)
+	;
+	\end{circuitikz}
+	\caption{Equivalent circuit of one of the \gls{psd} output terminals according to~\cite{HamamatsuPSD}.}\label{fig:psd_symbol}
+\end{figure}
+That said, the representation of \Cref{fig:psd_symbol} is not very useful for practical calculations.
+Instead we will model the output terminals of the \gls{psd} as a two current sources with internal resistance $R_i$ and capacitance $C_t$~\cite{HamamatsuPSD}.
+Such an equivalent circuit is presented in \Cref{fig:psd_circuit}.
+The first current source represents the photo current $I_p$ which is created from photons that excite electrons.
+The second current source represents the dark current $I_d$ which is created from thermal excitation of electrons.
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (-1, -1)
+			node[ground] {}
+			to[short] ++(0, 1)
+			to[short] ++(1, 0);
+		\draw (0, 3)
+			to[american current source, label=$I_p$] +(4, 0);
+		\draw (0, 1)
+			to[american current source, label=$I_d$] +(4, 0);
+		\draw (0, -1)
+			to[european resistor, label=$R_i$] +(4, 0);
+		\draw (0, -3)
+			to[capacitor, label=$C_t$] +(4, 0);
+		\draw (0, 0)
+			to[short, -*] ++(0, 1)
+			to[short] ++(0, 2);
+		\draw (0, 0)
+			to[short, -*] ++(0, -1)
+			to[short] ++(0, -2);
+		\draw (4, 0)
+			to[short, -*] ++(0, 1)
+			to[short] ++(0, 2);
+		\draw (4, 0)
+			to[short, -*] ++(0, -1)
+			to[short] ++(0, -2);
+		\draw (5, 0)
+			node[ocirc, label=X] {}
+			to[short, -*] ++(-1, 0);
+	\end{circuitikz}
+	\caption{Equivalent circuit of one of the \gls{psd} output terminals according to~\cite{HamamatsuPSD}.}\label{fig:psd_circuit}
+\end{figure}
+The parameters for the equivalent circuit of the \gls{s5990} are summarized in \Cref{tab:psd_s5990}.
+If not stated otherwise we will use the maximum values from the datasheet.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{lllll}
@@ -98,37 +160,10 @@ The parameters of the \gls{s5990} are reported in \Cref{tab:psd_s5990}.
 			\multirow{2}[3]{*}{Unit} \\
 			\cmidrule(lr){3-4} & & Typical & Maximum & \\
 		\midrule
-		Dark current & $I_\text{dark}$ & \num{0.5} & \num{10} & \si{\nano\ampere}\\
-		Interelectrode resistance & $R_\text{ie}$ & \num{7} & \num{15} & \si{\kilo\ohm}\\
+		Dark current & $I_d$ & \num{0.5} & \num{10} & \si{\nano\ampere}\\
+		Interelectrode resistance & $R_e$ & \num{7} & \num{15} & \si{\kilo\ohm}\\
 		Terminal capacitance & $C_t$ & \num{150} & \num{300} & \si{\pico\farad}\\
-		Position resolution & $\Delta x$ & \num{0.7} & & \si{\micro\meter}\\
 		\bottomrule	
 	\end{tabular}
 	\caption{Important parameters of the \gls{s5990} extracted from the datasheet~\cite{HamamatsuPSD}.}\label{tab:psd_s5990}
 \end{table}
-
-The output terminals of the \gls{psd} can be modelled as a current source with internal resistance and capacitance~\cite{HamamatsuPSD}.
-\begin{figure}[H]
-	\centering
-	\begin{circuitikz}
-		\draw (0, 0)
-			node[ground] {}
-			to[american current source, l=$I_\text{photo}$] (0, 4)
-			to[short, -*] (2, 4)
-			to[short, -*] (4, 4)
-			to[short] (6, 4)
-			to[short] (6, 0)
-			to[short, -*] (4, 0)
-			to[short, -*] (2, 0)
-			to[short] (0, 0);
-		\draw (2, 0)
-			to[american current source, l=$I_\text{dark}$] (2, 4);
-		\draw (4, 0)
-			to[european resistor, l=$R_\text{ie}$] (4, 4);
-		\draw (6, 0)
-			to[capacitor, l=$C_\text{t}$] (6, 4);
-		\draw (6, 4)
-			to[short, -o] (6, 5);
-	\end{circuitikz}
-	\caption{Equivalent circuit of one of the \gls{psd} output terminals according to~\cite{HamamatsuPSD}.}\label{fig:psd_circuit}
-\end{figure}

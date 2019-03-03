@@ -14,15 +14,16 @@ In the present document we want to summarise the design process of such a positi
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{llccc}
+	\begin{tabular}{llcccc}
 		\toprule
 			\multirow{2}[3]{*}{Parameter} &
 			\multirow{2}[3]{*}{Symbol} &
-			\multicolumn{2}{c}{Values} &
+			\multicolumn{3}{c}{Values} &
 			\multirow{2}[3]{*}{Unit} \\
-			\cmidrule(lr){3-4} & & Best & Worst & \\
+			\cmidrule(lr){3-4} & & Min & Typical & Max & \\
 		\midrule
-			Spatial resolution & $\Delta x$ & \num{0.7} & & \si{\micro\meter} \\
+			Spatial resolution & $\Delta x$ & \num{0.7} & & & \si{\micro\meter} \\
+			Photocurrent & $I_\text{ph}$ & \num{1} & \num{10} & \num{100} & \si{\micro\ampere} \\
 		\bottomrule
 	\end{tabular}
 	\caption{Technical requirements of the position-sensitive device.}
