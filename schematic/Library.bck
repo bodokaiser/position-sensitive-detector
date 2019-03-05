@@ -6,40 +6,4 @@ K photodiode diode opto psd
 F ~
 $ENDCMP
 #
-$CMP SCD7805
-D Positive 1A 35V Linear Regulator, Fixed Output 5V, TO-220/TO-263
-K Voltage Regulator 1A Positive
-F http://www.ti.com/lit/ds/symlink/ua78.pdf
-$ENDCMP
-#
-$CMP uA7808
-D Positive 1A 35V Linear Regulator, Fixed Output 8V, TO-220/TO-263
-K Voltage Regulator 1A Positive
-F http://www.ti.com/lit/ds/symlink/ua78.pdf
-$ENDCMP
-#
-$CMP uA7810
-D Positive 1A 35V Linear Regulator, Fixed Output 10V, TO-220/TO-263
-K Voltage Regulator 1A Positive
-F http://www.ti.com/lit/ds/symlink/ua78.pdf
-$ENDCMP
-#
-$CMP uA7812
-D Positive 1A 35V Linear Regulator, Fixed Output 12V, TO-220/TO-263
-K Voltage Regulator 1A Positive
-F http://www.ti.com/lit/ds/symlink/ua78.pdf
-$ENDCMP
-#
-$CMP uA7815
-D Positive 1A 35V Linear Regulator, Fixed Output 15V, TO-220/TO-263
-K Voltage Regulator 1A Positive
-F http://www.ti.com/lit/ds/symlink/ua78.pdf
-$ENDCMP
-#
-$CMP uA7824
-D Positive 1A 35V Linear Regulator, Fixed Output 24V, TO-220/TO-263
-K Voltage Regulator 1A Positive
-F http://www.ti.com/lit/ds/symlink/ua78.pdf
-$ENDCMP
-#
 #End Doc Library
