@@ -5,10 +5,10 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "PSD Development Board"
+Title "Position-sensitive development board"
 Date "2019-02-26"
 Rev "0.0.1"
-Comp "Quantum Optics Group (LMU)"
+Comp "Max-Planck-Institute of Quantum Optics"
 Comment1 "Bodo Kaiser"
 Comment2 ""
 Comment3 ""
