@@ -1,3 +1,4 @@
 (sym_lib_table
-  (lib (name Library)(type Legacy)(uri /Users/bodokaiser/Repositories/github.com/bodokaiser/position-sensitive-device/schematic/Library.lib)(options "")(descr ""))
+  (lib (name Library)(type Legacy)(uri /Users/bodokaiser/Repositories/src/github.com/bodokaiser/position-sensitive-device/schematic/Library.lib)(options "")(descr ""))
+  (lib (name Development-rescue)(type Legacy)(uri ${KIPRJMOD}/Development-rescue.lib)(options "")(descr ""))
 )
