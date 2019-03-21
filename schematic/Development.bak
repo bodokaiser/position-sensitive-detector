@@ -1264,36 +1264,25 @@ DIFFX
 $Comp
 L Development-rescue:C_Small-Device C?
 U 1 1 5CA3E5E0
-P 4900 1200
-F 0 "C?" V 5050 1150 50  0000 L CNN
-F 1 "100n" V 4750 1100 50  0000 L CNN
-F 2 "" H 4900 1200 50  0001 C CNN
-F 3 "~" H 4900 1200 50  0001 C CNN
-	1    4900 1200
+P 4900 1700
+F 0 "C?" V 5050 1650 50  0000 L CNN
+F 1 "100n" V 4750 1600 50  0000 L CNN
+F 2 "" H 4900 1700 50  0001 C CNN
+F 3 "~" H 4900 1700 50  0001 C CNN
+	1    4900 1700
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	4800 1200 4700 1200
-Wire Wire Line
-	5000 1200 5100 1200
-Wire Wire Line
-	5100 1200 5100 1000
 $Comp
 L Development-rescue:R_Small-Device R?
 U 1 1 5CA951AA
-P 5100 1750
-F 0 "R?" H 5200 1750 50  0000 C CNN
-F 1 "100k" H 4950 1750 50  0000 C CNN
-F 2 "" H 5100 1750 50  0001 C CNN
-F 3 "~" H 5100 1750 50  0001 C CNN
-	1    5100 1750
+P 5100 1200
+F 0 "R?" H 5200 1200 50  0000 C CNN
+F 1 "2.2k" H 4950 1200 50  0000 C CNN
+F 2 "" H 5100 1200 50  0001 C CNN
+F 3 "~" H 5100 1200 50  0001 C CNN
+	1    5100 1200
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	5100 1650 5100 1200
-Connection ~ 5100 1200
-Wire Wire Line
-	5100 1850 5100 2450
 Wire Wire Line
 	5100 2450 6150 2450
 Wire Wire Line
@@ -1332,7 +1321,7 @@ Wire Wire Line
 	5700 5200 5700 5350
 Connection ~ 4700 3700
 Wire Wire Line
-	4700 1200 4700 3700
+	4700 1200 4700 1700
 Wire Wire Line
 	6100 5200 6100 5350
 Wire Wire Line
@@ -2497,12 +2486,12 @@ Wire Wire Line
 	6000 8300 4800 8300
 Wire Wire Line
 	4800 8300 4800 8600
-Text GLabel 4550 8050 1    50   Input ~ 0
-X
+Text GLabel 4550 8200 1    50   Input ~ 0
+POSX
 Wire Wire Line
 	4550 9200 4900 9200
 Wire Wire Line
-	4550 8050 4550 9200
+	4550 8200 4550 9200
 Connection ~ 6250 8900
 Wire Wire Line
 	6250 8900 6500 8900
@@ -2624,12 +2613,12 @@ Wire Wire Line
 	8500 8300 7300 8300
 Wire Wire Line
 	7300 8300 7300 8600
-Text GLabel 7050 8050 1    50   Input ~ 0
-Y
+Text GLabel 7050 8200 1    50   Input ~ 0
+POSY
 Wire Wire Line
 	7050 9200 7400 9200
 Wire Wire Line
-	7050 8050 7050 9200
+	7050 8200 7050 9200
 Connection ~ 8750 8900
 Wire Wire Line
 	8750 8900 9050 8900
@@ -2734,7 +2723,7 @@ F 3 "" H 12300 8150 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	12550 8400 12550 8000
+	12550 8400 12550 8150
 $Comp
 L Connector:Conn_Coaxial J?
 U 1 1 5F72D1EF
@@ -2771,7 +2760,7 @@ Wire Wire Line
 Wire Wire Line
 	12550 8400 12750 8400
 Wire Wire Line
-	12550 9300 12550 9700
+	12550 9300 12550 9550
 $Comp
 L Connector:Conn_Coaxial J?
 U 1 1 5F72D224
@@ -2850,10 +2839,10 @@ Wire Notes Line
 	15900 7800 15900 9900
 Wire Notes Line
 	15900 9900 11700 9900
-Text GLabel 12550 8000 1    50   Input ~ 0
-X
-Text GLabel 12550 9700 3    50   Input ~ 0
-Y
+Text GLabel 12550 8150 1    50   Input ~ 0
+POSX
+Text GLabel 12550 9550 3    50   Input ~ 0
+POSY
 $Comp
 L Development-rescue:Opamp_Dual_Generic-Device U?
 U 1 1 5F85496F
@@ -2887,4 +2876,30 @@ F 3 "" H 12000 8850 50  0001 C CNN
 	3    12000 8850
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	5100 1300 5100 1700
+Wire Wire Line
+	5100 1000 5100 1100
+Wire Wire Line
+	5000 1700 5100 1700
+Connection ~ 5100 1700
+Wire Wire Line
+	5100 1700 5100 2450
+Wire Wire Line
+	4800 1700 4700 1700
+Connection ~ 4700 1700
+Wire Wire Line
+	4700 1700 4700 3700
+$Comp
+L Development-rescue:TestPoint-Connector TP?
+U 1 1 5FB5AE75
+P 5100 2450
+F 0 "TP?" H 5150 2700 50  0000 R CNN
+F 1 "TestPoint" H 5250 2800 50  0000 R CNN
+F 2 "" H 5300 2450 50  0001 C CNN
+F 3 "~" H 5300 2450 50  0001 C CNN
+	1    5100 2450
+	-1   0    0    1   
+$EndComp
+Connection ~ 5100 2450
 $EndSCHEMATC
