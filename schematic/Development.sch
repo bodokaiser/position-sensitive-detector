@@ -2497,12 +2497,12 @@ Wire Wire Line
 	6000 8300 4800 8300
 Wire Wire Line
 	4800 8300 4800 8600
-Text GLabel 4550 8050 1    50   Input ~ 0
-X
+Text GLabel 4550 8200 1    50   Input ~ 0
+POSX
 Wire Wire Line
 	4550 9200 4900 9200
 Wire Wire Line
-	4550 8050 4550 9200
+	4550 8200 4550 9200
 Connection ~ 6250 8900
 Wire Wire Line
 	6250 8900 6500 8900
@@ -2624,12 +2624,12 @@ Wire Wire Line
 	8500 8300 7300 8300
 Wire Wire Line
 	7300 8300 7300 8600
-Text GLabel 7050 8050 1    50   Input ~ 0
-Y
+Text GLabel 7050 8200 1    50   Input ~ 0
+POSY
 Wire Wire Line
 	7050 9200 7400 9200
 Wire Wire Line
-	7050 8050 7050 9200
+	7050 8200 7050 9200
 Connection ~ 8750 8900
 Wire Wire Line
 	8750 8900 9050 8900
@@ -2734,7 +2734,7 @@ F 3 "" H 12300 8150 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	12550 8400 12550 8000
+	12550 8400 12550 8150
 $Comp
 L Connector:Conn_Coaxial J?
 U 1 1 5F72D1EF
@@ -2771,7 +2771,7 @@ Wire Wire Line
 Wire Wire Line
 	12550 8400 12750 8400
 Wire Wire Line
-	12550 9300 12550 9700
+	12550 9300 12550 9550
 $Comp
 L Connector:Conn_Coaxial J?
 U 1 1 5F72D224
@@ -2850,10 +2850,10 @@ Wire Notes Line
 	15900 7800 15900 9900
 Wire Notes Line
 	15900 9900 11700 9900
-Text GLabel 12550 8000 1    50   Input ~ 0
-X
-Text GLabel 12550 9700 3    50   Input ~ 0
-Y
+Text GLabel 12550 8150 1    50   Input ~ 0
+POSX
+Text GLabel 12550 9550 3    50   Input ~ 0
+POSY
 $Comp
 L Development-rescue:Opamp_Dual_Generic-Device U?
 U 1 1 5F85496F
