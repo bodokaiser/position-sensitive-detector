@@ -1,6 +1,29 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
+# Connector_Conn_01x03_Male
+#
+DEF Connector_Conn_01x03_Male J 0 40 Y N 1 F N
+F0 "J" 0 200 50 H V C CNN
+F1 "Connector_Conn_01x03_Male" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_1x??_*
+$ENDFPLIST
+DRAW
+S 34 -95 0 -105 1 1 6 F
+S 34 5 0 -5 1 1 6 F
+S 34 105 0 95 1 1 6 F
+P 2 1 1 6 50 -100 34 -100 N
+P 2 1 1 6 50 0 34 0 N
+P 2 1 1 6 50 100 34 100 N
+X Pin_1 1 200 100 150 L 50 50 1 1 P
+X Pin_2 2 200 0 150 L 50 50 1 1 P
+X Pin_3 3 200 -100 150 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # Connector_Conn_Coaxial
 #
 DEF Connector_Conn_Coaxial J 0 40 Y N 1 F N
@@ -191,67 +214,6 @@ S -200 200 200 -75 0 1 10 f
 X GND 1 0 300 100 D 50 50 1 1 W
 X VI 2 -300 0 100 R 50 50 1 1 W
 X VO 3 300 0 100 L 50 50 1 1 w
-ENDDRAW
-ENDDEF
-#
-# Development-rescue_LEMO4-Connector
-#
-DEF Development-rescue_LEMO4-Connector J 0 40 Y N 1 F N
-F0 "J" 0 300 50 H V C CNN
-F1 "Development-rescue_LEMO4-Connector" 0 -300 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-A 0 -9 220 1799 -899 0 1 0 N -220 -9 0 -229
-A 0 -9 220 -901 1 0 1 0 N 0 -229 220 -9
-C -100 -100 40 0 1 0 N
-C -100 100 40 0 1 0 N
-C 0 0 250 0 1 10 f
-C 100 -100 40 0 1 0 N
-C 100 100 40 0 1 0 N
-P 2 0 1 0 -220 -9 219 -9 N
-P 2 0 1 0 -200 -150 -150 -150 N
-P 2 0 1 0 -150 -150 -130 -130 N
-P 2 0 1 0 -150 150 -200 150 N
-P 2 0 1 0 -150 150 -130 130 N
-P 2 0 1 0 150 -150 130 -130 N
-P 2 0 1 0 150 150 130 130 N
-P 2 0 1 0 200 -150 150 -150 N
-P 2 0 1 0 200 150 150 150 N
-X ~ 1 300 150 100 L 50 50 1 1 P
-X ~ 2 -300 150 100 R 50 50 1 1 P
-X ~ 3 -300 -150 100 R 50 50 1 1 P
-X ~ 4 300 -150 100 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
-# Development-rescue_Opamp_Dual_Generic-Device
-#
-DEF Development-rescue_Opamp_Dual_Generic-Device U 0 20 Y Y 3 F N
-F0 "U" 0 200 50 H V L CNN
-F1 "Development-rescue_Opamp_Dual_Generic-Device" 0 -200 50 H V L CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- SOIC*3.9x4.9mm*P1.27mm*
- DIP*W7.62mm*
- MSOP*3x3mm*P0.65mm*
- SSOP*2.95x2.8mm*P0.65mm*
- TSSOP*3x3mm*P0.65mm*
- VSSOP*P0.5mm*
- TO?99*
-$ENDFPLIST
-DRAW
-P 4 1 1 10 -200 200 200 0 -200 -200 -200 200 f
-P 4 2 1 10 -200 200 200 0 -200 -200 -200 200 f
-X ~ 1 300 0 100 L 50 50 1 1 O
-X - 2 -300 -100 100 R 50 50 1 1 I
-X + 3 -300 100 100 R 50 50 1 1 I
-X + 5 -300 100 100 R 50 50 2 1 I
-X - 6 -300 -100 100 R 50 50 2 1 I
-X ~ 7 300 0 100 L 50 50 2 1 O
-X V- 4 -100 -300 150 U 50 50 3 1 W
-X V+ 8 -100 300 150 D 50 50 3 1 W
 ENDDRAW
 ENDDEF
 #
