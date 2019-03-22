@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 "Detector"
 $EndDescr
 $Comp
-L common:S599x D?
+L Sensor_OpticalPosition:S599x D?
 U 1 1 5D92E8C4
 P 4750 3950
 AR Path="/5D92E8C4" Ref="D?"  Part="1" 

@@ -646,7 +646,7 @@ Wire Notes Line
 Text Notes 700  750  0    50   ~ 0
 LINEAR ARTHIMETIC
 $Comp
-L common:AD538 U?
+L Analog_CU:AD538 U?
 U 1 1 5D8D4EFB
 P 5400 1700
 AR Path="/5D8D4EFB" Ref="U?"  Part="1" 
@@ -773,7 +773,7 @@ F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 6150 
 	0    1    1    0   
 $EndComp
 $Comp
-L common:AD538 U?
+L Analog_CU:AD538 U?
 U 1 1 5D8D4F3C
 P 8250 1700
 AR Path="/5D8D4F3C" Ref="U?"  Part="1" 
