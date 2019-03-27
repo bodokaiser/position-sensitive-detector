@@ -1,4 +1,4 @@
-15818487371068443
+15820041076697741
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -65274,6 +65274,13 @@ QFN 0.5
 0
 25
 24
+Sensor_OpticalPosition
+S5990
+
+
+0
+0
+0
 Sensor_Pressure
 Freescale_98ARH99066A
 https://www.nxp.com/docs/en/data-sheet/MPXH6250A.pdf

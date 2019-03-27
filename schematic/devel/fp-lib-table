@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name Sensor_OpticalPosition)(type KiCad)(uri /Users/bodokaiser/Repositories/src/github.com/bodokaiser/position-sensitive-device/schematic/library/psd.pretty)(options "")(descr ""))
+)
