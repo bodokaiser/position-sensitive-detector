@@ -59,7 +59,7 @@ AR Path="/5D81CCCC" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D81CCCC" Ref="C4"  Part="1" 
 F 0 "C4" H 1938 1896 50  0000 L CNN
 F 1 "10u" H 1938 1805 50  0000 L CNN
-F 2 "" H 1850 1850 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_4x5.4" H 1850 1850 50  0001 C CNN
 F 3 "~" H 1850 1850 50  0001 C CNN
 	1    1850 1850
 	1    0    0    -1  
@@ -117,7 +117,7 @@ AR Path="/5D81CCE9" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D81CCE9" Ref="C6"  Part="1" 
 F 0 "C6" H 2388 1896 50  0000 L CNN
 F 1 "1u" H 2388 1805 50  0000 L CNN
-F 2 "" H 2300 1850 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_4x5.4" H 2300 1850 50  0001 C CNN
 F 3 "~" H 2300 1850 50  0001 C CNN
 	1    2300 1850
 	1    0    0    -1  
@@ -369,7 +369,7 @@ Wire Wire Line
 Wire Wire Line
 	6500 3850 6500 3650
 $Comp
-L Device:C_Small C?
+L Device:CP_Small C?
 U 1 1 5D8917FF
 P 6500 3950
 AR Path="/5D8917FF" Ref="C?"  Part="1" 
@@ -526,7 +526,7 @@ AR Path="/5D89184B" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D89184B" Ref="C8"  Part="1" 
 F 0 "C8" H 2388 4546 50  0000 L CNN
 F 1 "1u" H 2388 4455 50  0000 L CNN
-F 2 "" H 2300 4500 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_5x4.4" H 2300 4500 50  0001 C CNN
 F 3 "~" H 2300 4500 50  0001 C CNN
 	1    2300 4500
 	1    0    0    -1  
@@ -539,7 +539,7 @@ AR Path="/5D891851" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D891851" Ref="C7"  Part="1" 
 F 0 "C7" H 2392 4046 50  0000 L CNN
 F 1 "100n" H 2392 3955 50  0000 L CNN
-F 2 "" H 2300 4000 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2300 4000 50  0001 C CNN
 F 3 "~" H 2300 4000 50  0001 C CNN
 	1    2300 4000
 	1    0    0    -1  
@@ -563,7 +563,7 @@ AR Path="/5D89185D" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D89185D" Ref="C2"  Part="1" 
 F 0 "C2" H 1288 4546 50  0000 L CNN
 F 1 "2.2u" H 1288 4455 50  0000 L CNN
-F 2 "" H 1200 4500 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_4x5.4" H 1200 4500 50  0001 C CNN
 F 3 "~" H 1200 4500 50  0001 C CNN
 	1    1200 4500
 	1    0    0    -1  
@@ -586,7 +586,7 @@ AR Path="/5D891869" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D891869" Ref="C1"  Part="1" 
 F 0 "C1" H 1292 4046 50  0000 L CNN
 F 1 "330n" H 1292 3955 50  0000 L CNN
-F 2 "" H 1200 4000 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 1200 4000 50  0001 C CNN
 F 3 "~" H 1200 4000 50  0001 C CNN
 	1    1200 4000
 	1    0    0    -1  
@@ -704,7 +704,7 @@ AR Path="/5D8918A1" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D8918A1" Ref="C9"  Part="1" 
 F 0 "C9" H 5042 3846 50  0000 L CNN
 F 1 "330n" H 5042 3755 50  0000 L CNN
-F 2 "" H 4950 3800 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4950 3800 50  0001 C CNN
 F 3 "~" H 4950 3800 50  0001 C CNN
 	1    4950 3800
 	1    0    0    -1  
@@ -784,7 +784,7 @@ AR Path="/5C9BC2C2" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5C9BC2C2" Ref="C3"  Part="1" 
 F 0 "C3" H 1938 1396 50  0000 L CNN
 F 1 "10u" H 1938 1305 50  0000 L CNN
-F 2 "" H 1850 1350 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_4x5.4" H 1850 1350 50  0001 C CNN
 F 3 "~" H 1850 1350 50  0001 C CNN
 	1    1850 1350
 	1    0    0    -1  
@@ -797,7 +797,7 @@ AR Path="/5C9BC8E6" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5C9BC8E6" Ref="C5"  Part="1" 
 F 0 "C5" H 2388 1396 50  0000 L CNN
 F 1 "1u" H 2388 1305 50  0000 L CNN
-F 2 "" H 2300 1350 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_4x5.4" H 2300 1350 50  0001 C CNN
 F 3 "~" H 2300 1350 50  0001 C CNN
 	1    2300 1350
 	1    0    0    -1  

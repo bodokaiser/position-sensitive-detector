@@ -59,7 +59,7 @@ AR Path="/5D81CCCC" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D81CCCC" Ref="C4"  Part="1" 
 F 0 "C4" H 1938 1896 50  0000 L CNN
 F 1 "10u" H 1938 1805 50  0000 L CNN
-F 2 "" H 1850 1850 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_4x5.4" H 1850 1850 50  0001 C CNN
 F 3 "~" H 1850 1850 50  0001 C CNN
 	1    1850 1850
 	1    0    0    -1  
@@ -117,7 +117,7 @@ AR Path="/5D81CCE9" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D81CCE9" Ref="C6"  Part="1" 
 F 0 "C6" H 2388 1896 50  0000 L CNN
 F 1 "1u" H 2388 1805 50  0000 L CNN
-F 2 "" H 2300 1850 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_4x5.4" H 2300 1850 50  0001 C CNN
 F 3 "~" H 2300 1850 50  0001 C CNN
 	1    2300 1850
 	1    0    0    -1  
@@ -137,7 +137,7 @@ AR Path="/5D81CCF3" Ref="TP?"  Part="1"
 AR Path="/5D7CE105/5D81CCF3" Ref="TP1"  Part="1" 
 F 0 "TP1" H 2642 1176 50  0000 R CNN
 F 1 "TestPoint" H 2642 1267 50  0000 R CNN
-F 2 "" H 2900 1150 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill0.7mm" H 2900 1150 50  0001 C CNN
 F 3 "~" H 2900 1150 50  0001 C CNN
 	1    2700 1150
 	-1   0    0    1   
@@ -155,7 +155,7 @@ AR Path="/5D81CCFC" Ref="TP?"  Part="1"
 AR Path="/5D7CE105/5D81CCFC" Ref="TP2"  Part="1" 
 F 0 "TP2" H 2642 1676 50  0000 R CNN
 F 1 "TestPoint" H 2642 1767 50  0000 R CNN
-F 2 "" H 2900 1650 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill0.7mm" H 2900 1650 50  0001 C CNN
 F 3 "~" H 2900 1650 50  0001 C CNN
 	1    2700 1650
 	-1   0    0    1   
@@ -173,7 +173,7 @@ AR Path="/5D81CD05" Ref="TP?"  Part="1"
 AR Path="/5D7CE105/5D81CD05" Ref="TP3"  Part="1" 
 F 0 "TP3" H 2642 2176 50  0000 R CNN
 F 1 "TestPoint" H 2642 2267 50  0000 R CNN
-F 2 "" H 2900 2150 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill0.7mm" H 2900 2150 50  0001 C CNN
 F 3 "~" H 2900 2150 50  0001 C CNN
 	1    2700 2150
 	-1   0    0    1   
@@ -243,7 +243,7 @@ AR Path="/5D81CD28" Ref="J?"  Part="1"
 AR Path="/5D7CE105/5D81CD28" Ref="J1"  Part="1" 
 F 0 "J1" H 1000 1850 50  0000 C CNN
 F 1 "CONN_PWR" V 850 1600 50  0000 C CNN
-F 2 "" H 950 1600 50  0001 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x03_P1.00mm_Vertical" H 950 1600 50  0001 C CNN
 F 3 "~" H 950 1600 50  0001 C CNN
 	1    950  1600
 	1    0    0    -1  
@@ -273,7 +273,7 @@ AR Path="/5D8917CB" Ref="TP?"  Part="1"
 AR Path="/5D7CE105/5D8917CB" Ref="TP5"  Part="1" 
 F 0 "TP5" H 3242 4826 50  0000 R CNN
 F 1 "TestPoint" H 3242 4917 50  0000 R CNN
-F 2 "" H 3500 4800 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill0.7mm" H 3500 4800 50  0001 C CNN
 F 3 "~" H 3500 4800 50  0001 C CNN
 	1    3300 4800
 	-1   0    0    1   
@@ -291,7 +291,7 @@ AR Path="/5D8917D4" Ref="TP?"  Part="1"
 AR Path="/5D7CE105/5D8917D4" Ref="TP4"  Part="1" 
 F 0 "TP4" H 3242 3826 50  0000 R CNN
 F 1 "TestPoint" H 3242 3917 50  0000 R CNN
-F 2 "" H 3500 3800 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill0.7mm" H 3500 3800 50  0001 C CNN
 F 3 "~" H 3500 3800 50  0001 C CNN
 	1    3300 3800
 	-1   0    0    1   
@@ -306,7 +306,7 @@ AR Path="/5D8917DB" Ref="TP?"  Part="1"
 AR Path="/5D7CE105/5D8917DB" Ref="TP6"  Part="1" 
 F 0 "TP6" H 7292 3776 50  0000 R CNN
 F 1 "TestPoint" H 7292 3867 50  0000 R CNN
-F 2 "" H 7550 3750 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill0.7mm" H 7550 3750 50  0001 C CNN
 F 3 "~" H 7550 3750 50  0001 C CNN
 	1    7350 3750
 	-1   0    0    1   
@@ -329,7 +329,7 @@ AR Path="/5D8917E7" Ref="R?"  Part="1"
 AR Path="/5D7CE105/5D8917E7" Ref="R1"  Part="1" 
 F 0 "R1" H 7050 3900 50  0000 L CNN
 F 1 "100" H 7050 3800 50  0000 L CNN
-F 2 "" H 6950 3850 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 6950 3850 50  0001 C CNN
 F 3 "~" H 6950 3850 50  0001 C CNN
 	1    6950 3850
 	1    0    0    -1  
@@ -342,7 +342,7 @@ AR Path="/5D8917ED" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D8917ED" Ref="C11"  Part="1" 
 F 0 "C11" H 7042 4096 50  0000 L CNN
 F 1 "10n" H 7042 4005 50  0000 L CNN
-F 2 "" H 6950 4050 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 6950 4050 50  0001 C CNN
 F 3 "~" H 6950 4050 50  0001 C CNN
 	1    6950 4050
 	1    0    0    -1  
@@ -369,14 +369,14 @@ Wire Wire Line
 Wire Wire Line
 	6500 3850 6500 3650
 $Comp
-L Device:C_Small C?
+L Device:CP_Small C?
 U 1 1 5D8917FF
 P 6500 3950
 AR Path="/5D8917FF" Ref="C?"  Part="1" 
 AR Path="/5D7CE105/5D8917FF" Ref="C10"  Part="1" 
 F 0 "C10" H 6592 3996 50  0000 L CNN
 F 1 "22u" H 6592 3905 50  0000 L CNN
-F 2 "" H 6500 3950 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_5x5.4" H 6500 3950 50  0001 C CNN
 F 3 "~" H 6500 3950 50  0001 C CNN
 	1    6500 3950
 	1    0    0    -1  
@@ -526,7 +526,7 @@ AR Path="/5D89184B" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D89184B" Ref="C8"  Part="1" 
 F 0 "C8" H 2388 4546 50  0000 L CNN
 F 1 "1u" H 2388 4455 50  0000 L CNN
-F 2 "" H 2300 4500 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_5x4.4" H 2300 4500 50  0001 C CNN
 F 3 "~" H 2300 4500 50  0001 C CNN
 	1    2300 4500
 	1    0    0    -1  
@@ -539,7 +539,7 @@ AR Path="/5D891851" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D891851" Ref="C7"  Part="1" 
 F 0 "C7" H 2392 4046 50  0000 L CNN
 F 1 "100n" H 2392 3955 50  0000 L CNN
-F 2 "" H 2300 4000 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2300 4000 50  0001 C CNN
 F 3 "~" H 2300 4000 50  0001 C CNN
 	1    2300 4000
 	1    0    0    -1  
@@ -563,7 +563,7 @@ AR Path="/5D89185D" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D89185D" Ref="C2"  Part="1" 
 F 0 "C2" H 1288 4546 50  0000 L CNN
 F 1 "2.2u" H 1288 4455 50  0000 L CNN
-F 2 "" H 1200 4500 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_4x5.4" H 1200 4500 50  0001 C CNN
 F 3 "~" H 1200 4500 50  0001 C CNN
 	1    1200 4500
 	1    0    0    -1  
@@ -586,7 +586,7 @@ AR Path="/5D891869" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D891869" Ref="C1"  Part="1" 
 F 0 "C1" H 1292 4046 50  0000 L CNN
 F 1 "330n" H 1292 3955 50  0000 L CNN
-F 2 "" H 1200 4000 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 1200 4000 50  0001 C CNN
 F 3 "~" H 1200 4000 50  0001 C CNN
 	1    1200 4000
 	1    0    0    -1  
@@ -610,7 +610,7 @@ AR Path="/5D891875" Ref="U?"  Part="1"
 AR Path="/5D7CE105/5D891875" Ref="U2"  Part="1" 
 F 0 "U2" H 1750 4601 50  0000 C CNN
 F 1 "L7912" H 1750 4510 50  0000 C CNN
-F 2 "" H 1750 4550 50  0001 C CIN
+F 2 "Package_TO_SOT_SMD:TO-252-2" H 1750 4550 50  0001 C CIN
 F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/c9/16/86/41/c7/2b/45/f2/CD00000450.pdf/files/CD00000450.pdf/jcr:content/translations/en.CD00000450.pdf" H 1750 4750 50  0001 C CNN
 	1    1750 4750
 	1    0    0    -1  
@@ -623,7 +623,7 @@ AR Path="/5D89187B" Ref="U?"  Part="1"
 AR Path="/5D7CE105/5D89187B" Ref="U1"  Part="1" 
 F 0 "U1" H 1750 3992 50  0000 C CNN
 F 1 "L7812" H 1750 3901 50  0000 C CNN
-F 2 "" H 1775 3600 50  0001 L CIN
+F 2 "Package_TO_SOT_SMD:TO-252-2" H 1775 3600 50  0001 L CIN
 F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf" H 1750 3700 50  0001 C CNN
 	1    1750 3750
 	1    0    0    -1  
@@ -704,7 +704,7 @@ AR Path="/5D8918A1" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5D8918A1" Ref="C9"  Part="1" 
 F 0 "C9" H 5042 3846 50  0000 L CNN
 F 1 "330n" H 5042 3755 50  0000 L CNN
-F 2 "" H 4950 3800 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4950 3800 50  0001 C CNN
 F 3 "~" H 4950 3800 50  0001 C CNN
 	1    4950 3800
 	1    0    0    -1  
@@ -784,7 +784,7 @@ AR Path="/5C9BC2C2" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5C9BC2C2" Ref="C3"  Part="1" 
 F 0 "C3" H 1938 1396 50  0000 L CNN
 F 1 "10u" H 1938 1305 50  0000 L CNN
-F 2 "" H 1850 1350 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_4x5.4" H 1850 1350 50  0001 C CNN
 F 3 "~" H 1850 1350 50  0001 C CNN
 	1    1850 1350
 	1    0    0    -1  
@@ -797,7 +797,7 @@ AR Path="/5C9BC8E6" Ref="C?"  Part="1"
 AR Path="/5D7CE105/5C9BC8E6" Ref="C5"  Part="1" 
 F 0 "C5" H 2388 1396 50  0000 L CNN
 F 1 "1u" H 2388 1305 50  0000 L CNN
-F 2 "" H 2300 1350 50  0001 C CNN
+F 2 "Capacitor_SMD:CP_Elec_4x5.4" H 2300 1350 50  0001 C CNN
 F 3 "~" H 2300 1350 50  0001 C CNN
 	1    2300 1350
 	1    0    0    -1  

@@ -49,7 +49,7 @@ AR Path="/5D911A34/5D923E0C" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5D923E0C" Ref="J5"  Part="1" 
 F 0 "J5" H 1700 5400 50  0000 L CNN
 F 1 "CONN_Y2" H 1550 5300 50  0000 L CNN
-F 2 "" H 1750 5100 50  0001 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_901-144_Vertical" H 1750 5100 50  0001 C CNN
 F 3 " ~" H 1750 5100 50  0001 C CNN
 	1    1750 5100
 	1    0    0    -1  
@@ -79,7 +79,7 @@ AR Path="/5D911A34/5D923DEF" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5D923DEF" Ref="J4"  Part="1" 
 F 0 "J4" H 1700 4350 50  0000 L CNN
 F 1 "CONN_Y1" H 1550 4250 50  0000 L CNN
-F 2 "" H 1750 4050 50  0001 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_901-144_Vertical" H 1750 4050 50  0001 C CNN
 F 3 " ~" H 1750 4050 50  0001 C CNN
 	1    1750 4050
 	1    0    0    -1  
@@ -109,7 +109,7 @@ AR Path="/5D911A34/5D923DD2" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5D923DD2" Ref="J3"  Part="1" 
 F 0 "J3" H 1700 3250 50  0000 L CNN
 F 1 "CONN_X2" H 1550 3150 50  0000 L CNN
-F 2 "" H 1750 2950 50  0001 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_901-144_Vertical" H 1750 2950 50  0001 C CNN
 F 3 " ~" H 1750 2950 50  0001 C CNN
 	1    1750 2950
 	1    0    0    -1  
@@ -139,7 +139,7 @@ AR Path="/5D911A34/5D923DB5" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5D923DB5" Ref="J2"  Part="1" 
 F 0 "J2" H 1700 2200 50  0000 L CNN
 F 1 "CONN_X1" H 1550 2100 50  0000 L CNN
-F 2 "" H 1750 1900 50  0001 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_901-144_Vertical" H 1750 1900 50  0001 C CNN
 F 3 " ~" H 1750 1900 50  0001 C CNN
 	1    1750 1900
 	1    0    0    -1  
@@ -199,7 +199,7 @@ U 1 1 5C9D0AD0
 P 4250 1900
 F 0 "J6" H 4400 2200 50  0000 R CNN
 F 1 "CONN_PWR" H 4600 1650 50  0000 R CNN
-F 2 "" H 4250 1900 50  0001 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x03_P1.00mm_Vertical" H 4250 1900 50  0001 C CNN
 F 3 "~" H 4250 1900 50  0001 C CNN
 	1    4250 1900
 	-1   0    0    -1  
