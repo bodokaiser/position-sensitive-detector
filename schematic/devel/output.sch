@@ -27,7 +27,7 @@ F 3 "~" H 2800 2250 50  0001 C CNN
 	1    2800 2250
 	1    0    0    1   
 $EndComp
-Text GLabel 2000 2150 0    50   Input ~ 6
+Text GLabel 2000 2150 0    50   Input ~ 10
 -X1
 $Comp
 L Device:R_Small R?
@@ -228,7 +228,7 @@ F 3 "" H 3800 2500 50  0001 C CNN
 	1    3800 2500
 	-1   0    0    -1  
 $EndComp
-Text GLabel 2050 3200 0    50   Input ~ 6
+Text GLabel 2050 3200 0    50   Input ~ 10
 -X2
 $Comp
 L Device:R_Small R?
@@ -277,7 +277,7 @@ F 3 "" H 3800 3550 50  0001 C CNN
 	1    3800 3550
 	-1   0    0    -1  
 $EndComp
-Text GLabel 2050 4300 0    50   Input ~ 6
+Text GLabel 2050 4300 0    50   Input ~ 10
 -Y1
 $Comp
 L Device:R_Small R?
@@ -324,7 +324,7 @@ F 3 "" H 3800 4650 50  0001 C CNN
 	1    3800 4650
 	-1   0    0    -1  
 $EndComp
-Text GLabel 2050 5350 0    50   Input ~ 6
+Text GLabel 2050 5350 0    50   Input ~ 10
 -Y2
 $Comp
 L Device:R_Small R?
@@ -384,7 +384,7 @@ F 3 "~" H 6000 2250 50  0001 C CNN
 	1    6000 2250
 	1    0    0    1   
 $EndComp
-Text GLabel 5600 2350 0    50   Input ~ 6
+Text GLabel 5600 2350 0    50   Input ~ 10
 DIFFX
 $Comp
 L Device:R_Small R?
@@ -586,7 +586,7 @@ F 3 "" H 7000 2500 50  0001 C CNN
 	1    7000 2500
 	-1   0    0    -1  
 $EndComp
-Text GLabel 5600 3400 0    50   Input ~ 6
+Text GLabel 5600 3400 0    50   Input ~ 10
 DIFFY
 $Comp
 L Device:R_Small R?
@@ -640,7 +640,7 @@ F 3 "" H 7000 3550 50  0001 C CNN
 	1    7000 3550
 	-1   0    0    -1  
 $EndComp
-Text GLabel 5600 4500 0    50   Input ~ 6
+Text GLabel 5600 4500 0    50   Input ~ 10
 SUM
 $Comp
 L Device:R_Small R?
@@ -698,7 +698,7 @@ F 3 "" H 7000 4650 50  0001 C CNN
 	1    7000 4650
 	-1   0    0    -1  
 $EndComp
-Text GLabel 8850 2400 0    50   Input ~ 6
+Text GLabel 8850 2400 0    50   Input ~ 10
 POSX
 Wire Wire Line
 	8350 1850 8350 2150
@@ -792,7 +792,7 @@ F 3 "" H 7950 3600 50  0001 C CNN
 	1    7950 3600
 	-1   0    0    1   
 $EndComp
-Text GLabel 8850 3450 0    50   Input ~ 6
+Text GLabel 8850 3450 0    50   Input ~ 10
 POSY
 Wire Wire Line
 	7950 1850 7950 2150
@@ -806,7 +806,7 @@ Wire Notes Line
 	1000 6000 4000 6000
 Wire Notes Line
 	4000 6000 4000 1500
-Text Notes 1000 1450 0    50   ~ 6
+Text Notes 1000 1450 0    50   ~ 10
 TERMINAL OUTPUT
 $Comp
 L Device:Opamp_Dual_Generic U?
@@ -1284,7 +1284,7 @@ Wire Notes Line
 	7300 1500 4500 1500
 Wire Wire Line
 	7000 3500 7000 3550
-Text Notes 4500 1450 0    50   ~ 6
+Text Notes 4500 1450 0    50   ~ 10
 SUM AND DIFFERENCE OUTPUT
 Wire Notes Line
 	7750 3950 10650 3950
@@ -1294,6 +1294,6 @@ Wire Notes Line
 	10650 1500 7750 1500
 Wire Notes Line
 	7750 1500 7750 3950
-Text Notes 7750 1450 0    50   ~ 6
+Text Notes 7750 1450 0    50   ~ 10
 POSITION OUTPUT
 $EndSCHEMATC

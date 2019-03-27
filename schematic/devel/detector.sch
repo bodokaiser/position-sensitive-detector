@@ -177,12 +177,12 @@ F 3 "" H 6700 4650 50  0001 C CNN
 	1    6700 4650
 	-1   0    0    -1  
 $EndComp
-Text GLabel 7600 4400 2    50   Input ~ 6
+Text GLabel 7600 4400 2    50   Input ~ 10
 -Y2
 Wire Wire Line
 	7600 4400 7500 4400
 Connection ~ 7500 4400
-Text GLabel 7600 2800 2    50   Input ~ 6
+Text GLabel 7600 2800 2    50   Input ~ 10
 -X2
 $Comp
 L Device:Opamp_Quad_Generic U?
@@ -200,7 +200,7 @@ $EndComp
 Connection ~ 5800 2800
 Wire Wire Line
 	5900 2800 5800 2800
-Text GLabel 5900 2800 2    50   Input ~ 6
+Text GLabel 5900 2800 2    50   Input ~ 10
 -X1
 $Comp
 L power:GND #PWR?
@@ -299,7 +299,7 @@ $EndComp
 Connection ~ 5800 4400
 Wire Wire Line
 	5900 4400 5800 4400
-Text GLabel 5900 4400 2    50   Input ~ 6
+Text GLabel 5900 4400 2    50   Input ~ 10
 -Y1
 $Comp
 L power:GND #PWR?
@@ -538,7 +538,7 @@ Wire Notes Line
 	4550 5000 4550 1600
 Wire Notes Line
 	4550 1600 7950 1600
-Text Notes 4550 1550 0    50   ~ 6
+Text Notes 4550 1550 0    50   ~ 10
 TRANSIMPEDANCE AMPLIFIER
 $Comp
 L Sensor_OpticalPosition:S599x D?
@@ -561,7 +561,7 @@ Wire Notes Line
 	10000 3500 10000 2950
 Wire Notes Line
 	10000 2950 8850 2950
-Text Notes 8850 2900 0    50   ~ 6
+Text Notes 8850 2900 0    50   ~ 10
 REVERSE BIAS
 Wire Notes Line
 	2400 1600 3300 1600
@@ -571,6 +571,6 @@ Wire Notes Line
 	3300 4250 2400 4250
 Wire Notes Line
 	2400 4250 2400 1600
-Text Notes 2400 1550 0    50   ~ 6
+Text Notes 2400 1550 0    50   ~ 10
 OPAMP POWER
 $EndSCHEMATC

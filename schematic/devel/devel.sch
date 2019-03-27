@@ -24,7 +24,7 @@ $Sheet
 S 4500 4500 2500 1000
 U 5D894F76
 F0 "ARTHIMETIC" 50
-F1 "arthimetic.sch" 50
+F1 "arithmetic.sch" 50
 $EndSheet
 $Sheet
 S 7500 2450 1500 3050
