@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 5
+Sheet 2 4
 Title "Position-sensitive Detector Development Board"
 Date "2019-03-22"
 Rev "0.0.1"
@@ -14,7 +14,7 @@ Comment2 ""
 Comment3 ""
 Comment4 "Power Management"
 $EndDescr
-Text Notes 700  750  0    50   ~ 6
+Text Notes 700  750  0    50   ~ 10
 POWER CONNECTOR
 Wire Notes Line
 	3350 800  700  800 
@@ -47,34 +47,8 @@ Wire Wire Line
 	2300 1600 1850 1600
 Wire Wire Line
 	2300 1450 2300 1600
-$Comp
-L Device:CP_Small C?
-U 1 1 5D81CCBE
-P 2300 1350
-AR Path="/5D81CCBE" Ref="C?"  Part="1" 
-AR Path="/5D7CE105/5D81CCBE" Ref="C?"  Part="1" 
-F 0 "C?" H 2212 1304 50  0000 R CNN
-F 1 "1u" H 2212 1395 50  0000 R CNN
-F 2 "" H 2300 1350 50  0001 C CNN
-F 3 "~" H 2300 1350 50  0001 C CNN
-	1    2300 1350
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	1850 1450 1850 1600
-$Comp
-L Device:CP_Small C?
-U 1 1 5D81CCC5
-P 1850 1350
-AR Path="/5D81CCC5" Ref="C?"  Part="1" 
-AR Path="/5D7CE105/5D81CCC5" Ref="C?"  Part="1" 
-F 0 "C?" H 1762 1304 50  0000 R CNN
-F 1 "10u" H 1762 1395 50  0000 R CNN
-F 2 "" H 1850 1350 50  0001 C CNN
-F 3 "~" H 1850 1350 50  0001 C CNN
-	1    1850 1350
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	1850 1750 1850 1600
 $Comp
@@ -274,7 +248,7 @@ F 3 "~" H 950 1600 50  0001 C CNN
 	1    950  1600
 	1    0    0    -1  
 $EndComp
-Text Notes 4500 3000 0    50   ~ 6
+Text Notes 4500 3000 0    50   ~ 10
 BIAS VOLTAGE REFERENCE
 Wire Wire Line
 	7350 3650 7650 3650
@@ -800,6 +774,32 @@ Wire Notes Line
 	3950 5500 3950 3050
 Wire Notes Line
 	3950 3050 700  3050
-Text Notes 700  3000 0    50   ~ 6
+Text Notes 700  3000 0    50   ~ 10
 SUPPLY VOLTAGE REGULATOR
+$Comp
+L Device:CP_Small C?
+U 1 1 5C9BC2C2
+P 1850 1350
+AR Path="/5C9BC2C2" Ref="C?"  Part="1" 
+AR Path="/5D7CE105/5C9BC2C2" Ref="C?"  Part="1" 
+F 0 "C?" H 1938 1396 50  0000 L CNN
+F 1 "10u" H 1938 1305 50  0000 L CNN
+F 2 "" H 1850 1350 50  0001 C CNN
+F 3 "~" H 1850 1350 50  0001 C CNN
+	1    1850 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP_Small C?
+U 1 1 5C9BC8E6
+P 2300 1350
+AR Path="/5C9BC8E6" Ref="C?"  Part="1" 
+AR Path="/5D7CE105/5C9BC8E6" Ref="C?"  Part="1" 
+F 0 "C?" H 2388 1396 50  0000 L CNN
+F 1 "1u" H 2388 1305 50  0000 L CNN
+F 2 "" H 2300 1350 50  0001 C CNN
+F 3 "~" H 2300 1350 50  0001 C CNN
+	1    2300 1350
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
