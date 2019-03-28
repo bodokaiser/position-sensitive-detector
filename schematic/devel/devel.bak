@@ -397,7 +397,7 @@ AR Path="/5C9FE3C7" Ref="C12"  Part="1"
 AR Path="/5D929D0E/5C9FE3C7" Ref="C?"  Part="1" 
 F 0 "C12" V 5771 2650 50  0000 C CNN
 F 1 "100n" V 5862 2650 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 6000 2650 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0201_0603Metric" H 6000 2650 50  0001 C CNN
 F 3 "~" H 6000 2650 50  0001 C CNN
 	1    6000 2650
 	0    1    1    0   
@@ -557,7 +557,7 @@ AR Path="/5D911A34/5C9FE420" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE420" Ref="J?"  Part="1" 
 F 0 "J3" H 7850 5150 50  0000 L CNN
 F 1 "CONN_Y2" H 7700 5050 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_901-144_Vertical" H 7900 4850 50  0001 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 7900 4850 50  0001 C CNN
 F 3 " ~" H 7900 4850 50  0001 C CNN
 	1    7900 4850
 	1    0    0    -1  
@@ -587,7 +587,7 @@ AR Path="/5D911A34/5C9FE42D" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE42D" Ref="J?"  Part="1" 
 F 0 "J5" H 9750 5150 50  0000 L CNN
 F 1 "CONN_Y1" H 9600 5050 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_901-144_Vertical" H 9800 4850 50  0001 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 9800 4850 50  0001 C CNN
 F 3 " ~" H 9800 4850 50  0001 C CNN
 	1    9800 4850
 	1    0    0    -1  
@@ -617,7 +617,7 @@ AR Path="/5D911A34/5C9FE43A" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE43A" Ref="J?"  Part="1" 
 F 0 "J4" H 9750 3550 50  0000 L CNN
 F 1 "CONN_X2" H 9600 3450 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_901-144_Vertical" H 9800 3250 50  0001 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 9800 3250 50  0001 C CNN
 F 3 " ~" H 9800 3250 50  0001 C CNN
 	1    9800 3250
 	1    0    0    -1  
@@ -647,7 +647,7 @@ AR Path="/5D911A34/5C9FE447" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE447" Ref="J?"  Part="1" 
 F 0 "J2" H 7850 3550 50  0000 L CNN
 F 1 "CONN_X1" H 7700 3450 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_901-144_Vertical" H 7900 3250 50  0001 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 7900 3250 50  0001 C CNN
 F 3 " ~" H 7900 3250 50  0001 C CNN
 	1    7900 3250
 	1    0    0    -1  
