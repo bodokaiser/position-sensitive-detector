@@ -557,7 +557,7 @@ AR Path="/5D911A34/5C9FE420" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE420" Ref="J?"  Part="1" 
 F 0 "J3" H 7850 5150 50  0000 L CNN
 F 1 "CONN_Y2" H 7700 5050 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_901-144_Vertical" H 7900 4850 50  0001 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 7900 4850 50  0001 C CNN
 F 3 " ~" H 7900 4850 50  0001 C CNN
 	1    7900 4850
 	1    0    0    -1  
@@ -587,7 +587,7 @@ AR Path="/5D911A34/5C9FE42D" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE42D" Ref="J?"  Part="1" 
 F 0 "J5" H 9750 5150 50  0000 L CNN
 F 1 "CONN_Y1" H 9600 5050 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_901-144_Vertical" H 9800 4850 50  0001 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 9800 4850 50  0001 C CNN
 F 3 " ~" H 9800 4850 50  0001 C CNN
 	1    9800 4850
 	1    0    0    -1  
@@ -617,7 +617,7 @@ AR Path="/5D911A34/5C9FE43A" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE43A" Ref="J?"  Part="1" 
 F 0 "J4" H 9750 3550 50  0000 L CNN
 F 1 "CONN_X2" H 9600 3450 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_901-144_Vertical" H 9800 3250 50  0001 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 9800 3250 50  0001 C CNN
 F 3 " ~" H 9800 3250 50  0001 C CNN
 	1    9800 3250
 	1    0    0    -1  
@@ -647,7 +647,7 @@ AR Path="/5D911A34/5C9FE447" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE447" Ref="J?"  Part="1" 
 F 0 "J2" H 7850 3550 50  0000 L CNN
 F 1 "CONN_X1" H 7700 3450 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_901-144_Vertical" H 7900 3250 50  0001 C CNN
+F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 7900 3250 50  0001 C CNN
 F 3 " ~" H 7900 3250 50  0001 C CNN
 	1    7900 3250
 	1    0    0    -1  
@@ -775,7 +775,7 @@ AR Path="/5CA08158" Ref="TP1"  Part="1"
 AR Path="/5D7CE105/5CA08158" Ref="TP?"  Part="1" 
 F 0 "TP1" H 2842 1326 50  0000 R CNN
 F 1 "TestPoint" H 2842 1417 50  0000 R CNN
-F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill0.7mm" H 3100 1300 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3100 1300 50  0001 C CNN
 F 3 "~" H 3100 1300 50  0001 C CNN
 	1    2900 1300
 	-1   0    0    1   
@@ -793,7 +793,7 @@ AR Path="/5CA08161" Ref="TP2"  Part="1"
 AR Path="/5D7CE105/5CA08161" Ref="TP?"  Part="1" 
 F 0 "TP2" H 2842 1826 50  0000 R CNN
 F 1 "TestPoint" H 2842 1917 50  0000 R CNN
-F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill0.7mm" H 3100 1800 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3100 1800 50  0001 C CNN
 F 3 "~" H 3100 1800 50  0001 C CNN
 	1    2900 1800
 	-1   0    0    1   
@@ -811,7 +811,7 @@ AR Path="/5CA0816A" Ref="TP3"  Part="1"
 AR Path="/5D7CE105/5CA0816A" Ref="TP?"  Part="1" 
 F 0 "TP3" H 2842 2326 50  0000 R CNN
 F 1 "TestPoint" H 2842 2417 50  0000 R CNN
-F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill0.7mm" H 3100 2300 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3100 2300 50  0001 C CNN
 F 3 "~" H 3100 2300 50  0001 C CNN
 	1    2900 2300
 	-1   0    0    1   
@@ -881,7 +881,7 @@ AR Path="/5CA0818D" Ref="J1"  Part="1"
 AR Path="/5D7CE105/5CA0818D" Ref="J?"  Part="1" 
 F 0 "J1" H 1200 2000 50  0000 C CNN
 F 1 "CONN_PWR" V 1050 1750 50  0000 C CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x03_P1.00mm_Vertical" H 1150 1750 50  0001 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_1x03_P2.00mm_Vertical_SMD_Pin1Left" H 1150 1750 50  0001 C CNN
 F 3 "~" H 1150 1750 50  0001 C CNN
 	1    1150 1750
 	1    0    0    -1  
@@ -909,7 +909,7 @@ AR Path="/5CA0819C" Ref="TP5"  Part="1"
 AR Path="/5D7CE105/5CA0819C" Ref="TP?"  Part="1" 
 F 0 "TP5" H 3442 4426 50  0000 R CNN
 F 1 "TestPoint" H 3442 4517 50  0000 R CNN
-F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill0.7mm" H 3700 4400 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3700 4400 50  0001 C CNN
 F 3 "~" H 3700 4400 50  0001 C CNN
 	1    3500 4400
 	-1   0    0    1   
@@ -927,7 +927,7 @@ AR Path="/5CA081A5" Ref="TP4"  Part="1"
 AR Path="/5D7CE105/5CA081A5" Ref="TP?"  Part="1" 
 F 0 "TP4" H 3442 3426 50  0000 R CNN
 F 1 "TestPoint" H 3442 3517 50  0000 R CNN
-F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill0.7mm" H 3700 3400 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3700 3400 50  0001 C CNN
 F 3 "~" H 3700 3400 50  0001 C CNN
 	1    3500 3400
 	-1   0    0    1   
@@ -942,7 +942,7 @@ AR Path="/5CA081AC" Ref="TP6"  Part="1"
 AR Path="/5D7CE105/5CA081AC" Ref="TP?"  Part="1" 
 F 0 "TP6" H 3692 5876 50  0000 R CNN
 F 1 "TestPoint" H 3692 5967 50  0000 R CNN
-F 2 "TestPoint:TestPoint_Bridge_Pitch2.54mm_Drill0.7mm" H 3950 5850 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 3950 5850 50  0001 C CNN
 F 3 "~" H 3950 5850 50  0001 C CNN
 	1    3750 5850
 	-1   0    0    1   
