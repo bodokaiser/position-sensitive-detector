@@ -1433,34 +1433,12 @@ Wire Wire Line
 Connection ~ 2400 3250
 Wire Wire Line
 	2400 3250 3050 3250
-$Comp
-L Diode:1N4001 D?
-U 1 1 5D40E7BA
-P 2400 1550
-F 0 "D?" V 2354 1629 50  0000 L CNN
-F 1 "1N4001" V 2445 1629 50  0000 L CNN
-F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 2400 1375 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 2400 1550 50  0001 C CNN
-	1    2400 1550
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	2400 1100 2400 1400
 Wire Wire Line
 	2400 2550 2400 2650
 Wire Wire Line
 	2400 1700 2400 1750
-$Comp
-L Diode:1N4001 D?
-U 1 1 5D4228BE
-P 2400 2800
-F 0 "D?" V 2446 2879 50  0000 L CNN
-F 1 "1N4001" V 2355 2879 50  0000 L CNN
-F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 2400 2625 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 2400 2800 50  0001 C CNN
-	1    2400 2800
-	0    1    -1   0   
-$EndComp
 Wire Wire Line
 	2400 2950 2400 3250
 Connection ~ 3100 4800
@@ -1664,7 +1642,7 @@ P 3050 2350
 AR Path="/5D6A383A" Ref="C?"  Part="1" 
 AR Path="/5D7CE105/5D6A383A" Ref="C?"  Part="1" 
 F 0 "C?" H 3138 2396 50  0000 L CNN
-F 1 "10mF" H 3138 2305 50  0000 L CNN
+F 1 "100u" H 3138 2305 50  0000 L CNN
 F 2 "Capacitor_SMD:CP_Elec_4x3.9" H 3050 2350 50  0001 C CNN
 F 3 "~" H 3050 2350 50  0001 C CNN
 	1    3050 2350
@@ -1742,10 +1720,32 @@ P 3050 1950
 AR Path="/5D5D5F35" Ref="C?"  Part="1" 
 AR Path="/5D7CE105/5D5D5F35" Ref="C?"  Part="1" 
 F 0 "C?" H 3138 1996 50  0000 L CNN
-F 1 "10mF" H 3138 1905 50  0000 L CNN
+F 1 "100u" H 3138 1905 50  0000 L CNN
 F 2 "Capacitor_SMD:CP_Elec_4x3.9" H 3050 1950 50  0001 C CNN
 F 3 "~" H 3050 1950 50  0001 C CNN
 	1    3050 1950
 	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Zener D?
+U 1 1 5D7A56EE
+P 2400 1550
+F 0 "D?" V 2354 1629 50  0000 L CNN
+F 1 "D_Zener" V 2445 1629 50  0000 L CNN
+F 2 "" H 2400 1550 50  0001 C CNN
+F 3 "~" H 2400 1550 50  0001 C CNN
+	1    2400 1550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:D_Zener D?
+U 1 1 5D7A6478
+P 2400 2800
+F 0 "D?" V 2446 2879 50  0000 L CNN
+F 1 "D_Zener" V 2355 2879 50  0000 L CNN
+F 2 "" H 2400 2800 50  0001 C CNN
+F 3 "~" H 2400 2800 50  0001 C CNN
+	1    2400 2800
+	0    1    -1   0   
 $EndComp
 $EndSCHEMATC
