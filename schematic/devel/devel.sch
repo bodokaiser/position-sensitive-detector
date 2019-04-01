@@ -544,7 +544,7 @@ AR Path="/5D911A34/5C9FE420" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE420" Ref="J?"  Part="1" 
 F 0 "J3" H 7250 3850 50  0000 L CNN
 F 1 "CONN_Y2" H 7100 3750 50  0000 L CNN
-F 2 "Connector_Coaxial_SMA:SMA_EdgeSlim" H 7300 3550 50  0001 C CNN
+F 2 "Connector_Coaxial_SMA:SMA_Molex_73251-2120_EdgeMount" H 7300 3550 50  0001 C CNN
 F 3 " ~" H 7300 3550 50  0001 C CNN
 	1    7300 3550
 	1    0    0    -1  
@@ -574,7 +574,7 @@ AR Path="/5D911A34/5C9FE42D" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE42D" Ref="J?"  Part="1" 
 F 0 "J5" H 9150 3850 50  0000 L CNN
 F 1 "CONN_Y1" H 9000 3750 50  0000 L CNN
-F 2 "Connector_Coaxial_SMA:SMA_EdgeSlim" H 9200 3550 50  0001 C CNN
+F 2 "Connector_Coaxial_SMA:SMA_Molex_73251-2120_EdgeMount" H 9200 3550 50  0001 C CNN
 F 3 " ~" H 9200 3550 50  0001 C CNN
 	1    9200 3550
 	1    0    0    -1  
@@ -604,7 +604,7 @@ AR Path="/5D911A34/5C9FE43A" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE43A" Ref="J?"  Part="1" 
 F 0 "J4" H 9150 2250 50  0000 L CNN
 F 1 "CONN_X2" H 9000 2150 50  0000 L CNN
-F 2 "Connector_Coaxial_SMA:SMA_EdgeSlim" H 9200 1950 50  0001 C CNN
+F 2 "Connector_Coaxial_SMA:SMA_Molex_73251-2120_EdgeMount" H 9200 1950 50  0001 C CNN
 F 3 " ~" H 9200 1950 50  0001 C CNN
 	1    9200 1950
 	1    0    0    -1  
@@ -634,7 +634,7 @@ AR Path="/5D911A34/5C9FE447" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE447" Ref="J?"  Part="1" 
 F 0 "J2" H 7250 2250 50  0000 L CNN
 F 1 "CONN_X1" H 7100 2150 50  0000 L CNN
-F 2 "Connector_Coaxial_SMA:SMA_EdgeSlim" H 7300 1950 50  0001 C CNN
+F 2 "Connector_Coaxial_SMA:SMA_Molex_73251-2120_EdgeMount" H 7300 1950 50  0001 C CNN
 F 3 " ~" H 7300 1950 50  0001 C CNN
 	1    7300 1950
 	1    0    0    -1  
@@ -751,7 +751,7 @@ AR Path="/5CA0818D" Ref="J1"  Part="1"
 AR Path="/5D7CE105/5CA0818D" Ref="J?"  Part="1" 
 F 0 "J1" H 900 1800 50  0000 C CNN
 F 1 "CONN_PWR" V 750 1550 50  0000 C CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x03_P1.00mm_Vertical_SMD_Pin1Right" H 850 1550 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical_SMD_Pin1Left" H 850 1550 50  0001 C CNN
 F 3 "~" H 850 1550 50  0001 C CNN
 	1    850  1550
 	1    0    0    -1  

@@ -1,4 +1,4 @@
-15821595190075800
+15823149321810800
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -6387,6 +6387,13 @@ Connector_Coaxial_SMA
 SMA_EdgeSlim
 
 
+0
+5
+2
+Connector_Coaxial_SMA
+SMA_Molex_73251-2120_EdgeMount
+http://suddendocs.samtec.com/prints/sma-j-p-x-st-em1-mkt.pdf
+SMA
 0
 5
 2
