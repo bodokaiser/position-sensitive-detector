@@ -544,7 +544,7 @@ AR Path="/5D911A34/5C9FE420" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE420" Ref="J?"  Part="1" 
 F 0 "J3" H 8850 3850 50  0000 L CNN
 F 1 "CONN_Y2" H 8700 3750 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 8900 3550 50  0001 C CNN
+F 2 "Connector_Coaxial_SMA:SMA_EdgeSlim" H 8900 3550 50  0001 C CNN
 F 3 " ~" H 8900 3550 50  0001 C CNN
 	1    8900 3550
 	1    0    0    -1  
@@ -574,7 +574,7 @@ AR Path="/5D911A34/5C9FE42D" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE42D" Ref="J?"  Part="1" 
 F 0 "J5" H 10750 3850 50  0000 L CNN
 F 1 "CONN_Y1" H 10600 3750 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 10800 3550 50  0001 C CNN
+F 2 "Connector_Coaxial_SMA:SMA_EdgeSlim" H 10800 3550 50  0001 C CNN
 F 3 " ~" H 10800 3550 50  0001 C CNN
 	1    10800 3550
 	1    0    0    -1  
@@ -604,7 +604,7 @@ AR Path="/5D911A34/5C9FE43A" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE43A" Ref="J?"  Part="1" 
 F 0 "J4" H 10750 2250 50  0000 L CNN
 F 1 "CONN_X2" H 10600 2150 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 10800 1950 50  0001 C CNN
+F 2 "Connector_Coaxial_SMA:SMA_EdgeSlim" H 10800 1950 50  0001 C CNN
 F 3 " ~" H 10800 1950 50  0001 C CNN
 	1    10800 1950
 	1    0    0    -1  
@@ -634,7 +634,7 @@ AR Path="/5D911A34/5C9FE447" Ref="J?"  Part="1"
 AR Path="/5C9BDA7E/5C9FE447" Ref="J?"  Part="1" 
 F 0 "J2" H 8850 2250 50  0000 L CNN
 F 1 "CONN_X1" H 8700 2150 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_132289_EdgeMount" H 8900 1950 50  0001 C CNN
+F 2 "Connector_Coaxial_SMA:SMA_EdgeSlim" H 8900 1950 50  0001 C CNN
 F 3 " ~" H 8900 1950 50  0001 C CNN
 	1    8900 1950
 	1    0    0    -1  
@@ -1502,17 +1502,6 @@ F 3 "~" H 3450 1550 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3450 1450 3450 1100
-$Comp
-L Device:Q_PMOS_GSD Q3
-U 1 1 5D5D688A
-P 4000 1200
-F 0 "Q3" V 4343 1200 50  0000 C CNN
-F 1 "Q_PMOS_GSD" V 4252 1200 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 4200 1300 50  0001 C CNN
-F 3 "~" H 4000 1200 50  0001 C CNN
-	1    4000 1200
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	4200 1100 4550 1100
 Wire Wire Line
@@ -1604,17 +1593,6 @@ Wire Wire Line
 Connection ~ 4550 3250
 Wire Wire Line
 	4550 3250 5000 3250
-$Comp
-L Device:Q_NMOS_GSD Q4
-U 1 1 5D6EB887
-P 4000 3150
-F 0 "Q4" V 4251 3150 50  0000 C CNN
-F 1 "Q_NMOS_GSD" V 4342 3150 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 4200 3250 50  0001 C CNN
-F 3 "~" H 4000 3150 50  0001 C CNN
-	1    4000 3150
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	4200 3250 4550 3250
 Wire Wire Line

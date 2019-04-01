@@ -1,4 +1,4 @@
-15820041079663741
+15821595190075800
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -6382,6 +6382,13 @@ Molex Microcoaxial RF Connectors (MCRF), mates Hirose U.FL, (http://www.molex.co
 mcrf hirose ufl u.fl microcoaxial
 0
 4
+2
+Connector_Coaxial_SMA
+SMA_EdgeSlim
+
+
+0
+5
 2
 Connector_DIN
 DIN41612_B2_2x8_Horizontal
