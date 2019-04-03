@@ -1,0 +1,73 @@
+\section{Transimpedance amplifier}
+
+% need motivation why current-to-voltage (transimpedance) design
+
+% explain amplification factor
+% mention feedback tee network as workaround to high Rf
+
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw
+			(0, 0)
+				node[op amp] (opamp) {}
+			(opamp.-)
+				to[short] (-1, 0.5)
+				to[american current source, invert, label=I\textsubscript{in}] (-4, 0.5)
+				to[short] (-4, -1.5)
+				node[ground] {}
+			(opamp.-)
+				to[short, *-] ++(0, 1.5)
+				coordinate (left)
+				to[resistor, label=R\textsubscript{f}] (left -| opamp.out)
+				to[short, -*] (opamp.out)
+			(opamp.+)
+				to[short] +(0, -1)
+				node[ground] {}
+			(opamp.out)
+				to[short] (3, 0)
+				node[ocirc, label=V\textsubscript{out}] {}
+	;
+	\end{circuitikz}
+	\caption{Simple transimpedance amplifier circuit.}\label{fig:circuit_transimpedance_amplifier}
+\end{figure}
+
+\subsection{Offset compensation}
+
+% ideal to real op-amp
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw
+			(0, 0)
+				node[op amp] (opamp) {}
+			(opamp.-)
+				to[short] (-1, 0.5)
+				to[american current source, invert, label=I\textsubscript{in}] (-4, 0.5)
+				to[short] (-4, -1.5)
+				node[ocirc, label=I\textsubscript{-}] {}
+			(opamp.+)
+				to[short] +(0, -1)
+				node[ocirc, label=I\textsubscript{+}] {}
+			(opamp.out)
+				to[short] (3, 0)
+				node[ocirc, label=V\textsubscript{out}] {}
+	;
+	\end{circuitikz}
+	\caption{Equivalent circuit of an operational amplifier comprising input bias and input offset current, and input offset voltage.}\label{fig:circuit_nonideal_opamp}
+\end{figure}
+
+\subsubsection{Input bias current}
+
+% can compensate by impedance matching
+
+\subsubsection{Input offset current}
+
+% cannot compensate input offset current
+
+\subsubsection{Input offset voltage}
+
+% can compensate through voltage injection
+
+\subsection{Frequency response}
+
