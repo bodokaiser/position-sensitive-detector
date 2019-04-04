@@ -8,28 +8,13 @@
 \begin{figure}[H]
 	\centering
 	\begin{circuitikz}
-		\draw
-			(0, 0)
-				node[op amp] (opamp) {}
-			(opamp.-)
-				to[short] (-1, 0.5)
-				to[american current source, invert, label=I\textsubscript{in}] (-4, 0.5)
-				to[short] (-4, -1.5)
-				node[ground] {}
-			(opamp.-)
-				to[short, *-] ++(0, 1.5)
-				coordinate (left)
-				to[resistor, label=R\textsubscript{f}] (left -| opamp.out)
-				to[short, -*] (opamp.out)
-			(opamp.+)
-				to[short] +(0, -1)
-				node[ground] {}
-			(opamp.out)
-				to[short] (3, 0)
-				node[ocirc, label=V\textsubscript{out}] {}
-	;
+		\draw (0, 0) node[op amp](opamp){};
+		\draw (opamp.+) -- +(0, -1) node[ground](gnd1){};
+		\draw (opamp.out) -- (3, 0) node[ocirc, label=V\textsubscript{out}]{};
+		\draw (opamp.-) to[current source, invert, label=I\textsubscript{in}] +(-3, 0) node(node1){} -- (node1 |- gnd1) node[ground]{};
+		\draw (opamp.-) |- (-1, 2) to[resistor, label=R\textsubscript{f}] (1,2) -| (opamp.out);
 	\end{circuitikz}
-	\caption{Simple transimpedance amplifier circuit.}\label{fig:circuit_transimpedance_amplifier}
+	\caption{Basic transimpedance amplifier circuit.}\label{fig:circuit_transimpedance_amplifier}
 \end{figure}
 
 \subsection{Offset compensation}
@@ -38,23 +23,16 @@
 \begin{figure}[H]
 	\centering
 	\begin{circuitikz}
-		\draw
-			(0, 0)
-				node[op amp] (opamp) {}
-			(opamp.-)
-				to[short] (-1, 0.5)
-				to[american current source, invert, label=I\textsubscript{in}] (-4, 0.5)
-				to[short] (-4, -1.5)
-				node[ocirc, label=I\textsubscript{-}] {}
-			(opamp.+)
-				to[short] +(0, -1)
-				node[ocirc, label=I\textsubscript{+}] {}
-			(opamp.out)
-				to[short] (3, 0)
-				node[ocirc, label=V\textsubscript{out}] {}
-	;
+		\draw (0, 0) node[op amp, scale=1.5](opamp){};
+		\draw (opamp.out) -- +(1, 0) node[ocirc, label=V\textsubscript{out}]{};
+		\draw (opamp.+) to[voltage source, label=V\textsubscript{offset}] ++(-1.5, 0) -- ++(-0.5, 0) node(node1)[circ]{};
+		\draw (node1) to[current source, label=I\textsubscript{offset}/2] (node1 |- opamp.-) node(node2)[circ]{} -- (opamp.-);
+		\draw (node2) -- ++(-4.5, 0) node(node3)[circ]{} -- (node3 |- opamp.+) to[current source, label=I\textsubscript{bias}]  ++(0, -2) node[ground]{};
+		\draw(node1) -- ++(-2.5, 0) node(node4)[circ]{} to[current source, label=I\textsubscript{bias}] ++(0, -2) node[ground]{};
+		\draw (node3) to[short, f<_=i\textsubscript{-}] +(-2, 0) node[ocirc, label=V\textsubscript{-}]{};
+		\draw (node4) -- +(-2, 0) to[short, f<_=i\textsubscript{+}] +(-4, 0) node[ocirc, label=V\textsubscript{+}]{};
 	\end{circuitikz}
-	\caption{Equivalent circuit of an operational amplifier comprising input bias and input offset current, and input offset voltage.}\label{fig:circuit_nonideal_opamp}
+	\caption{Equivalent circuit of an operational amplifier comprising input bias current, input offset current and input offset voltage.}\label{fig:circuit_opamp_offset_bias}
 \end{figure}
 
 \subsubsection{Input bias current}
