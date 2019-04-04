@@ -10,42 +10,76 @@
 	\begin{circuitikz}
 		\draw (0, 0) node[op amp](opamp){};
 		\draw (opamp.+) -- +(0, -1) node[ground](gnd1){};
-		\draw (opamp.out) -- (3, 0) node[ocirc, label=V\textsubscript{out}]{};
-		\draw (opamp.-) to[current source, invert, label=I\textsubscript{in}] +(-3, 0) node(node1){} -- (node1 |- gnd1) node[ground]{};
-		\draw (opamp.-) |- (-1, 2) to[resistor, label=R\textsubscript{f}] (1,2) -| (opamp.out);
+		\draw (opamp.out) -- (3, 0) node[ocirc, label=$V_\text{out}$]{};
+		\draw (opamp.-) to[current source, invert, l=$I_\text{in}$] +(-3, 0) node(node1){} -- (node1 |- gnd1) node[ground]{};
+		\draw (opamp.-) |- (-1, 2) to[resistor, l=$R_f$] (1,2) -| (opamp.out);
 	\end{circuitikz}
-	\caption{Basic transimpedance amplifier circuit.}\label{fig:circuit_transimpedance_amplifier}
+	\caption{Simple transimpedance amplifier circuit.}
 \end{figure}
 
-\subsection{Offset compensation}
+\begin{equation}
+	V_\text{out}=R_fI\text{in}
+\end{equation}
+
+\begin{figure}[H]
+	\begin{subfigure}[t]{.5\textwidth}
+		\centering
+		\begin{circuitikz}
+			\draw (0, 0) node[op amp](opamp){};
+			\draw (opamp.+) -- +(0, -1) node[ground](gnd1){};
+			\draw (opamp.out) -- +(.5, 0) node[ocirc, label=$V_\text{out}$]{};
+			\draw (opamp.-) -- +(-3, 0) node(node1){} to[current source, invert, l=$I_\text{in}$] (node1 |- gnd1) node[ground]{};
+			\draw (node1) -- +(1.5, 0) node(node2){} to[resistor, l=$R_\text{in}$] (node2 |- gnd1) node[ground]{};
+			\draw (opamp.-) |- (-1, 2) to[resistor, l=$R_f$] (1,2) -| (opamp.out);
+		\end{circuitikz}
+		\caption{Transimpedance amplifier.}
+	\end{subfigure}
+	\begin{subfigure}[t]{.5\textwidth}
+		\centering
+		\begin{circuitikz}
+			\draw (0, 0) node[op amp](opamp){};
+			\draw (opamp.+) -- +(0, -1) node[ground](gnd1){};
+			\draw (opamp.out) -- +(.5, 0) node[ocirc, label=$V_\text{out}$]{};
+			\draw (opamp.-) to[resistor, l_=$R_\text{in}$] +(-3, 0) node(node1){} to[voltage source, l=$V_\text{in}{=}R_\text{in}I_\text{in}$] (node1 |- gnd1) node[ground]{};
+			\draw (opamp.-) |- (-1, 2) to[resistor, l=$R_f$] (1,2) -| (opamp.out);
+		\end{circuitikz}
+		\caption{Inverting amplifier.}
+	\end{subfigure}
+	\caption{Equivalence between transimpedance and inverting amplifier using source transformation.}
+\end{figure}
+
+\subsection{Offset voltage}
 
 % ideal to real op-amp
 \begin{figure}[H]
 	\centering
 	\begin{circuitikz}
 		\draw (0, 0) node[op amp, scale=1.5](opamp){};
-		\draw (opamp.out) -- +(1, 0) node[ocirc, label=V\textsubscript{out}]{};
-		\draw (opamp.+) to[voltage source, label=V\textsubscript{offset}] ++(-1.5, 0) -- ++(-0.5, 0) node(node1)[circ]{};
-		\draw (node1) to[current source, label=I\textsubscript{offset}/2] (node1 |- opamp.-) node(node2)[circ]{} -- (opamp.-);
-		\draw (node2) -- ++(-4.5, 0) node(node3)[circ]{} -- (node3 |- opamp.+) to[current source, label=I\textsubscript{bias}]  ++(0, -2) node[ground]{};
-		\draw(node1) -- ++(-2.5, 0) node(node4)[circ]{} to[current source, label=I\textsubscript{bias}] ++(0, -2) node[ground]{};
-		\draw (node3) to[short, f<_=i\textsubscript{-}] +(-2, 0) node[ocirc, label=V\textsubscript{-}]{};
-		\draw (node4) -- +(-2, 0) to[short, f<_=i\textsubscript{+}] +(-4, 0) node[ocirc, label=V\textsubscript{+}]{};
+		\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
+		\draw (opamp.+) to[voltage source, label=$V_\text{offset}$] ++(-1.5, 0) -- ++(-0.5, 0) node(node1)[circ]{};
+		\draw (node1) to[current source, label=$I_\text{offset}/2$] (node1 |- opamp.-) node(node2)[circ]{} -- (opamp.-);
+		\draw (node2) -- ++(-4.5, 0) node(node3)[circ]{} -- (node3 |- opamp.+) to[current source, label=$I_\text{bias}$]  ++(0, -2) node[ground]{};
+		\draw(node1) -- ++(-2.5, 0) node(node4)[circ]{} to[current source, label=$I_\text{bias}$] ++(0, -2) node[ground]{};
+		\draw (node3) to[short, f<_=$i_-$] +(-2, 0) node[ocirc, label=$V_-$]{};
+		\draw (node4) -- +(-2, 0) to[short, f<_=$i_+$] +(-4, 0) node[ocirc, label=$V_+$]{};
 	\end{circuitikz}
-	\caption{Equivalent circuit of an operational amplifier comprising input bias current, input offset current and input offset voltage.}\label{fig:circuit_opamp_offset_bias}
+	\caption{Equivalent circuit of an imperfect operational amplifier comprising input bias current, input offset current and input offset voltage.}\label{fig:circuit_opamp_offset_bias}
 \end{figure}
-
-\subsubsection{Input bias current}
 
 % can compensate by impedance matching
 
-\subsubsection{Input offset current}
+The input offset current $I_\text{offset}$ denotes the difference between the input current of the input terminals,
+\begin{equation}
+	I_\text{offset}=i_+-i_-.
+\end{equation}
+In the case of the simple transimpedance amplifier a non-zero input offset current adds an output voltage offset $R_fI_\text{offset}$, see Ref.~\cite[p.~57]{Jung05}.
+
 
 % cannot compensate input offset current
-
-\subsubsection{Input offset voltage}
 
 % can compensate through voltage injection
 
 \subsection{Frequency response}
+
+\subsection{Noise reduction}
 
