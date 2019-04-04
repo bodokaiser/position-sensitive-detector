@@ -53,8 +53,26 @@
 
 \subsection{Offset}
 
-% TODO: mention photodiode leakage current (Graemer p. 25)
-% TODO: compensation circuit (Jung p. 57)
+\subsubsection{Input offset voltage}
+
+\cite[p.~54]{Jung05}
+
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (0, 0) node[op amp](opamp){};
+		\draw (opamp.out) -- +(.5, 0) node[ocirc, label=$V_\text{out}$]{};
+		\draw (opamp.-) to[resistor, l_=$R_\text{in}$] +(-3, 0) node(node1){} to[voltage source, l=$V_\text{in}$] (node1 |- +0, -3) node[ground](gnd){};
+		\draw (opamp.-) |- (-1, 2) to[resistor, l=$R_f$] (1,2) -| (opamp.out);
+		\draw (opamp.+) -- ++(0, -1) node(node2)[circ]{};
+		\draw (-2, -0.5) to[potentiometer, n=pot, l_=$R_p$] (-2, -2.5);
+		\draw (node2) -- ++(2, 0) node(node3){} to[resistor, l_=$R_c$] (node3 |- gnd) node[ground]{};
+		\draw (node2) -- (pot.wiper);
+		\draw (-2, -0.5) node[ocirc, label=$+V_s$]{};
+		\draw (-2, -2.5) node[ocirc, label=$-V_s$, rotate=180]{};
+	\end{circuitikz}
+	\caption{Input current offset compensation.}
+\end{figure}
 
 \subsubsection{Input current}
 
@@ -96,9 +114,30 @@
 	I_\text{bias}=\frac{I_++I_-}{2}
 \end{align}
 
-\subsubsection{Input offset voltage}
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (0, 0) node[op amp](opamp){};
+		\draw (opamp.out) -- +(.5, 0) node[ocirc, label=$V_\text{out}$]{};
+		\draw (opamp.-) to[resistor, l_=$R_\text{in}$] +(-3, 0) node(node1){} to[voltage source, l=$V_\text{in}$] (node1 |- +0, -3) node[ground](gnd){};
+		\draw (opamp.-) |- (-1, 2) to[resistor, l=$R_f$] (1,2) -| (opamp.out);
+		\draw (opamp.+) -- ++(0, -1) node(node2)[circ]{} to[resistor, l_=$R_c$] (opamp.+ |- gnd) node[ground]{};
+		\draw (node2) -- ++(1, 0) node(node3){} to[capacitor, l=$C_c$] (node3 |- gnd) node[ground]{};
+	\end{circuitikz}
+	\caption{Input current offset compensation.}
+\end{figure}
 
-\subsubsection{Offset compensation}
+\cite[p.~57]{Jung05}
+\cite[p.~25]{Graeme96}
+
+\begin{equation}
+	R_c=\frac{R_\text{in}R_f}{R_\text{in}+R_f}
+\end{equation}
+
+% TODO: mention that this only works for well-matched bias currents (Ioffset < Ibias)
+% TODO: give noise argument why this introduces more error
+
+
 
 \subsection{Bandwidth}
 
