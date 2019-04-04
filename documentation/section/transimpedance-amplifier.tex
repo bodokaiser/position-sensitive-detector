@@ -1,9 +1,7 @@
 \section{Transimpedance amplifier}
 
-% need motivation why current-to-voltage (transimpedance) design
-
-% explain amplification factor
-% mention feedback tee network as workaround to high Rf
+% TODO: motivate choice for current-to-voltage (transimpedance) design
+% TODO: mention feedback tee network for high feedback factor
 
 \begin{figure}[H]
 	\centering
@@ -18,7 +16,7 @@
 \end{figure}
 
 \begin{equation}
-	V_\text{out}=R_fI\text{in}
+	V_\text{out}=R_fI_\text{in}
 \end{equation}
 
 \begin{figure}[H]
@@ -48,38 +46,59 @@
 	\caption{Equivalence between transimpedance and inverting amplifier using source transformation.}
 \end{figure}
 
-\subsection{Offset voltage}
+\subsection{Noise}
 
-% ideal to real op-amp
+% TODO: add shot noise
+% TOOD: add thermal noise
+
+\subsection{Offset}
+
+% TODO: mention photodiode leakage current (Graemer p. 25)
+% TODO: compensation circuit (Jung p. 57)
+
+\subsubsection{Input current}
+
+% TODO: mention that I+, I- are difficult to measure and therefore the datasheets report Ibias and Ioffset
+
 \begin{figure}[H]
-	\centering
-	\begin{circuitikz}
-		\draw (0, 0) node[op amp, scale=1.5](opamp){};
-		\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
-		\draw (opamp.+) to[voltage source, label=$V_\text{offset}$] ++(-1.5, 0) -- ++(-0.5, 0) node(node1)[circ]{};
-		\draw (node1) to[current source, label=$I_\text{offset}/2$] (node1 |- opamp.-) node(node2)[circ]{} -- (opamp.-);
-		\draw (node2) -- ++(-4.5, 0) node(node3)[circ]{} -- (node3 |- opamp.+) to[current source, label=$I_\text{bias}$]  ++(0, -2) node[ground]{};
-		\draw(node1) -- ++(-2.5, 0) node(node4)[circ]{} to[current source, label=$I_\text{bias}$] ++(0, -2) node[ground]{};
-		\draw (node3) to[short, f<_=$i_-$] +(-2, 0) node[ocirc, label=$V_-$]{};
-		\draw (node4) -- +(-2, 0) to[short, f<_=$i_+$] +(-4, 0) node[ocirc, label=$V_+$]{};
-	\end{circuitikz}
-	\caption{Equivalent circuit of an imperfect operational amplifier comprising input bias current, input offset current and input offset voltage.}\label{fig:circuit_opamp_offset_bias}
+	\begin{subfigure}[t]{.5\textwidth}
+		\centering
+		\begin{circuitikz}
+			\draw (0, 0) node[op amp, scale=1.2](opamp){};
+			\draw (opamp.out) -- +(0.5, 0) node[ocirc, label=$V_\text{out}$]{};
+			\draw (opamp.+) -- +(-0.5, 0) node(node1a)[circ]{} to[current source, l=$I_\text{offset}/2$] (node1a |- opamp.-) node(node1b)[circ]{} -- (opamp.-);
+			\draw (node1a) -- ++(-1, 0) node(node2a)[circ]{} -- ++(0, -0.5) to[current source, l=$I_\text{bias}$] ++(0, -1) node[ground]{};
+			\draw (node1b) -- ++(-1, 0) node(node2b)[circ]{} -- ++(0, +0.5) to[current source, l_=$I_\text{bias}$] ++(0, 1) node[ground, rotate=180]{};
+			\draw (node2a) to[short, i<=$i_+$] +(-1.5, 0) node[ocirc, label=$V_+$]{};
+			\draw (node2b) to[short, i<_=$i_-$] +(-1.5, 0) node[ocirc, label=$V_-$]{};
+		\end{circuitikz}
+		\caption{Equivalent current sources as reported in the datasheet.}
+	\end{subfigure}
+	\begin{subfigure}[t]{.5\textwidth}
+		\centering
+		\begin{circuitikz}
+			\draw (0, 0) node[op amp, scale=1.2](opamp){};
+			\draw (opamp.out) -- +(0.5, 0) node[ocirc, label=$V_\text{out}$]{};
+			\draw (opamp.+)-- ++(-0.5, 0) node(node2a)[circ]{} -- ++(0, -0.5) to[current source, l=$I_-$] ++(0, -1) node[ground]{};
+			\draw (opamp.-) -- ++(-0.5, 0) node(node2b)[circ]{} -- ++(0, +0.5) to[current source, l_=$I_+$] ++(0, 1) node[ground, rotate=180]{};
+			\draw (node2a) to[short, i<=$i_+$] +(-1.5, 0) node[ocirc, label=$V_+$]{};
+			\draw (node2b) to[short, i<_=$i_-$] +(-1.5, 0) node[ocirc, label=$V_-$]{};
+		\end{circuitikz}
+		\caption{Alternative equivalent current sources.}
+	\end{subfigure}
+	\caption{Non-zero input current from the operational amplifier.}
 \end{figure}
 
-% can compensate by impedance matching
+\begin{align}
+	I_+=I_\text{bias}+\frac{1}{2}I_\text{offset} &&
+	I_\text{offset}=I_+-I_- \\
+	I_-=I_\text{bias}-\frac{1}{2}I_\text{offset} &&
+	I_\text{bias}=\frac{I_++I_-}{2}
+\end{align}
 
-The input offset current $I_\text{offset}$ denotes the difference between the input current of the input terminals,
-\begin{equation}
-	I_\text{offset}=i_+-i_-.
-\end{equation}
-In the case of the simple transimpedance amplifier a non-zero input offset current adds an output voltage offset $R_fI_\text{offset}$, see Ref.~\cite[p.~57]{Jung05}.
+\subsubsection{Input offset voltage}
 
+\subsubsection{Offset compensation}
 
-% cannot compensate input offset current
-
-% can compensate through voltage injection
-
-\subsection{Frequency response}
-
-\subsection{Noise reduction}
+\subsection{Bandwidth}
 
