@@ -63,7 +63,7 @@ By using the source transformation on the current source with a parallel impedan
 			\draw (0, 0) node[op amp](opamp){};
 			\draw (opamp.+) -- +(0, -1) node[ground](gnd1){};
 			\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
-			\draw (opamp.-) node[circ]{} to[generic, invert, l_=$Z_\text{in}$] +(-3, 0) node(node1){} to[voltage source, invert, l=$V_\text{in}{=}Z_\text{in}I_\text{in}$] (node1 |- gnd1) node[ground]{};
+			\draw (opamp.-) node[circ]{} to[generic, invert, l_=$Z_\text{in}$] +(-3, 0) node(node1){} to[voltage source, l=$V_\text{in}{=}Z_\text{in}I_\text{in}$] (node1 |- gnd1) node[ground]{};
 			\draw (opamp.-) |- (-1, 2) to[generic, l=$Z_f$] (1,2) -| (opamp.out);
 		\end{circuitikz}
 		\caption{Inverting amplifier.}
@@ -75,7 +75,25 @@ Given a current source $I_\text{in}$ with parallel impedance $Z_\text{in}$ the e
 
 \subsection{Offset}
 
+So far we have assumed ideal properties of the operational amplifier.
+In this section, we are going to start with the discussion of operational amplifier imperfections that contribute to a constant offset voltage at the output.
+
 \subsubsection{Input offset voltage}
+
+Real operational amplifiers only reduce the voltage difference between the inverting and non-inverting input to a non-zero input offset voltage.
+For high-precision operational amplifiers, the input offset voltage is in the range of microvolts.
+We can model the input offset voltage as a voltage source at the non-inverting input of an ideal operational amplifier in our transimpedance circuit, as can be seen from \Cref{fig:input_offset_voltage}.
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (0, 0) node[op amp](opamp){};
+		\draw (opamp.+) -- ++(0, -.5) to[voltage source, l=$V_\text{offset}$] +(0, -1) node[ground](gnd1){};
+		\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
+		\draw (opamp.-) node[circ]{} -- +(-2, 0) node(node1){} to[current source, invert, l=$I_\text{in}$] (node1 |- gnd1) node[ground]{};
+		\draw (opamp.-) |- (-1, 2) to[generic, l=$Z_f$] (1,2) -| (opamp.out);
+	\end{circuitikz}
+	\caption{Input offset voltage in the transimpedance amplifier.}\label{fig:input_offset_voltage}
+\end{figure}
 
 \cite[p.~54]{Jung05}
 
@@ -93,7 +111,7 @@ Given a current source $I_\text{in}$ with parallel impedance $Z_\text{in}$ the e
 		\draw (-2, -0.5) node[ocirc, label=$+V_s$]{};
 		\draw (-2, -2.5) node[ocirc, label=$-V_s$, rotate=180]{};
 	\end{circuitikz}
-	\caption{Input current offset compensation.}
+	\caption{Input offset voltage compensation using adjustable potentiometer.}
 \end{figure}
 
 \subsubsection{Input bias current}
