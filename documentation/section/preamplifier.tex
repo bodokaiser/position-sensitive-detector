@@ -1,14 +1,18 @@
 \section{Preamplifier}
 
-% TODO: purpose of preamplifier
-% TODO: motivate choice for current-to-voltage (transimpedance) design
-% TODO: mention current feedback amplifier
-% TODO: mention current analog-to-digital-converter
+The photocurrents created by our detector are in the range of microampere where they are vulnerable to noise.
+Using a preamplifier, we can increase the amplitude of the signal for an improved signal-to-noise ratio.
+The typical photocurrent preamplifier is based on the transimpedance (current-to-voltage) amplifier design using a voltage-feedback operational amplifier.
+Converting the current to a voltage signal has the benefit that the voltage signal can be easily visualized with an oscilloscope.
+Furthermore, the voltage-feedback operational amplifier design appears to be more common than the current-feedback operational amplifier, as manufacturers offer much more choice and they are more prominent in the literature.
+That said, current feedback operational amplifiers are reported to be a viable solution for high-speed and high-bandwidth applications, see Ref.~\cite[p.~110]{Jung05} for an overview of the benefits of current feedback amplifiers and Ref.~\cite[Ch.~9]{Carter17} for a comparison.
 
 % TODO: mention feedback tee network for high feedback factor
 % TODO: mention finite loop gain error (Jung, p. 13)
 % TODO: table with op amp parameters specified in the datasheet and their relevance for our application
 % TODO: noise model (Jung, p. 80)
+
+\subsection{Gain}
 
 \begin{figure}[H]
 	\centering
@@ -76,7 +80,7 @@
 	\caption{Input current offset compensation.}
 \end{figure}
 
-\subsubsection{Input current}
+\subsubsection{Input bias current}
 
 % TODO: mention that I+, I- are difficult to measure and therefore the datasheets report Ibias and Ioffset
 
@@ -139,7 +143,9 @@
 % TODO: mention that this only works for well-matched bias currents (Ioffset < Ibias)
 % TODO: give noise argument why this introduces more error
 
-\subsection{Bandwidth and stability}
+\subsection{Noise}
+
+\subsection{Stability}
 
 \cite[p.~693]{Hobbs11}
 \cite[p.~183]{Kay12}
