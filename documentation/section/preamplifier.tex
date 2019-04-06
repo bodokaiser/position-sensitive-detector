@@ -5,41 +5,55 @@ Using a preamplifier, we can increase the amplitude of the signal for an improve
 The typical photocurrent preamplifier is based on the transimpedance (current-to-voltage) amplifier design using a voltage-feedback operational amplifier.
 Converting the current to a voltage signal has the benefit that the voltage signal can be easily visualized with an oscilloscope.
 Furthermore, the voltage-feedback operational amplifier design appears to be more common than the current-feedback operational amplifier, as manufacturers offer much more choice and they are more prominent in the literature.
-That said, current feedback operational amplifiers are reported to be a viable solution for high-speed and high-bandwidth applications, see Ref.~\cite[p.~110]{Jung05} for an overview of the benefits of current feedback amplifiers and Ref.~\cite[Ch.~9]{Carter17} for a comparison.
+That said, current-feedback operational amplifiers are reported to be a viable solution for high-speed and high-bandwidth applications, see Ref.~\cite[p.~110]{Jung05} for an overview of the benefits of current-feedback amplifiers and Ref.~\cite[Ch.~9]{Carter17} for a comparison with voltage-feedback amplifiers.
 
-% TODO: mention feedback tee network for high feedback factor
+In the following, we will always refer to the voltage-feedback operational amplifier if not noted otherwise.
+Moreover, we expect the reader to be familiar with the foundations of the operational amplifier.
+Well-written introductions to this topic can be found in \cite[Ch.~1]{Jung05} and \cite[Ch.~3]{Carter17}.
+
 % TODO: mention finite loop gain error (Jung, p. 13)
 % TODO: table with op amp parameters specified in the datasheet and their relevance for our application
 % TODO: noise model (Jung, p. 80)
 
-\subsection{Gain}
+\subsection{Basic design}
 
+The basic design of a transimpedance amplifier is illustrated in~\Cref{fig:basic_transimpedance}.
+Ignoring imperfections of the photodiode, we can represent the photodiode as a current source.
+The non-inverting input of the operational amplifier is connected to ground.
+The inverting input is coupled with the output of the operational amplifier via a feedback impedance $Z_f$.
 \begin{figure}[H]
 	\centering
 	\begin{circuitikz}
 		\draw (0, 0) node[op amp](opamp){};
 		\draw (opamp.+) -- +(0, -1) node[ground](gnd1){};
-		\draw (opamp.out) -- (3, 0) node[ocirc, label=$V_\text{out}$]{};
-		\draw (opamp.-) to[current source, invert, l=$I_\text{in}$] +(-3, 0) node(node1){} -- (node1 |- gnd1) node[ground]{};
-		\draw (opamp.-) |- (-1, 2) to[resistor, l=$R_f$] (1,2) -| (opamp.out);
+		\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
+		\draw (opamp.-) node[circ]{} -- +(-2, 0) node(node1){} to[current source, invert, l=$I_\text{in}$] (node1 |- gnd1) node[ground]{};
+		\draw (opamp.-) |- (-1, 2) to[generic, l=$Z_f$] (1,2) -| (opamp.out);
 	\end{circuitikz}
-	\caption{Simple transimpedance amplifier circuit.}
+	\caption{Basic transimpedance amplifier using voltage feedback operational amplifier.}\label{fig:basic_transimpedance}
 \end{figure}
-
+The ideal operation amplifier has zero input current, thus, in the node of the inverting input of the operational amplifier Kirchhoff's law states that the current going through the feedback impedance has to cancel the current of the current source $I_\text{in}$.
+The current through the feedback impedance $Z_f$ can be expressed in terms of the feedback impedance $Z_f$ and the output voltage $V_\text{out}$ of the operational amplifier through the use of Ohm's law, yielding,
 \begin{equation}
-	V_\text{out}=R_fI_\text{in}
+	V_\text{out}=-Z_fI_\text{in}
+	\label{eq:transimpedance}.
 \end{equation}
+Given a maximum current $I_\text{in}$ and a desired maximum output voltage $V_\text{out}$, \Cref{eq:transimpedance} determines the feedback resistance.
+Limitations arise for real operational amplifiers where the output voltage is limited to be below the supply voltage of the operational amplifier.
 
+
+Aside from photodiode applications, it is more common to find the inverting (voltage-to-voltage) operational amplifier in the literature.
+By using the source transformation on the current source with a parallel impedance in the transimpedance amplifier circuit, we can recover the inverting operational amplifier circuit, and thereby easily use results obtained for this design.
 \begin{figure}[H]
 	\begin{subfigure}[t]{.5\textwidth}
 		\centering
 		\begin{circuitikz}
 			\draw (0, 0) node[op amp](opamp){};
 			\draw (opamp.+) -- +(0, -1) node[ground](gnd1){};
-			\draw (opamp.out) -- +(.5, 0) node[ocirc, label=$V_\text{out}$]{};
-			\draw (opamp.-) -- +(-3, 0) node(node1){} to[current source, invert, l=$I_\text{in}$] (node1 |- gnd1) node[ground]{};
-			\draw (node1) -- +(1.5, 0) node(node2){} to[resistor, l=$R_\text{in}$] (node2 |- gnd1) node[ground]{};
-			\draw (opamp.-) |- (-1, 2) to[resistor, l=$R_f$] (1,2) -| (opamp.out);
+			\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
+			\draw (opamp.-) node[circ]{} -- +(-3, 0) node(node1){} to[current source, invert, l=$I_\text{in}$] (node1 |- gnd1) node[ground]{};
+			\draw (opamp.-) node[circ]{} -- +(-1.5, 0) node(node1){} to[generic, invert, l=$Z_\text{in}$] (node1 |- gnd1) node[ground]{};
+			\draw (opamp.-) |- (-1, 2) to[generic, l=$Z_f$] (1,2) -| (opamp.out);
 		\end{circuitikz}
 		\caption{Transimpedance amplifier.}
 	\end{subfigure}
@@ -48,14 +62,16 @@ That said, current feedback operational amplifiers are reported to be a viable s
 		\begin{circuitikz}
 			\draw (0, 0) node[op amp](opamp){};
 			\draw (opamp.+) -- +(0, -1) node[ground](gnd1){};
-			\draw (opamp.out) -- +(.5, 0) node[ocirc, label=$V_\text{out}$]{};
-			\draw (opamp.-) to[resistor, l_=$R_\text{in}$] +(-3, 0) node(node1){} to[voltage source, l=$V_\text{in}{=}R_\text{in}I_\text{in}$] (node1 |- gnd1) node[ground]{};
-			\draw (opamp.-) |- (-1, 2) to[resistor, l=$R_f$] (1,2) -| (opamp.out);
+			\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
+			\draw (opamp.-) node[circ]{} to[generic, invert, l_=$Z_\text{in}$] +(-3, 0) node(node1){} to[voltage source, invert, l=$V_\text{in}{=}Z_\text{in}I_\text{in}$] (node1 |- gnd1) node[ground]{};
+			\draw (opamp.-) |- (-1, 2) to[generic, l=$Z_f$] (1,2) -| (opamp.out);
 		\end{circuitikz}
 		\caption{Inverting amplifier.}
 	\end{subfigure}
-	\caption{Equivalence between transimpedance and inverting amplifier using source transformation.}
+	\caption{Equivalence between transimpedance and inverting amplifier using source transformation.}\label{fig:equivalence_transimpedance_inverting}
 \end{figure}
+\Cref{fig:equivalence_transimpedance_inverting} shows the source transformation applied to transimpedance and inverting amplifier circuits.
+Given a current source $I_\text{in}$ with parallel impedance $Z_\text{in}$ the equivalent voltage source has value $V_\text{in}=Z_\text{in}I_\text{in}$ with impedance $Z_\text{in}$ in series.
 
 \subsection{Offset}
 
