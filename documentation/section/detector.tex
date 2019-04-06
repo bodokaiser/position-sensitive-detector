@@ -1,0 +1,29 @@
+\section{Position-sensitive detector}
+
+% TODO: overview of position-sensitive detectors and why we choose the lateral pin-cushion type
+
+\cite{Noorlag74} % TODO: specify pages
+
+% TODO: diagram of depletion region for lateral photodiode
+% TODO: motivate value for reverse bias
+% TODO: diode leakage current
+% TODO: noise model
+
+% TODO: equivalent circuit
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lllll}
+		\toprule
+			\multirow{2}[3]{*}{Parameter} &
+			\multirow{2}[3]{*}{Symbol} &
+			\multicolumn{2}{c}{Values} &
+			\multirow{2}[3]{*}{Unit} \\
+			\cmidrule(lr){3-4} & & Typical & Maximum & \\
+		\midrule
+		Dark current & $I_d$ & \num{0.5} & \num{10} & \si{\nano\ampere}\\
+		Interelectrode resistance & $R_e$ & \num{7} & \num{15} & \si{\kilo\ohm}\\
+		Terminal capacitance & $C_t$ & \num{150} & \num{300} & \si{\pico\farad}\\
+		\bottomrule	
+	\end{tabular}
+	\caption{Important parameters of the \gls{s5990} extracted from the datasheet~\cite{HamamatsuS5990}.}\label{tab:psd_s5990}
+\end{table}
