@@ -161,44 +161,52 @@ We highlighted the input currents in \Cref{fig:input_bias_current} where they ar
 	\begin{circuitikz}
 		\draw (0, 0) node[op amp](opamp){};
 		\draw (opamp.out) -- +(0.5, 0) node(node1)[circ]{} -- ++(1.5, 0) node[ocirc, label=$V_\text{out}$]{};
-		\draw (opamp.-) to[short, i<=$i_-$] ++(-1, 0) node(node1a)[circ]{} |- (-1.5, 2) to[generic, l=$Z_f$] (1.5, 2) -| (node1);
-		\draw (opamp.+) to[short, i<=$i_+$] ++(-1, 0) node(node1b){} -- ++(0, -1) node(gnd)[ground]{};
+		\draw (opamp.-) to[short, i<_=$i_-$] ++(-1, 0) node(node1a)[circ]{} |- (-1.5, 2) to[generic, l=$Z_f$] (1.5, 2) -| (node1);
+		\draw (opamp.+) to[short, i<_=$i_+$] ++(-1, 0) node(node1b){} -- ++(0, -1) node(gnd)[ground]{};
 		\draw (node1a) -- ++(-1.5, 0) node(node2a){} to[current source, invert, l=$I_\text{in}$] (node2a |- gnd) node[ground]{};
 	\end{circuitikz}
 	\caption{Input bias current offset in the transimpedance amplifier.}\label{fig:input_bias_current}
 \end{figure}
-
-% TODO: mention that I+, I- are difficult to measure and therefore the datasheets report Ibias and Ioffset
-
+Input bias currents for high-precision operational amplifier are in the range of picoamperes.
+These small currents are usually difficult to measure and may differ between inputs.
+The datasheet of the operational amplifier, therefore, doesn't report the input bias current per terminal but the mean $I_\text{bias}$ and the difference between the input currents $I_\text{offset}$.
+The relationship between the mean input bias current $I_\text{bias}$ and the input offset current $I_\text{offset}$ with respect to the actual input bias currents $i_+,i_-$ is given below.
 \begin{align}
-	I_+=I_\text{bias}+\frac{1}{2}I_\text{offset} &&
-	I_\text{offset}=I_+-I_- \\
-	I_-=I_\text{bias}-\frac{1}{2}I_\text{offset} &&
-	I_\text{bias}=\frac{I_++I_-}{2}
+	i_+=I_\text{bias}+\frac{1}{2}I_\text{offset} &&
+	I_\text{offset}=i_+-i_- \\
+	i_-=I_\text{bias}-\frac{1}{2}I_\text{offset} &&
+	I_\text{bias}=\frac{i_++i_-}{2}
 \end{align}
-
+According to Ref.~\cite[p.~57]{Jung05} and Ref.~\cite[p.~25]{Graeme96} the effect of the input bias currents $i_+,i_-$ on the output voltage $V_\text{out}$ can be compensated with an impedance $Z_c$ at the non-inverting input of the operational amplifier.
+\Cref{fig:input_bias_current_compensation} illustrates the inverting amplifier configuration with such a compensation impedance $Z_c$.
 \begin{figure}[H]
 	\centering
 	\begin{circuitikz}
 		\draw (0, 0) node[op amp](opamp){};
-		\draw (opamp.out) -- +(.5, 0) node[ocirc, label=$V_\text{out}$]{};
-		\draw (opamp.-) to[resistor, l_=$R_\text{in}$] +(-3, 0) node(node1){} to[voltage source, l=$V_\text{in}$] (node1 |- +0, -3) node[ground](gnd){};
-		\draw (opamp.-) |- (-1, 2) to[resistor, l=$R_f$] (1,2) -| (opamp.out);
-		\draw (opamp.+) -- ++(0, -1) node(node2)[circ]{} to[resistor, l_=$R_c$] (opamp.+ |- gnd) node[ground]{};
-		\draw (node2) -- ++(1, 0) node(node3){} to[capacitor, l=$C_c$] (node3 |- gnd) node[ground]{};
+		\draw (opamp.out) -- +(0.5, 0) node(node1)[circ]{} -- ++(1.5, 0) node[ocirc, label=$V_\text{out}$]{};
+		\draw (opamp.-) to[short, i<_=$i_-$] ++(-1, 0) node(node1a)[circ]{} |- (-1.5, 2) to[generic, l=$Z_f$] (1.5, 2) -| (node1);
+		\draw (opamp.+) to[short, i<_=$i_+$] ++(-1, 0) node(node1b){} to[generic, l=$Z_c$] ++(0, -2) node(gnd)[ground]{};
+		\draw (node1a) -- ++(-1.5, 0) node(node2a){} -- (node1b -| node2a) to[generic, l=$Z_\text{in}$] (node2a |- gnd) node[ground]{};
 	\end{circuitikz}
-	\caption{Input current offset compensation.}
+	\caption{Input current offset compensation.}\label{fig:input_bias_current_compensation}
 \end{figure}
-
-\cite[p.~57]{Jung05}
-\cite[p.~25]{Graeme96}
-
+Following the argumentation from Ref.~\cite[p.~383]{Terrel96}, the input bias current at the inverting input of the operational amplifier $i_-$ develops a voltage of $Z_fi_-$ over the feedback impedance $Z_f$.
+The input bias current at the non-inverting input $i_-$ develops the voltage $Z_ci_-$ over the compensation resistor $Z_c$.
+The voltage $Z_ci_-$ propagates through the voltage divider comprising the feedback and input impedance analogue to the input offset voltage.
+According to the superposition theorem, both of these contributions add and yield,
 \begin{equation}
-	R_c=\frac{R_\text{in}R_f}{R_\text{in}+R_f}
+	V_\text{out}=i_+Z_c\left(1+\frac{Z_f}{Z_\text{in}}\right)-i_-Z_f
+	\label{eq:input_bias_current},
 \end{equation}
-
-% TODO: mention that this only works for well-matched bias currents (Ioffset < Ibias)
-% TODO: give noise argument why this introduces more error
+at the output voltage.
+If $i_+\approx i_-$ we can choose,
+\begin{equation}
+	Z_c=\frac{Z_\text{in}}{Z_\text{in}+Z_f},
+\end{equation}
+ to compensate for the output voltage offset caused by the input bias currents.
+The condition $i_+\approx i_-$ is usually satisfied if the input offset current $I_\text{offset}$ reported in the datasheet is less than the mean input bias current $I_\text{bias}$.
+High-precision operational amplifier usually have compensated bias currents that do not satisfy this condition.
+In this case, there is no generic formula for the value of the compensation impedance $Z_c$ in terms of input and feedback impedance and one needs to perform impedance matching on a per-device basis.
 
 \subsection{Noise}
 
