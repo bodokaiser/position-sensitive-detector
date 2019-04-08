@@ -11,10 +11,6 @@ In the following, we will always refer to the voltage-feedback operational ampli
 Moreover, we expect the reader to be familiar with the foundations of the operational amplifier.
 Well-written introductions to this topic can be found in \cite[Ch.~1]{Jung05} and \cite[Ch.~3]{Carter17}.
 
-% TODO: mention finite loop gain error (Jung, p. 13)
-% TODO: table with op amp parameters specified in the datasheet and their relevance for our application
-% TODO: noise model (Jung, p. 80)
-
 \subsection{Basic design}
 
 The basic design of a transimpedance amplifier is illustrated in~\Cref{fig:basic_transimpedance}.
@@ -77,8 +73,8 @@ Given a current source $I_\text{in}$ with parallel impedance $Z_\text{in}$ the e
 
 Real operational amplifiers only reduce the voltage difference between the inverting and non-inverting input to a non-zero input offset voltage.
 For high-precision operational amplifiers, the input offset voltage is in the range of microvolts.
-We can model the input offset voltage as a voltage source at the non-inverting input of an ideal operational amplifier in our transimpedance circuit, as can be seen from \Cref{fig:input_offset_voltage}.
-In \Cref{fig:input_offset_voltage} we amended the basic transimpedance circuit of \Cref{fig:basic_transimpedance} by inserting a voltage source with the input offset voltage between the non-inverting input and ground.
+We can model the input offset voltage as a voltage source at the non-inverting input of an ideal operational amplifier in our transimpedance circuit, as can be seen from \Cref{fig:input_offset_voltage_transimpedance}.
+In \Cref{fig:input_offset_voltage_transimpedance} we amended the basic transimpedance circuit of \Cref{fig:basic_transimpedance} by inserting a voltage source with the input offset voltage between the non-inverting input and ground.
 \begin{figure}[H]
 	\centering
 	\begin{circuitikz}
@@ -88,18 +84,35 @@ In \Cref{fig:input_offset_voltage} we amended the basic transimpedance circuit o
 		\draw (opamp.+) -- ++(0, -.5) node(node1){} to[voltage source, l=$V_\text{offset}$] ++(0, -2) node[ground](gnd1){};
 		\draw (opamp.-) node[circ]{} -- +(-2, 0) node(node2){} -- (node2 |- node1) to[current source, invert, l=$I_\text{in}$] (node2 |- gnd1) node[ground]{};
 	\end{circuitikz}
-	\caption{Input offset voltage in the transimpedance amplifier.}\label{fig:input_offset_voltage}
+	\caption{Input offset voltage in the transimpedance amplifier.}\label{fig:input_offset_voltage_transimpedance}
 \end{figure}
-In order to estimate the output offset $V_\text{out}$ caused by the input offset voltage $V_\text{offset}$, we need to use the picture of the inverting amplifier.
-For the inverting amplifier, the output voltage follows,
+In order to estimate the output offset $V_\text{out}$ caused by the input offset voltage $V_\text{offset}$ we adapt the picture of the inverting amplifier.
+\Cref{fig:input_offset_voltage_inverting} shows an inverting amplifier circuit with input impedance $Z_\text{in}$ and input offset voltage $V_\text{offset}$ at the non-inverting input of the operational amplifier.
+According to the superposition theorem, we can replace the input voltage source with a short circuit to estimate the contribution of the input offset voltage source.
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (0, 0) node[op amp](opamp){};
+		\draw (opamp.-) |- (-1, 2) to[generic, l=$Z_f$] (1,2) -| (opamp.out);
+		\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
+		\draw (opamp.+) -- ++(0, -.5) node(node1){} to[voltage source, l=$V_\text{offset}$] ++(0, -2) node[ground](gnd1){};
+		\draw (opamp.-) node[circ]{} -- +(-2, 0) node(node2){} -- (node2 |- node1) to[generic, l=$Z_\text{in}$] (node2 |- gnd1) node[ground]{};
+	\end{circuitikz}
+	\caption{Input offset voltage in the inverting amplifier.}\label{fig:input_offset_voltage_inverting}
+\end{figure}
+From \Cref{fig:input_offset_voltage_inverting} we identify input and feedback impedance as a voltage divider in which the input and output nodes are exchanged.
+The respective transfer function reads,
 \begin{equation}
-	V_\text{out}=-\frac{R_f}{R_\text{in}}V_\text{in},
+	V_\text{out}=-\frac{R_f+R_\text{in}}{R_\text{in}}V_\text{offset}=-\left(1+\frac{R_f}{R_\text{in}}\right)V_\text{offset}
+	\label{eq:input_offset_voltage}.
 \end{equation}
-wherein $R_\text{in}$ is the resistance parallel to the current source $I_\text{in}$ in the picture of the transimpedance amplifier.
+Comparing \Cref{eq:input_offset_voltage} with \Cref{eq:transimpedance} discloses a difference in gain.
+The gain of the input signal in Eq. 1 is commonly referred to as signal gain. 
+The gain of a signal applied directly to the inputs of the operational amplifier is referred to as noise gain.
 In the case of the position-sensitive detector, the input resistance is of order \SI{10}{\kilo\ohm}.
-Using a feedback resistance of $R_f=\SI{100}{\kilo\ohm}$ we find that the input offset voltage experiences a gain of 10.
+Using a feedback resistance of $R_f=\SI{100}{\kilo\ohm}$ we find that the input offset voltage experiences a gain of 11.
 
-One approach to compensate for the input offset voltage as described is depicted in \Cref{fig:offset_voltage_compensation}, see also Ref~\cite[p.~54]{Jung05}.
+One approach to compensate for the input offset voltage as described is depicted in \Cref{fig:input_offset_voltage_compensation}, see also Ref~\cite[p.~54]{Jung05}.
 A potentiometer with maximum resistance Rp connects the positive and negative supply voltage.
 The wiper of the potentiometer is connected with a first resistor R1 to a node.
 The node is connected with a second resistor R2 and an optional bypass capacitor to ground.
@@ -112,7 +125,7 @@ Finally, the equivalent input offset voltage source connects the node with the n
 		\draw (node1) to[voltage source, l_=$V_\text{offset}$, invert] ++(0, 2) node[ocirc, label=$V_+$]{};
 		\draw (node1) -- ++(2, 0) to[capacitor, l=$C_1$] ++(0, -2) node[ground]{};
 	\end{circuitikz}
-	\caption{Input offset voltage compensation using adjustable potentiometer.}\label{fig:offset_voltage_compensation}
+	\caption{Input offset voltage compensation using adjustable potentiometer.}\label{fig:input_offset_voltage_compensation}
 \end{figure}
 Let $0\leq x\geq1$ be the position of the potentiometer.
 For $x=1/2$ the resistance of the potentiometer is $R_p/2$ and there is no offset compensation.
@@ -121,12 +134,12 @@ For $x>1/2$ the input offset compensation is positive to compensate for a negati
 The maximum input offset compensation is obtained for $x=0$ and $x=1$.
 Using circuit analysis techniques, we obtain,
 \begin{equation}
-	V_c(x)=\frac{R_2V_\text{supply}(1-2x)}{R_1+R_2-R_p(1-x)x},
+	V_c(x)=\frac{R_2(1-2x)}{R_1+R_2-R_p(1-x)x}V_\text{supply},
 \end{equation}
 as an analytical expression for the input offset voltage compensation measured between the node and ground.
 The maximum absolute value of the compensation voltage follows to be,
 \begin{equation}
-	V_c(0)=V_c(1)=\pm\frac{R_2V_\text{supply}}{R_1+R_2}.
+	V_c(0)=V_c(1)=\pm\frac{R_2}{R_1+R_2}V_\text{supply}.
 \end{equation}
 Given a maximum input offset voltage of \SI{100}{\micro\volt} and a supply voltage of \SI{15}{\volt}, we find approximate resistor values $R_1=\SI{3}{\mega\ohm}$ and $R_2=\SI{2}{\ohm}$.
 The resistor value of the potentiometer $R_p$ should be chosen sufficiently large such to limit the current.
@@ -135,41 +148,27 @@ In practice, one should aim for a slightly higher maximum compensation voltage i
 
 That said, there are some practical arguments against the use of the described input offset voltage compensation.
 The first argument is that the low resistance of $R_2$ acts as a dominant source for thermal current noise density of about \SI{100}{\pico\ampere\per\sqrt\hertz}.
-As this current noise contributes to the input of the transimpedance amplifier it gets amplified by the feedback impedance $Z_f$, yielding up to \SI{100}{\micro\volt\per\sqrt\hertz} in voltage noise density, which --- depending on the bandwidth --- surpasses the actual input offset voltage to compensate.
+As this current noise contributes to the input of the transimpedance amplifier it gets amplified by the feedback impedance $Z_f$, yielding up to \SI{110}{\micro\volt\per\sqrt\hertz} in voltage noise density, which --- depending on the bandwidth --- surpasses the actual input offset voltage to compensate.
 The second argument is that high-precision potentiometers with large dynamic range get very large and difficult to accommodate on a printed circuit board.
 
 \subsection{Input bias current}
 
-% TODO: mention that I+, I- are difficult to measure and therefore the datasheets report Ibias and Ioffset
-
+In addition to the input offset voltage $V_\text{offset}$, there is a second effect that causes an offset in the output voltage $V_\text{out}$.
+This second effect stems from the small amount of current that is drawn from the inputs of the operational amplifier.
+We highlighted the input currents in \Cref{fig:input_bias_current} where they are represented by the current flows $i_+$ and $i_-$ directly pointing into the inputs of the operational amplifier in the transimpedance circuit.
 \begin{figure}[H]
-	\begin{subfigure}[t]{.5\textwidth}
-		\centering
-		\begin{circuitikz}
-			\draw (0, 0) node[op amp, scale=1.2](opamp){};
-			\draw (opamp.out) -- +(0.5, 0) node[ocirc, label=$V_\text{out}$]{};
-			\draw (opamp.+) -- +(-0.5, 0) node(node1a)[circ]{} to[current source, l=$I_\text{offset}/2$] (node1a |- opamp.-) node(node1b)[circ]{} -- (opamp.-);
-			\draw (node1a) -- ++(-1, 0) node(node2a)[circ]{} -- ++(0, -0.5) to[current source, l=$I_\text{bias}$] ++(0, -1) node[ground]{};
-			\draw (node1b) -- ++(-1, 0) node(node2b)[circ]{} -- ++(0, +0.5) to[current source, l_=$I_\text{bias}$] ++(0, 1) node[ground, rotate=180]{};
-			\draw (node2a) to[short, i<=$i_+$] +(-1.5, 0) node[ocirc, label=$V_+$]{};
-			\draw (node2b) to[short, i<_=$i_-$] +(-1.5, 0) node[ocirc, label=$V_-$]{};
-		\end{circuitikz}
-		\caption{Equivalent current sources as reported in the datasheet.}
-	\end{subfigure}
-	\begin{subfigure}[t]{.5\textwidth}
-		\centering
-		\begin{circuitikz}
-			\draw (0, 0) node[op amp, scale=1.2](opamp){};
-			\draw (opamp.out) -- +(0.5, 0) node[ocirc, label=$V_\text{out}$]{};
-			\draw (opamp.+)-- ++(-0.5, 0) node(node2a)[circ]{} -- ++(0, -0.5) to[current source, l=$I_-$] ++(0, -1) node[ground]{};
-			\draw (opamp.-) -- ++(-0.5, 0) node(node2b)[circ]{} -- ++(0, +0.5) to[current source, l_=$I_+$] ++(0, 1) node[ground, rotate=180]{};
-			\draw (node2a) to[short, i<=$i_+$] +(-1.5, 0) node[ocirc, label=$V_+$]{};
-			\draw (node2b) to[short, i<_=$i_-$] +(-1.5, 0) node[ocirc, label=$V_-$]{};
-		\end{circuitikz}
-		\caption{Alternative equivalent current sources.}
-	\end{subfigure}
-	\caption{Non-zero input current from the operational amplifier.}
+	\centering
+	\begin{circuitikz}
+		\draw (0, 0) node[op amp](opamp){};
+		\draw (opamp.out) -- +(0.5, 0) node(node1)[circ]{} -- ++(1.5, 0) node[ocirc, label=$V_\text{out}$]{};
+		\draw (opamp.-) to[short, i<=$i_-$] ++(-1, 0) node(node1a)[circ]{} |- (-1.5, 2) to[generic, l=$Z_f$] (1.5, 2) -| (node1);
+		\draw (opamp.+) to[short, i<=$i_+$] ++(-1, 0) node(node1b){} -- ++(0, -1) node(gnd)[ground]{};
+		\draw (node1a) -- ++(-1.5, 0) node(node2a){} to[current source, invert, l=$I_\text{in}$] (node2a |- gnd) node[ground]{};
+	\end{circuitikz}
+	\caption{Input bias current offset in the transimpedance amplifier.}\label{fig:input_bias_current}
 \end{figure}
+
+% TODO: mention that I+, I- are difficult to measure and therefore the datasheets report Ibias and Ioffset
 
 \begin{align}
 	I_+=I_\text{bias}+\frac{1}{2}I_\text{offset} &&
@@ -202,6 +201,8 @@ The second argument is that high-precision potentiometers with large dynamic ran
 % TODO: give noise argument why this introduces more error
 
 \subsection{Noise}
+
+% TODO: noise model (Jung, p. 80)
 
 \subsection{Stability}
 
