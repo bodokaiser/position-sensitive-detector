@@ -1,7 +1,16 @@
 \section{Introduction}
 
-% TODO: what to expect from this document?
-% TODO: outline application scenario (beam pointing alignment)
-% TODO: requirements and technical specifications (+- 15 V)
-% TODO: precision vs. accuracy
-% TODO: mention current analog-to-digital-converter in a digital signal processing section
+We define a position-sensitive device as a device that converts the center of mass of an input optical signal into an electrical output.
+The present document is meant to summarize the theory required to design such a position-sensitive device.
+
+Position-sensitive devices are used in a wide range of industrial and commercial applications, including displacement sensing and beam alignment, see Ref.~\cite[p.~22]{Maekynen00}.
+In our case, we were interested in the application of the position-sensitive device for beam pointing alignment.
+Beam pointing refers to the spatial focus of a laser beam and can change through, for instance, thermal and mechanical effects.
+Uncompensated changes in beam alignment can quickly degrade the overall performance of an optical system.
+It is, therefore, crucial to align the beam pointing to ensure proper operation of the optical system at hand.
+Using a position-sensitive device for monitoring the beam pointing as part of a feedback loop, would allow for automatization of this otherwise cumbersome work.
+
+This document is organized as follows.
+The first section gives an overview of the design requirements imposed upon our position-sensitive device.
+In the second section, we summarize the physical theory behind the position-sensitive detector and discuss its electrical properties.
+In the third section, we dive into the theory of operational amplifier as a front-end for the position-sensitive detector.
