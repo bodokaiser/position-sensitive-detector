@@ -2,30 +2,46 @@
 
 % TODO: overview of position-sensitive detectors and why we choose the lateral pin-cushion type
 
-\cite{Noorlag74} % TODO: specify pages
+% TODO: specify pages \cite{Noorlag74}
 
 % TODO: diagram of depletion region for lateral photodiode
 % TODO: motivate value for reverse bias
 % TODO: diode leakage current
 % TODO: noise model
+% TODO: responsitivity
+% TODO: bandwidth limit
+% TODO: photon shot noise
 
-% TODO: equivalent circuit
-\begin{table}[H]
+\begin{figure}[H]
 	\centering
-	\begin{tabular}{lllll}
-		\toprule
-			\multirow{2}[3]{*}{Parameter} &
-			\multirow{2}[3]{*}{Symbol} &
-			\multicolumn{2}{c}{Values} &
-			\multirow{2}[3]{*}{Unit} \\
-			\cmidrule(lr){3-4} & & Typical & Maximum & \\
-		\midrule
-		Dark current & $I_d$ & \num{0.5} & \num{10} & \si{\nano\ampere}\\
-		Interelectrode resistance & $R_e$ & \num{7} & \num{15} & \si{\kilo\ohm}\\
-		Terminal capacitance & $C_t$ & \num{150} & \num{300} & \si{\pico\farad}\\
-		\bottomrule	
-	\end{tabular}
-	\caption{Important parameters of the \gls{s5990} extracted from the datasheet~\cite{HamamatsuS5990}.}\label{tab:psd_s5990}
-\end{table}
+	\begin{circuitikz}
+		\draw (0, 0) node[circ]{};
+		\draw (+2, +2) node[ocirc, label=X1]{} to[photodiode] (0, 0);
+		\draw (-2, -2) node[ocirc, label=X2]{} to[photodiode] (0, 0);
+		\draw (+2, -2) node[ocirc, label=Y2]{} to[photodiode] (0, 0);
+		\draw (-2, +2) node[ocirc, label=Y1]{} to[photodiode] (0, 0);
+		\draw (0, 0) -- ++(0, -2.5) node[ocirc, label=Cathode, rotate=180]{};
+	\end{circuitikz}
+	\caption{Position-sensitive detector as photodiodes}
+\end{figure}
 
 % TODO: mention non-linearity of voltage response to illumination
+
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (-3, -2) to[current source, l=$I_\text{photo}$] ++(0, 4);
+		\draw (-1, -2) node[circ]{} to[current source, l=$I_\text{dark}$] ++(0, 4) node[circ]{};
+		\draw (1, -2) node[circ]{} to[resistor, l=$R_d$] ++(0, 4) node[circ]{};
+		\draw (3, -2) to[capacitor, l=$C_d$] ++(0, 4);
+		\draw (-3, -2) -- ++(6, 0);
+		\draw (-3, 2) -- ++(6, 0);
+		\draw (0, -2) -- ++(0, -1) node[ocirc, label=Cathode, rotate=180]{};
+		\draw (0, 2) -- ++(0, 1) node[ocirc, label=Anode]{};
+	\end{circuitikz}
+	\caption{Photodiode equivalent circuit}
+\end{figure}
+
+\begin{equation}
+	I_\text{leakage}=I_\text{dark}\left(1-e^{\frac{qV_d}{k_BT}}\right)
+\end{equation}
