@@ -2,8 +2,19 @@
 
 \subsection{Transverse photoeffect}
 
-% TODO: cite Simon13
+The purpose of the following section is to recall the mechanics of the (transverse) photoeffect observed in an illuminated p-n junction.
+Figures and the description thereof is largely based on Ref.~\cite{Simon13}.
+A subtle difference in the depicted figures and the figures of Ref.~\cite{Simon13} is that we exchanged the order of p- and n-type semiconductors.
+We found this order to be more intuitive when referring to a p-n junction.
 
+\Cref{fig:pn_junction_separated} shows a separated p- and n-type semiconductor.
+In the upper half, we see an illustration of the p- and n-type semiconductor with their respective mobile charge carriers.
+The p-type semiconductor has an excess of positive charge carriers (holes) which are depicted as white circles.
+The n-type semiconductor has an excess of negative charge carriers (electrons) which are depicted as black circles.
+The excess charge carriers form due to the implantation of acceptor and donator ions.
+These are depicted as circles with plus and minus sign in \Cref{fig:pn_junction_separated}.
+The implanted ions have more or fewer electrons than the atoms of the semiconductor material.
+Therefore donating an electron or accepting an electron and effectively forming a hole as an absence of negative charge.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -39,9 +50,16 @@
 			\filldraw[fill=black] (3.8+0.4*\x, -2.8) circle (.09);
 		}
 	\end{tikzpicture}
-	\caption{Separated p- and n-type semiconductor with holes (white) and electrons (black).}
+	\caption{Separated p- and n-type semiconductor with holes (white) and electrons (black).}\label{fig:pn_junction_separated}
 \end{figure}
-
+The lower half of \Cref{fig:pn_junction_separated} shows the energy band structure of both p- and n-type semiconductor.
+The lower energy band represents the valence band made up of the electrons that are tightly bound to a single atomic core.
+The upper energy band represents the conduction band made up of electrons that are are not bound to a single atomic core but shared across the lattice.
+Charge carriers in the conduction band can move freely and thereby contribute to the conductivity of the material.
+For an undoped (intrinsic) semiconductor the chemical potential is in the center of the band gap between the conduction and valence band.
+Through doping, the chemical potential is shifted in the p- and n-type semiconductor.
+In the p-type semiconductor, acceptor ions can take up electrons from the conduction band, thereby decreasing the chemical potential.
+In the n-type semiconductor, donator ions contribute electrons to the conduction band, thereby increasing the chemical potential.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -83,9 +101,13 @@
 		\draw (0, -6.5) -- ++(2.5, 0) -- ++(1, -1) -- ++(2.5, 0);
 		\draw (3, -8) node{electrostatic potential};
 	\end{tikzpicture}
-	\caption{Junction, energy and electrostatic potential of p- and n-type semiconductor with holes (white) and electrons (black).}
+	\caption{Combined p- and n-type semiconductor with holes (white) and electrons (black).}\label{fig:pn_junction_combined}
 \end{figure}
-
+In \Cref{fig:pn_junction_combined} the p- and n-type semiconductor are brought into contact with each other, forming a p-n junction.
+In close proximity of the junction holes and energies recombine due to a diffusion process, leaving an electrically charged area.
+The electrically charged area creates an electrostatic potential across the junction as illustrated in the lower part of \Cref{fig:pn_junction_combined}.
+We refer to this area as the depletion region.
+In \Cref{fig:pn_junction_combined} the depletion region expands between the dashed lines around the junction.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -109,9 +131,14 @@
 		\filldraw[fill=black] (2.8, 2.3) circle (.09);
 		\filldraw[fill=black] (3.2, 2.1) circle (.09);
 	\end{tikzpicture}
-	\caption{Energy of a p-n junction in equilibrium with holes (white) and electrons (black).}
+	\caption{Energy bands of the p-n junction.}\label{fig:pn_junction}
 \end{figure}
+The energy band diagram in \Cref{fig:pn_junction} accounts for the shift in energy due to the electrostatic potential.
+The chemical potentials of both sides of the junction are now aligned.
+The energy required to excite an electron on the p-type side from the valence to the conduction band and the energy required to excite a hole from the conduction to the valence band are equal to the band gap of the semiconductor.
 
+If one applies a reverse bias voltage across the p-n junction, the effective energy gap between conduction and valence band is reduced, the electrostatic potential increases and the depletion region broadens.
+The situation of an applied reverse voltage is depicted in \Cref{fig:pn_junction_reverse}.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -133,9 +160,25 @@
 			\filldraw[fill=black] (0.2+0.4*\x, 2.5) circle (.09);
 		};
 	\end{tikzpicture}
-	\caption{Energy diagram of a reverse biased p-n junction with holes (white) and electrons (black).}
+	\caption{Energy band diagram of a reverse biased p-n junction.}\label{fig:pn_junction_reverse}
 \end{figure}
+The current-voltage characteristic of the p-n junction is described by the Schockley diode equation,
+\begin{equation}
+	I_\text{diode}=I_\text{sat}(T)\left(e^{eV/k_BT}-1\right)
+	\label{eq:diode_current},
+\end{equation}
+wherein $I_\text{sat}\propto e^{-E_\text{gap}/k_BT}$ is the temperature dependent reverse bias saturation current and $V$ the voltage applied to the p-n junction.
+% TODO: I-V curve and reverse bias saturation current
+Using the proportionality of the reverse bias saturation current, we can write,
+\begin{equation}
+	I_\text{diode}\propto e^{\left(eV-E_\text{gap}\right)/k_BT}-e^{-E_\text{gap}/k_BT}\label{eq:diode_current_prop},
+\end{equation} 
+which discloses the two effects contributing to the diode current.
+The left-hand side of the proportionality of \Cref{eq:diode_current_prop} represents the current contribution due intra-band excitation of charge carriers, whereas the right-hand side represents the current contribution due to inter-band excitation.
 
+\Cref{fig:pn_junction_illumination} shows a p-n junction under reverse bias where a photon excites an electron-hole pair in the depletion region.
+Due to the electrostatic potential, the electron is accelerated to the right side.
+Analogue the hole is accelerated to the left side and in addition to the diode current, \Cref{eq:diode_current}, a photocurrent can be measured across the junction.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -162,12 +205,16 @@
 		\draw[-latex] (3.2, 1.85) -- +(0.4, 0);
 		\draw[-latex] (2.8, 0.74) -- +(-0.4, 0);
 	\end{tikzpicture}
-	\caption{Energy diagram of a reverse biased p-n junction under illumination with holes (white) and electrons (black).}
+	\caption{Energy diagram of a reverse biased p-n junction under illumination.}\label{fig:pn_junction_illumination}
 \end{figure}
-
+% TODO: I-V curve under illumination
+The conversion rate of photons to photoelectrons depends on the type of the band gap, i.e. direct or indirect, the wavelength $\lambda$ of the photon and the temperature $T$.
+Most photodiodes report a wavelength $\lambda$ dependent responsitivity $R$ which can be used to convert the radiant flux $P$ of the incident light to the generated photocurrent $I_\text{photo}$,
 \begin{equation}
-	I_\text{dark}=I_\text{sat}\left(e^{e_0V_d/k_BT}-1\right)
+	I_\text{photo}=RP
+	\label{eq:responsitivity}.
 \end{equation}
+For silicon-based p-n junctions, the responsitivity $R$ is between \SI{0.2}{\ampere\per\watt} at \SI{400}{\nano\meter} and \SI{0.6}{\ampere\per\watt} at \SI{950}{\nano\meter}.
 
 \subsection{Lateral photoeffect}
 
