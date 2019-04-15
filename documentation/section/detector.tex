@@ -73,7 +73,6 @@
 		\draw[-latex] (-0.5, -5) -- (-0.5, -2) node[left]{$E$};
 		\filldraw[draw=black, fill=gray] (0, -2) rectangle +(3, -1) +(0, -1.8) node[left]{$\mu$} -- +(2.5, -1.8) ++(0, -2) rectangle +(3, -1);
 		\filldraw[draw=black, fill=gray!40] (3, -2) rectangle +(3, -1) +(0.5, -1.2) -- +(3, -1.2) node[right]{$\mu$} ++(0, -2) rectangle +(3, -1);
-		\draw (2.5, -3.8) -- +(1, 0.6);
 		\draw[dashed, line width=.8] (2.5, -5) -- +(0, 3) +(1, 0) -- +(1, 3) +(0.5, -0.3);
 		\draw (3, -1.6) node{conduction band} +(0, -3.8) node{valence band};
 		\foreach \x in {0, ..., 5} {
@@ -85,11 +84,48 @@
 		\draw (0, -6.5) -- ++(2.5, 0) -- ++(1, -1) -- ++(2.5, 0);
 		\draw (3, -8) node{electrostatic potential};
 	\end{tikzpicture}
-	\caption{Junction of p- and n-type semiconductor with holes (white) and electrons (black).}
+	\caption{Junction, energy and electrostatic potential of p- and n-type semiconductor with holes (white) and electrons (black).}
 \end{figure}
 
-% TODO: electrochemical potential
-% TODO: electrochemical potential in reverse bias
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\draw (1.25, 3.6) node {p-type};
+		\draw (4.75, 3.0) node {n-type};
+		\draw[-latex] (-0.5, -0.5) -- (-0.5, 3.5) node[left]{$E-e\phi$};
+		\filldraw[draw=black, fill=gray] (0, 3.3) rectangle +(2.5, -1) +(0, -1.8) node[left]{$\mu$} -- +(2.5, -1.8) ++(0, -2) rectangle +(2.5, -1);
+		\filldraw[draw=black, fill=gray!40] (3.5, 2.7) rectangle +(2.5, -1) +(0, -1.2) -- +(2.5, -1.2) node[right]{$\mu$} ++(0, -2) rectangle +(2.5, -1);
+		\draw[dashed, line width=0.5] (2.5, 1.5) -- +(1, 0);
+		\filldraw[draw=black, fill=gray!70] (2.5, 3.3) -- ++(1, -.6) -- ++(0, -1) -- ++(-1, .6) -- ++(0, 1);
+		\filldraw[draw=black, fill=gray!70] (2.5, 1.3) -- ++(1, -.6) -- ++(0, -1) -- ++(-1, .6) -- ++(0, 1);
+		\draw[-latex] (4.5, 0.7) -- ++(0, 0.8);
+		\draw (4.5, 1.05) node[right]{$E_\text{gap}$};
+		\foreach \x in {0, ..., 5} {
+			\filldraw[fill=white] (0.25+0.4*\x, 1.1) circle (.11);
+			\filldraw[fill=black] (3.75+0.4*\x, 1.9) circle (.09);
+		}
+	\end{tikzpicture}
+	\caption{Energy and electrochemical potential in equilibrium of a p-n junction with holes (white) and electrons (black).}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\draw (1.25, 3.6) node {p-type};
+		\draw (4.75, 3.0) node {n-type};
+		\draw[-latex] (-0.5, -0.5) -- (-0.5, 3.5) node[left]{$E-e\phi$};
+		\filldraw[draw=black, fill=gray] (0, 3.3) rectangle +(2, -1) +(0, -1.8) node[left]{$\mu$} -- +(2, -1.8) ++(0, -2) rectangle +(2, -1);
+		\filldraw[draw=black, fill=gray!40] (4, 1.9) rectangle +(2, -1) +(0, -1.2) -- +(2, -1.2) node[right]{$\mu-eV$} ++(0, -2) rectangle +(2, -1);
+		\draw[dashed, line width=0.5] (2, 1.5) -- +(2, -0.8);
+		\filldraw[draw=black, fill=gray!70] (2, 3.3) -- ++(2, -1.4) -- ++(0, -1) -- ++(-2, 1.4) -- ++(0, 1);
+		\filldraw[draw=black, fill=gray!70] (2, 1.3) -- ++(2, -1.4) -- ++(0, -1) -- ++(-2, 1.4) -- ++(0, 1);
+		\foreach \x in {0, ..., 4} {
+			\filldraw[fill=white] (0.2+0.4*\x, 1.1) circle (.11);
+			\filldraw[fill=black] (4.2+0.4*\x, 1.1) circle (.09);
+		}
+	\end{tikzpicture}
+	\caption{Energy and electrochemical potential of a reverse biased p-n junction with holes (white) and electrons (black).}
+\end{figure}
 
 \subsection{Transverse photoeffect}
 
