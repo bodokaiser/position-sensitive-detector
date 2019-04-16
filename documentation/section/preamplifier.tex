@@ -208,6 +208,8 @@ If $i_+\approx i_-$ we can choose,
 The condition $i_+\approx i_-$ is usually satisfied if the input offset current $I_\text{offset}$ reported in the datasheet is less than the mean input bias current $I_\text{bias}$.
 High-precision operational amplifier usually have compensated bias currents that do not satisfy this condition.
 In this case, there is no generic formula for the value of the compensation impedance $Z_c$ in terms of input and feedback impedance and one needs to perform impedance matching on a per-device basis.
+One should keep in mind that high-precision operational amplifier have input bias currents in the range of \si{\pico\ampere}.
+Using \Cref{eq:input_bias_current} one should therefore first check if the output voltage offset due to input bias currents is even worth compensating compared to other offset and noise contributions.
 
 \subsection{Stability and bandwidth}
 

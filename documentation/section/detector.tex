@@ -168,17 +168,40 @@ The current-voltage characteristic of the p-n junction is described by the Schoc
 	\label{eq:diode_current},
 \end{equation}
 wherein $I_\text{sat}\propto e^{-E_\text{gap}/k_BT}$ is the temperature dependent reverse bias saturation current and $V$ the voltage applied to the p-n junction.
-% TODO: I-V curve and reverse bias saturation current
 Using the proportionality of the reverse bias saturation current, we can write,
 \begin{equation}
 	I_\text{diode}\propto e^{\left(eV-E_\text{gap}\right)/k_BT}-e^{-E_\text{gap}/k_BT}\label{eq:diode_current_prop},
 \end{equation} 
 which discloses the two effects contributing to the diode current.
 The left-hand side of the proportionality of \Cref{eq:diode_current_prop} represents the current contribution due intra-band excitation of charge carriers, whereas the right-hand side represents the current contribution due to inter-band excitation.
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[xmin=-5, xmax=5, xticklabels=\empty, xlabel=$V$, ymin=-5, ymax=5, ylabel=$I$, yticklabels=\empty, axis lines=middle]
+			\addplot[domain=-5:2, samples=100]{exp(x)-1-1/(x+5.4)^6};
+			\addplot[domain=-5:2, samples=100]{exp(x)-1-1/(x+5.4)^6-0.5};
+			\addplot[domain=-5:2, samples=100]{exp(x)-1-1/(x+5.4)^6-1};
+		\end{axis}
+		\draw (-0.2, 2.3) node[left]{$I_\text{sat}$} -- +(1.4, 0);
+		\draw (-0.2, 1.72) node[left]{$I_\text{sat}-I_\text{photo}$} -- +(1.3, 0);
+	\end{tikzpicture}
+	\caption{Current-voltage characteristics of a p-n junction with different levels of illumination.}\label{fig:pn_junction_iv}
+\end{figure}
+In \Cref{fig:pn_junction_iv} we see the current-voltage characteristics of the p-n junction under different levels of illumination.
+For negative voltages, the p-n junction is operated under reverse bias.
+If the reverse bias voltage exceeds the breakdown voltage the p-n junction starts to conduct.
+The current before the breakdown occurs is the reverse saturation current.
+For different levels of illumination, the curve is shifted downwards.
+The separation between the non-illuminated (top curve) and illuminated curves represent the respective photocurrent.
 
-\Cref{fig:pn_junction_illumination} shows a p-n junction under reverse bias where a photon excites an electron-hole pair in the depletion region.
-Due to the electrostatic potential, the electron is accelerated to the right side.
-Analogue the hole is accelerated to the left side and in addition to the diode current, \Cref{eq:diode_current}, a photocurrent can be measured across the junction.
+The conversion rate of photons to photoelectrons depends on the type of the band gap, i.e. direct or indirect, the wavelength $\lambda$ of the photon and the temperature $T$.
+Most photodiodes report a wavelength $\lambda$ dependent responsitivity $R$ which can be used to convert the radiant flux $P$ of the incident light to the generated photocurrent $I_\text{photo}$,
+\begin{equation}
+	I_\text{photo}=RP
+	\label{eq:responsitivity}.
+\end{equation}
+For silicon-based p-n junctions, the responsitivity $R$ is between \SI{0.2}{\ampere\per\watt} at \SI{400}{\nano\meter} and \SI{0.6}{\ampere\per\watt} at \SI{950}{\nano\meter}.
+
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -207,14 +230,9 @@ Analogue the hole is accelerated to the left side and in addition to the diode c
 	\end{tikzpicture}
 	\caption{Energy diagram of a reverse biased p-n junction under illumination.}\label{fig:pn_junction_illumination}
 \end{figure}
-% TODO: I-V curve under illumination
-The conversion rate of photons to photoelectrons depends on the type of the band gap, i.e. direct or indirect, the wavelength $\lambda$ of the photon and the temperature $T$.
-Most photodiodes report a wavelength $\lambda$ dependent responsitivity $R$ which can be used to convert the radiant flux $P$ of the incident light to the generated photocurrent $I_\text{photo}$,
-\begin{equation}
-	I_\text{photo}=RP
-	\label{eq:responsitivity}.
-\end{equation}
-For silicon-based p-n junctions, the responsitivity $R$ is between \SI{0.2}{\ampere\per\watt} at \SI{400}{\nano\meter} and \SI{0.6}{\ampere\per\watt} at \SI{950}{\nano\meter}.
+\Cref{fig:pn_junction_illumination} shows a p-n junction under reverse bias where a photon excites an electron-hole pair in the depletion region.
+Due to the electrostatic potential, the electron is accelerated to the right side.
+Analogue the hole is accelerated to the left side and in addition to the diode current, \Cref{eq:diode_current}, a photocurrent can be measured across the junction.
 
 \subsection{Lateral photoeffect}
 
@@ -229,9 +247,6 @@ In 1957, it was rediscovered by J. Wallmark~\cite{Wallmark57}.
 % TODO: diagram of depletion region for lateral photodiode
 
 
-% TODO: photodiode characteristics
-% TODO: diode leakage current
-% TODO: responsitivity
 % TODO: bandwidth limit
 % TODO: motivate value for reverse bias
 
