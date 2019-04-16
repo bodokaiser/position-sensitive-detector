@@ -2,6 +2,8 @@
 
 \subsection{Transverse photoeffect}
 
+% TODO: change variable names I_sat -> I_s etc.
+
 The purpose of the following section is to recall the mechanics of the (transverse) photoeffect observed in an illuminated p-n junction.
 Figures and the description thereof is largely based on Ref.~\cite{Simon13}.
 A subtle difference in the depicted figures and the figures of Ref.~\cite{Simon13} is that we exchanged the order of p- and n-type semiconductors.
@@ -246,37 +248,83 @@ In 1957, it was rediscovered by J. Wallmark~\cite{Wallmark57}.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
-% TODO: Woltring75. Fig. 1
+		\filldraw[fill=gray] (0, 1.5) rectangle +(6, 0.5) node[below right]{p-type};
+		\filldraw[fill=gray!40] (0, 0.5) rectangle +(6, 1) node[below right]{n-type};
+		\filldraw[fill=gray!10] (0, 0) rectangle +(6, 0.5) node[below right]{resistive};
+		\filldraw[fill=black] (5, 2) rectangle ++(0.5, 0.2) +(-0.25, 0) node[above]{bias};
+		\draw [->, thick, decorate, decoration={snake, amplitude=3, segment length=4, post length=3}] (3, 3) node[above]{photon} -- +(0, -1);
+		\filldraw[fill=black] (0.5, 0) rectangle ++(0.5, -0.2) +(-0.25, 0) node[below]{X1};
+		\filldraw[fill=black] (5, 0) rectangle ++(0.5, -0.2) +(-0.25, 0) node[below]{X2};
 	\end{tikzpicture}
 	\caption{Cross section of a lateral photodiode.}
 \end{figure}
 
+% TODO: rename rho_d -> rho and w_d -> w
+
 % TODO: Lucovsky equations with idea (Woltring75)
 \begin{equation}
-	\frac{w_d}{\rho_d}\nabla^2V=J_\text{sat}\left(e^{eV_d/k_BT}-1\right)-J_\text{photo}
-	\label{eq:lucovsky}
+	\nabla^2V=\frac{\rho_d}{w_d}J_s\left(e^{eV_d/k_BT}-1\right)-\frac{\rho_d}{w_d}J_p\label{eq:lucovsky_exact}
 \end{equation}
 
-% TODO: time-dependent expansion of Lucovsky
+% TODO: mention benefits of reverse bias (refer to highlighted parts in Woltring75)
+\begin{align}
+	\nabla^2V\approx-\frac{\rho_d}{w_d}\left(J_s+J_p\right) && \text{when } eV_d/k_BT\ll1 \label{eq:lucovsky_reverse_bias}	
+\end{align}
+
 \begin{equation}
-	\nabla^2V=-f_s
-	\label{eq:lucovsky_expansion}
+	\nabla^2V_p=-\frac{\rho_d}{w_d}J_p\label{eq:lucovsky_simplified}	
+\end{equation}
+
+
+\begin{equation}
+	V_p(x,y, t=0)=-I_p\frac{\rho_d}{w_d}\delta(x-x_0)\delta(y-y_0)
+	\label{eq:lucovsky_initial}	
 \end{equation}
 
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
-% TODO: Woltring75. Fig. 2-4
+		\filldraw[fill=white] (0, 0) rectangle +(3, 3);
+		\filldraw[fill=white] (4, 0) rectangle +(3, 3);
+		\filldraw[fill=white] (8, 0) rectangle +(3, 3);
+		\filldraw (1.5, 0.2) circle (.1);
+		\filldraw (1.5, 2.8) circle (.1);
+		\filldraw (0.2, 1.5) circle (.1);
+		\filldraw (2.8, 1.5) circle (.1);
+		\filldraw (4.4, 0.1) rectangle (6.6, 0.3);
+		\filldraw (4.4, 2.7) rectangle (6.6, 2.9);
+		\filldraw[fill=black!50] (4.1, 0.4) rectangle (4.3, 2.6);
+		\filldraw[fill=black!50] (6.7, 0.4) rectangle (6.9, 2.6);
+		\filldraw (8.4, 0.1) rectangle (10.6, 0.3);
+		\filldraw (8.4, 2.7) rectangle (10.6, 2.9);
+		\filldraw (8.1, 0.4) rectangle (8.3, 2.6);
+		\filldraw (10.7, 0.4) rectangle (10.9, 2.6);
+		\draw (1.5, 3.1) node[above]{Wallmark};
+		\draw (5.5, 3.1) node[above]{Duolateral};
+		\draw (9.5, 3.1) node[above]{Tetralateral};
 	\end{tikzpicture}
-	\caption{Contact configurations a lateral photodiode.}
+	\caption{Contact configurations of a lateral photodiode.}
 \end{figure}
+
+% TODO: Dirichlet, Neumann boundary condition
+
+\begin{equation}
+	V^*_{nm}(x,y)=\frac{\sin(m\pi x/l)\sin(n\pi y/l)}{(m^2+n^2)\pi^2}l^2
+	\label{eq:lucovsky_fourier}	
+\end{equation}
+
+
+\begin{equation}
+	V^*_p(x,y)=I_p\frac{\rho_d}{w_d}\sum_{n\in\mathbb{Z}}\sum_{m\in\mathbb{Z}}\frac{\sin(m\pi x/l)\sin(m\pi x_0/l)\sin(n\pi y/l)\sin(n\pi y_0/l)}{(m^2+n^2)\pi^2}
+	\label{eq:lucovsky_solution}
+\end{equation}
+
 
 % TODO: derive output current for tetralateral type
 \begin{equation}
 	I_x=\frac{2}{\pi}I_\text{photo}\sum_{n\in\mathbb{Z}}\frac{\sin[(2n-1)\pi y_0/l]}{2n-1}\times\left\{\frac{\sinh[a_n(1-x_0/l)]}{\sinh(a_n)}-\sum_{m\in\mathbb{Z}}
 	\frac{m\pi\sin[m\pi x_0/l]}{a_n^2+m^2\pi^2}\right\}
 \end{equation}
-% TODO: approximate for reverse bias and mention benefits thereof (refer to highlighted parts in Woltring75)
 % TODO: derive linear relation between currents and light spot position
 
 % TODO: mention benefits of tetralateral type manufacturing
