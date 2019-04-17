@@ -245,6 +245,8 @@ Analogue the hole is accelerated to the left side and in addition to the diode c
 The lateral photoeffect was first discovered by W. Schottky in 1930~\cite{Schottky30}.
 In 1957, it was rediscovered by J. Wallmark~\cite{Wallmark57}.
 
+% TODO: cite Noolang and Woltring as main sources
+
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -263,12 +265,12 @@ In 1957, it was rediscovered by J. Wallmark~\cite{Wallmark57}.
 
 % TODO: Lucovsky equations with idea (Woltring75)
 \begin{equation}
-	\nabla^2V=\frac{\rho_d}{w_d}J_s\left(e^{eV_d/k_BT}-1\right)-\frac{\rho_d}{w_d}J_p\label{eq:lucovsky_exact}
+	\nabla^2V=\frac{\rho}{w}J_s\left(e^{eV/k_BT}-1\right)-\frac{\rho_d}{w}J_p\label{eq:lucovsky_exact}
 \end{equation}
 
 % TODO: mention benefits of reverse bias (refer to highlighted parts in Woltring75)
 \begin{align}
-	\nabla^2V\approx-\frac{\rho_d}{w_d}\left(J_s+J_p\right) && \text{when } eV_d/k_BT\ll1 \label{eq:lucovsky_reverse_bias}	
+	\nabla^2V\approx-\frac{\rho}{w}\left(J_s+J_p\right) && \text{when } eV/k_BT\ll1 \label{eq:lucovsky_reverse_bias}	
 \end{align}
 
 \begin{equation}
@@ -277,7 +279,7 @@ In 1957, it was rediscovered by J. Wallmark~\cite{Wallmark57}.
 
 
 \begin{equation}
-	V_p(x,y, t=0)=-I_p\frac{\rho_d}{w_d}\delta(x-x_0)\delta(y-y_0)
+	V_p(x,y, t=0)=I_p\frac{\rho}{w}\delta(x-x^*)\delta(y-y^*)
 	\label{eq:lucovsky_initial}	
 \end{equation}
 
@@ -315,20 +317,42 @@ In 1957, it was rediscovered by J. Wallmark~\cite{Wallmark57}.
 
 
 \begin{equation}
-	V^*_p(x,y)=I_p\frac{\rho_d}{w_d}\sum_{n\in\mathbb{Z}}\sum_{m\in\mathbb{Z}}\frac{\sin(m\pi x/l)\sin(m\pi x_0/l)\sin(n\pi y/l)\sin(n\pi y_0/l)}{(m^2+n^2)\pi^2}
+	V^*_p(x,y)=I_p\frac{\rho}{w}\sum_{n\in\mathbb{Z}}\sum_{m\in\mathbb{Z}}\frac{\sin(m\pi x/l)\sin(m\pi x^*/l)\sin(n\pi y/l)\sin(n\pi y^*/l)}{(m^2+n^2)\pi^2}
 	\label{eq:lucovsky_solution}
 \end{equation}
 
 
 % TODO: derive output current for tetralateral type
 \begin{equation}
-	I_x=\frac{2}{\pi}I_\text{photo}\sum_{n\in\mathbb{Z}}\frac{\sin[(2n-1)\pi y_0/l]}{2n-1}\times\left\{\frac{\sinh[a_n(1-x_0/l)]}{\sinh(a_n)}-\sum_{m\in\mathbb{Z}}
-	\frac{m\pi\sin[m\pi x_0/l]}{a_n^2+m^2\pi^2}\right\}
+	I_{x1}(x^*,y^*)=\frac{w}{\rho}\int_0^l\dd{y}\eval{\pdv{V}{x}}_{x=0}
+\end{equation}
+
+\begin{equation}
+	I_{x1}(x^*,y^*)=\frac{2}{\pi}I_p\sum_{n\in\mathbb{Z}}\frac{\sin[(2n-1)\pi y^*/l]}{2n-1}\frac{\sinh[\abs{2n-1}\pi(1-x^*/l)]}{\sinh(\abs{2n-1}\pi)}	
 \end{equation}
 % TODO: derive linear relation between currents and light spot position
 
+\begin{align}
+	I_{x1}(x^*,l/2)
+	&=\frac{2}{\pi}I_p\sum_{n\in\mathbb{Z}}\frac{(-1)^{n+1}}{2n-1}\frac{\sinh(\abs{2n-1}\pi(1-x^*/l))}{\sinh(\abs{2n-1}\pi)}\\
+	&\approx I_p\left\{0.25-0.41731\left(\frac{x}{2l}-1\right)\right\}+\mathcal{O}\left(\left(\frac{x^*}{l}-\frac{1}{2}\right)^2\right)
+\end{align}
+
+
+\begin{equation}
+	\frac{I_{x2}(x^*,l/2)-I_{x1}(x^*,l/2)}{I_{x1}(x^*,l/2)+I_{x2}(x^*,l/2)}
+	\propto\frac{x}{l}
+\end{equation}
+
+
 % TODO: mention benefits of tetralateral type manufacturing
 % TODO: mention improved tetralateral designs (Doke87, Wang89)
+
+\begin{align}
+	\frac{\left(I_{x2}+I_{y1}\right)-\left(I_{x1}+I_{y2}\right)}{I_{x1}+I_{x2}+I_{y1}+I_{y2}}=\frac{2x}{l} &&
+	\frac{\left(I_{x2}+I_{y2}\right)-\left(I_{x1}+I_{y1}\right)}{I_{x1}+I_{x2}+I_{y1}+I_{y2}}=\frac{2y}{l}	
+\end{align}
+
 
 \subsection{Characteristics}
 
