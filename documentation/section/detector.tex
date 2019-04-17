@@ -242,11 +242,9 @@ Analogue the hole is accelerated to the left side and in addition to the diode c
 
 % TODO: history: lateral photoeffect Schottky30, Wallmark57
 
-The lateral photoeffect was first discovered by W. Schottky in 1930~\cite{Schottky30}.
-In 1957, it was rediscovered by J. Wallmark~\cite{Wallmark57}.
-
-% TODO: cite Noolang and Woltring as main sources
-
+In the previous section, we discussed the transversal photoeffect that is usually associated with the illumination of the p-n junction.
+In addition to the transversal photoeffect, the lateral photoeffect was first discovered by W. Schottky~\cite{Schottky30} in 1930 and later rediscovered in 1957 by J. Wallmark~\cite{Wallmark57}.
+In the present section, we summarize important results from Ref.~\cite{Noorlag74} and Ref.~\cite{Woltring75} with focus on the tetralateral photodiode which is the most common commercially available design.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -258,31 +256,41 @@ In 1957, it was rediscovered by J. Wallmark~\cite{Wallmark57}.
 		\filldraw[fill=black] (0.5, 0) rectangle ++(0.5, -0.2) +(-0.25, 0) node[below]{X1};
 		\filldraw[fill=black] (5, 0) rectangle ++(0.5, -0.2) +(-0.25, 0) node[below]{X2};
 	\end{tikzpicture}
-	\caption{Cross section of a lateral photodiode.}
+	\caption{Cross section of a lateral photodiode.}\label{fig:lateral_photodiode_cross_section}
 \end{figure}
-
-% TODO: rename rho_d -> rho and w_d -> w
+\Cref{fig:lateral_photodiode_cross_section} depicts the cross-section of a lateral photodiode with a p-type semiconductor as the top, an n-type semiconductor as the middle layer and a resistive material as the bottom layer.
+An electric contact embedded into the top layer can be used as a common cathode.
+The common cathode can be connected to the ground or a positive voltage for reverse bias operation.
+In contrast to the transversal photodiode, the lateral photodiode has two anode contacts positioned at the opposite sites embedded into the resistive layer.
+The photocurrent measured at each of the anode contacts follows an almost linear relationship with the center-of-mass of the incident light spot.
+Therefore the lateral photodiode can be used to measure the spatial coordinate of an incident light spot.
 
 % TODO: Lucovsky equations with idea (Woltring75)
+The dynamics of the lateral photodiode are guided by the Lucovsky~\cite{Lucovsky60} equation,
 \begin{equation}
-	\nabla^2V=\frac{\rho}{w}J_s\left(e^{eV/k_BT}-1\right)-\frac{\rho_d}{w}J_p\label{eq:lucovsky_exact}
+	\nabla^2V=\frac{\rho}{w}J_s\left(e^{eV/k_BT}-1\right)-\frac{\rho_d}{w}J_p\label{eq:lucovsky_exact},
 \end{equation}
+wherein $V$ is the diode voltage, $\rho$ is the resistance per unit length of the resistive layer, $J_s$ is the reverse-bias saturation current and $J_p$ is the photocurrent generated due photon induced electron-hole excitation.
+\Cref{eq:lucovsky_exact} can be obtained by combination of the current density continuity equation with Ohm's law and the Schottky equation, \Cref{eq:diode_current}.
 
-% TODO: mention benefits of reverse bias (refer to highlighted parts in Woltring75)
-\begin{align}
-	\nabla^2V\approx-\frac{\rho}{w}\left(J_s+J_p\right) && \text{when } eV/k_BT\ll1 \label{eq:lucovsky_reverse_bias}	
-\end{align}
+According to Ref.~\cite{Woltring75}, operation of the lateral in fully reverse-bias has the following benefits:
+\begin{enumerate}
+	\item Reduced signal loss.
+	\item Improved response speed and resolution.
+	\item Improved linearity of the position.
+	\item Reduced temperature dependence.
+\end{enumerate}
+In electronic engineering literature, e.g. Ref.~\cite[p.~258]{Jung05}, one is sometimes discouraged from operating a photodiode under reverse-bias for highest sensitivity as the reverse-bias increased the diode leakage (dark) current.
+We believe that as long as the dark current is significantly smaller than the typical photocurrent, the photodiode should always be operated in reverse-bias mode as recommended Ref.~\cite{Noorlag74,Woltring75,Wang89,Hobbs11}.
 
+Assuming a fully reverse-biased lateral photodiode, we have $eV/k_BT\ll1$ and \Cref{eq:lucovsky_exact} simplifies to a linear second order differential (Poisson) equation,
 \begin{equation}
-	\nabla^2V_p=-\frac{\rho_d}{w_d}J_p\label{eq:lucovsky_simplified}	
+	\nabla^2V\approx-\frac{\rho}{w}\left(J_s+J_p\right)
+	\label{eq:lucovsky_reverse_bias},
 \end{equation}
-
-
-\begin{equation}
-	V_p(x,y, t=0)=I_p\frac{\rho}{w}\delta(x-x^*)\delta(y-y^*)
-	\label{eq:lucovsky_initial}	
-\end{equation}
-
+which can be solved using variable separation and a product Ansatz.
+The solution of \Cref{eq:lucovsky_reverse_bias} depends on the imposed boundary conditions.
+The Dirichlet boundary condition, $V=0$, should be used if an electrical contact terminates the semiconductor, otherwise, the Neumann boundary condition, $\pdv{V}{n}=0$, should be assumed.
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -305,54 +313,63 @@ In 1957, it was rediscovered by J. Wallmark~\cite{Wallmark57}.
 		\draw (5.5, 3.1) node[above]{Duolateral};
 		\draw (9.5, 3.1) node[above]{Tetralateral};
 	\end{tikzpicture}
-	\caption{Contact configurations of a lateral photodiode.}
+	\caption{Contact configurations of a lateral photodiode.}\label{fig:lateral_photodiode_contacts}
 \end{figure}
-
-% TODO: Dirichlet, Neumann boundary condition
-
+In \Cref{fig:lateral_photodiode_contacts} we present three different contact configurations.
+The left contact configuration was used by Wallmark~\cite{Wallmark57} and comprises four small electronic contacts.
+Assuming that the contact size is small compared to the surface of the photodiode, the von Neumann boundary condition have to be used.
+The middle contact configuration receives great attention from Noorlag~\cite{Noorlag74}.
+On two opposite sides of the photodiode an electric contact terminates the boundary while the remaining sides are left empty.
+For two-dimensional position detection, one can create two electric contacts at another layer.
+Mathematically we can express this configuration as combination of Neumann and Dirichlet boundary conditions.
+Finally, the tetralateral configuration where each side on the same layer is terminated by electric contacts can be modelled by Dirichlet boundary conditions on all sides.
+For a rectangular tetralateral photodiode of width $l$, the explicit boundary conditions are,
+\begin{align}
+	V(0, y)=V(l,y)=0, && V(x,0)=V(x,l)=0.
+\end{align}
+Together with the initial condition that a focused light spot hits the photodiode at $(x^*,y^*)$,
 \begin{equation}
-	V^*_{nm}(x,y)=\frac{\sin(m\pi x/l)\sin(n\pi y/l)}{(m^2+n^2)\pi^2}l^2
-	\label{eq:lucovsky_fourier}	
+	V_p(x,y, t=0)=I_p\frac{\rho}{w}\delta(x-x^*)\delta(y-y^*)
+	\label{eq:lucovsky_initial},
 \end{equation}
-
-
+the general solution of the Lucovsky equation, \Cref{eq:lucovsky_reverse_bias}, for the tetralateral configuration reads,
 \begin{equation}
 	V^*_p(x,y)=I_p\frac{\rho}{w}\sum_{n\in\mathbb{Z}}\sum_{m\in\mathbb{Z}}\frac{\sin(m\pi x/l)\sin(m\pi x^*/l)\sin(n\pi y/l)\sin(n\pi y^*/l)}{(m^2+n^2)\pi^2}
-	\label{eq:lucovsky_solution}
+	\label{eq:lucovsky_solution}.
 \end{equation}
-
-
-% TODO: derive output current for tetralateral type
+The current that flows through the $x1$ contact is given by,
 \begin{equation}
-	I_{x1}(x^*,y^*)=\frac{w}{\rho}\int_0^l\dd{y}\eval{\pdv{V}{x}}_{x=0}
+	I_{x1}(x^*,y^*)=\frac{w}{\rho}\int_0^l\dd{y}\eval{\pdv{V}{x}}_{x=0},
 \end{equation}
-
+respective,
 \begin{equation}
-	I_{x1}(x^*,y^*)=\frac{2}{\pi}I_p\sum_{n\in\mathbb{Z}}\frac{\sin[(2n-1)\pi y^*/l]}{2n-1}\frac{\sinh[\abs{2n-1}\pi(1-x^*/l)]}{\sinh(\abs{2n-1}\pi)}	
+	I_{x1}(x^*,y^*)=\frac{2}{\pi}I_p\sum_{n\in\mathbb{Z}}\frac{\sin[(2n-1)\pi y^*/l]}{2n-1}\frac{\sinh[\abs{2n-1}\pi(1-x^*/l)]}{\sinh(\abs{2n-1}\pi)}
+	\label{eq:lucovsky_current}.
 \end{equation}
-% TODO: derive linear relation between currents and light spot position
-
+The solution does not disclose the linear relationship between anode current $I_{x1}$ and the incident spot light coordinate $x^*$.
+Ref.~\cite[Fig.~7]{Woltring75} renders the non-linear distortion close to the boundaries as described by \Cref{eq:lucovsky_current}.
+In order to show analytically that there is an almost linear relationship between $I_{x1}$ and $x^*$, we fix $y^*=l/2$, numerically evaluate the dominant terms and Taylor expand the terms to linear order,
 \begin{align}
 	I_{x1}(x^*,l/2)
 	&=\frac{2}{\pi}I_p\sum_{n\in\mathbb{Z}}\frac{(-1)^{n+1}}{2n-1}\frac{\sinh(\abs{2n-1}\pi(1-x^*/l))}{\sinh(\abs{2n-1}\pi)}\\
-	&\approx I_p\left\{0.25-0.41731\left(\frac{x}{2l}-1\right)\right\}+\mathcal{O}\left(\left(\frac{x^*}{l}-\frac{1}{2}\right)^2\right)
+	&\approx I_p\left\{0.25-0.41731\left(\frac{x}{2l}-1\right)\right\}+\mathcal{O}\left(\left(\frac{x^*}{l}-\frac{1}{2}\right)^2\right).
 \end{align}
-
-
+Using the difference between two opposite contacts and normalizing for the total photocurrent, we find,
 \begin{equation}
 	\frac{I_{x2}(x^*,l/2)-I_{x1}(x^*,l/2)}{I_{x1}(x^*,l/2)+I_{x2}(x^*,l/2)}
-	\propto\frac{x}{l}
+	\propto\frac{x}{l},
 \end{equation}
+which indeed is linear in $x$.
 
-
-% TODO: mention benefits of tetralateral type manufacturing
-% TODO: mention improved tetralateral designs (Doke87, Wang89)
-
+According to Ref.~\cite[p.~41]{Noorlag74}, the tetralateral photodiode has benefits in manufacturing, although its linearity is below the duallateral photodiode, but still better than the Wallmark type, see Ref.~\cite{Woltring75}.
+Recent contact configurations have improved upon the tetralateral design in order to improve the linearity.
+For example, the commercially availble pin-cushion tetralateral photodiode, discussed in Ref.~\cite{Doke87,Wang89}, shows good linearity over a large area.
+The center-of-mass of an incident light spot at $(x^*,y^*)$ can be recovered from the anode currents via,
 \begin{align}
-	\frac{\left(I_{x2}+I_{y1}\right)-\left(I_{x1}+I_{y2}\right)}{I_{x1}+I_{x2}+I_{y1}+I_{y2}}=\frac{2x}{l} &&
-	\frac{\left(I_{x2}+I_{y2}\right)-\left(I_{x1}+I_{y1}\right)}{I_{x1}+I_{x2}+I_{y1}+I_{y2}}=\frac{2y}{l}	
+	\frac{\left(I_{x2}+I_{y1}\right)-\left(I_{x1}+I_{y2}\right)}{I_{x1}+I_{x2}+I_{y1}+I_{y2}}=\frac{2x^*}{l} &&
+	\frac{\left(I_{x2}+I_{y2}\right)-\left(I_{x1}+I_{y1}\right)}{I_{x1}+I_{x2}+I_{y1}+I_{y2}}=\frac{2y^*}{l}	.
 \end{align}
-
+The datasheet~\cite{HamamatsuS5990} of the \gls{s5990}, a pin-cushion tetralateral photodiode, discloses the position detectability of a light spot of size \SI{0.2}{\milli\meter} over a scan interval of \SI{0.4}{\milli\meter} which does not show any non-linear distortion.
 
 \subsection{Characteristics}
 
