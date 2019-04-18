@@ -2,8 +2,6 @@
 
 \subsection{Transverse photoeffect}
 
-% TODO: change variable names I_sat -> I_s etc.
-
 The purpose of the following section is to recall the mechanics of the (transverse) photoeffect observed in an illuminated p-n junction.
 Figures and the description thereof is largely based on Ref.~\cite{Simon13}.
 A subtle difference in the depicted figures and the figures of Ref.~\cite{Simon13} is that we exchanged the order of p- and n-type semiconductors.
@@ -196,15 +194,14 @@ If the reverse bias voltage exceeds the breakdown voltage the p-n junction start
 The current before the breakdown occurs is the reverse saturation current.
 For different levels of illumination, the curve is shifted downwards.
 The separation between the non-illuminated (top curve) and illuminated curves represent the respective photocurrent.
-% TODO: mention non-linearity of voltage response to illumination
 
 The conversion rate of photons to photoelectrons depends on the type of the band gap, i.e. direct or indirect, the wavelength $\lambda$ of the photon and the temperature $T$.
 Most photodiodes report a wavelength $\lambda$ dependent responsitivity $R$ which can be used to convert the radiant flux $P$ of the incident light to the generated photocurrent $I_\text{photo}$,
 \begin{equation}
-	I_\text{photo}=RP
+	I_\text{photo}=R(\lambda)P
 	\label{eq:responsitivity}.
 \end{equation}
-For silicon-based p-n junctions, the responsitivity $R$ is between \SI{0.2}{\ampere\per\watt} at \SI{400}{\nano\meter} and \SI{0.6}{\ampere\per\watt} at \SI{950}{\nano\meter}.
+For silicon-based p-n junctions, the responsitivity $R(\lambda)$ is between \SI{0.2}{\ampere\per\watt} at \SI{400}{\nano\meter} and \SI{0.6}{\ampere\per\watt} at \SI{950}{\nano\meter}.
 
 \begin{figure}[H]
 	\centering
@@ -240,8 +237,6 @@ Analogue the hole is accelerated to the left side and in addition to the diode c
 
 \subsection{Lateral photoeffect}
 
-% TODO: history: lateral photoeffect Schottky30, Wallmark57
-
 In the previous section, we discussed the transversal photoeffect that is usually associated with the illumination of the p-n junction.
 In addition to the transversal photoeffect, the lateral photoeffect was first discovered by W. Schottky~\cite{Schottky30} in 1930 and later rediscovered in 1957 by J. Wallmark~\cite{Wallmark57}.
 In the present section, we summarize important results from Ref.~\cite{Noorlag74} and Ref.~\cite{Woltring75} with focus on the tetralateral photodiode which is the most common commercially available design.
@@ -265,7 +260,6 @@ In contrast to the transversal photodiode, the lateral photodiode has two anode 
 The photocurrent measured at each of the anode contacts follows an almost linear relationship with the center-of-mass of the incident light spot.
 Therefore the lateral photodiode can be used to measure the spatial coordinate of an incident light spot.
 
-% TODO: Lucovsky equations with idea (Woltring75)
 The dynamics of the lateral photodiode are guided by the Lucovsky~\cite{Lucovsky60} equation,
 \begin{equation}
 	\nabla^2V=\frac{\rho}{w}J_s\left(e^{eV/k_BT}-1\right)-\frac{\rho_d}{w}J_p\label{eq:lucovsky_exact},
@@ -371,45 +365,58 @@ The center-of-mass of an incident light spot at $(x^*,y^*)$ can be recovered fro
 \end{align}
 The datasheet~\cite{HamamatsuS5990} of the \gls{s5990}, a pin-cushion tetralateral photodiode, discloses the position detectability of a light spot of size \SI{0.2}{\milli\meter} over a scan interval of \SI{0.4}{\milli\meter} which does not show any non-linear distortion.
 
-\subsection{Characteristics}
+\subsection{Equivalent circuit}
 
-% TODO: bandwidth limit
-% TODO: equivalent circuit with capacitance, resistance
+In the previous section, we described the physics behind the lateral photodiode.
+In the current section, we want to ignore microscopic details and concentrate on the electrical properties of real tetralateral photodiodes.
 
+In \Cref{fig:tetralateral_photodiode_equivalent} the equivalent circuit of a tetralateral photodiode is depicted.
+The tetralateral photodiode has four anode connections X1, X2, Y1, and Y2 which are connected to the junction via position-dependent resistances $R_1$, $R_2$, $R_3$, and $R_4$.
+The actual junction is equivalent to two current sources $I_p,I_d$, a resistor $R_d$, and a capacitor $C_d$ in parallel.
+The first current source $I_p$ represents the generated photocurrent with typical values between \si{\micro\ampere} and \si{\milli\ampere}.
+The second current source $I_d$ represents the generated leakage or dark current with typical values between \si{\pico\ampere} and \si{\nano\ampere}.
 \begin{figure}[H]
 	\centering
 	\begin{circuitikz}
-		\draw (0, 0) node[circ]{};
-		\draw (+2, +2) node[ocirc, label=X1]{} to[photodiode] (0, 0);
-		\draw (-2, -2) node[ocirc, label=X2]{} to[photodiode] (0, 0);
-		\draw (+2, -2) node[ocirc, label=Y2]{} to[photodiode] (0, 0);
-		\draw (-2, +2) node[ocirc, label=Y1]{} to[photodiode] (0, 0);
-		\draw (0, 0) -- ++(0, -2.5) node[ocirc, label=Cathode, rotate=180]{};
-	\end{circuitikz}
-	\caption{Position-sensitive detector as photodiodes}
-\end{figure}
-
-\begin{figure}[H]
-	% TODO: add position dependent potentiometers to anode (Andersson08 Fig. 15) 
-	\centering
-	\begin{circuitikz}
-		\draw (-3, -2) to[current source, l=$I_\text{photo}$] ++(0, 4);
-		\draw (-1, -2) node[circ]{} to[current source, l=$I_\text{dark}$] ++(0, 4) node[circ]{};
+		\draw (-3, -2) to[current source, l=$I_p$] ++(0, 4);
+		\draw (-1, -2) node[circ]{} to[current source, l=$I_d$] ++(0, 4) node[circ]{};
 		\draw (1, -2) node[circ]{} to[resistor, l=$R_d$] ++(0, 4) node[circ]{};
 		\draw (3, -2) to[capacitor, l=$C_d$] ++(0, 4);
 		\draw (-3, -2) -- ++(6, 0);
 		\draw (-3, 2) -- ++(6, 0);
-		\draw (0, -2) -- ++(0, -1) node[ocirc, label=Cathode, rotate=180]{};
-		\draw (0, 2) -- ++(0, 1) node[ocirc, label=Anode]{};
+		\draw (0, -2) -- ++(0, -1) node[ocirc, label=$V_b$, rotate=180]{};
+		\draw (0, 2) -- ++(0, 3) node(node)[circ]{};
+		\draw (node) to[resistor, label=$R_1$] ++(2, 2) node[ocirc, label=Y1, rotate=-10]{};
+		\draw (node) to[resistor, label=$R_2$] ++(-2, 2) node[ocirc, label=X1, rotate=10]{};
+		\draw (node) to[resistor, label=$R_3$] ++(2, -2) node[ocirc, label=X2, rotate=-150]{};
+		\draw (node) to[resistor, label=$R_4$] ++(-2, -2) node[ocirc, label=Y2, rotate=150]{};
 	\end{circuitikz}
-	\caption{Photodiode equivalent circuit}
+	\caption{Equivalent circuit of a tetralateral photodiode.}\label{fig:tetralateral_photodiode_equivalent}
 \end{figure}
+The resistance $R_d$ is referred to as interelectrode resistance and is about \SI{10}{\kilo\ohm}.
+The capacitance $C_d$ is also referred to as terminal capacitance and is about \SI{150}{\pico\farad}.
+Resistance $R_d$ and capacitance $C_d$ form an RC pole which frequency is given by,
+\begin{equation}
+	f_d=\frac{1}{2\pi R_dC_d}.
+\end{equation}
+For $R_d=\SI{10}{\kilo\ohm}$ and $C_d=\SI{100}{\pico\farad}$ the cut-off frequency $f_d$ of the pole is about \SI{1}{\mega\hertz}, representing the intrinsic bandwidth limit of the detector.
 
-\subsection{Noise and non-linear error}
+\subsection{Signal-to-noise ratio}
 
-% TODO: define signal-to-noise ratio
+% TODO: check out Radeka1974 and Narayanan1997 for more details
+% TODO: estimate non-linear errors
 
-% TODO: photon shot noise
-% TODO: thermal noise through psd resistance
-% TODO: noise through leakage current and non-linearity
-% TODO: non-linear errors (requires additional research)
+According to \cite{Woltring75}, the thermal (Johnson) noise of the resistive component of the lateral photodiode is the dominant noise source.
+The thermal noise is given by,
+\begin{equation}
+	I_t=\sqrt{\frac{4k_BTB}{R}},
+\end{equation}
+wherein $B$ denotes the bandwidth to consider.
+At room temperature $T=\SI{300}{\kelvin}$ and an interelectrode resistance of $R_d=\SI{10}{\kilo\ohm}$, we find a noise current density due to thermal noise of $i_t=\SI{2}{\pico\ampere\per\sqrt\hertz}$.
+If we estimate for the complete bandwidth supported by the detector we find a root-mean-squared noise current of $I_t=\SI{2}{\nano\ampere}$.
+A more realistic bandwidth incoporating later analog components would be $B=\SI{10}{\kilo\hertz}$, yielding $I_t=\SI{200}{\pico\ampere}$.
+
+% TODO: noise propagation from detector to anodes
+In any case, we cannot say for sure how these noise sources propagate into position detection noise.
+For instance, if the noise propagates in same proportions over the anodes, any error should cancel out when calculating the position.
+Further research has to be conducted.
