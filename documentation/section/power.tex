@@ -15,11 +15,45 @@ A simple embodiment of a supply filter is that of an RC low-pass filter as illus
 \end{figure}
 In \Cref{fig:filter_lowpass} the input voltage is connected through a resistor $R$ with the output voltage.
 After the resistor $R$, a capacitor $C$ is connected with ground.
-The RC filter supresses all frequencies components above,
+The transfer function of the RC low-pass filter can be obtained from the voltage divider with complex impedances,
+\begin{equation}
+	\frac{V_\text{out}}{V_\text{in}}
+	=\frac{Z_C}{Z_R+Z_C}
+	=\frac{1}{1+j\omega RC}.
+	\label{eq:transfer_filter_rc}
+\end{equation}
+The absolute value of the transfer function,
+\begin{equation}
+	\abs{\frac{V_\text{out}}{V_\text{in}}}
+	=\frac{1}{\sqrt{1+\left(f/f_{RC}\right)^2}},
+\end{equation}
+has a pole at frequency,
 \begin{equation}
 	f_{RC}=\frac{1}{2\pi RC}.
 \end{equation}
-% TODO: explain how RC should be choosen
+% TODO: explain how to select R and C values for low-pass
+The frequency response of an RC low-pass with pole frequency $f_{RC}=\SI{100}{\hertz}$ is visualized in \Cref{fig:bode_filter_rc}.
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\begin{semilogxaxis}[xmin=1, xmax=1e6, xlabel=Frequency (Hz), ymin=-100, ymax=10, ylabel=Gain (dB), ytick={0, -20, -40, -60, -80}, grid=minor]
+			\addplot[domain=1:1e9]{-10*log10(1+(x/100)^2)};
+		\end{semilogxaxis}
+	\end{tikzpicture}
+	\caption{Bode plot of the frequency response of an RC low-pass at \SI{100}{\hertz}.}\label{fig:bode_filter_rc}
+\end{figure}
+We can see how the frequency response suppresses frequency above \SI{100}{\hertz}.
+However, efficient frequency suppression starts at \SI{-80}{\decibel} which the given RC low-pass of \Cref{fig:bode_filter_rc} only satisfies for much higher frequencies than the pole frequency.
+
+% TODO: give example of two pole filter and how to choose parameters
+One approach to improve the frequency response of a filter is to introduce additional frequency poles.
+In the limit of infinite many frequency poles, one is able to approach an ideal brick-wall filter.
+The frequency response of an ideal brick-wall filter resembles a step function.
+In practice, one finds good enough results for two pole filters.
+
+% TODO: give example of capacitance multiplier and how to choose parameters
+In addition to a multi-pole filter, a capacitance multiplier can be used to increase the effective capacitance of a filter.
+The capacitance multiplier is described in Ref.~\cite[p.~536]{Hobbs11} and Ref.~\cite[p.~578]{Horowitz15}.
 
 \subsection{Voltage regulator}
 
