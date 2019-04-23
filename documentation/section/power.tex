@@ -57,4 +57,37 @@ The capacitance multiplier is described in Ref.~\cite[p.~536]{Hobbs11} and Ref.~
 
 \subsection{Voltage regulator}
 
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (0, 0) node[vcc, rotate=90, label={[label distance=6]:\SI[retain-explicit-plus]{+15}{\volt}}]{} -- ++(1, 0) node(node1a)[circ]{} -- ++(4, 0) node(node1b)[circ]{} -- ++(0, 2) to[diode, l_=D1] ++(-4, 0) -- ++(0, -2);
+		\draw (node1b) to[resistor, l_=R1, a^=\SI{120}{\ohm}] ++(0, -2) node(node2a)[circ]{} -- ++(-2, 0) -- ++(0, 2);
+		\draw (node2a) -- ++(3, 0) node(node2b)[circ]{} to[diode, l=D3] ++(0, 2) node(node1c)[circ]{} -- ++(-3 ,0);
+		\draw (node1c) -- ++(2, 0) node(node1d)[circ]{} to[ecapacitor, label=C1] ++(0, -4) node(node3d)[circ]{} -- ++(-2, 0) node(node3c)[circ]{} -- ++(-3, 0) node(node3b)[circ]{} to[resistor, l^=R2, a_=\SI{980}{\ohm}] ++(0, 2);
+		\draw (node2b) to[ecapacitor, l_=C3, a^=\SI{10}{\micro\farad}] (node3c);
+		\draw (node1d) -- ++(1, 0) node[vcc, rotate=270, label={[label distance=6]:\SI[retain-explicit-plus]{+12}{\volt}}]{};
+		\begin{scope}[xshift=3cm]
+			\node[draw, rectangle, fill=white, minimum width=2cm, minimum height=1.2cm, label=U1]{};
+			\node at (0, 0) {LM317};
+		\end{scope}
+		\draw (node3d) -- ++(1, 0) node[ground, rotate=90]{};
+		\draw (node3b) -- ++(-5, 0) node[ground, rotate=270]{};
+		\draw (node1a) to[ecapacitor, l_=C1, a^=\SI{100}{\nano\farad}] ++(0, -4) node(node3a)[circ]{};
+		\draw (node3a) to[ecapacitor, l_=C2, a^=\SI{100}{\nano\farad}] ++(0, -4) node(node5a)[circ]{};
+		\draw (node5a) -- ++(-1, 0) node[vee, rotate=270, label={[label distance=6]:\SI{-15}{\volt}}]{};
+		\draw (node3b) to[resistor, l_=R3, a^=\SI{980}{\ohm}] ++(0, -2) node(node4b)[circ]{} to[resistor, l_=R4, a^=\SI{120}{\ohm}] ++(0, -2) node(node5b)[circ]{} -- (node5a);
+		\draw (node3c) to[ecapacitor, l_=C4, a^=\SI{10}{\micro\farad}] ++(0, -2) node(node4c)[circ]{} to[diode, l_=D4] ++(0, -2) node(node5c)[circ]{} -- (node5b);
+		\draw (node3d) to[ecapacitor, l_=C6, a^=\SI{1}{\micro\farad}] ++(0, -4) node(node5d)[circ]{} -- (node5c);
+		\draw (node5d) -- ++(1, 0) node[vee, rotate=90, label={[label distance=6]:\SI{-12}{\volt}}]{};
+		\draw (node5a) ++(2, 0) -- ++(0, 2) -- (node4b) -- (node4c);
+		\begin{scope}[xshift=3cm, yshift=-8cm]
+			\node[draw, rectangle, fill=white, minimum width=2cm, minimum height=1.2cm, label=below:U2]{};
+			\node at (0, 0) {LM337};
+		\end{scope}
+		\draw (node5b) -- ++(0, -2) to[diode, l^=D2] ++(-4, 0) -- ++(0, 2);
+	\end{circuitikz}
+	\caption{Dual supply voltage regulator.}
+\end{figure}
+
+
 \subsection{Voltage reference}
