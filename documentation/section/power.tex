@@ -89,5 +89,23 @@ The capacitance multiplier is described in Ref.~\cite[p.~536]{Hobbs11} and Ref.~
 	\caption{Dual supply voltage regulator.}
 \end{figure}
 
-
 \subsection{Voltage reference}
+
+\begin{figure}[H]
+	\centering
+	\begin{circuitikz}
+		\draw (0, 0) node[vcc, rotate=90, label={[label distance=6]:\SI{15}{\volt}}]{} -- ++(1, 0) node(node1a)[circ]{} to[capacitor, l_=C1, a^=\SI{1}{\micro\farad}] ++(0, -4) node(node2a)[circ]{} -- ++(-1, 0) node[ground, rotate=270]{};
+		\draw (node1a) -- ++(2, 0) node(node1b)[circ]{} -- ++(0, -4) node(node2b)[circ]{} -- (node2a);
+		\draw (node1b) -- ++(2, 0) node(node1c)[circ]{} to[capacitor, l_=C2, a^=\SI{1}{\farad}] ++(0, -4) node(node2c)[circ]{} -- (node2a);
+		\draw (node1c) -- ++(2, 0) node(node1d)[circ]{} to[resistor, l_=R1, a^=\SI{1}{\ohm}] ++(0, -2) to[capacitor, l_=C3, a^=\SI{1}{\farad}] ++(0, -2) node(node2d)[circ]{} -- (node2c);
+		\draw (node1d) -- ++(2, 0) node(node1e)[circ]{} to[ecapacitor, l_=C4, a^=\SI{1}{\farad}] ++(0, -4) node(node2e)[circ]{} -- (node2c);
+		\draw (node1e) -- ++(1, 0) node[vcc, rotate=270, label={[label distance=6]:\SI{10}{\volt}}]{};
+		\draw (node2e) -- ++(1, 0) node[ground, rotate=90]{};
+		% TODO: use dipchip node and name IC ports
+		\begin{scope}[xshift=4cm]
+			\node[draw, rectangle, fill=white, minimum width=3cm, minimum height=1.4cm, label=above:U1]{};
+			\node at (0, 0) {REF5010};
+		\end{scope}
+	\end{circuitikz}
+	\caption{High-precision voltage reference.}
+\end{figure}
