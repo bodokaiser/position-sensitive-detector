@@ -57,13 +57,27 @@ The capacitance multiplier is described in Ref.~\cite[p.~536]{Hobbs11} and Ref.~
 
 \subsection{Voltage regulator}
 
+We use two voltage regulator to maintain a constant voltage of \SI{\pm12}{\volt} which is used to supply the operational amplifiers.
+
+In general, one needs to decide between linear and switching voltage regulators.
+Linear voltage regulators are less efficient than their switching counterparts but have better noise characteristics.
+As efficiency is not a concern in our application, the better noise characteristics are a strong argument for the linear voltage regulators.
+Linear voltage regulators require an input voltage greater than the output voltage.
+The difference between input and output voltage is called the drop-out voltage.
+The drop-out voltage is about \SIrange{2}{3}{\volt}
+
+Linear voltage regulators are available with fixed and adjustable output voltage.
+As we might need an additional voltage drop between the input voltage and the voltage regulator input, e.g. for input power filters, an adjustable voltage regulator would allow for more flexibility.
+Moreover, we found the range of negative voltage regulators to be rather limited.
+
+% TODO: working principle (how does R1, R2 on the adjustable terminal change the output voltage?)
 \begin{figure}[H]
 	\centering
 	\begin{circuitikz}
 		\draw (0, 0) node[vcc, rotate=90, label={[label distance=6]:\SI[retain-explicit-plus]{+15}{\volt}}]{} -- ++(1, 0) node(node1a)[circ]{} -- ++(4, 0) node(node1b)[circ]{} -- ++(0, 2) to[diode, l_=D1] ++(-4, 0) -- ++(0, -2);
 		\draw (node1b) to[resistor, l_=R1, a^=\SI{120}{\ohm}] ++(0, -2) node(node2a)[circ]{} -- ++(-2, 0) -- ++(0, 2);
 		\draw (node2a) -- ++(3, 0) node(node2b)[circ]{} to[diode, l=D3] ++(0, 2) node(node1c)[circ]{} -- ++(-3 ,0);
-		\draw (node1c) -- ++(2, 0) node(node1d)[circ]{} to[ecapacitor, label=C1] ++(0, -4) node(node3d)[circ]{} -- ++(-2, 0) node(node3c)[circ]{} -- ++(-3, 0) node(node3b)[circ]{} to[resistor, l^=R2, a_=\SI{980}{\ohm}] ++(0, 2);
+		\draw (node1c) -- ++(2, 0) node(node1d)[circ]{} to[ecapacitor, l_=C5, a^=\SI{1}{\micro\farad}] ++(0, -4) node(node3d)[circ]{} -- ++(-2, 0) node(node3c)[circ]{} -- ++(-3, 0) node(node3b)[circ]{} to[resistor, l^=R2, a_=\SI{980}{\ohm}] ++(0, 2);
 		\draw (node2b) to[ecapacitor, l_=C3, a^=\SI{10}{\micro\farad}] (node3c);
 		\draw (node1d) -- ++(1, 0) node[vcc, rotate=270, label={[label distance=6]:\SI[retain-explicit-plus]{+12}{\volt}}]{};
 		\begin{scope}[xshift=3cm]
@@ -86,19 +100,29 @@ The capacitance multiplier is described in Ref.~\cite[p.~536]{Hobbs11} and Ref.~
 		\end{scope}
 		\draw (node5b) -- ++(0, -2) to[diode, l^=D2] ++(-4, 0) -- ++(0, 2);
 	\end{circuitikz}
-	\caption{Dual supply voltage regulator.}
+	\caption{Dual supply voltage regulator.}\label{fig:voltage_regulator_dual}
 \end{figure}
+\Cref{fig:voltage_regulator_dual} illustrates the schematic of the final dual voltage regulator supply circuit.
+The input voltage is buffered by capacitors C1 and C2.
+U1 and U2 denote the fixed positive and negative voltage regulators.
+Resistors R1 and R2 configure the output voltage of U1 to about \SI[retain-explicit-plus]{+11.5}{\volt}.
+Resistors R3 and R4 configure the output voltage of U2 to about \SI[retain-explicit-plus]{-11.5}{\volt}.
+Capacitors C3, C4, C5 and C6 buffer the output voltage.
+When the supply power is switched off and C3 or C5 discharges,
+diodes D3 and D1 redirect the current back to the supply lines around the voltage regulators.
 
 \subsection{Voltage reference}
 
+A voltage reference is a high-precision linear (fixed) voltage regulator.
+We use it as a voltage source for the sensible reverse bias voltage of the photodiode.
 \begin{figure}[H]
 	\centering
 	\begin{circuitikz}
 		\draw (0, 0) node[vcc, rotate=90, label={[label distance=6]:\SI{15}{\volt}}]{} -- ++(1, 0) node(node1a)[circ]{} to[capacitor, l_=C1, a^=\SI{1}{\micro\farad}] ++(0, -4) node(node2a)[circ]{} -- ++(-1, 0) node[ground, rotate=270]{};
 		\draw (node1a) -- ++(2, 0) node(node1b)[circ]{} -- ++(0, -4) node(node2b)[circ]{} -- (node2a);
-		\draw (node1b) -- ++(2, 0) node(node1c)[circ]{} to[capacitor, l_=C2, a^=\SI{1}{\farad}] ++(0, -4) node(node2c)[circ]{} -- (node2a);
-		\draw (node1c) -- ++(2, 0) node(node1d)[circ]{} to[resistor, l_=R1, a^=\SI{1}{\ohm}] ++(0, -2) to[capacitor, l_=C3, a^=\SI{1}{\farad}] ++(0, -2) node(node2d)[circ]{} -- (node2c);
-		\draw (node1d) -- ++(2, 0) node(node1e)[circ]{} to[ecapacitor, l_=C4, a^=\SI{1}{\farad}] ++(0, -4) node(node2e)[circ]{} -- (node2c);
+		\draw (node1b) -- ++(2, 0) node(node1c)[circ]{} to[capacitor, l_=C2, a^=\SI{1}{\micro\farad}] ++(0, -4) node(node2c)[circ]{} -- (node2a);
+		\draw (node1c) -- ++(2, 0) node(node1d)[circ]{} to[resistor, l_=R1, a^=\SI{100}{\ohm}] ++(0, -2) to[capacitor, l_=C3, a^=\SI{10}{\nano\farad}] ++(0, -2) node(node2d)[circ]{} -- (node2c);
+		\draw (node1d) -- ++(2, 0) node(node1e)[circ]{} to[ecapacitor, l_=C4, a^=\SI{22}{\micro\farad}] ++(0, -4) node(node2e)[circ]{} -- (node2c);
 		\draw (node1e) -- ++(1, 0) node[vcc, rotate=270, label={[label distance=6]:\SI{10}{\volt}}]{};
 		\draw (node2e) -- ++(1, 0) node[ground, rotate=90]{};
 		% TODO: use dipchip node and name IC ports
@@ -107,5 +131,10 @@ The capacitance multiplier is described in Ref.~\cite[p.~536]{Hobbs11} and Ref.~
 			\node at (0, 0) {REF5010};
 		\end{scope}
 	\end{circuitikz}
-	\caption{High-precision voltage reference.}
+	\caption{High-precision voltage reference.}\label{fig:voltage_reference}
 \end{figure}
+\Cref{fig:voltage_reference} depicts the schematic of the voltage reference circuit.
+Capacitor C1 buffers the \SI{15}{\volt} supply voltage.
+According to the datasheet the trim terminal should be connected through a capacitor, C2, to ground.
+Resistor R1 and capacitor C3 form a low-pass to suppress frequency components in the kHz range.
+Finally, capacitor C4 buffers the output voltage.
