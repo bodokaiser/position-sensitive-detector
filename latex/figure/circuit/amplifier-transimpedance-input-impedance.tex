@@ -1,0 +1,18 @@
+\documentclass{standalone}
+
+\ifstandalone
+	\usepackage{amsmath}
+	\usepackage{circuitikz}
+\fi
+
+
+\begin{document}
+  \begin{circuitikz}
+    \draw (0, 0) node[op amp](opamp){};
+    \draw (opamp.+) -- +(0, -1) node[ground](gnd1){};
+    \draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
+    \draw (opamp.-) node[circ]{} -- +(-3, 0) node(node1){} to[current source, invert, l=$I_\text{in}$] (node1 |- gnd1) node[ground]{};
+    \draw (opamp.-) node[circ]{} -- +(-1.5, 0) node(node1){} to[generic, invert, l=$Z_\text{in}$] (node1 |- gnd1) node[ground]{};
+    \draw (opamp.-) |- (-1, 2) to[generic, l=$Z_f$] (1,2) -| (opamp.out);
+  \end{circuitikz}
+\end{document}

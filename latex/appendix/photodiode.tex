@@ -17,39 +17,7 @@ The implanted ions have more or fewer electrons than the atoms of the semiconduc
 Therefore donating an electron or accepting an electron and effectively forming a hole as an absence of negative charge.
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}
-		\draw (1.5, 2.5) node {p-type};
-		\draw (5, 2.5) node {n-type};
-		\filldraw[draw=black, fill=gray] (0, 0) rectangle (3, 2);
-		\filldraw[draw=black, fill=gray!40] (3.5, 0) rectangle (6.5, 2);
-		\foreach \x in {1, ..., 4} {
-			\filldraw[fill=white] (0.25+0.5*\x, 0.4) circle (.1);
-			\filldraw[fill=white] (0.25+0.5*\x, 1.2) circle (.1);
-
-			\filldraw[fill=black] (3.75+0.5*\x, 0.8) circle (.1);
-			\filldraw[fill=black] (3.75+0.5*\x, 1.6) circle (.1);
-		}
-		\foreach \x in {1, ..., 5} {
-			\filldraw[fill=white] (0.5*\x, 0.8) circle (.1);
-			\filldraw[fill=white] (0.5*\x, 1.6) circle (.1);
-			
-			\filldraw[fill=black] (3.5+0.5*\x, 0.4) circle (.1);
-			\filldraw[fill=black] (3.5+0.5*\x, 1.2) circle (.1);
-		}
-		\foreach \x in {0, ..., 5} {
-			\draw (0.25+0.5*\x, -0.3) node[circle, draw=black, inner sep=0]{$-$};
-			\draw (3.75+0.5*\x, -0.3) node[circle, draw=black, inner sep=0]{$+$};
-		}
-		\draw[-latex] (-0.5, -5) -- (-0.5, -2) node[left]{$E$};
-		\draw[dotted, line width=1] (3.25, -2) -- (3.25, -5);
-		\filldraw[draw=black, fill=gray] (0, -2) rectangle +(3, -1) +(0, -1.8) node[left]{$\mu$} -- +(3, -1.8) ++(0, -2) rectangle +(3, -1);
-		\filldraw[draw=black, fill=gray!40] (3.5, -2) rectangle +(3, -1) +(0, -1.2) -- +(3, -1.2) node[right]{$\mu$} ++(0, -2) rectangle +(3, -1);
-		\draw (3.25, -1.6) node{conduction band} +(0, -3.8) node{valence band};
-		\foreach \x in {0, ..., 6} {
-			\filldraw[fill=white] (0.3+0.4*\x, -4.2) circle (.11);
-			\filldraw[fill=black] (3.8+0.4*\x, -2.8) circle (.09);
-		}
-	\end{tikzpicture}
+	\includestandalone[mode=buildnew]{figure/diagram/pn-junction-separated}
 	\caption{Separated p- and n-type semiconductor with holes (white) and electrons (black).}\label{fig:pn_junction_separated}
 \end{figure}
 The lower half of \Cref{fig:pn_junction_separated} shows the energy band structure of both p- and n-type semiconductor.
@@ -62,45 +30,7 @@ In the p-type semiconductor, acceptor ions can take up electrons from the conduc
 In the n-type semiconductor, donator ions contribute electrons to the conduction band, thereby increasing the chemical potential.
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}
-		\draw (1.5, 2.5) node {p-type};
-		\draw (5, 2.5) node {n-type};
-		\filldraw[draw=black, fill=gray] (0, 0) rectangle (3, 2);
-		\filldraw[draw=black, fill=gray!40] (3, 0) rectangle (6, 2);
-		\foreach \x in {1, ..., 4} {
-			\filldraw[fill=white] (0.25+0.5*\x, 0.4) circle (.1);
-			\filldraw[fill=white] (0.25+0.5*\x, 1.2) circle (.1);
-
-			\filldraw[fill=black] (3.75+0.5*\x, 0.8) circle (.09);
-			\filldraw[fill=black] (3.75+0.5*\x, 1.6) circle (.09);
-		}
-		\foreach \x in {1, ..., 4} {
-			\filldraw[fill=white] (0.5*\x, 0.8) circle (.1);
-			\filldraw[fill=white] (0.5*\x, 1.6) circle (.1);
-			
-			\filldraw[fill=black] (3.5+0.5*\x, 0.4) circle (.09);
-			\filldraw[fill=black] (3.5+0.5*\x, 1.2) circle (.09);
-		}
-		\foreach \x in {0, ..., 5} {
-			\draw (0.25+0.5*\x, -0.3) node[circle, draw=black, inner sep=0]{$-$};
-			\draw (3.25+0.5*\x, -0.3) node[circle, draw=black, inner sep=0]{$+$};
-		}
-		\draw[dashed, line width=.8] (2.5, -.5) -- +(0, 2.5) +(1, 0) -- +(1, 2.5) +(0.5, -0.3) node{depletion region};
-
-		\draw[-latex] (-0.5, -5) -- (-0.5, -2) node[left]{$E$};
-		\filldraw[draw=black, fill=gray] (0, -2) rectangle +(3, -1) +(0, -1.8) node[left]{$\mu$} -- +(2.5, -1.8) ++(0, -2) rectangle +(3, -1);
-		\filldraw[draw=black, fill=gray!40] (3, -2) rectangle +(3, -1) +(0.5, -1.2) -- +(3, -1.2) node[right]{$\mu$} ++(0, -2) rectangle +(3, -1);
-		\draw[dashed, line width=.8] (2.5, -5) -- +(0, 3) +(1, 0) -- +(1, 3) +(0.5, -0.3);
-		\draw (3, -1.6) node{conduction band} +(0, -3.8) node{valence band};
-		\foreach \x in {0, ..., 5} {
-			\filldraw[fill=white] (0.3+0.4*\x, -4.2) circle (.10);
-			\filldraw[fill=black] (3.7+0.4*\x, -2.8) circle (.09);
-		}
-		
-		\draw[-latex] (-0.5, -8) -- (-0.5, -6) node[left]{$-e\phi$};
-		\draw (0, -6.5) -- ++(2.5, 0) -- ++(1, -1) -- ++(2.5, 0);
-		\draw (3, -8) node{electrostatic potential};
-	\end{tikzpicture}
+	\includestandalone[mode=buildnew]{figure/diagram/pn-junction-combined}
 	\caption{Combined p- and n-type semiconductor with holes (white) and electrons (black).}\label{fig:pn_junction_combined}
 \end{figure}
 In \Cref{fig:pn_junction_combined} the p- and n-type semiconductor are brought into contact with each other, forming a p-n junction.
@@ -110,27 +40,7 @@ We refer to this area as the depletion region.
 In \Cref{fig:pn_junction_combined} the depletion region expands between the dashed lines around the junction.
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}
-		\draw (1.25, 3.6) node {p-type};
-		\draw (4.75, 3.0) node {n-type};
-		\draw[-latex] (-0.5, -0.5) -- (-0.5, 3.5) node[left]{$E-e\phi$};
-		\filldraw[draw=black, fill=gray] (0, 3.3) rectangle +(2.5, -1) +(0, -1.8) node[left]{$\mu$} -- +(2.5, -1.8) ++(0, -2) rectangle +(2.5, -1);
-		\filldraw[draw=black, fill=gray!40] (3.5, 2.7) rectangle +(2.5, -1) +(0, -1.2) -- +(2.5, -1.2) node[right]{$\mu$} ++(0, -2) rectangle +(2.5, -1);
-		\filldraw[draw=black, fill=gray!70] (2.5, 3.3) -- ++(1, -.6) -- ++(0, -1) -- ++(-1, .6) -- ++(0, 1);
-		\filldraw[draw=black, fill=gray!70] (2.5, 1.3) -- ++(1, -.6) -- ++(0, -1) -- ++(-1, .6) -- ++(0, 1);
-		\draw[-latex] (4.5, 0.7) -- ++(0, 0.8);
-		\draw (4.5, 1.05) node[right]{$E_\text{gap}$};
-		\foreach \x in {0, ..., 5} {
-			\filldraw[fill=white] (0.25+0.4*\x, 1.1) circle (.10);
-			\filldraw[fill=white] (3.75+0.4*\x, 0.5) circle (.10);
-			\filldraw[fill=black] (3.75+0.4*\x, 1.9) circle (.09);
-			\filldraw[fill=black] (0.25+0.4*\x, 2.5) circle (.09);
-		};
-		\filldraw[fill=white] (2.8, 0.9) circle (.10);
-		\filldraw[fill=white] (3.2, 0.65) circle (.10);
-		\filldraw[fill=black] (2.8, 2.3) circle (.09);
-		\filldraw[fill=black] (3.2, 2.1) circle (.09);
-	\end{tikzpicture}
+	\includestandalone[mode=buildnew]{figure/diagram/pn-junction-energy}
 	\caption{Energy bands of the p-n junction.}\label{fig:pn_junction}
 \end{figure}
 The energy band diagram in \Cref{fig:pn_junction} accounts for the shift in energy due to the electrostatic potential.
@@ -142,25 +52,7 @@ If one applies a reverse bias voltage across the p-n junction, the effective ene
 The situation of an applied reverse voltage is depicted in \Cref{fig:pn_junction_reverse}.
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}
-		\draw (1, 3.6) node {p-type};
-		\draw (5, 2.2) node {n-type};
-		\draw[-latex] (-0.5, -1) -- (-0.5, 3.8) node[left]{$E-e\phi$};
-		\filldraw[draw=black, fill=gray] (0, 3.3) rectangle +(2, -1) +(0, -1.5) node[left]{$\mu$} -- +(2, -1.5) ++(0, -1.6) rectangle +(2, -1);
-		\filldraw[draw=black, fill=gray!40] (4, 1.9) rectangle +(2, -1) +(0, -1.1) -- +(2, -1.1) node[right]{$\mu-eV$} ++(0, -1.6) rectangle +(2, -1);
-		\filldraw[draw=black, fill=gray!70] (2, 3.3) -- ++(2, -1.4) -- ++(0, -1) -- ++(-2, 1.4) -- ++(0, 1);
-		\filldraw[draw=black, fill=gray!70] (2, 1.7) -- ++(2, -1.4) -- ++(0, -1) -- ++(-2, 1.4) -- ++(0, 1);
-		\draw[-latex] (4.2, 0.3) -- ++(0, 0.5);
-		\draw (4.2, 0.5) node[right]{$E_\text{gap}-eV$};
-		\foreach \x in {0, ..., 4} {
-			\filldraw[fill=white] (0.2+0.4*\x, 1.5) circle (.10);
-			\filldraw[fill=white] (2.2+0.4*\x, 1.3-0.275*\x) circle (.10);
-			\filldraw[fill=white] (4.2+0.4*\x, 0.1) circle (.10);
-			\filldraw[fill=black] (4.2+0.4*\x, 1.1) circle (.09);
-			\filldraw[fill=black] (2.2+0.4*\x, 2.4-0.275*\x) circle (.09);
-			\filldraw[fill=black] (0.2+0.4*\x, 2.5) circle (.09);
-		};
-	\end{tikzpicture}
+	\includestandalone[mode=buildnew]{figure/diagram/pn-junction-energy-reverse}
 	\caption{Energy band diagram of a reverse biased p-n junction.}\label{fig:pn_junction_reverse}
 \end{figure}
 The current-voltage characteristic of the p-n junction is described by the Schockley diode equation,
@@ -177,15 +69,7 @@ which discloses the two effects contributing to the diode current.
 The left-hand side of the proportionality of \Cref{eq:diode_current_prop} represents the current contribution due intra-band excitation of charge carriers, whereas the right-hand side represents the current contribution due to inter-band excitation.
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}
-		\begin{axis}[xmin=-5, xmax=5, xticklabels=\empty, xlabel=$V$, ymin=-5, ymax=5, ylabel=$I$, yticklabels=\empty, axis lines=middle]
-			\addplot[domain=-5:2, samples=100]{exp(x)-1-1/(x+5.4)^6};
-			\addplot[domain=-5:2, samples=100]{exp(x)-1-1/(x+5.4)^6-0.5};
-			\addplot[domain=-5:2, samples=100]{exp(x)-1-1/(x+5.4)^6-1};
-		\end{axis}
-		\draw (-0.2, 2.3) node[left]{$I_\text{sat}$} -- +(1.4, 0);
-		\draw (-0.2, 1.72) node[left]{$I_\text{sat}-I_\text{photo}$} -- +(1.3, 0);
-	\end{tikzpicture}
+	\includestandalone[mode=buildnew]{figure/plot/diode-current-voltage}
 	\caption{Current-voltage characteristics of a p-n junction with different levels of illumination.}\label{fig:pn_junction_iv}
 \end{figure}
 In \Cref{fig:pn_junction_iv} we see the current-voltage characteristics of the p-n junction under different levels of illumination.
@@ -205,30 +89,7 @@ For silicon-based p-n junctions, the responsitivity $R(\lambda)$ is between \SI{
 
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}
-		\draw (1, 3.6) node {p-type};
-		\draw (5, 2.2) node {n-type};
-		\draw[-latex] (-0.5, -1) -- (-0.5, 3.8) node[left]{$E-e\phi$};
-		\filldraw[draw=black, fill=gray] (0, 3.3) rectangle +(2, -1) +(0, -1.5) node[left]{$\mu$} -- +(2, -1.5) ++(0, -1.6) rectangle +(2, -1);
-		\filldraw[draw=black, fill=gray!40] (4, 1.9) rectangle +(2, -1) +(0, -1.1) -- +(2, -1.1) node[right]{$\mu-eV$} ++(0, -1.6) rectangle +(2, -1);
-		\filldraw[draw=black, fill=gray!70] (2, 3.3) -- ++(2, -1.4) -- ++(0, -1) -- ++(-2, 1.4) -- ++(0, 1);
-		\filldraw[draw=black, fill=gray!70] (2, 1.7) -- ++(2, -1.4) -- ++(0, -1) -- ++(-2, 1.4) -- ++(0, 1);
-		\draw[-latex] (4.2, 0.3) -- ++(0, 0.5);
-		\draw (4.2, 0.5) node[right]{$E_\text{gap}-eV$};
-		\foreach \x in {0, ..., 4} {
-			\filldraw[fill=white] (0.2+0.4*\x, 1.5) circle (.10);
-			\filldraw[fill=white] (2.2+0.4*\x, 1.3-0.275*\x) circle (.10);
-			\filldraw[fill=white] (4.2+0.4*\x, 0.1) circle (.10);
-			\filldraw[fill=black] (4.2+0.4*\x, 1.1) circle (.09);
-			\filldraw[fill=black] (2.2+0.4*\x, 2.4-0.275*\x) circle (.09);
-			\filldraw[fill=black] (0.2+0.4*\x, 2.5) circle (.09);
-		};
-		\filldraw[fill=white] (3.0, 1.85) circle (.10);
-		\filldraw[fill=black] (3.0, 0.75) circle (.10);
-		\draw[-latex] (3.0, 1.1) -- +(0, 0.4);
-		\draw[-latex] (3.2, 1.85) -- +(0.4, 0);
-		\draw[-latex] (2.8, 0.74) -- +(-0.4, 0);
-	\end{tikzpicture}
+	\includestandalone[mode=buildnew]{figure/diagram/pn-junction-energy-illumination}
 	\caption{Energy diagram of a reverse biased p-n junction under illumination.}\label{fig:pn_junction_illumination}
 \end{figure}
 \Cref{fig:pn_junction_illumination} shows a p-n junction under reverse bias where a photon excites an electron-hole pair in the depletion region.
@@ -242,15 +103,7 @@ In addition to the transversal photoeffect, the lateral photoeffect was first di
 In the present section, we summarize important results from Ref.~\cite{Noorlag74} and Ref.~\cite{Woltring75} with focus on the tetralateral photodiode which is the most common commercially available design.
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}
-		\filldraw[fill=gray] (0, 1.5) rectangle +(6, 0.5) node[below right]{p-type};
-		\filldraw[fill=gray!40] (0, 0.5) rectangle +(6, 1) node[below right]{n-type};
-		\filldraw[fill=gray!10] (0, 0) rectangle +(6, 0.5) node[below right]{resistive};
-		\filldraw[fill=black] (5, 2) rectangle ++(0.5, 0.2) +(-0.25, 0) node[above]{bias};
-		\draw [->, thick, decorate, decoration={snake, amplitude=3, segment length=4, post length=3}] (3, 3) node[above]{photon} -- +(0, -1);
-		\filldraw[fill=black] (0.5, 0) rectangle ++(0.5, -0.2) +(-0.25, 0) node[below]{X1};
-		\filldraw[fill=black] (5, 0) rectangle ++(0.5, -0.2) +(-0.25, 0) node[below]{X2};
-	\end{tikzpicture}
+	\includestandalone[mode=buildnew]{figure/diagram/pn-junction-lateral-cross-section}
 	\caption{Cross section of a lateral photodiode.}\label{fig:lateral_photodiode_cross_section}
 \end{figure}
 \Cref{fig:lateral_photodiode_cross_section} depicts the cross-section of a lateral photodiode with a p-type semiconductor as the top, an n-type semiconductor as the middle layer and a resistive material as the bottom layer.
@@ -287,26 +140,7 @@ The solution of \Cref{eq:lucovsky_reverse_bias} depends on the imposed boundary 
 The Dirichlet boundary condition, $V=0$, should be used if an electrical contact terminates the semiconductor, otherwise, the Neumann boundary condition, $\pdv{V}{n}=0$, should be assumed.
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}
-		\filldraw[fill=white] (0, 0) rectangle +(3, 3);
-		\filldraw[fill=white] (4, 0) rectangle +(3, 3);
-		\filldraw[fill=white] (8, 0) rectangle +(3, 3);
-		\filldraw (1.5, 0.2) circle (.1);
-		\filldraw (1.5, 2.8) circle (.1);
-		\filldraw (0.2, 1.5) circle (.1);
-		\filldraw (2.8, 1.5) circle (.1);
-		\filldraw (4.4, 0.1) rectangle (6.6, 0.3);
-		\filldraw (4.4, 2.7) rectangle (6.6, 2.9);
-		\filldraw[fill=black!50] (4.1, 0.4) rectangle (4.3, 2.6);
-		\filldraw[fill=black!50] (6.7, 0.4) rectangle (6.9, 2.6);
-		\filldraw (8.4, 0.1) rectangle (10.6, 0.3);
-		\filldraw (8.4, 2.7) rectangle (10.6, 2.9);
-		\filldraw (8.1, 0.4) rectangle (8.3, 2.6);
-		\filldraw (10.7, 0.4) rectangle (10.9, 2.6);
-		\draw (1.5, 3.1) node[above]{Wallmark};
-		\draw (5.5, 3.1) node[above]{Duolateral};
-		\draw (9.5, 3.1) node[above]{Tetralateral};
-	\end{tikzpicture}
+	\includestandalone[mode=buildnew]{figure/diagram/pn-junction-lateral-contacts}
 	\caption{Contact configurations of a lateral photodiode.}\label{fig:lateral_photodiode_contacts}
 \end{figure}
 In \Cref{fig:lateral_photodiode_contacts} we present three different contact configurations.
@@ -377,20 +211,7 @@ The first current source $I_p$ represents the generated photocurrent with typica
 The second current source $I_d$ represents the generated leakage or dark current with typical values between \si{\pico\ampere} and \si{\nano\ampere}.
 \begin{figure}[H]
 	\centering
-	\begin{circuitikz}
-		\draw (-3, -2) to[current source, l=$I_p$] ++(0, 4);
-		\draw (-1, -2) node[circ]{} to[current source, l=$I_d$] ++(0, 4) node[circ]{};
-		\draw (1, -2) node[circ]{} to[resistor, l=$R_d$] ++(0, 4) node[circ]{};
-		\draw (3, -2) to[capacitor, l=$C_d$] ++(0, 4);
-		\draw (-3, -2) -- ++(6, 0);
-		\draw (-3, 2) -- ++(6, 0);
-		\draw (0, -2) -- ++(0, -1) node[ocirc, label=$V_b$, rotate=180]{};
-		\draw (0, 2) -- ++(0, 3) node(node)[circ]{};
-		\draw (node) to[resistor, label=$R_1$] ++(2, 2) node[ocirc, label=Y1, rotate=-10]{};
-		\draw (node) to[resistor, label=$R_2$] ++(-2, 2) node[ocirc, label=X1, rotate=10]{};
-		\draw (node) to[resistor, label=$R_3$] ++(2, -2) node[ocirc, label=X2, rotate=-150]{};
-		\draw (node) to[resistor, label=$R_4$] ++(-2, -2) node[ocirc, label=Y2, rotate=150]{};
-	\end{circuitikz}
+	\includestandalone[mode=buildnew]{figure/circuit/photodiode-tetralateral}
 	\caption{Equivalent circuit of a tetralateral photodiode.}\label{fig:tetralateral_photodiode_equivalent}
 \end{figure}
 The resistance $R_d$ is referred to as interelectrode resistance and is about \SI{10}{\kilo\ohm}.

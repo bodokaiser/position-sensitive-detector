@@ -8,11 +8,7 @@ The purpose of the supply filter is to filter out noise from the power supply an
 A simple embodiment of a supply filter is that of an RC low-pass filter as illustrated in \Cref{fig:filter_lowpass}.
 \begin{figure}[H]
 	\centering
-	\begin{circuitikz}
-		\draw (0, 0) node[ocirc, label=$V_\text{in}$]{} to[resistor, label=$R$] ++(4, 0) node(node)[circ]{};
-		\draw (node) -- ++(2, 0) node[ocirc, label=$V_\text{out}$]{};
-		\draw (node) to[capacitor, label=$C$] ++(0, -2) node[ground]{};
-	\end{circuitikz}
+	\includestandalone[mode=buildnew]{figure/circuit/low-pass-rc}
 	\caption{Passive low-pass filter using an RC circuit.}\label{fig:filter_lowpass}
 \end{figure}
 In \Cref{fig:filter_lowpass} the input voltage is connected through a resistor $R$ with the output voltage.
@@ -37,11 +33,7 @@ has a pole at frequency,
 The frequency response of an RC low-pass with pole frequency $f_{RC}=\SI{100}{\hertz}$ is visualized in \Cref{fig:bode_filter_rc}.
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}
-		\begin{semilogxaxis}[xmin=1, xmax=1e6, xlabel=Frequency (Hz), ymin=-100, ymax=10, ylabel=Gain (dB), ytick={0, -20, -40, -60, -80}, grid=minor]
-			\addplot[domain=1:1e9]{-10*log10(1+(x/100)^2)};
-		\end{semilogxaxis}
-	\end{tikzpicture}
+	\includestandalone[mode=buildnew]{figure/plot/bode-low-pass-rc}
 	\caption{Bode plot of the frequency response of an RC low-pass at \SI{100}{\hertz}.}\label{fig:bode_filter_rc}
 \end{figure}
 We can see how the frequency response suppresses frequency above \SI{100}{\hertz}.
@@ -75,33 +67,7 @@ Moreover, we found the range of negative voltage regulators to be rather limited
 % TODO: working principle (how does R1, R2 on the adjustable terminal change the output voltage?)
 \begin{figure}[H]
 	\centering
-	\begin{circuitikz}
-		\draw (0, 0) node[vcc, rotate=90, label={[label distance=6]:\SI[retain-explicit-plus]{+15}{\volt}}]{} -- ++(1, 0) node(node1a)[circ]{} -- ++(4, 0) node(node1b)[circ]{} -- ++(0, 2) to[diode, l_=D1] ++(-4, 0) -- ++(0, -2);
-		\draw (node1b) to[resistor, l_=R1, a^=\SI{120}{\ohm}] ++(0, -2) node(node2a)[circ]{} -- ++(-2, 0) -- ++(0, 2);
-		\draw (node2a) -- ++(3, 0) node(node2b)[circ]{} to[diode, l=D3] ++(0, 2) node(node1c)[circ]{} -- ++(-3 ,0);
-		\draw (node1c) -- ++(2, 0) node(node1d)[circ]{} to[ecapacitor, l_=C5, a^=\SI{1}{\micro\farad}] ++(0, -4) node(node3d)[circ]{} -- ++(-2, 0) node(node3c)[circ]{} -- ++(-3, 0) node(node3b)[circ]{} to[resistor, l^=R2, a_=\SI{980}{\ohm}] ++(0, 2);
-		\draw (node2b) to[ecapacitor, l_=C3, a^=\SI{10}{\micro\farad}] (node3c);
-		\draw (node1d) -- ++(1, 0) node[vcc, rotate=270, label={[label distance=6]:\SI[retain-explicit-plus]{+12}{\volt}}]{};
-		\begin{scope}[xshift=3cm]
-			\node[draw, rectangle, fill=white, minimum width=2cm, minimum height=1.2cm, label=U1]{};
-			\node at (0, 0) {LM317};
-		\end{scope}
-		\draw (node3d) -- ++(1, 0) node[ground, rotate=90]{};
-		\draw (node3b) -- ++(-5, 0) node[ground, rotate=270]{};
-		\draw (node1a) to[ecapacitor, l_=C1, a^=\SI{100}{\nano\farad}] ++(0, -4) node(node3a)[circ]{};
-		\draw (node3a) to[ecapacitor, l_=C2, a^=\SI{100}{\nano\farad}] ++(0, -4) node(node5a)[circ]{};
-		\draw (node5a) -- ++(-1, 0) node[vee, rotate=270, label={[label distance=6]:\SI{-15}{\volt}}]{};
-		\draw (node3b) to[resistor, l_=R3, a^=\SI{980}{\ohm}] ++(0, -2) node(node4b)[circ]{} to[resistor, l_=R4, a^=\SI{120}{\ohm}] ++(0, -2) node(node5b)[circ]{} -- (node5a);
-		\draw (node3c) to[ecapacitor, l_=C4, a^=\SI{10}{\micro\farad}] ++(0, -2) node(node4c)[circ]{} to[diode, l_=D4] ++(0, -2) node(node5c)[circ]{} -- (node5b);
-		\draw (node3d) to[ecapacitor, l_=C6, a^=\SI{1}{\micro\farad}] ++(0, -4) node(node5d)[circ]{} -- (node5c);
-		\draw (node5d) -- ++(1, 0) node[vee, rotate=90, label={[label distance=6]:\SI{-12}{\volt}}]{};
-		\draw (node5a) ++(2, 0) -- ++(0, 2) -- (node4b) -- (node4c);
-		\begin{scope}[xshift=3cm, yshift=-8cm]
-			\node[draw, rectangle, fill=white, minimum width=2cm, minimum height=1.2cm, label=below:U2]{};
-			\node at (0, 0) {LM337};
-		\end{scope}
-		\draw (node5b) -- ++(0, -2) to[diode, l^=D2] ++(-4, 0) -- ++(0, 2);
-	\end{circuitikz}
+	\includestandalone[mode=buildnew]{figure/circuit/voltage-regulator}
 	\caption{Dual supply voltage regulator.}\label{fig:voltage_regulator_dual}
 \end{figure}
 \Cref{fig:voltage_regulator_dual} illustrates the schematic of the final dual voltage regulator supply circuit.
@@ -119,20 +85,7 @@ A voltage reference is a high-precision linear (fixed) voltage regulator.
 We use it as a voltage source for the sensible reverse bias voltage of the photodiode.
 \begin{figure}[H]
 	\centering
-	\begin{circuitikz}
-		\draw (0, 0) node[vcc, rotate=90, label={[label distance=6]:\SI{15}{\volt}}]{} -- ++(1, 0) node(node1a)[circ]{} to[capacitor, l_=C1, a^=\SI{1}{\micro\farad}] ++(0, -4) node(node2a)[circ]{} -- ++(-1, 0) node[ground, rotate=270]{};
-		\draw (node1a) -- ++(2, 0) node(node1b)[circ]{} -- ++(0, -4) node(node2b)[circ]{} -- (node2a);
-		\draw (node1b) -- ++(2, 0) node(node1c)[circ]{} to[capacitor, l_=C2, a^=\SI{1}{\micro\farad}] ++(0, -4) node(node2c)[circ]{} -- (node2a);
-		\draw (node1c) -- ++(2, 0) node(node1d)[circ]{} to[resistor, l_=R1, a^=\SI{100}{\ohm}] ++(0, -2) to[capacitor, l_=C3, a^=\SI{10}{\nano\farad}] ++(0, -2) node(node2d)[circ]{} -- (node2c);
-		\draw (node1d) -- ++(2, 0) node(node1e)[circ]{} to[ecapacitor, l_=C4, a^=\SI{22}{\micro\farad}] ++(0, -4) node(node2e)[circ]{} -- (node2c);
-		\draw (node1e) -- ++(1, 0) node[vcc, rotate=270, label={[label distance=6]:\SI{10}{\volt}}]{};
-		\draw (node2e) -- ++(1, 0) node[ground, rotate=90]{};
-		% TODO: use dipchip node and name IC ports
-		\begin{scope}[xshift=4cm]
-			\node[draw, rectangle, fill=white, minimum width=3cm, minimum height=1.4cm, label=above:U1]{};
-			\node at (0, 0) {REF5010};
-		\end{scope}
-	\end{circuitikz}
+	\includestandalone[mode=buildnew]{figure/circuit/voltage-reference}
 	\caption{High-precision voltage reference.}\label{fig:voltage_reference}
 \end{figure}
 \Cref{fig:voltage_reference} depicts the schematic of the voltage reference circuit.

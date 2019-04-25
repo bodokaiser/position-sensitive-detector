@@ -1,0 +1,15 @@
+\documentclass{standalone}
+
+\ifstandalone
+	\usepackage{amsmath}
+	\usepackage{circuitikz}
+\fi
+
+
+\begin{document}
+  \begin{circuitikz}
+    \draw (0, 0) node[ocirc, label=$V_\text{in}$]{} to[resistor, label=$R$] ++(4, 0) node(node)[circ]{};
+    \draw (node) -- ++(2, 0) node[ocirc, label=$V_\text{out}$]{};
+    \draw (node) to[capacitor, label=$C$] ++(0, -2) node[ground]{};
+  \end{circuitikz}
+\end{document}

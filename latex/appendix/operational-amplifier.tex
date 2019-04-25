@@ -20,13 +20,7 @@ The non-inverting input of the operational amplifier is connected to ground.
 The inverting input is coupled with the output of the operational amplifier via a feedback impedance $Z_f$.
 \begin{figure}[H]
 	\centering
-	\begin{circuitikz}
-		\draw (0, 0) node[op amp](opamp){};
-		\draw (opamp.+) -- +(0, -1) node[ground](gnd1){};
-		\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
-		\draw (opamp.-) node[circ]{} -- +(-2, 0) node(node1){} to[current source, invert, l=$I_\text{in}$] (node1 |- gnd1) node[ground]{};
-		\draw (opamp.-) |- (-1, 2) to[generic, l=$Z_f$] (1,2) -| (opamp.out);
-	\end{circuitikz}
+	\includestandalone[mode=buildnew]{figure/circuit/amplifier-transimpedance-basic}
 	\caption{Basic transimpedance amplifier using voltage feedback operational amplifier.}\label{fig:basic_transimpedance}
 \end{figure}
 The ideal operation amplifier has zero input current, thus, in the node of the inverting input of the operational amplifier Kirchhoff's law states that the current going through the feedback impedance has to cancel the current of the current source $I_\text{in}$.
@@ -44,25 +38,12 @@ By using the source transformation on the current source with a parallel impedan
 \begin{figure}[H]
 	\begin{subfigure}[t]{.5\textwidth}
 		\centering
-		\begin{circuitikz}
-			\draw (0, 0) node[op amp](opamp){};
-			\draw (opamp.+) -- +(0, -1) node[ground](gnd1){};
-			\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
-			\draw (opamp.-) node[circ]{} -- +(-3, 0) node(node1){} to[current source, invert, l=$I_\text{in}$] (node1 |- gnd1) node[ground]{};
-			\draw (opamp.-) node[circ]{} -- +(-1.5, 0) node(node1){} to[generic, invert, l=$Z_\text{in}$] (node1 |- gnd1) node[ground]{};
-			\draw (opamp.-) |- (-1, 2) to[generic, l=$Z_f$] (1,2) -| (opamp.out);
-		\end{circuitikz}
+		\includestandalone[mode=buildnew]{figure/circuit/amplifier-transimpedance-input-impedance}
 		\caption{Transimpedance amplifier.}
 	\end{subfigure}
 	\begin{subfigure}[t]{.5\textwidth}
 		\centering
-		\begin{circuitikz}
-			\draw (0, 0) node[op amp](opamp){};
-			\draw (opamp.+) -- +(0, -1) node[ground](gnd1){};
-			\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
-			\draw (opamp.-) node[circ]{} to[generic, invert, l_=$Z_\text{in}$] +(-3, 0) node(node1){} to[voltage source, l=$V_\text{in}{=}Z_\text{in}I_\text{in}$] (node1 |- gnd1) node[ground]{};
-			\draw (opamp.-) |- (-1, 2) to[generic, l=$Z_f$] (1,2) -| (opamp.out);
-		\end{circuitikz}
+		\includestandalone[mode=buildnew]{figure/circuit/amplifier-inverting-input-impedance}
 		\caption{Inverting amplifier.}
 	\end{subfigure}
 	\caption{Equivalence between transimpedance and inverting amplifier using source transformation.}\label{fig:equivalence_transimpedance_inverting}
@@ -78,13 +59,7 @@ We can model the input offset voltage as a voltage source at the non-inverting i
 In \Cref{fig:input_offset_voltage_transimpedance} we amended the basic transimpedance circuit of \Cref{fig:basic_transimpedance} by inserting a voltage source with the input offset voltage between the non-inverting input and ground.
 \begin{figure}[H]
 	\centering
-	\begin{circuitikz}
-		\draw (0, 0) node[op amp](opamp){};
-		\draw (opamp.-) |- (-1, 2) to[generic, l=$Z_f$] (1,2) -| (opamp.out);
-		\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
-		\draw (opamp.+) -- ++(0, -.5) node(node1){} to[voltage source, l=$V_\text{offset}$] ++(0, -2) node[ground](gnd1){};
-		\draw (opamp.-) node[circ]{} -- +(-2, 0) node(node2){} -- (node2 |- node1) to[current source, invert, l=$I_\text{in}$] (node2 |- gnd1) node[ground]{};
-	\end{circuitikz}
+	\includestandalone[mode=buildnew]{figure/circuit/amplifier-transimpedance-input-offset-voltage}
 	\caption{Input offset voltage in the transimpedance amplifier.}\label{fig:input_offset_voltage_transimpedance}
 \end{figure}
 In order to estimate the output offset $V_\text{out}$ caused by the input offset voltage $V_\text{offset}$ we adapt the picture of the inverting amplifier.
@@ -92,13 +67,7 @@ In order to estimate the output offset $V_\text{out}$ caused by the input offset
 According to the superposition theorem, we can replace the input voltage source with a short circuit to estimate the contribution of the input offset voltage source.
 \begin{figure}[H]
 	\centering
-	\begin{circuitikz}
-		\draw (0, 0) node[op amp](opamp){};
-		\draw (opamp.-) |- (-1, 2) to[generic, l=$Z_f$] (1,2) -| (opamp.out);
-		\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
-		\draw (opamp.+) -- ++(0, -.5) node(node1){} to[voltage source, l=$V_\text{offset}$] ++(0, -2) node[ground](gnd1){};
-		\draw (opamp.-) node[circ]{} -- +(-2, 0) node(node2){} -- (node2 |- node1) to[generic, l=$Z_\text{in}$] (node2 |- gnd1) node[ground]{};
-	\end{circuitikz}
+	\includestandalone[mode=buildnew]{figure/circuit/amplifier-inverting-input-offset-voltage}
 	\caption{Input offset voltage in the inverting amplifier.}\label{fig:input_offset_voltage_inverting}
 \end{figure}
 From \Cref{fig:input_offset_voltage_inverting} we identify input and feedback impedance as a voltage divider in which the input and output nodes are exchanged.
@@ -120,12 +89,7 @@ The node is connected with a second resistor R2 and an optional bypass capacitor
 Finally, the equivalent input offset voltage source connects the node with the non-inverting input of the operational amplifier.
 \begin{figure}[H]
 	\centering
-	\begin{circuitikz}
-		\draw (0, 3) node[ocirc, label=$+V_\text{supply}$]{} to[potentiometer, n=poti, l_=$R_p$] ++(0, -3) node[ocirc, label=$-V_\text{supply}$, rotate=180]{};
-		\draw (poti.wiper) to[resistor, l=$R_1$] ++(2, 0) node(node1)[circ]{} to[resistor, l=$R_2$] ++(0, -2) node(gnd)[ground]{};
-		\draw (node1) to[voltage source, l_=$V_\text{offset}$, invert] ++(0, 2) node[ocirc, label=$V_+$]{};
-		\draw (node1) -- ++(2, 0) to[capacitor, l=$C_1$] ++(0, -2) node[ground]{};
-	\end{circuitikz}
+	\includestandalone[mode=buildnew]{figure/circuit/offset-compensation}
 	\caption{Input offset voltage compensation using adjustable potentiometer.}\label{fig:input_offset_voltage_compensation}
 \end{figure}
 Let $0\leq x\geq1$ be the position of the potentiometer.
@@ -159,13 +123,7 @@ This second effect stems from the small amount of current that is drawn from the
 We highlighted the input currents in \Cref{fig:input_bias_current} where they are represented by the current flows $i_+$ and $i_-$ directly pointing into the inputs of the operational amplifier in the transimpedance circuit.
 \begin{figure}[H]
 	\centering
-	\begin{circuitikz}
-		\draw (0, 0) node[op amp](opamp){};
-		\draw (opamp.out) -- +(0.5, 0) node(node1)[circ]{} -- ++(1.5, 0) node[ocirc, label=$V_\text{out}$]{};
-		\draw (opamp.-) to[short, i<_=$i_-$] ++(-1, 0) node(node1a)[circ]{} |- (-1.5, 2) to[generic, l=$Z_f$] (1.5, 2) -| (node1);
-		\draw (opamp.+) to[short, i<_=$i_+$] ++(-1, 0) node(node1b){} -- ++(0, -1) node(gnd)[ground]{};
-		\draw (node1a) -- ++(-1.5, 0) node(node2a){} to[current source, invert, l=$I_\text{in}$] (node2a |- gnd) node[ground]{};
-	\end{circuitikz}
+	\includestandalone[mode=buildnew]{figure/circuit/amplifier-transimpedance-input-bias-current}
 	\caption{Input bias current offset in the transimpedance amplifier.}\label{fig:input_bias_current}
 \end{figure}
 Input bias currents for high-precision operational amplifier are in the range of picoamperes.
@@ -182,13 +140,7 @@ According to Ref.~\cite[p.~57]{Jung05} and Ref.~\cite[p.~25]{Graeme96} the effec
 \Cref{fig:input_bias_current_compensation} illustrates the inverting amplifier configuration with such a compensation impedance $Z_c$.
 \begin{figure}[H]
 	\centering
-	\begin{circuitikz}
-		\draw (0, 0) node[op amp](opamp){};
-		\draw (opamp.out) -- +(0.5, 0) node(node1)[circ]{} -- ++(1.5, 0) node[ocirc, label=$V_\text{out}$]{};
-		\draw (opamp.-) to[short, i<_=$i_-$] ++(-1, 0) node(node1a)[circ]{} |- (-1.5, 2) to[generic, l=$Z_f$] (1.5, 2) -| (node1);
-		\draw (opamp.+) to[short, i<_=$i_+$] ++(-1, 0) node(node1b){} to[generic, l=$Z_c$] ++(0, -2) node(gnd)[ground]{};
-		\draw (node1a) -- ++(-1.5, 0) node(node2a){} -- (node1b -| node2a) to[generic, l=$Z_\text{in}$] (node2a |- gnd) node[ground]{};
-	\end{circuitikz}
+	\includestandalone[mode=buildnew]{figure/circuit/amplifier-inverting-input-current-compensation}
 	\caption{Input current offset compensation.}\label{fig:input_bias_current_compensation}
 \end{figure}
 Following the argumentation from Ref.~\cite[p.~383]{Terrel96}, the input bias current at the inverting input of the operational amplifier $i_-$ develops a voltage of $Z_fi_-$ over the feedback impedance $Z_f$.
@@ -221,20 +173,7 @@ By artificially limiting the bandwidth with an additional frequency pole, we can
 The noise gain separates into a compensated (solid) and uncompensated (dotted) branch.
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[scale=1.2, transform shape]
-		\begin{semilogxaxis}[xmin=1, xmax=1e9, xlabel=Frequency (Hz), ymin=0, ymax=140, ylabel=Gain (dB), ytick={0, 20, 40, 60, 80, 100, 120, 140}, grid=minor]
-			\addplot[domain=1:1e2]{120};
-			\addplot[domain=1e2:1e9]{160-20*log10(x)};
-			\addplot[domain=1:1e4, color=red]{40};
-			\addplot[domain=1e4:1e5, color=red]{-40+20*log10(x)};
-			\addplot[domain=1e5:1e9, color=red]{60};
-			\addplot[domain=1e5:1e9, dashed, color=red]{-40+20*log10(x)};
-		\end{semilogxaxis}
-		\node[label={AOL}] at (.8, 4.1) {};
-		\node[label={[red]$1/\beta$}] at (.8, .7) {};
-		\node[label={[red]compensated}] at (5.5, 1.7) {};
-		\node[label={[red]uncompensated}] at (4.2, 4) {};
-	\end{tikzpicture}
+	\includestandalone[mode=buildnew]{figure/plot/bode-operational-amplifier}
 	\caption{Bode plot of the open-loop and closed-loop gain of the amplifier.}\label{fig:bode_gain}
 \end{figure}
 With the uncompensated branch we would observe instability due to oscillations.
@@ -261,15 +200,7 @@ Parallel to the current source $I_\text{in}$ we find the input capacitance $C_\t
 Parallel to the feedback resistance $R_f$ we find the feedback capacitance $C_f$ with value given in \Cref{eq:feedback_capacitance_exact} or \Cref{eq:feedback_capacitance_approximation}.
 \begin{figure}[H]
 	\centering
-	\begin{circuitikz}
-		\draw (0, 0) node[op amp](opamp){};
-		\draw (opamp.+) -- +(0, -1) node[ground](gnd1){};
-		\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
-		\draw (opamp.-) node[circ]{} -- +(-4, 0) node(node1){} to[current source, invert, l=$I_\text{in}$] (node1 |- gnd1) node[ground]{};
-		\draw (opamp.-) node[circ]{} -- +(-2, 0) node(node1){} to[capacitor, l=$C_\text{in}$] (node1 |- gnd1) node[ground]{};
-		\draw (opamp.-) |- (-1, 2) to[resistor, l=$R_f$] (1, 2) -| (opamp.out);
-		\draw (opamp.-) |- (-1, 3.5) to[capacitor, l=$C_f$] (1, 3.5) -| (opamp.out);
-	\end{circuitikz}
+	\includestandalone[mode=buildnew]{figure/circuit/amplifier-transimpedance-input-capacitance}
 	\caption{Transimpedance amplifier with capacitive elements.}\label{fig:capacitive_transimpedance}
 \end{figure}
 % TODO: why use noise gain

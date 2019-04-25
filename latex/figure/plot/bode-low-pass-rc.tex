@@ -1,0 +1,15 @@
+\documentclass{standalone}
+
+\ifstandalone
+	\usepackage{amsmath}
+	\usepackage{pgfplots}
+\fi
+
+
+\begin{document}
+	\begin{tikzpicture}
+		\begin{semilogxaxis}[xmin=1, xmax=1e6, xlabel=Frequency (Hz), ymin=-100, ymax=10, ylabel=Gain (dB), ytick={0, -20, -40, -60, -80}, grid=minor]
+			\addplot[domain=1:1e9]{-10*log10(1+(x/100)^2)};
+		\end{semilogxaxis}
+	\end{tikzpicture}
+\end{document}
