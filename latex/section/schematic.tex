@@ -1,6 +1,8 @@
-\section{Power management}
+\section{Circuit schematic design}
 
-\subsection{Supply filter}
+\subsection{Power management}
+
+\subsubsection{Supply filter}
 
 The purpose of the supply filter is to filter out noise from the power supply and buffer voltage peaks.
 A simple embodiment of a supply filter is that of an RC low-pass filter as illustrated in \Cref{fig:filter_lowpass}.
@@ -55,7 +57,7 @@ In practice, one finds good enough results for two pole filters.
 In addition to a multi-pole filter, a capacitance multiplier can be used to increase the effective capacitance of a filter.
 The capacitance multiplier is described in Ref.~\cite[p.~536]{Hobbs11} and Ref.~\cite[p.~578]{Horowitz15}.
 
-\subsection{Voltage regulator}
+\subsubsection{Voltage regulator}
 
 We use two voltage regulator to maintain a constant voltage of \SI{\pm12}{\volt} which is used to supply the operational amplifiers.
 
@@ -111,7 +113,7 @@ Capacitors C3, C4, C5 and C6 buffer the output voltage.
 When the supply power is switched off and C3 or C5 discharges,
 diodes D3 and D1 redirect the current back to the supply lines around the voltage regulators.
 
-\subsection{Voltage reference}
+\subsubsection{Voltage reference}
 
 A voltage reference is a high-precision linear (fixed) voltage regulator.
 We use it as a voltage source for the sensible reverse bias voltage of the photodiode.
@@ -138,3 +140,8 @@ Capacitor C1 buffers the \SI{15}{\volt} supply voltage.
 According to the datasheet the trim terminal should be connected through a capacitor, C2, to ground.
 Resistor R1 and capacitor C3 form a low-pass to suppress frequency components in the kHz range.
 Finally, capacitor C4 buffers the output voltage.
+
+\subsection{Photodiode frontend}
+
+% TODO: circuit of photodiode anodes with operational amplifier and cathode with reverse bias
+% TODO: explicit calculation of feedback impedance for operational amplifier
