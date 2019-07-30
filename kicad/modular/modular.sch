@@ -4,11 +4,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 3
-Title ""
-Date ""
+Title "Position-sensitive detector"
+Date "2019-07-30"
 Rev ""
-Comp ""
-Comment1 ""
+Comp "Max Planck Insitute of Quantum Optics"
+Comment1 "Bodo Kaiser"
 Comment2 ""
 Comment3 ""
 Comment4 ""
