@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name Connector_Shield)(type KiCad)(uri /Users/bodokaiser/Repositories/src/github.com/bodokaiser/position-sensitive-device/kicad/library/shield.pretty)(options "")(descr ""))
+  (lib (name Sensor_OpticalPosition)(type KiCad)(uri /Users/bodokaiser/Repositories/src/github.com/bodokaiser/position-sensitive-device/kicad/library/psd.pretty)(options "")(descr ""))
 )
