@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 4)
+    (drawings 0)
     (tracks 102)
     (zones 0)
     (modules 55)
@@ -178,7 +178,7 @@
     )
     (fp_circle (center 44 -8) (end 46.75 -8) (layer F.CrtYd) (width 0.05))
     (fp_circle (center 44 -8) (end 46.5 -8) (layer Cmts.User) (width 0.15))
-    (fp_text user Shield (at 44 -3) (layer F.Fab)
+    (fp_text user Shield_2.54mm (at 44 -3) (layer F.Fab)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text user REF** (at 44 16) (layer F.SilkS)
@@ -1139,7 +1139,7 @@
     (fp_text user REF** (at 36 16) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text user Shield (at 36 -3) (layer F.Fab)
+    (fp_text user Shield_2.54mm (at 36 -3) (layer F.Fab)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_circle (center 36 -8) (end 38.5 -8) (layer Cmts.User) (width 0.15))
@@ -2094,11 +2094,6 @@
       (rotate (xyz 0 0 0))
     )
   )
-
-  (gr_line (start 40 26.75) (end 90 26.75) (layer Edge.Cuts) (width 0.05) (tstamp 5D422B77))
-  (gr_line (start 40 62) (end 40 27) (layer Edge.Cuts) (width 0.05))
-  (gr_line (start 90 62) (end 40 62) (layer Edge.Cuts) (width 0.05))
-  (gr_line (start 90 26) (end 90 62) (layer Edge.Cuts) (width 0.05))
 
   (segment (start 81.3 47.7) (end 82 47) (width 1) (layer F.Cu) (net 1))
   (segment (start 79.3 47.7) (end 81.3 47.7) (width 1) (layer F.Cu) (net 1))

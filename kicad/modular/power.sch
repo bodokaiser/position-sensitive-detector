@@ -643,26 +643,6 @@ F 3 "" H 7100 3900 50  0001 C CNN
 	1    7100 3900
 	0    -1   1    0   
 $EndComp
-Wire Wire Line
-	7100 3900 6900 3900
-Wire Wire Line
-	6900 3850 6900 3900
-Connection ~ 6900 3900
-Wire Wire Line
-	6900 3900 6550 3900
-$Comp
-L Connector:TestPoint TP?
-U 1 1 5D4E3320
-P 6900 3850
-AR Path="/5D4E3320" Ref="TP?"  Part="1" 
-AR Path="/5D4C5F00/5D4E3320" Ref="TP5"  Part="1" 
-F 0 "TP5" H 6850 4200 50  0000 L CNN
-F 1 "GND" H 6850 4100 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 7100 3850 50  0001 C CNN
-F 3 "~" H 7100 3850 50  0001 C CNN
-	1    6900 3850
-	1    0    0    -1  
-$EndComp
 Wire Notes Line
 	7550 2150 7550 5650
 Wire Notes Line
@@ -766,31 +746,16 @@ Wire Notes Line
 Text Notes 7850 2100 0    50   ~ 0
 POWER OUTPUT
 $Comp
-L Connector_Shield:Shield_2x1x6 J2
+L Connector_Header:Header J2
 U 1 1 5D7DD68E
 P 8600 2200
 F 0 "J2" H 8700 2150 50  0000 L CNN
-F 1 "HEADER_SIG" H 8550 1000 50  0000 L CNN
-F 2 "" H 8600 2200 50  0001 C CNN
+F 1 "HEADER" H 8550 1000 50  0000 L CNN
+F 2 "Connector_Header:PinHeader_2.54mm" H 8600 2200 50  0001 C CNN
 F 3 "" H 8600 2200 50  0001 C CNN
 	1    8600 2200
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector_Shield:Shield_2x1x6 J2
-U 2 1 5D7DEA95
-P 8600 4000
-F 0 "J2" H 8700 3950 50  0000 L CNN
-F 1 "HEADER_SIG" H 8550 2800 50  0000 L CNN
-F 2 "" H 8600 4000 50  0001 C CNN
-F 3 "" H 8600 4000 50  0001 C CNN
-	2    8600 4000
-	1    0    0    -1  
-$EndComp
-NoConn ~ 8500 4250
-NoConn ~ 8500 4400
-NoConn ~ 8500 4550
-NoConn ~ 8500 4700
-NoConn ~ 8500 4850
-NoConn ~ 8500 5000
+Wire Wire Line
+	6550 3900 7100 3900
 $EndSCHEMATC

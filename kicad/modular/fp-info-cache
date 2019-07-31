@@ -1,4 +1,4 @@
-15820051848821078
+15821605645509360
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -8896,6 +8896,13 @@ hdmi micro type d right angle tht smd hybrid
 0
 23
 20
+Connector_Header
+PinHeader_2.54mm
+
+
+0
+12
+12
 Connector_Hirose
 Hirose_BM24_BM24-40DP-2-0.35V_2x20_P0.35mm_PowerPin2_Vertical
 Hirose BM24 series connector, BM24-40DP/2-0.35V (https://www.hirose.com/product/en/download_file/key_name/BM24/category/Catalog/doc_file_id/47680/?file_category_id=4&item_id=50&is_series=1)
@@ -39430,13 +39437,6 @@ SATA
 0
 24
 23
-Connector_Shield
-PinHeader_2.54mm
-
-
-0
-0
-0
 Connector_Stocko
 Stocko_MKS_1651-6-0-202_1x2_P2.50mm_Vertical
 Stocko MKS 16xx series connector, (https://www.stocko-contact.com/downloads/steckverbindersystem-raster-2,5-mm.pdf#page=15), generated with kicad-footprint-generator
@@ -65281,6 +65281,13 @@ QFN 0.5
 0
 25
 24
+Sensor_OpticalPosition
+S5990
+
+
+0
+10
+10
 Sensor_Pressure
 Freescale_98ARH99066A
 https://www.nxp.com/docs/en/data-sheet/MPXH6250A.pdf

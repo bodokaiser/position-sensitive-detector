@@ -816,23 +816,23 @@ Wire Notes Line
 Text Notes 1700 3250 0    50   ~ 0
 OPAMP POWER
 $Comp
-L Connector_Shield:Shield_2x1x6 J3
+L Connector_Header:Header J3
 U 1 1 5D7EC537
 P 2200 1300
 F 0 "J3" H 2350 1250 50  0000 C CNN
-F 1 "HEADER_SIG" H 2350 100 50  0000 C CNN
-F 2 "" H 2200 1300 50  0001 C CNN
+F 1 "HEADER" H 2350 100 50  0000 C CNN
+F 2 "Connector_Header:PinHeader_2.54mm" H 2200 1300 50  0001 C CNN
 F 3 "" H 2200 1300 50  0001 C CNN
 	1    2200 1300
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Connector_Shield:Shield_2x1x6 J3
+L Connector_Header:Header J3
 U 2 1 5D7EFB55
 P 8900 1050
 F 0 "J3" H 9000 1000 50  0000 L CNN
-F 1 "HEADER_SIG" H 8850 -150 50  0000 L CNN
-F 2 "" H 8900 1050 50  0001 C CNN
+F 1 "HEADER" H 8950 -150 50  0000 L CNN
+F 2 "Connector_Header:PinHeader_2.54mm" H 8900 1050 50  0001 C CNN
 F 3 "" H 8900 1050 50  0001 C CNN
 	2    8900 1050
 	1    0    0    -1  
