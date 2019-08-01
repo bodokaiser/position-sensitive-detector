@@ -541,10 +541,10 @@ $EndComp
 Wire Wire Line
 	4350 6700 4350 6300
 $Comp
-L Connector:TestPoint TP10
+L Connector:TestPoint TP3
 U 1 1 5D5B0543
 P 4100 6200
-F 0 "TP10" H 4158 6318 50  0000 L CNN
+F 0 "TP3" H 4158 6318 50  0000 L CNN
 F 1 "BIAS" H 4158 6227 50  0000 L CNN
 F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 4300 6200 50  0001 C CNN
 F 3 "~" H 4300 6200 50  0001 C CNN
@@ -864,37 +864,10 @@ Wire Wire Line
 Wire Wire Line
 	2500 2000 2600 2100
 $Comp
-L Connector:TestPoint TP9
-U 1 1 5D8C8343
-P 2350 6200
-F 0 "TP9" H 2408 6318 50  0000 L CNN
-F 1 "+15V" H 2408 6227 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 2550 6200 50  0001 C CNN
-F 3 "~" H 2550 6200 50  0001 C CNN
-	1    2350 6200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2350 6200 2350 6300
-$Comp
-L Connector:TestPoint TP13
-U 1 1 5D8E6790
-P 4550 7300
-F 0 "TP13" V 4504 7488 50  0000 L CNN
-F 1 "GND" V 4595 7488 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 4750 7300 50  0001 C CNN
-F 3 "~" H 4750 7300 50  0001 C CNN
-	1    4550 7300
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4550 7300 4350 7300
-Connection ~ 4350 7300
-$Comp
-L Connector:TestPoint TP7
+L Connector:TestPoint TP1
 U 1 1 5D8EC494
 P 2050 3800
-F 0 "TP7" V 2245 3872 50  0000 C CNN
+F 0 "TP1" V 2245 3872 50  0000 C CNN
 F 1 "+12V" V 2154 3872 50  0000 C CNN
 F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 2250 3800 50  0001 C CNN
 F 3 "~" H 2250 3800 50  0001 C CNN
@@ -904,10 +877,10 @@ $EndComp
 Wire Wire Line
 	2050 3800 2300 3800
 $Comp
-L Connector:TestPoint TP8
+L Connector:TestPoint TP2
 U 1 1 5D8F1FF0
 P 2050 4700
-F 0 "TP8" V 2245 4772 50  0000 C CNN
+F 0 "TP2" V 2245 4772 50  0000 C CNN
 F 1 "-12V" V 2154 4772 50  0000 C CNN
 F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 2250 4700 50  0001 C CNN
 F 3 "~" H 2250 4700 50  0001 C CNN

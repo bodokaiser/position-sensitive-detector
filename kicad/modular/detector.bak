@@ -97,22 +97,9 @@ Wire Wire Line
 Wire Wire Line
 	5650 2450 5400 2450
 Connection ~ 5400 2450
-$Comp
-L Connector:TestPoint TP14
-U 1 1 5D4ED18A
-P 5400 2650
-F 0 "TP14" H 5342 2676 50  0000 R CNN
-F 1 "X1" H 5342 2767 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 5600 2650 50  0001 C CNN
-F 3 "~" H 5600 2650 50  0001 C CNN
-	1    5400 2650
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	5400 1350 5400 1850
 Connection ~ 5400 1850
-Wire Wire Line
-	5400 2450 5400 2650
 Wire Wire Line
 	6250 2350 6400 2350
 Wire Wire Line
@@ -175,22 +162,9 @@ Wire Wire Line
 Wire Wire Line
 	7650 2450 7400 2450
 Connection ~ 7400 2450
-$Comp
-L Connector:TestPoint TP18
-U 1 1 5D4FA6CC
-P 7400 2650
-F 0 "TP18" H 7342 2676 50  0000 R CNN
-F 1 "X2" H 7342 2767 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 7600 2650 50  0001 C CNN
-F 3 "~" H 7600 2650 50  0001 C CNN
-	1    7400 2650
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	7400 1350 7400 1850
 Connection ~ 7400 1850
-Wire Wire Line
-	7400 2450 7400 2650
 $Comp
 L Sensor_OpticalPosition:S599x D5
 U 2 1 5D4FAC3D
@@ -275,22 +249,9 @@ Wire Wire Line
 Wire Wire Line
 	5650 4400 5400 4400
 Connection ~ 5400 4400
-$Comp
-L Connector:TestPoint TP15
-U 1 1 5D506748
-P 5400 4600
-F 0 "TP15" H 5342 4626 50  0000 R CNN
-F 1 "Y1" H 5342 4717 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 5600 4600 50  0001 C CNN
-F 3 "~" H 5600 4600 50  0001 C CNN
-	1    5400 4600
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	5400 3300 5400 3800
 Connection ~ 5400 3800
-Wire Wire Line
-	5400 4400 5400 4600
 Wire Wire Line
 	6250 4300 6400 4300
 Wire Wire Line
@@ -353,22 +314,9 @@ Wire Wire Line
 Wire Wire Line
 	7650 4400 7400 4400
 Connection ~ 7400 4400
-$Comp
-L Connector:TestPoint TP19
-U 1 1 5D506774
-P 7400 4600
-F 0 "TP19" H 7342 4626 50  0000 R CNN
-F 1 "Y2" H 7342 4717 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 7600 4600 50  0001 C CNN
-F 3 "~" H 7600 4600 50  0001 C CNN
-	1    7400 4600
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	7400 3300 7400 3800
 Connection ~ 7400 3800
-Wire Wire Line
-	7400 4400 7400 4600
 $Comp
 L Device:Opamp_Quad_Generic U3
 U 3 1 5D50785D
@@ -915,33 +863,6 @@ Wire Wire Line
 	2300 1700 2750 1700
 Wire Wire Line
 	2500 2000 2600 2100
-$Comp
-L Connector:TestPoint TP9
-U 1 1 5D8C8343
-P 2350 6200
-F 0 "TP9" H 2408 6318 50  0000 L CNN
-F 1 "+15V" H 2408 6227 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 2550 6200 50  0001 C CNN
-F 3 "~" H 2550 6200 50  0001 C CNN
-	1    2350 6200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2350 6200 2350 6300
-$Comp
-L Connector:TestPoint TP13
-U 1 1 5D8E6790
-P 4550 7300
-F 0 "TP13" V 4504 7488 50  0000 L CNN
-F 1 "GND" V 4595 7488 50  0000 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 4750 7300 50  0001 C CNN
-F 3 "~" H 4750 7300 50  0001 C CNN
-	1    4550 7300
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4550 7300 4350 7300
-Connection ~ 4350 7300
 $Comp
 L Connector:TestPoint TP7
 U 1 1 5D8EC494
