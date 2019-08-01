@@ -97,22 +97,9 @@ Wire Wire Line
 Wire Wire Line
 	5650 2450 5400 2450
 Connection ~ 5400 2450
-$Comp
-L Connector:TestPoint TP14
-U 1 1 5D4ED18A
-P 5400 2650
-F 0 "TP14" H 5342 2676 50  0000 R CNN
-F 1 "U1" H 5342 2767 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 5600 2650 50  0001 C CNN
-F 3 "~" H 5600 2650 50  0001 C CNN
-	1    5400 2650
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	5400 1350 5400 1850
 Connection ~ 5400 1850
-Wire Wire Line
-	5400 2450 5400 2650
 Wire Wire Line
 	6250 2350 6400 2350
 Wire Wire Line
@@ -175,22 +162,9 @@ Wire Wire Line
 Wire Wire Line
 	7650 2450 7400 2450
 Connection ~ 7400 2450
-$Comp
-L Connector:TestPoint TP18
-U 1 1 5D4FA6CC
-P 7400 2650
-F 0 "TP18" H 7342 2676 50  0000 R CNN
-F 1 "X2" H 7342 2767 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 7600 2650 50  0001 C CNN
-F 3 "~" H 7600 2650 50  0001 C CNN
-	1    7400 2650
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	7400 1350 7400 1850
 Connection ~ 7400 1850
-Wire Wire Line
-	7400 2450 7400 2650
 $Comp
 L Sensor_OpticalPosition:S599x D5
 U 2 1 5D4FAC3D
@@ -275,22 +249,9 @@ Wire Wire Line
 Wire Wire Line
 	5650 4400 5400 4400
 Connection ~ 5400 4400
-$Comp
-L Connector:TestPoint TP15
-U 1 1 5D506748
-P 5400 4600
-F 0 "TP15" H 5342 4626 50  0000 R CNN
-F 1 "U3" H 5342 4717 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 5600 4600 50  0001 C CNN
-F 3 "~" H 5600 4600 50  0001 C CNN
-	1    5400 4600
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	5400 3300 5400 3800
 Connection ~ 5400 3800
-Wire Wire Line
-	5400 4400 5400 4600
 Wire Wire Line
 	6250 4300 6400 4300
 Wire Wire Line
@@ -353,22 +314,9 @@ Wire Wire Line
 Wire Wire Line
 	7650 4400 7400 4400
 Connection ~ 7400 4400
-$Comp
-L Connector:TestPoint TP19
-U 1 1 5D506774
-P 7400 4600
-F 0 "TP19" H 7342 4626 50  0000 R CNN
-F 1 "U4" H 7342 4717 50  0000 R CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 7600 4600 50  0001 C CNN
-F 3 "~" H 7600 4600 50  0001 C CNN
-	1    7400 4600
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	7400 3300 7400 3800
 Connection ~ 7400 3800
-Wire Wire Line
-	7400 4400 7400 4600
 $Comp
 L Device:Opamp_Quad_Generic U3
 U 3 1 5D50785D
@@ -947,7 +895,7 @@ L Connector:TestPoint TP7
 U 1 1 5D8EC494
 P 2050 3800
 F 0 "TP7" V 2245 3872 50  0000 C CNN
-F 1 "+15V" V 2154 3872 50  0000 C CNN
+F 1 "+12V" V 2154 3872 50  0000 C CNN
 F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 2250 3800 50  0001 C CNN
 F 3 "~" H 2250 3800 50  0001 C CNN
 	1    2050 3800
@@ -960,7 +908,7 @@ L Connector:TestPoint TP8
 U 1 1 5D8F1FF0
 P 2050 4700
 F 0 "TP8" V 2245 4772 50  0000 C CNN
-F 1 "-15V" V 2154 4772 50  0000 C CNN
+F 1 "-12V" V 2154 4772 50  0000 C CNN
 F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 2250 4700 50  0001 C CNN
 F 3 "~" H 2250 4700 50  0001 C CNN
 	1    2050 4700
@@ -968,56 +916,4 @@ F 3 "~" H 2250 4700 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2050 4700 2300 4700
-$Comp
-L Connector:TestPoint TP11
-U 1 1 5D90397B
-P 4200 1850
-F 0 "TP11" V 4395 1922 50  0000 C CNN
-F 1 "I1" V 4304 1922 50  0000 C CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 4400 1850 50  0001 C CNN
-F 3 "~" H 4400 1850 50  0001 C CNN
-	1    4200 1850
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	4200 1850 4400 1850
-$Comp
-L Connector:TestPoint TP16
-U 1 1 5D90A09A
-P 6250 1850
-F 0 "TP16" V 6445 1922 50  0000 C CNN
-F 1 "I2" V 6354 1922 50  0000 C CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 6450 1850 50  0001 C CNN
-F 3 "~" H 6450 1850 50  0001 C CNN
-	1    6250 1850
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	6250 1850 6400 1850
-$Comp
-L Connector:TestPoint TP12
-U 1 1 5D90FE8E
-P 4250 3800
-F 0 "TP12" V 4445 3872 50  0000 C CNN
-F 1 "I3" V 4354 3872 50  0000 C CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 4450 3800 50  0001 C CNN
-F 3 "~" H 4450 3800 50  0001 C CNN
-	1    4250 3800
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	4250 3800 4400 3800
-$Comp
-L Connector:TestPoint TP17
-U 1 1 5D915B17
-P 6250 3800
-F 0 "TP17" V 6445 3872 50  0000 C CNN
-F 1 "I4" V 6354 3872 50  0000 C CNN
-F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 6450 3800 50  0001 C CNN
-F 3 "~" H 6450 3800 50  0001 C CNN
-	1    6250 3800
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	6250 3800 6400 3800
 $EndSCHEMATC
