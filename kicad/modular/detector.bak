@@ -33,7 +33,7 @@ F 1 "OPA4197" H 7200 2726 50  0000 C CNN
 F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 7200 2450 50  0001 C CNN
 F 3 "~" H 7200 2450 50  0001 C CNN
 	2    7200 2450
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 Wire Wire Line
 	6550 2350 6700 2350
@@ -49,7 +49,7 @@ Connection ~ 6700 2350
 Wire Wire Line
 	6700 2350 6900 2350
 Wire Wire Line
-	6700 1850 6700 1350
+	6700 1850 6700 1650
 Wire Wire Line
 	6700 1350 7050 1350
 Connection ~ 6700 1850
@@ -98,7 +98,7 @@ Wire Wire Line
 	7950 2450 7700 2450
 Connection ~ 7700 2450
 Wire Wire Line
-	7700 1350 7700 1850
+	7700 1350 7700 1650
 Connection ~ 7700 1850
 Wire Wire Line
 	4550 2400 4700 2400
@@ -185,7 +185,7 @@ F 1 "OPA4197" H 5200 2776 50  0000 C CNN
 F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 5200 2500 50  0001 C CNN
 F 3 "~" H 5200 2500 50  0001 C CNN
 	4    5200 2500
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 Wire Wire Line
 	4550 4300 4700 4300
@@ -326,7 +326,7 @@ F 1 "OPA4197" H 5200 4676 50  0000 C CNN
 F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 5200 4400 50  0001 C CNN
 F 3 "~" H 5200 4400 50  0001 C CNN
 	3    5200 4400
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L Device:Opamp_Quad_Generic U4
@@ -337,7 +337,7 @@ F 1 "OPA4197" H 7200 4676 50  0000 C CNN
 F 2 "Package_SO:TSSOP-14_4.4x5mm_P0.65mm" H 7200 4400 50  0001 C CNN
 F 3 "~" H 7200 4400 50  0001 C CNN
 	1    7200 4400
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L Sensor_OpticalPosition:S599x D5
@@ -980,10 +980,6 @@ F 3 "~" H 6800 1650 50  0001 C CNN
 	1    6600 1650
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	6600 1650 6700 1650
-Wire Wire Line
-	7800 1650 7700 1650
 $Comp
 L Connector:TestPoint TP19
 U 1 1 5DCE1C5C
@@ -1059,4 +1055,14 @@ Wire Wire Line
 Connection ~ 6700 3550
 Wire Wire Line
 	6700 3550 6700 3300
+Wire Wire Line
+	7800 1650 7700 1650
+Connection ~ 7700 1650
+Wire Wire Line
+	7700 1650 7700 1850
+Wire Wire Line
+	6600 1650 6700 1650
+Connection ~ 6700 1650
+Wire Wire Line
+	6700 1650 6700 1350
 $EndSCHEMATC
