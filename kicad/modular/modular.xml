@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/Users/bodokaiser/Repositories/src/github.com/bodokaiser/position-sensitive-device/kicad/modular/modular.sch</source>
+    <date>2019 August 02, Friday 17:23:42</date>
+    <tool>Eeschema (5.1.2-1)-1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Position-sensitive detector</title>
+        <company>Max Planck Insitute of Quantum Optics</company>
+        <rev/>
+        <date>2019-07-30</date>
+        <source>modular.sch</source>
+        <comment number="1" value="Bodo Kaiser"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/Power/" tstamps="/5D4C5F00/">
+      <title_block>
+        <title>Position-sensitive detector (Power)</title>
+        <company>Max Planck Institute of Quantum Optics</company>
+        <rev/>
+        <date>2019-07-30</date>
+        <source>power.sch</source>
+        <comment number="1" value="Bodo Kaiser"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="3" name="/Detector/" tstamps="/5D4E5478/">
+      <title_block>
+        <title>Position-sensitive detector (Detector)</title>
+        <company>Max Planck Institute of Quantum Optics</company>
+        <rev/>
+        <date>2019-07-30</date>
+        <source>detector.sch</source>
+        <comment number="1" value="Bodo Kaiser"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="J1">
+      <value>CONN_PWR</value>
+      <footprint>TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-3_1x03_P2.54mm_Horizontal</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Screw_Terminal_01x03" description="Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E31E6</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>LM317</value>
+      <footprint>Package_TO_SOT_SMD:SOT-223-3_TabPin2</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm317.pdf</datasheet>
+      <libsource lib="Regulator_Linear" part="LM317_3PinPackage" description="1A 35V Adjustable Linear Regulator, SOT-89/SOT-223/TO-220/TO-252/TO-263"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E3225</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>S1A</value>
+      <footprint>Diode_SMD:D_SMA</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E323A</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>120</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E3241</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E3253</tstamp>
+    </comp>
+    <comp ref="D3">
+      <value>S1A</value>
+      <footprint>Diode_SMD:D_SMA</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E3274</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>10u</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E327B</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E3287</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>LM337</value>
+      <footprint>Package_TO_SOT_SMD:SOT-223-3_TabPin2</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/lm337-n.pdf</datasheet>
+      <libsource lib="Regulator_Linear" part="LM337_SOT223" description="Negative 1A 35V Adjustable Linear Regulator, SOT-223"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E32A8</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E32AF</tstamp>
+    </comp>
+    <comp ref="C6">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E32C5</tstamp>
+    </comp>
+    <comp ref="D4">
+      <value>S1A</value>
+      <footprint>Diode_SMD:D_SMA</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E32CC</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>10u</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E32D3</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E32DA</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>120</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E32E1</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>S1A</value>
+      <footprint>Diode_SMD:D_SMA</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="D" description="Diode"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E32EA</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>HEADER</value>
+      <footprint>Connector_Header:PinHeader_2.54mm</footprint>
+      <libsource lib="Connector_Header" part="Header" description=""/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D7DD68E</tstamp>
+    </comp>
+    <comp ref="TP4">
+      <value>+12V</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5DD29B20</tstamp>
+    </comp>
+    <comp ref="TP5">
+      <value>GND</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5DD2D5F3</tstamp>
+    </comp>
+    <comp ref="TP6">
+      <value>-12V</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5DD30B9F</tstamp>
+    </comp>
+    <comp ref="TP1">
+      <value>+15V</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5DD42668</tstamp>
+    </comp>
+    <comp ref="TP2">
+      <value>GND</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5DD6811A</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5D4E3266</tstamp>
+    </comp>
+    <comp ref="TP3">
+      <value>-15V</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Power/" tstamps="/5D4C5F00/"/>
+      <tstamp>5DD6EE05</tstamp>
+    </comp>
+    <comp ref="D5">
+      <value>S599x</value>
+      <footprint>Sensor_OpticalPosition:S5990</footprint>
+      <libsource lib="Sensor_OpticalPosition" part="S599x" description="Position-sensitive photodiode"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D4E6047</tstamp>
+    </comp>
+    <comp ref="U4">
+      <value>OPA4197</value>
+      <footprint>Package_SO:TSSOP-14_4.4x5mm_P0.65mm</footprint>
+      <libsource lib="Device" part="Opamp_Quad_Generic" description="Quad operational amplifier"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D4E6F20</tstamp>
+    </comp>
+    <comp ref="R8">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D4E949F</tstamp>
+    </comp>
+    <comp ref="C15">
+      <value>5p</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D4E9D11</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D4FA6B4</tstamp>
+    </comp>
+    <comp ref="C13">
+      <value>5p</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D4FA6BB</tstamp>
+    </comp>
+    <comp ref="R7">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D506730</tstamp>
+    </comp>
+    <comp ref="C14">
+      <value>5p</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D506737</tstamp>
+    </comp>
+    <comp ref="R9">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D50675C</tstamp>
+    </comp>
+    <comp ref="C16">
+      <value>5p</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D506763</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>REF5010</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/ref5030.pdf</datasheet>
+      <libsource lib="Reference_Voltage" part="REF5010IDGK" description="10V 0.05% 10mA Low Noise Precision Voltage Reference, MSOP-8"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D52095C</tstamp>
+    </comp>
+    <comp ref="C7">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D5799E1</tstamp>
+    </comp>
+    <comp ref="C10">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D57CB81</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>100</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D58E964</tstamp>
+    </comp>
+    <comp ref="C11">
+      <value>10n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D5922CB</tstamp>
+    </comp>
+    <comp ref="C12">
+      <value>22u</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D5AFDAE</tstamp>
+    </comp>
+    <comp ref="TP14">
+      <value>BIAS</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D5B0543</tstamp>
+    </comp>
+    <comp ref="C8">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D751073</tstamp>
+    </comp>
+    <comp ref="C9">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D766461</tstamp>
+    </comp>
+    <comp ref="J3">
+      <value>HEADER</value>
+      <footprint>Connector_Header:PinHeader_2.54mm</footprint>
+      <libsource lib="Connector_Header" part="Header" description=""/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5D7EC537</tstamp>
+    </comp>
+    <comp ref="TP9">
+      <value>+12V</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5DBBC9A4</tstamp>
+    </comp>
+    <comp ref="TP10">
+      <value>GND</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5DBF527A</tstamp>
+    </comp>
+    <comp ref="TP11">
+      <value>-12V</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5DC00EC0</tstamp>
+    </comp>
+    <comp ref="TP7">
+      <value>+15V</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5DC7FB86</tstamp>
+    </comp>
+    <comp ref="TP8">
+      <value>GND</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5DC85F7E</tstamp>
+    </comp>
+    <comp ref="TP12">
+      <value>I1</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5DCB4CDA</tstamp>
+    </comp>
+    <comp ref="TP15">
+      <value>U1</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5DCCDDC7</tstamp>
+    </comp>
+    <comp ref="TP17">
+      <value>I2</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5DCDBBC7</tstamp>
+    </comp>
+    <comp ref="TP19">
+      <value>U2</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5DCE1C5C</tstamp>
+    </comp>
+    <comp ref="TP16">
+      <value>U3</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5DCF9D51</tstamp>
+    </comp>
+    <comp ref="TP20">
+      <value>U4</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5DD06A66</tstamp>
+    </comp>
+    <comp ref="TP13">
+      <value>I3</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5DD0D829</tstamp>
+    </comp>
+    <comp ref="TP18">
+      <value>I4</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <sheetpath names="/Detector/" tstamps="/5D4E5478/"/>
+      <tstamp>5DD1474B</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Screw_Terminal_01x03">
+      <description>Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TerminalBlock*:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Screw_Terminal_01x03</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="TestPoint">
+      <description>test point</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Pin*</fp>
+        <fp>Test*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">TestPoint</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Header" part="Header">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Header</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+15V" type="BiDi"/>
+        <pin num="2" name="+12V" type="BiDi"/>
+        <pin num="3" name="GND" type="BiDi"/>
+        <pin num="4" name="GND" type="BiDi"/>
+        <pin num="5" name="-12V" type="BiDi"/>
+        <pin num="6" name="-15V" type="BiDi"/>
+        <pin num="7" name="X1" type="BiDi"/>
+        <pin num="8" name="X2" type="BiDi"/>
+        <pin num="9" name="Y1" type="BiDi"/>
+        <pin num="10" name="Y2" type="BiDi"/>
+        <pin num="11" name="X" type="BiDi"/>
+        <pin num="12" name="Y" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D">
+      <description>Diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Opamp_Quad_Generic">
+      <description>Quad operational amplifier</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>SOIC*3.9x8.7mm*P1.27mm*</fp>
+        <fp>DIP*W7.62mm*</fp>
+        <fp>TSSOP*4.4x5mm*P0.65mm*</fp>
+        <fp>SSOP*5.3x6.2mm*P0.65mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Opamp_Quad_Generic</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="output"/>
+        <pin num="2" name="-" type="input"/>
+        <pin num="3" name="+" type="input"/>
+        <pin num="4" name="V+" type="power_in"/>
+        <pin num="5" name="+" type="input"/>
+        <pin num="6" name="-" type="input"/>
+        <pin num="7" name="~" type="output"/>
+        <pin num="8" name="~" type="output"/>
+        <pin num="9" name="-" type="input"/>
+        <pin num="10" name="+" type="input"/>
+        <pin num="11" name="V-" type="power_in"/>
+        <pin num="12" name="+" type="input"/>
+        <pin num="13" name="-" type="input"/>
+        <pin num="14" name="~" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Reference_Voltage" part="REF5020ADGK">
+      <aliases>
+        <alias>REF5025ADGK</alias>
+        <alias>REF5030ADGK</alias>
+        <alias>REF5040ADGK</alias>
+        <alias>REF5045ADGK</alias>
+        <alias>REF5050ADGK</alias>
+        <alias>REF5010ADGK</alias>
+        <alias>REF5020IDGK</alias>
+        <alias>REF5025IDGK</alias>
+        <alias>REF5030IDGK</alias>
+        <alias>REF5040IDGK</alias>
+        <alias>REF5045IDGK</alias>
+        <alias>REF5050IDGK</alias>
+        <alias>REF5010IDGK</alias>
+      </aliases>
+      <description>2.048V 0.1% 10mA Low Noise Precision Voltage Reference, MSOP-8</description>
+      <docs>http://www.ti.com/lit/ds/symlink/ref5030.pdf</docs>
+      <footprints>
+        <fp>MSOP*3x3mm*P0.65mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">REF5020ADGK</field>
+        <field name="Footprint">Package_SO:MSOP-8_3x3mm_P0.65mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="DNC" type="NotConnected"/>
+        <pin num="2" name="Vin" type="power_in"/>
+        <pin num="3" name="Temp" type="passive"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="Trim/NR" type="passive"/>
+        <pin num="6" name="Vout" type="power_out"/>
+        <pin num="7" name="NC" type="NotConnected"/>
+        <pin num="8" name="DNC" type="NotConnected"/>
+      </pins>
+    </libpart>
+    <libpart lib="Regulator_Linear" part="LM317_3PinPackage">
+      <aliases>
+        <alias>AZ1117-ADJ</alias>
+      </aliases>
+      <description>1A 35V Adjustable Linear Regulator, SOT-89/SOT-223/TO-220/TO-252/TO-263</description>
+      <docs>http://www.ti.com/lit/ds/symlink/lm317.pdf</docs>
+      <footprints>
+        <fp>SOT?223*</fp>
+        <fp>SOT?89*</fp>
+        <fp>TO?220*</fp>
+        <fp>TO?252*</fp>
+        <fp>TO?263*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LM317_3PinPackage</field>
+      </fields>
+      <pins>
+        <pin num="1" name="ADJ" type="input"/>
+        <pin num="2" name="VO" type="power_out"/>
+        <pin num="3" name="VI" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Regulator_Linear" part="LM337_SOT223">
+      <description>Negative 1A 35V Adjustable Linear Regulator, SOT-223</description>
+      <docs>http://www.ti.com/lit/ds/symlink/lm337-n.pdf</docs>
+      <footprints>
+        <fp>SOT?223*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LM337_SOT223</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-223-3_TabPin2</field>
+      </fields>
+      <pins>
+        <pin num="1" name="ADJ" type="input"/>
+        <pin num="2" name="VI" type="power_in"/>
+        <pin num="3" name="VO" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Sensor_OpticalPosition" part="S599x">
+      <description>Position-sensitive photodiode</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">S599x</field>
+      </fields>
+      <pins>
+        <pin num="1" name="I1" type="output"/>
+        <pin num="5" name="I3" type="output"/>
+        <pin num="6" name="I2" type="output"/>
+        <pin num="8" name="K" type="input"/>
+        <pin num="10" name="I4" type="output"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>/Users/bodokaiser/Repositories/src/github.com/kicad/kicad-symbols/Connector.lib</uri>
+    </library>
+    <library logical="Connector_Header">
+      <uri>/Users/bodokaiser/Repositories/src/github.com/bodokaiser/position-sensitive-device/kicad/library/header.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>/Users/bodokaiser/Repositories/src/github.com/kicad/kicad-symbols/Device.lib</uri>
+    </library>
+    <library logical="Reference_Voltage">
+      <uri>/Users/bodokaiser/Repositories/src/github.com/kicad/kicad-symbols/Reference_Voltage.lib</uri>
+    </library>
+    <library logical="Regulator_Linear">
+      <uri>/Users/bodokaiser/Repositories/src/github.com/kicad/kicad-symbols/Regulator_Linear.lib</uri>
+    </library>
+    <library logical="Sensor_OpticalPosition">
+      <uri>/Users/bodokaiser/Repositories/src/github.com/bodokaiser/position-sensitive-device/kicad/library/psd.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+15V">
+      <node ref="J1" pin="3"/>
+      <node ref="C7" pin="1"/>
+      <node ref="U3" pin="2"/>
+      <node ref="TP7" pin="1"/>
+      <node ref="U1" pin="3"/>
+      <node ref="J3" pin="1"/>
+      <node ref="C1" pin="1"/>
+      <node ref="D1" pin="1"/>
+      <node ref="TP1" pin="1"/>
+      <node ref="J2" pin="1"/>
+    </net>
+    <net code="2" name="GND">
+      <node ref="C9" pin="2"/>
+      <node ref="R2" pin="2"/>
+      <node ref="C11" pin="2"/>
+      <node ref="C12" pin="2"/>
+      <node ref="J1" pin="2"/>
+      <node ref="C10" pin="2"/>
+      <node ref="C3" pin="2"/>
+      <node ref="C7" pin="2"/>
+      <node ref="J3" pin="3"/>
+      <node ref="C5" pin="2"/>
+      <node ref="J3" pin="4"/>
+      <node ref="C2" pin="1"/>
+      <node ref="TP8" pin="1"/>
+      <node ref="U4" pin="5"/>
+      <node ref="C6" pin="1"/>
+      <node ref="C4" pin="1"/>
+      <node ref="U3" pin="4"/>
+      <node ref="R3" pin="1"/>
+      <node ref="U4" pin="3"/>
+      <node ref="U4" pin="10"/>
+      <node ref="C1" pin="2"/>
+      <node ref="C8" pin="1"/>
+      <node ref="TP2" pin="1"/>
+      <node ref="J2" pin="3"/>
+      <node ref="J2" pin="4"/>
+      <node ref="TP10" pin="1"/>
+      <node ref="TP5" pin="1"/>
+      <node ref="U4" pin="12"/>
+    </net>
+    <net code="3" name="-15V">
+      <node ref="J2" pin="6"/>
+      <node ref="J1" pin="1"/>
+      <node ref="D2" pin="2"/>
+      <node ref="TP3" pin="1"/>
+      <node ref="C2" pin="2"/>
+      <node ref="U2" pin="2"/>
+    </net>
+    <net code="4" name="Net-(C3-Pad1)">
+      <node ref="R2" pin="1"/>
+      <node ref="R1" pin="2"/>
+      <node ref="C3" pin="1"/>
+      <node ref="U1" pin="1"/>
+      <node ref="D3" pin="2"/>
+    </net>
+    <net code="5" name="Net-(C4-Pad2)">
+      <node ref="R4" pin="1"/>
+      <node ref="R3" pin="2"/>
+      <node ref="C4" pin="2"/>
+      <node ref="D4" pin="1"/>
+      <node ref="U2" pin="1"/>
+    </net>
+    <net code="6" name="+12V">
+      <node ref="R1" pin="1"/>
+      <node ref="C5" pin="1"/>
+      <node ref="D3" pin="1"/>
+      <node ref="D1" pin="2"/>
+      <node ref="C8" pin="2"/>
+      <node ref="TP4" pin="1"/>
+      <node ref="TP9" pin="1"/>
+      <node ref="U4" pin="4"/>
+      <node ref="J2" pin="2"/>
+      <node ref="U1" pin="2"/>
+      <node ref="J3" pin="2"/>
+    </net>
+    <net code="7" name="-12V">
+      <node ref="D2" pin="1"/>
+      <node ref="R4" pin="2"/>
+      <node ref="C9" pin="1"/>
+      <node ref="J3" pin="5"/>
+      <node ref="J2" pin="5"/>
+      <node ref="U4" pin="11"/>
+      <node ref="D4" pin="2"/>
+      <node ref="TP11" pin="1"/>
+      <node ref="C6" pin="2"/>
+      <node ref="TP6" pin="1"/>
+      <node ref="U2" pin="3"/>
+    </net>
+    <net code="8" name="/Detector/X1">
+      <node ref="J3" pin="7"/>
+      <node ref="U4" pin="14"/>
+      <node ref="C13" pin="1"/>
+      <node ref="R6" pin="1"/>
+      <node ref="TP15" pin="1"/>
+    </net>
+    <net code="9" name="Net-(U3-Pad1)">
+      <node ref="U3" pin="1"/>
+    </net>
+    <net code="10" name="Net-(U3-Pad3)">
+      <node ref="U3" pin="3"/>
+    </net>
+    <net code="11" name="Net-(U3-Pad7)">
+      <node ref="U3" pin="7"/>
+    </net>
+    <net code="12" name="Net-(U3-Pad8)">
+      <node ref="U3" pin="8"/>
+    </net>
+    <net code="13" name="Net-(J3-Pad11)">
+      <node ref="J3" pin="11"/>
+    </net>
+    <net code="14" name="Net-(J3-Pad12)">
+      <node ref="J3" pin="12"/>
+    </net>
+    <net code="15" name="Net-(J3-Pad6)">
+      <node ref="J3" pin="6"/>
+    </net>
+    <net code="16" name="Net-(C10-Pad1)">
+      <node ref="C10" pin="1"/>
+      <node ref="U3" pin="5"/>
+    </net>
+    <net code="17" name="Net-(C11-Pad1)">
+      <node ref="C11" pin="1"/>
+      <node ref="R5" pin="2"/>
+    </net>
+    <net code="18" name="Net-(C12-Pad1)">
+      <node ref="C12" pin="1"/>
+      <node ref="TP14" pin="1"/>
+      <node ref="R5" pin="1"/>
+      <node ref="D5" pin="8"/>
+      <node ref="U3" pin="6"/>
+    </net>
+    <net code="19" name="Net-(C13-Pad2)">
+      <node ref="TP12" pin="1"/>
+      <node ref="R6" pin="2"/>
+      <node ref="D5" pin="1"/>
+      <node ref="C13" pin="2"/>
+      <node ref="U4" pin="13"/>
+    </net>
+    <net code="20" name="Net-(C15-Pad2)">
+      <node ref="D5" pin="6"/>
+      <node ref="R8" pin="2"/>
+      <node ref="U4" pin="6"/>
+      <node ref="TP17" pin="1"/>
+      <node ref="C15" pin="2"/>
+    </net>
+    <net code="21" name="/Detector/X2">
+      <node ref="C15" pin="1"/>
+      <node ref="TP19" pin="1"/>
+      <node ref="U4" pin="7"/>
+      <node ref="J3" pin="8"/>
+      <node ref="R8" pin="1"/>
+    </net>
+    <net code="22" name="/Detector/Y1">
+      <node ref="TP16" pin="1"/>
+      <node ref="U4" pin="8"/>
+      <node ref="C14" pin="1"/>
+      <node ref="R7" pin="1"/>
+      <node ref="J3" pin="9"/>
+    </net>
+    <net code="23" name="/Detector/Y2">
+      <node ref="TP20" pin="1"/>
+      <node ref="U4" pin="1"/>
+      <node ref="J3" pin="10"/>
+      <node ref="C16" pin="1"/>
+      <node ref="R9" pin="1"/>
+    </net>
+    <net code="24" name="Net-(C14-Pad2)">
+      <node ref="D5" pin="5"/>
+      <node ref="TP13" pin="1"/>
+      <node ref="C14" pin="2"/>
+      <node ref="R7" pin="2"/>
+      <node ref="U4" pin="9"/>
+    </net>
+    <net code="25" name="Net-(C16-Pad2)">
+      <node ref="C16" pin="2"/>
+      <node ref="TP18" pin="1"/>
+      <node ref="U4" pin="2"/>
+      <node ref="R9" pin="2"/>
+      <node ref="D5" pin="10"/>
+    </net>
+  </nets>
+</export>
