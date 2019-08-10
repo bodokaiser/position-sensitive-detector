@@ -1,0 +1,239 @@
+EESchema Schematic File Version 4
+LIBS:modular-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 4
+Title "Position-senstivie detector"
+Date "2019-08-10"
+Rev ""
+Comp "Max Planck Institute of Quantum Optics"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Header:Header J?
+U 1 1 5D4EDADD
+P 1650 1450
+F 0 "J?" H 1767 1465 50  0000 C CNN
+F 1 "Header" H 1767 1374 50  0000 C CNN
+F 2 "" H 1650 1450 50  0001 C CNN
+F 3 "" H 1650 1450 50  0001 C CNN
+	1    1650 1450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector_Header:Header J?
+U 2 1 5D4EDFA5
+P 9900 2550
+F 0 "J?" H 10000 2600 50  0000 L CNN
+F 1 "Header" H 9950 2500 50  0000 L CNN
+F 2 "" H 9900 2550 50  0001 C CNN
+F 3 "" H 9900 2550 50  0001 C CNN
+	2    9900 2550
+	1    0    0    -1  
+$EndComp
+NoConn ~ 1750 1700
+NoConn ~ 1750 2450
+$Comp
+L power:+12V #PWR?
+U 1 1 5D4F6FDD
+P 2250 1850
+F 0 "#PWR?" H 2250 1700 50  0001 C CNN
+F 1 "+12V" V 2265 1978 50  0000 L CNN
+F 2 "" H 2250 1850 50  0001 C CNN
+F 3 "" H 2250 1850 50  0001 C CNN
+	1    2250 1850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2250 1850 2100 1850
+Wire Wire Line
+	2100 1850 1750 1850
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 5D4F7B92
+P 2100 1800
+F 0 "#FLG?" H 2100 1875 50  0001 C CNN
+F 1 "PWR_FLAG" H 2100 1973 50  0000 C CNN
+F 2 "" H 2100 1800 50  0001 C CNN
+F 3 "~" H 2100 1800 50  0001 C CNN
+	1    2100 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 1800 2100 1850
+Connection ~ 2100 1850
+Wire Wire Line
+	1750 2150 1750 2000
+Connection ~ 1750 2150
+$Comp
+L power:GND #PWR?
+U 1 1 5D4F8E70
+P 2250 2150
+F 0 "#PWR?" H 2250 1900 50  0001 C CNN
+F 1 "GND" V 2255 2022 50  0000 R CNN
+F 2 "" H 2250 2150 50  0001 C CNN
+F 3 "" H 2250 2150 50  0001 C CNN
+	1    2250 2150
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2250 2150 2100 2150
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 5D4F9D20
+P 2100 2100
+F 0 "#FLG?" H 2100 2175 50  0001 C CNN
+F 1 "PWR_FLAG" H 2100 2273 50  0000 C CNN
+F 2 "" H 2100 2100 50  0001 C CNN
+F 3 "~" H 2100 2100 50  0001 C CNN
+	1    2100 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 2100 2100 2150
+Connection ~ 2100 2150
+Wire Wire Line
+	2100 2150 1750 2150
+$Comp
+L power:-12V #PWR?
+U 1 1 5D4FB275
+P 2250 2500
+F 0 "#PWR?" H 2250 2600 50  0001 C CNN
+F 1 "-12V" V 2265 2628 50  0000 L CNN
+F 2 "" H 2250 2500 50  0001 C CNN
+F 3 "" H 2250 2500 50  0001 C CNN
+	1    2250 2500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2250 2500 2100 2500
+Wire Wire Line
+	1850 2500 1850 2300
+Wire Wire Line
+	1850 2300 1750 2300
+$Comp
+L power:PWR_FLAG #FLG?
+U 1 1 5D4FBB34
+P 2100 2450
+F 0 "#FLG?" H 2100 2525 50  0001 C CNN
+F 1 "PWR_FLAG" H 2100 2623 50  0000 C CNN
+F 2 "" H 2100 2450 50  0001 C CNN
+F 3 "~" H 2100 2450 50  0001 C CNN
+	1    2100 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 2450 2100 2500
+Connection ~ 2100 2500
+Wire Wire Line
+	2100 2500 1850 2500
+Wire Notes Line
+	1150 1350 1150 2650
+Wire Notes Line
+	1150 2650 2650 2650
+Wire Notes Line
+	2650 2650 2650 1350
+Wire Notes Line
+	2650 1350 1150 1350
+Text Notes 1150 1300 0    50   ~ 0
+POWER INPUT
+Text Label 9600 2800 0    50   ~ 0
+X1
+Wire Wire Line
+	9600 2800 9800 2800
+Text Label 9600 2950 0    50   ~ 0
+X2
+Wire Wire Line
+	9600 2950 9800 2950
+Text Label 9600 3100 0    50   ~ 0
+Y1
+Wire Wire Line
+	9600 3100 9800 3100
+Text Label 9600 3250 0    50   ~ 0
+Y2
+Wire Wire Line
+	9600 3250 9800 3250
+Text Label 9600 3400 0    50   ~ 0
+X
+Wire Wire Line
+	9600 3400 9800 3400
+Text Label 9600 3550 0    50   ~ 0
+Y
+Wire Wire Line
+	9600 3550 9800 3550
+Wire Notes Line
+	9450 2400 9450 3750
+Wire Notes Line
+	9450 3750 10450 3750
+Wire Notes Line
+	10450 3750 10450 2400
+Wire Notes Line
+	10450 2400 9450 2400
+Text Notes 9450 2350 0    50   ~ 0
+SIGNAL INPUT OUTPUT
+$Comp
+L Device:Opamp_Dual_Generic U?
+U 1 1 5D5067D7
+P 5750 3950
+F 0 "U?" H 5750 4317 50  0000 C CNN
+F 1 "OPA2197" H 5750 4226 50  0000 C CNN
+F 2 "" H 5750 3950 50  0001 C CNN
+F 3 "~" H 5750 3950 50  0001 C CNN
+	1    5750 3950
+	1    0    0    -1  
+$EndComp
+Text Label 6550 3950 0    50   ~ 0
+DX
+Wire Wire Line
+	6550 3950 6250 3950
+Wire Wire Line
+	5450 3850 5200 3850
+Wire Wire Line
+	5200 3850 5200 3300
+Wire Wire Line
+	6250 3300 6250 3950
+Connection ~ 6250 3950
+Wire Wire Line
+	6250 3950 6050 3950
+$Comp
+L Device:R R?
+U 1 1 5D5077E6
+P 5750 3300
+F 0 "R?" V 5543 3300 50  0000 C CNN
+F 1 "1k" V 5634 3300 50  0000 C CNN
+F 2 "" V 5680 3300 50  0001 C CNN
+F 3 "~" H 5750 3300 50  0001 C CNN
+	1    5750 3300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5900 3300 6250 3300
+Wire Wire Line
+	5200 3300 5600 3300
+Wire Wire Line
+	6250 3300 6250 2750
+Wire Wire Line
+	6250 2750 5900 2750
+Wire Wire Line
+	5200 2750 5200 3300
+Connection ~ 6250 3300
+Connection ~ 5200 3300
+$Comp
+L Device:C C?
+U 1 1 5D509C57
+P 5750 2750
+F 0 "C?" V 5498 2750 50  0000 C CNN
+F 1 "5p" V 5589 2750 50  0000 C CNN
+F 2 "" H 5788 2600 50  0001 C CNN
+F 3 "~" H 5750 2750 50  0001 C CNN
+	1    5750 2750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5600 2750 5200 2750
+$EndSCHEMATC
