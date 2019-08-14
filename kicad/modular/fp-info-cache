@@ -1,4 +1,4 @@
-15821605734305360
+15824749476065619
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -39437,6 +39437,20 @@ SATA
 0
 24
 23
+Connector_SMA
+SMA_EdgeSlim
+
+
+0
+5
+2
+Connector_SMA
+SMA_Molex_73251-2120_EdgeMount
+http://suddendocs.samtec.com/prints/sma-j-p-x-st-em1-mkt.pdf
+SMA
+0
+5
+2
 Connector_Stocko
 Stocko_MKS_1651-6-0-202_1x2_P2.50mm_Vertical
 Stocko MKS 16xx series connector, (https://www.stocko-contact.com/downloads/steckverbindersystem-raster-2,5-mm.pdf#page=15), generated with kicad-footprint-generator
