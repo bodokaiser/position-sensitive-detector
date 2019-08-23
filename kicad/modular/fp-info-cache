@@ -1,4 +1,4 @@
-15827881015361885
+15823184978536619
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -39438,18 +39438,11 @@ SATA
 24
 23
 Connector_SMA
-SMA_EdgeSlim
-
-
-0
-5
-2
-Connector_SMA
 SMA_Molex_73251-2120_EdgeMount
-http://suddendocs.samtec.com/prints/sma-j-p-x-st-em1-mkt.pdf
-SMA
+Molex SMA RF Connector, Edge Mount, (http://www.molex.com/pdm_docs/sd/732512120_sd.pdf)
+sma edge
 0
-5
+11
 2
 Connector_Stocko
 Stocko_MKS_1651-6-0-202_1x2_P2.50mm_Vertical
@@ -49902,20 +49895,6 @@ net tie
 0
 4
 4
-OPA197IDR
-SOIC127P600X175-8N
-
-
-0
-8
-8
-OPA2197IDR
-SOIC8
-<b>SOIC-8</b> CASE 751-07<p>Source: http://www.onsemi.com/pub/Collateral/MC34164-D.PDF<p><b>D (R-PDSO-G8)</b>PLATIC SMALL-OUTLINE PACKAGE<br>Source: http://focus.ti.com/lit/ds/symlink/tlc27l2.pdf
-
-0
-8
-8
 OptoDevice
 ADNS-9800
 Laser Gaming Sensor ADNS-9800
