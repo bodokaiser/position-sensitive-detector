@@ -28,7 +28,7 @@ $EndSheet
 $Sheet
 S 4500 2500 2500 2000
 U 5D601578
-F0 "VOLTAGE ADC" 50
-F1 "adc-voltage.sch" 50
+F0 "ADC" 50
+F1 "adc.sch" 50
 $EndSheet
 $EndSCHEMATC
