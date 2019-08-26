@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:experimental-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
@@ -156,22 +157,22 @@ Wire Notes Line
 	9150 3900 9150 3000
 Text Notes 8500 2950 0    50   Italic 0
 SPI
-Text Label 5400 3750 0    50   ~ 0
+Text Label 4900 3750 0    50   ~ 0
 X1
 Wire Wire Line
-	5400 3750 5600 3750
-Text Label 5400 3850 0    50   ~ 0
+	4900 3750 5200 3750
+Text Label 4900 3850 0    50   ~ 0
 X2
 Wire Wire Line
-	5400 3850 5600 3850
-Text Label 5400 3950 0    50   ~ 0
+	4900 3850 5200 3850
+Text Label 4900 3950 0    50   ~ 0
 Y1
 Wire Wire Line
-	5400 3950 5600 3950
-Text Label 5400 4050 0    50   ~ 0
+	4900 3950 5200 3950
+Text Label 4900 4050 0    50   ~ 0
 Y2
 Wire Wire Line
-	5400 4050 5600 4050
+	4900 4050 5200 4050
 Text Label 6800 3950 2    50   ~ 0
 CNV
 Wire Wire Line
@@ -483,4 +484,56 @@ Wire Notes Line
 	6950 3000 4500 3000
 Text Notes 4500 2950 0    50   Italic 0
 ANALOG-DIGITAL-CONVERTER
+$Comp
+L Device:R R?
+U 1 1 5D640C63
+P 5350 3750
+F 0 "R?" V 5300 3600 50  0000 C CNN
+F 1 "100" V 5350 3750 50  0000 C CNN
+F 2 "" V 5280 3750 50  0001 C CNN
+F 3 "~" H 5350 3750 50  0001 C CNN
+	1    5350 3750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5500 3750 5600 3750
+$Comp
+L Device:R R?
+U 1 1 5D641270
+P 5350 3850
+F 0 "R?" V 5300 3700 50  0000 C CNN
+F 1 "100" V 5350 3850 50  0000 C CNN
+F 2 "" V 5280 3850 50  0001 C CNN
+F 3 "~" H 5350 3850 50  0001 C CNN
+	1    5350 3850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5500 3850 5600 3850
+$Comp
+L Device:R R?
+U 1 1 5D6415C2
+P 5350 3950
+F 0 "R?" V 5300 3800 50  0000 C CNN
+F 1 "100" V 5350 3950 50  0000 C CNN
+F 2 "" V 5280 3950 50  0001 C CNN
+F 3 "~" H 5350 3950 50  0001 C CNN
+	1    5350 3950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5500 3950 5600 3950
+$Comp
+L Device:R R?
+U 1 1 5D6417EE
+P 5350 4050
+F 0 "R?" V 5300 3900 50  0000 C CNN
+F 1 "100" V 5350 4050 50  0000 C CNN
+F 2 "" V 5280 4050 50  0001 C CNN
+F 3 "~" H 5350 4050 50  0001 C CNN
+	1    5350 4050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5500 4050 5600 4050
 $EndSCHEMATC
