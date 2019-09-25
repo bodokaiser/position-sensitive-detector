@@ -495,8 +495,6 @@ Wire Wire Line
 	8800 5400 8800 5250
 Text Label 6600 5050 0    50   ~ 0
 DIFFX
-Wire Wire Line
-	6600 5050 6700 5050
 Text Label 7450 5050 0    50   ~ 0
 DIFFY
 Wire Wire Line
@@ -515,8 +513,6 @@ Wire Notes Line
 	6500 5750 9150 5750
 Text Notes 6500 4750 0    50   ~ 0
 SIGNAL OUTPUT CONNECTORS
-Wire Wire Line
-	6800 5050 6850 5050
 $Comp
 L Device:Opamp_Dual_Generic U6
 U 1 1 5D73CCED
@@ -994,4 +990,6 @@ Wire Wire Line
 	3600 6300 3500 6300
 Wire Wire Line
 	3500 6300 3500 6400
+Wire Wire Line
+	6600 5050 6850 5050
 $EndSCHEMATC
