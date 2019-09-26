@@ -92,70 +92,70 @@ Wire Notes Line
 	2200 1000 1000 1000
 Text Notes 1000 950  0    50   ~ 0
 POWER SUPPLY
-Text Label 9600 1350 2    50   ~ 0
+Text Label 9750 1550 2    50   ~ 0
 X1
 Wire Wire Line
-	9600 1350 9400 1350
-Text Label 9600 1450 2    50   ~ 0
+	9750 1550 9550 1550
+Text Label 9750 1650 2    50   ~ 0
 X2
 Wire Wire Line
-	9600 1450 9400 1450
-Text Label 9600 1550 2    50   ~ 0
+	9750 1650 9550 1650
+Text Label 9750 1750 2    50   ~ 0
 Y1
 Wire Wire Line
-	9600 1550 9400 1550
-Text Label 9600 1650 2    50   ~ 0
+	9750 1750 9550 1750
+Text Label 9750 1850 2    50   ~ 0
 Y2
 Wire Wire Line
-	9600 1650 9400 1650
+	9750 1850 9550 1850
 Wire Notes Line
-	9000 1000 9750 1000
+	9000 1000 9850 1000
 Wire Notes Line
-	9750 1000 9750 2050
+	9850 1000 9850 2000
 Wire Notes Line
-	9750 2050 9000 2050
+	9850 2000 9000 2000
 Wire Notes Line
-	9000 2050 9000 1000
+	9000 2000 9000 1000
 Text Notes 9000 950  0    50   ~ 0
 SIGNAL INPUT
 $Comp
 L Connector:Screw_Terminal_01x04 J?
 U 1 1 5D6D0047
-P 10400 1600
+P 10500 1600
 AR Path="/5D61C196/5D6D0047" Ref="J?"  Part="1" 
 AR Path="/5D601578/5D6D0047" Ref="J6"  Part="1" 
-F 0 "J6" H 10250 1100 50  0000 C CNN
-F 1 "SPI" H 10250 1200 50  0000 C CNN
-F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-4_1x04_P2.54mm_Horizontal" H 10400 1600 50  0001 C CNN
-F 3 "~" H 10400 1600 50  0001 C CNN
-	1    10400 1600
+F 0 "J6" H 10350 1100 50  0000 C CNN
+F 1 "SPI" H 10350 1200 50  0000 C CNN
+F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-4_1x04_P2.54mm_Horizontal" H 10500 1600 50  0001 C CNN
+F 3 "~" H 10500 1600 50  0001 C CNN
+	1    10500 1600
 	1    0    0    1   
 $EndComp
-Text Label 10000 1400 0    50   ~ 0
+Text Label 10100 1700 0    50   ~ 0
 CNV
 Wire Wire Line
-	10000 1400 10200 1400
-Text Label 10000 1500 0    50   ~ 0
+	10100 1400 10300 1400
+Text Label 10100 1500 0    50   ~ 0
 SCK
 Wire Wire Line
-	10000 1500 10200 1500
-Text Label 10000 1600 0    50   ~ 0
+	10100 1500 10300 1500
+Text Label 10100 1600 0    50   ~ 0
 DIN
 Wire Wire Line
-	10000 1600 10200 1600
-Text Label 10000 1700 0    50   ~ 0
+	10100 1600 10300 1600
+Text Label 10100 1400 0    50   ~ 0
 SDO
 Wire Wire Line
-	10000 1700 10200 1700
+	10100 1700 10300 1700
 Wire Notes Line
-	10550 1000 9900 1000
+	10650 1000 10000 1000
 Wire Notes Line
-	9900 1000 9900 1900
+	10000 1000 10000 1900
 Wire Notes Line
-	9900 1900 10550 1900
+	10000 1900 10650 1900
 Wire Notes Line
-	10550 1900 10550 1000
-Text Notes 9900 950  0    50   Italic 0
+	10650 1900 10650 1000
+Text Notes 10000 950  0    50   Italic 0
 SPI
 Text Label 4350 1400 0    50   ~ 0
 X1
@@ -192,29 +192,25 @@ Wire Wire Line
 $Comp
 L Connector:Screw_Terminal_01x05 J5
 U 1 1 5D6F1D26
-P 9200 1550
-F 0 "J5" H 9050 2000 50  0000 C CNN
-F 1 "SIG_IN" H 9050 1900 50  0000 C CNN
-F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-5_1x05_P2.54mm_Horizontal" H 9200 1550 50  0001 C CNN
-F 3 "~" H 9200 1550 50  0001 C CNN
-	1    9200 1550
+P 9350 1650
+F 0 "J5" H 9250 2200 50  0000 C CNN
+F 1 "SIG_IN" H 9250 2100 50  0000 C CNN
+F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-5_1x05_P2.54mm_Horizontal" H 9350 1650 50  0001 C CNN
+F 3 "~" H 9350 1650 50  0001 C CNN
+	1    9350 1650
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	9500 1750 9400 1750
 $Comp
 L power:GNDA #PWR028
 U 1 1 5D6F572D
-P 9500 1800
-F 0 "#PWR028" H 9500 1550 50  0001 C CNN
-F 1 "GNDA" H 9505 1627 50  0000 C CNN
-F 2 "" H 9500 1800 50  0001 C CNN
-F 3 "" H 9500 1800 50  0001 C CNN
-	1    9500 1800
+P 9150 1700
+F 0 "#PWR028" H 9150 1450 50  0001 C CNN
+F 1 "GNDA" H 9155 1527 50  0000 C CNN
+F 2 "" H 9150 1700 50  0001 C CNN
+F 3 "" H 9150 1700 50  0001 C CNN
+	1    9150 1700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	9500 1750 9500 1800
 $Comp
 L power:GNDA #PWR025
 U 1 1 5D6F7D63
@@ -257,13 +253,13 @@ Wire Wire Line
 $Comp
 L Connector:Screw_Terminal_01x02 J4
 U 1 1 5D6FEBEF
-P 1150 1650
-F 0 "J4" H 1068 1325 50  0000 C CNN
-F 1 "PWR_IN" H 1068 1416 50  0000 C CNN
-F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-2_1x02_P2.54mm_Horizontal" H 1150 1650 50  0001 C CNN
-F 3 "~" H 1150 1650 50  0001 C CNN
-	1    1150 1650
-	-1   0    0    1   
+P 1150 1550
+F 0 "J4" H 1050 1900 50  0000 C CNN
+F 1 "PWR_IN" H 1050 1750 50  0000 C CNN
+F 2 "TerminalBlock_TE-Connectivity:TerminalBlock_TE_282834-2_1x02_P2.54mm_Horizontal" H 1150 1550 50  0001 C CNN
+F 3 "~" H 1150 1550 50  0001 C CNN
+	1    1150 1550
+	-1   0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
@@ -722,4 +718,12 @@ Wire Wire Line
 Connection ~ 6100 2500
 Wire Wire Line
 	6100 2500 6100 2700
+Wire Wire Line
+	9550 1450 9650 1450
+Wire Wire Line
+	9650 1450 9650 1300
+Wire Wire Line
+	9650 1300 9150 1300
+Wire Wire Line
+	9150 1300 9150 1700
 $EndSCHEMATC
