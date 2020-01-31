@@ -1,4 +1,0 @@
-(sym_lib_table
-  (lib (name Analog_CU)(type Legacy)(uri /Users/bodokaiser/Repositories/src/github.com/bodokaiser/position-sensitive-device/kicad/library/acu.lib)(options "")(descr ""))
-  (lib (name Sensor_OpticalPosition)(type Legacy)(uri /Users/bodokaiser/Repositories/src/github.com/bodokaiser/position-sensitive-device/kicad/library/psd.lib)(options "")(descr ""))
-)
