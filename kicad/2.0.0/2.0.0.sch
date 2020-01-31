@@ -4,11 +4,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Title "Position-sensitive detector"
+Date "2020-01-31"
+Rev "2.0.0"
+Comp "Ludwig-Maximilians-Universität"
+Comment1 "Bodo Kaiser"
 Comment2 ""
 Comment3 ""
 Comment4 ""
