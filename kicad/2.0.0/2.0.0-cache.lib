@@ -1,6 +1,28 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
+# 2.0.0-rescue_S599x-Sensor_Optical_Position
+#
+DEF 2.0.0-rescue_S599x-Sensor_Optical_Position D 0 20 N N 5 L N
+F0 "D" 20 70 50 H V L CNN
+F1 "2.0.0-rescue_S599x-Sensor_Optical_Position" -40 -110 50 H V C CNN
+F2 "" -50 0 50 H I C CNN
+F3 "" -50 0 50 H I C CNN
+DRAW
+P 2 0 1 8 -100 50 -100 -50 N
+P 2 0 1 0 -80 70 -60 70 N
+P 2 0 1 0 0 0 -100 0 N
+P 3 0 1 0 -20 130 -80 70 -80 90 N
+P 4 0 1 8 0 -50 0 50 -100 0 0 -50 F
+P 5 0 1 0 30 130 -30 70 -30 90 -30 70 -10 70 N
+X I1 1 100 0 100 L 50 50 1 1 O
+X I2 6 100 0 100 L 50 50 2 1 O
+X I4 10 100 0 100 L 50 50 3 1 O
+X I3 5 100 0 100 L 50 50 4 1 O
+X K 8 -200 0 100 R 50 50 5 1 I
+ENDDRAW
+ENDDEF
+#
 # Connector_Conn_Coaxial
 #
 DEF Connector_Conn_Coaxial J 0 40 Y N 1 F N
@@ -156,28 +178,6 @@ S -200 200 200 -75 0 1 10 f
 X ADJ 1 0 300 100 D 50 50 1 1 I
 X VI 2 -300 0 100 R 50 50 1 1 W
 X VO 3 300 0 100 L 50 50 1 1 w
-ENDDRAW
-ENDDEF
-#
-# Sensor_Optical_Position_S599x
-#
-DEF Sensor_Optical_Position_S599x D 0 20 N N 5 L N
-F0 "D" 20 70 50 H V L CNN
-F1 "Sensor_Optical_Position_S599x" -40 -110 50 H V C CNN
-F2 "" -50 0 50 H I C CNN
-F3 "" -50 0 50 H I C CNN
-DRAW
-P 2 0 1 8 -100 50 -100 -50 N
-P 2 0 1 0 -80 70 -60 70 N
-P 2 0 1 0 0 0 -100 0 N
-P 3 0 1 0 -20 130 -80 70 -80 90 N
-P 4 0 1 8 0 -50 0 50 -100 0 0 -50 F
-P 5 0 1 0 30 130 -30 70 -30 90 -30 70 -10 70 N
-X I1 1 100 0 100 L 50 50 1 1 O
-X I2 6 100 0 100 L 50 50 2 1 O
-X I4 10 100 0 100 L 50 50 3 1 O
-X I3 5 100 0 100 L 50 50 4 1 O
-X K 8 -200 0 100 R 50 50 5 1 I
 ENDDRAW
 ENDDEF
 #
