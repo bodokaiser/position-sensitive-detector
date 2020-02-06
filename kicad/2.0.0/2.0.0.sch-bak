@@ -470,39 +470,6 @@ F 3 "" H 1350 4550 50  0001 C CNN
 	5    1400 4550
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:Opamp_Dual_Generic U1
-U 1 1 5E395987
-P 2250 1850
-F 0 "U1" H 2250 1483 50  0000 C CNN
-F 1 "OPA2197" H 2250 1574 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 2250 1850 50  0001 C CNN
-F 3 "~" H 2250 1850 50  0001 C CNN
-	1    2250 1850
-	1    0    0    1   
-$EndComp
-$Comp
-L Device:Opamp_Dual_Generic U1
-U 2 1 5E396064
-P 3750 1850
-F 0 "U1" H 3750 1483 50  0000 C CNN
-F 1 "OPA2197" H 3750 1574 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 3750 1850 50  0001 C CNN
-F 3 "~" H 3750 1850 50  0001 C CNN
-	2    3750 1850
-	1    0    0    1   
-$EndComp
-$Comp
-L Device:Opamp_Dual_Generic U1
-U 3 1 5E39666A
-P 950 1550
-F 0 "U1" H 1000 1650 50  0000 L CNN
-F 1 "OPA2197" H 900 1550 50  0000 L CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 950 1550 50  0001 C CNN
-F 3 "~" H 950 1550 50  0001 C CNN
-	3    950  1550
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1750 1750 1850 1750
 $Comp
@@ -825,39 +792,6 @@ F 3 "" H 850 3850 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	850  3850 850  3700
-$Comp
-L Device:Opamp_Dual_Generic U2
-U 1 1 5E3E1751
-P 2250 3600
-F 0 "U2" H 2250 3233 50  0000 C CNN
-F 1 "OPA2197" H 2250 3324 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 2250 3600 50  0001 C CNN
-F 3 "~" H 2250 3600 50  0001 C CNN
-	1    2250 3600
-	1    0    0    1   
-$EndComp
-$Comp
-L Device:Opamp_Dual_Generic U2
-U 2 1 5E3E290A
-P 3750 3600
-F 0 "U2" H 3750 3233 50  0000 C CNN
-F 1 "OPA2197" H 3750 3324 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 3750 3600 50  0001 C CNN
-F 3 "~" H 3750 3600 50  0001 C CNN
-	2    3750 3600
-	1    0    0    1   
-$EndComp
-$Comp
-L Device:Opamp_Dual_Generic U2
-U 3 1 5E3E3958
-P 950 3300
-F 0 "U2" H 1000 3400 50  0000 L CNN
-F 1 "OPA2197" H 900 3300 50  0000 L CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 950 3300 50  0001 C CNN
-F 3 "~" H 950 3300 50  0001 C CNN
-	3    950  3300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1200 4550 1000 4550
 Wire Notes Line
@@ -872,39 +806,6 @@ Text Notes 600  600  0    50   ~ 0
 DETECTOR AND TRANSIMPEDANCE AMPLIFIERS
 Text Notes 2200 4650 0    42   Italic 0
 For details on how to size the feedback capacitor check\nW. Jung. Opamp Application Handbook. p. 273 
-$Comp
-L Device:Opamp_Dual_Generic U5
-U 1 1 5E43D5EA
-P 6950 1500
-F 0 "U5" H 6950 1133 50  0000 C CNN
-F 1 "OPA2197" H 6950 1224 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6950 1500 50  0001 C CNN
-F 3 "~" H 6950 1500 50  0001 C CNN
-	1    6950 1500
-	1    0    0    1   
-$EndComp
-$Comp
-L Device:Opamp_Dual_Generic U5
-U 2 1 5E43E84F
-P 6950 3300
-F 0 "U5" H 6950 2933 50  0000 C CNN
-F 1 "OPA2197" H 6950 3024 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 6950 3300 50  0001 C CNN
-F 3 "~" H 6950 3300 50  0001 C CNN
-	2    6950 3300
-	1    0    0    1   
-$EndComp
-$Comp
-L Device:Opamp_Dual_Generic U5
-U 3 1 5E43F028
-P 5300 2500
-F 0 "U5" H 5050 2450 50  0000 R CNN
-F 1 "OPA2197" H 5100 2550 50  0000 R CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5300 2500 50  0001 C CNN
-F 3 "~" H 5300 2500 50  0001 C CNN
-	3    5300 2500
-	-1   0    0    1   
-$EndComp
 $Comp
 L power:GND #PWR0117
 U 1 1 5E43F321
@@ -1412,17 +1313,6 @@ Text Notes 5800 4400 0    50   Italic 0
 DIFFX = (X2 + Y1) - (X1 + Y2)\nDIFFY = (X2 + Y2) - (X1 + Y1)
 Text Notes 5600 4600 0    42   Italic 0
 See the S5990 datasheet for details on the formula.
-$Comp
-L Device:Opamp_Dual_Generic U6
-U 1 1 5E6E4B30
-P 10200 1600
-F 0 "U6" H 10200 1233 50  0000 C CNN
-F 1 "OPA197" H 10200 1324 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 10200 1600 50  0001 C CNN
-F 3 "~" H 10200 1600 50  0001 C CNN
-	1    10200 1600
-	1    0    0    1   
-$EndComp
 Text Label 9200 1100 0    50   Italic 0
 -X1
 Text Label 9200 1500 0    50   Italic 0
@@ -1556,17 +1446,6 @@ SUM = X1 + X2 + Y1 + Y2
 Text Notes 9200 2950 0    42   Italic 0
 See the S5990 datasheet for details on the formula.
 Connection ~ 10600 1600
-$Comp
-L Device:Opamp_Dual_Generic U6
-U 3 1 5E764FFA
-P 8700 1950
-F 0 "U6" H 8658 1996 50  0000 L CNN
-F 1 "OPA197" H 8658 1905 50  0000 L CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 8700 1950 50  0001 C CNN
-F 3 "~" H 8700 1950 50  0001 C CNN
-	3    8700 1950
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:+12V #PWR0129
 U 1 1 5E768443
@@ -1759,4 +1638,125 @@ Wire Notes Line
 	3550 7650 3550 6800
 Text Notes 3550 6750 0    50   ~ 0
 OUTPUT CONNECTORS
+$Comp
+L Amplifier_Operational:OPA197IDR U6
+U 2 1 5E3ED93E
+P 8600 1950
+F 0 "U6" H 8850 2000 50  0000 C CNN
+F 1 "OPA197IDR" H 8850 1900 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 8650 1950 50  0001 C CNN
+F 3 "" H 8650 1950 50  0001 C CNN
+	2    8600 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OPA197IDR U6
+U 1 1 5E3EEBF9
+P 10150 1600
+F 0 "U6" H 10250 1750 50  0000 L CNN
+F 1 "OPA197IDR" H 10200 1400 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 10200 1600 50  0001 C CNN
+F 3 "" H 10200 1600 50  0001 C CNN
+	1    10150 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OPA2197IDR U?
+U 2 1 5E495054
+P 6900 3300
+F 0 "U?" H 7100 3450 50  0000 C CNN
+F 1 "OPA2197IDR" H 7100 3100 50  0000 C CNN
+F 2 "" H 6950 3500 50  0001 C CNN
+F 3 "~" H 6950 3500 50  0001 C CNN
+	2    6900 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OPA2197IDR U?
+U 3 1 5E4964C0
+P 5500 2500
+F 0 "U?" H 5600 2550 50  0000 L CNN
+F 1 "OPA2197IDR" H 5458 2455 50  0000 L CNN
+F 2 "" H 5550 2700 50  0001 C CNN
+F 3 "~" H 5550 2700 50  0001 C CNN
+	3    5500 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OPA2197IDR U?
+U 1 1 5E4983D9
+P 2200 1850
+F 0 "U?" H 2350 2050 50  0000 C CNN
+F 1 "OPA2197IDR" H 2450 1650 50  0000 C CNN
+F 2 "" H 2250 2050 50  0001 C CNN
+F 3 "~" H 2250 2050 50  0001 C CNN
+	1    2200 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OPA2197IDR U?
+U 2 1 5E4995C9
+P 3700 1850
+F 0 "U?" H 3850 2050 50  0000 C CNN
+F 1 "OPA2197IDR" H 3950 1650 50  0000 C CNN
+F 2 "" H 3750 2050 50  0001 C CNN
+F 3 "~" H 3750 2050 50  0001 C CNN
+	2    3700 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OPA2197IDR U?
+U 3 1 5E49A8CC
+P 950 1550
+F 0 "U?" H 1050 1650 50  0000 L CNN
+F 1 "OPA2197IDR" H 900 1550 50  0000 L CNN
+F 2 "" H 1000 1750 50  0001 C CNN
+F 3 "~" H 1000 1750 50  0001 C CNN
+	3    950  1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OPA2197IDR U?
+U 1 1 5E4A737B
+P 2200 3600
+F 0 "U?" H 2350 3800 50  0000 C CNN
+F 1 "OPA2197IDR" H 2500 3400 50  0000 C CNN
+F 2 "" H 2250 3800 50  0001 C CNN
+F 3 "~" H 2250 3800 50  0001 C CNN
+	1    2200 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OPA2197IDR U?
+U 2 1 5E4A876E
+P 3700 3600
+F 0 "U?" H 3800 3800 50  0000 C CNN
+F 1 "OPA2197IDR" H 4000 3400 50  0000 C CNN
+F 2 "" H 3750 3800 50  0001 C CNN
+F 3 "~" H 3750 3800 50  0001 C CNN
+	2    3700 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OPA2197IDR U?
+U 3 1 5E4A97F1
+P 950 3300
+F 0 "U?" H 1050 3450 50  0000 L CNN
+F 1 "OPA2197IDR" H 950 3350 50  0000 L CNN
+F 2 "" H 1000 3500 50  0001 C CNN
+F 3 "~" H 1000 3500 50  0001 C CNN
+	3    950  3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OPA2197IDR U?
+U 1 1 5E493BA7
+P 6900 1500
+F 0 "U?" H 7100 1650 50  0000 C CNN
+F 1 "OPA2197IDR" H 7150 1300 50  0000 C CNN
+F 2 "" H 6950 1700 50  0001 C CNN
+F 3 "~" H 6950 1700 50  0001 C CNN
+	1    6900 1500
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
