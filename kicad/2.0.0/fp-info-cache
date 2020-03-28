@@ -1,4 +1,4 @@
-16920753256257369
+16920771711902334
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -6081,6 +6081,20 @@ Tantalum Capacitor SMD AVX-U (7361-438 Metric), IPC_7351 nominal, (Body size fro
 capacitor tantalum
 0
 2
+2
+Common
+S5990
+
+
+0
+10
+10
+Common
+SMA_Molex_73251-2120_EdgeMount
+Molex SMA RF Connector, Edge Mount, (http://www.molex.com/pdm_docs/sd/732512120_sd.pdf)
+sma edge
+0
+11
 2
 Connector
 Banana_Jack_1Pin
@@ -38107,13 +38121,6 @@ SATA
 0
 24
 23
-Connector_SMA
-SMA_Molex_73251-2120_EdgeMount
-Molex SMA RF Connector, Edge Mount, (http://www.molex.com/pdm_docs/sd/732512120_sd.pdf)
-sma edge
-0
-11
-2
 Connector_Samtec
 Samtec_FMC_ASP-134486-01_10x40_P1.27mm_Vertical
 http://suddendocs.samtec.com/prints/asp-134486-01-mkt.pdf
@@ -68914,13 +68921,6 @@ QFN 0.5
 0
 25
 24
-Sensor_Optical_Position
-S5990
-
-
-0
-10
-10
 Sensor_Pressure
 Freescale_98ARH99066A
 https://www.nxp.com/docs/en/data-sheet/MPXH6250A.pdf
