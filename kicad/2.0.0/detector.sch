@@ -1117,16 +1117,12 @@ Text Label 10100 1150 0    50   ~ 0
 -X1
 Wire Wire Line
 	10100 1150 10300 1150
-Text Label 10100 1250 0    50   ~ 0
+Text Label 10100 1350 0    50   ~ 0
 -X2
 Wire Wire Line
 	10100 1250 10300 1250
-Text Label 10100 1350 0    50   ~ 0
--Y1
 Wire Wire Line
 	10100 1350 10300 1350
-Text Label 10100 1450 0    50   ~ 0
--Y2
 Wire Wire Line
 	10100 1450 10300 1450
 Wire Notes Line
@@ -1392,4 +1388,8 @@ Wire Wire Line
 	1300 2400 1700 2400
 Wire Wire Line
 	1300 4000 1700 4000
+Text Label 10100 1450 0    50   ~ 0
+-Y2
+Text Label 10100 1250 0    50   ~ 0
+-Y1
 $EndSCHEMATC

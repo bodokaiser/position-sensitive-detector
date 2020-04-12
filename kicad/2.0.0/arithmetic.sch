@@ -1513,9 +1513,9 @@ F 3 "~" H 1800 2350 50  0001 C CNN
 $EndComp
 Text Label 2200 2150 2    50   Italic 0
 -X1
-Text Label 2200 2250 2    50   Italic 0
--X2
 Text Label 2200 2350 2    50   Italic 0
+-X2
+Text Label 2200 2250 2    50   Italic 0
 -Y1
 Text Label 2200 2450 2    50   Italic 0
 -Y2
