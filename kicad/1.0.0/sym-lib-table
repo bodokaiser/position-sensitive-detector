@@ -1,5 +1,0 @@
-(sym_lib_table
-  (lib (name Connector_Header)(type Legacy)(uri /Users/bodokaiser/Repositories/src/github.com/bodokaiser/position-sensitive-device/kicad/library/header.lib)(options "")(descr ""))
-  (lib (name Sensor_OpticalPosition)(type Legacy)(uri /Users/bodokaiser/Repositories/src/github.com/bodokaiser/position-sensitive-device/kicad/library/psd.lib)(options "")(descr ""))
-  (lib (name modular-rescue)(type Legacy)(uri ${KIPRJMOD}/modular-rescue.lib)(options "")(descr ""))
-)

@@ -1,5 +1,0 @@
-(fp_lib_table
-  (lib (name Connector_Header)(type KiCad)(uri /Users/bodokaiser/Repositories/src/github.com/bodokaiser/position-sensitive-device/kicad/library/header.pretty)(options "")(descr ""))
-  (lib (name Sensor_OpticalPosition)(type KiCad)(uri /Users/bodokaiser/Repositories/src/github.com/bodokaiser/position-sensitive-device/kicad/library/psd.pretty)(options "")(descr ""))
-  (lib (name Connector_SMA)(type KiCad)(uri /Users/bodokaiser/Repositories/src/github.com/bodokaiser/position-sensitive-device/kicad/library/sma.pretty)(options "")(descr ""))
-)
