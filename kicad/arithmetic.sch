@@ -840,17 +840,6 @@ Wire Wire Line
 	9750 2750 9750 3050
 Wire Wire Line
 	8600 2950 8750 2950
-$Comp
-L Amplifier_Operational:OPA197xDBV U4
-U 1 1 5E77CAA4
-P 9850 2450
-F 0 "U4" H 10150 2300 50  0000 C CNN
-F 1 "OPA197xDBV" H 10100 2200 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 9750 2250 50  0001 L CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa197.pdf" H 9850 2650 50  0001 C CNN
-	1    9850 2450
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9400 3250 9400 2900
 $Comp
@@ -1536,17 +1525,6 @@ Wire Wire Line
 	7050 2750 7050 3050
 Wire Wire Line
 	5900 2750 6050 2750
-$Comp
-L Amplifier_Operational:OPA197xDBV U3
-U 1 1 5EAD1BE7
-P 7150 2450
-F 0 "U3" H 7450 2300 50  0000 C CNN
-F 1 "OPA197xDBV" H 7400 2200 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 7050 2250 50  0001 L CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa197.pdf" H 7150 2650 50  0001 C CNN
-	1    7150 2450
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6700 3250 6700 3100
 $Comp
@@ -1897,17 +1875,6 @@ Wire Wire Line
 	7050 5500 7050 5800
 Wire Wire Line
 	5900 5500 6050 5500
-$Comp
-L Amplifier_Operational:OPA197xDBV U5
-U 1 1 5EE0464F
-P 7150 5200
-F 0 "U5" H 7450 5050 50  0000 C CNN
-F 1 "OPA197xDBV" H 7400 4950 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 7050 5000 50  0001 L CNN
-F 3 "http://www.ti.com/lit/ds/symlink/opa197.pdf" H 7150 5400 50  0001 C CNN
-	1    7150 5200
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6700 6000 6700 5850
 $Comp
@@ -2015,4 +1982,37 @@ Wire Wire Line
 Wire Wire Line
 	6500 4700 6050 4700
 Connection ~ 6050 4700
+$Comp
+L Amplifier_Operational:OPA197xD U3
+U 1 1 5EA083BA
+P 7150 2450
+F 0 "U3" H 7300 2300 50  0000 L CNN
+F 1 "OPA197xD" H 7150 2200 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 7050 2250 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa197.pdf" H 7300 2600 50  0001 C CNN
+	1    7150 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OPA197xD U5
+U 1 1 5EA0BE83
+P 9850 2450
+F 0 "U5" H 10000 2300 50  0000 L CNN
+F 1 "OPA197xD" H 9850 2200 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 9750 2250 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa197.pdf" H 10000 2600 50  0001 C CNN
+	1    9850 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OPA197xD U4
+U 1 1 5EA0D7C6
+P 7150 5200
+F 0 "U4" H 7300 5050 50  0000 L CNN
+F 1 "OPA197xD" H 7150 4950 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 7050 5000 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa197.pdf" H 7300 5350 50  0001 C CNN
+	1    7150 5200
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
