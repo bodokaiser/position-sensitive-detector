@@ -1392,4 +1392,15 @@ Text Label 10100 1450 0    50   ~ 0
 -Y2
 Text Label 10100 1250 0    50   ~ 0
 -Y1
+$Comp
+L Mechanical:MountingHole_Pad H?
+U 1 1 5EA4D075
+P 10100 3450
+F 0 "H?" H 10200 3499 50  0000 L CNN
+F 1 "MountingHole_Pad" H 10200 3408 50  0000 L CNN
+F 2 "" H 10100 3450 50  0001 C CNN
+F 3 "~" H 10100 3450 50  0001 C CNN
+	1    10100 3450
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
