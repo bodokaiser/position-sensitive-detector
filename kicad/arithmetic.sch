@@ -2015,4 +2015,134 @@ F 3 "http://www.ti.com/lit/ds/symlink/opa197.pdf" H 7300 5350 50  0001 C CNN
 	1    7150 5200
 	1    0    0    -1  
 $EndComp
+$Comp
+L Mechanical:MountingHole_Pad H1
+U 1 1 5EACE9FB
+P 2300 7000
+F 0 "H1" H 2400 7049 50  0000 L CNN
+F 1 "MountingHole_Pad" H 2400 6958 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5_Pad" H 2300 7000 50  0001 C CNN
+F 3 "~" H 2300 7000 50  0001 C CNN
+	1    2300 7000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0113
+U 1 1 5EACEF0B
+P 2300 7150
+AR Path="/5EACEF0B" Ref="#PWR0113"  Part="1" 
+AR Path="/5E4BE137/5EACEF0B" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0113" H 2300 6900 50  0001 C CNN
+F 1 "GND" H 2305 6977 50  0000 C CNN
+F 2 "" H 2300 7150 50  0001 C CNN
+F 3 "" H 2300 7150 50  0001 C CNN
+	1    2300 7150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 7150 2300 7100
+$Comp
+L Mechanical:MountingHole_Pad H2
+U 1 1 5EADD1F3
+P 3200 7000
+F 0 "H2" H 3300 7049 50  0000 L CNN
+F 1 "MountingHole_Pad" H 3300 6958 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5_Pad" H 3200 7000 50  0001 C CNN
+F 3 "~" H 3200 7000 50  0001 C CNN
+	1    3200 7000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0114
+U 1 1 5EADD1F9
+P 3200 7150
+AR Path="/5EADD1F9" Ref="#PWR0114"  Part="1" 
+AR Path="/5E4BE137/5EADD1F9" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0114" H 3200 6900 50  0001 C CNN
+F 1 "GND" H 3205 6977 50  0000 C CNN
+F 2 "" H 3200 7150 50  0001 C CNN
+F 3 "" H 3200 7150 50  0001 C CNN
+	1    3200 7150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 7150 3200 7100
+$Comp
+L Mechanical:MountingHole_Pad H3
+U 1 1 5EAEAEF9
+P 4100 7000
+F 0 "H3" H 4200 7049 50  0000 L CNN
+F 1 "MountingHole_Pad" H 4200 6958 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5_Pad" H 4100 7000 50  0001 C CNN
+F 3 "~" H 4100 7000 50  0001 C CNN
+	1    4100 7000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0115
+U 1 1 5EAEAEFF
+P 4100 7150
+AR Path="/5EAEAEFF" Ref="#PWR0115"  Part="1" 
+AR Path="/5E4BE137/5EAEAEFF" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0115" H 4100 6900 50  0001 C CNN
+F 1 "GND" H 4105 6977 50  0000 C CNN
+F 2 "" H 4100 7150 50  0001 C CNN
+F 3 "" H 4100 7150 50  0001 C CNN
+	1    4100 7150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 7150 4100 7100
+$Comp
+L Mechanical:MountingHole_Pad H4
+U 1 1 5EAF96D9
+P 5000 7000
+F 0 "H4" H 5100 7049 50  0000 L CNN
+F 1 "MountingHole_Pad" H 5100 6958 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5_Pad" H 5000 7000 50  0001 C CNN
+F 3 "~" H 5000 7000 50  0001 C CNN
+	1    5000 7000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0116
+U 1 1 5EAF96DF
+P 5000 7150
+AR Path="/5EAF96DF" Ref="#PWR0116"  Part="1" 
+AR Path="/5E4BE137/5EAF96DF" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0116" H 5000 6900 50  0001 C CNN
+F 1 "GND" H 5005 6977 50  0000 C CNN
+F 2 "" H 5000 7150 50  0001 C CNN
+F 3 "" H 5000 7150 50  0001 C CNN
+	1    5000 7150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 7150 5000 7100
+$Comp
+L Mechanical:MountingHole_Pad H5
+U 1 1 5EB2DC32
+P 5900 7000
+F 0 "H5" H 6000 7049 50  0000 L CNN
+F 1 "MountingHole_Pad" H 6000 6958 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.7mm_M2.5_Pad" H 5900 7000 50  0001 C CNN
+F 3 "~" H 5900 7000 50  0001 C CNN
+	1    5900 7000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0117
+U 1 1 5EB2DC38
+P 5900 7150
+AR Path="/5EB2DC38" Ref="#PWR0117"  Part="1" 
+AR Path="/5E4BE137/5EB2DC38" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0117" H 5900 6900 50  0001 C CNN
+F 1 "GND" H 5905 6977 50  0000 C CNN
+F 2 "" H 5900 7150 50  0001 C CNN
+F 3 "" H 5900 7150 50  0001 C CNN
+	1    5900 7150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 7150 5900 7100
 $EndSCHEMATC
