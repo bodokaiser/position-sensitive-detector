@@ -801,20 +801,16 @@ Wire Notes Line
 	5300 4500 5300 750 
 Wire Notes Line
 	5300 750  1950 750 
-Text Label 1900 5550 0    50   Italic 0
--X1
-Text Label 1000 5450 0    50   Italic 0
--X2
-Text Label 1000 5550 0    50   Italic 0
--Y1
 Text Label 1900 5450 0    50   Italic 0
+-X1
+Text Label 1000 5350 0    50   Italic 0
+-X2
+Text Label 1000 5450 0    50   Italic 0
+-Y1
+Text Label 1900 5350 0    50   Italic 0
 -Y2
 Wire Wire Line
 	1000 5150 1200 5150
-Wire Wire Line
-	1200 5250 1100 5250
-Wire Wire Line
-	1000 5350 1100 5350
 Wire Wire Line
 	1200 5450 1000 5450
 Wire Wire Line
@@ -863,26 +859,17 @@ Wire Wire Line
 $Comp
 L power:GND #PWR02
 U 1 1 5EC11469
-P 1900 5350
+P 1900 5250
 AR Path="/5EC11469" Ref="#PWR02"  Part="1" 
 AR Path="/5E48BEC6/5EC11469" Ref="#PWR?"  Part="1" 
 AR Path="/5E4BE137/5EC11469" Ref="#PWR?"  Part="1" 
-F 0 "#PWR02" H 1900 5100 50  0001 C CNN
-F 1 "GND" V 1905 5222 50  0000 R CNN
-F 2 "" H 1900 5350 50  0001 C CNN
-F 3 "" H 1900 5350 50  0001 C CNN
-	1    1900 5350
+F 0 "#PWR02" H 1900 5000 50  0001 C CNN
+F 1 "GND" V 1905 5122 50  0000 R CNN
+F 2 "" H 1900 5250 50  0001 C CNN
+F 3 "" H 1900 5250 50  0001 C CNN
+	1    1900 5250
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2100 5250 2000 5250
-Wire Wire Line
-	2000 5250 2000 5350
-Wire Wire Line
-	2000 5350 1900 5350
-Wire Wire Line
-	2000 5350 2100 5350
-Connection ~ 2000 5350
 Wire Wire Line
 	2100 5450 1900 5450
 Wire Notes Line
@@ -1897,102 +1884,19 @@ $EndComp
 Wire Wire Line
 	1800 7300 1800 7250
 $Comp
-L Mechanical:MountingHole_Pad H3
-U 1 1 5EAEAEF9
-P 2700 7150
-F 0 "H3" H 2800 7199 50  0000 L CNN
-F 1 "MountingHole_Pad" H 2800 7108 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm_M2.5_Pad" H 2700 7150 50  0001 C CNN
-F 3 "~" H 2700 7150 50  0001 C CNN
-	1    2700 7150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0115
-U 1 1 5EAEAEFF
-P 2700 7300
-AR Path="/5EAEAEFF" Ref="#PWR0115"  Part="1" 
-AR Path="/5E4BE137/5EAEAEFF" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0115" H 2700 7050 50  0001 C CNN
-F 1 "GND" H 2705 7127 50  0000 C CNN
-F 2 "" H 2700 7300 50  0001 C CNN
-F 3 "" H 2700 7300 50  0001 C CNN
-	1    2700 7300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2700 7300 2700 7250
-$Comp
-L Mechanical:MountingHole_Pad H4
-U 1 1 5EAF96D9
-P 3600 7150
-F 0 "H4" H 3700 7199 50  0000 L CNN
-F 1 "MountingHole_Pad" H 3700 7108 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm_M2.5_Pad" H 3600 7150 50  0001 C CNN
-F 3 "~" H 3600 7150 50  0001 C CNN
-	1    3600 7150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0116
-U 1 1 5EAF96DF
-P 3600 7300
-AR Path="/5EAF96DF" Ref="#PWR0116"  Part="1" 
-AR Path="/5E4BE137/5EAF96DF" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0116" H 3600 7050 50  0001 C CNN
-F 1 "GND" H 3605 7127 50  0000 C CNN
-F 2 "" H 3600 7300 50  0001 C CNN
-F 3 "" H 3600 7300 50  0001 C CNN
-	1    3600 7300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3600 7300 3600 7250
-$Comp
-L Mechanical:MountingHole_Pad H5
-U 1 1 5EB2DC32
-P 4500 7150
-F 0 "H5" H 4600 7199 50  0000 L CNN
-F 1 "MountingHole_Pad" H 4600 7108 50  0000 L CNN
-F 2 "MountingHole:MountingHole_2.7mm_M2.5_Pad" H 4500 7150 50  0001 C CNN
-F 3 "~" H 4500 7150 50  0001 C CNN
-	1    4500 7150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0117
-U 1 1 5EB2DC38
-P 4500 7300
-AR Path="/5EB2DC38" Ref="#PWR0117"  Part="1" 
-AR Path="/5E4BE137/5EB2DC38" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0117" H 4500 7050 50  0001 C CNN
-F 1 "GND" H 4505 7127 50  0000 C CNN
-F 2 "" H 4500 7300 50  0001 C CNN
-F 3 "" H 4500 7300 50  0001 C CNN
-	1    4500 7300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4500 7300 4500 7250
-$Comp
 L power:GND #PWR0118
 U 1 1 5EB97CC8
-P 1000 5350
+P 1000 5250
 AR Path="/5EB97CC8" Ref="#PWR0118"  Part="1" 
 AR Path="/5E48BEC6/5EB97CC8" Ref="#PWR?"  Part="1" 
 AR Path="/5E4BE137/5EB97CC8" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0118" H 1000 5100 50  0001 C CNN
-F 1 "GND" V 1005 5222 50  0000 R CNN
-F 2 "" H 1000 5350 50  0001 C CNN
-F 3 "" H 1000 5350 50  0001 C CNN
-	1    1000 5350
+F 0 "#PWR0118" H 1000 5000 50  0001 C CNN
+F 1 "GND" V 1005 5122 50  0000 R CNN
+F 2 "" H 1000 5250 50  0001 C CNN
+F 3 "" H 1000 5250 50  0001 C CNN
+	1    1000 5250
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	1100 5250 1100 5350
-Connection ~ 1100 5350
-Wire Wire Line
-	1100 5350 1200 5350
 $Comp
 L power:+12V #PWR0119
 U 1 1 5EBB4909
@@ -2216,4 +2120,40 @@ Wire Notes Line
 	1800 3950 600  3950
 Wire Notes Line
 	1800 2100 1800 3950
+Wire Wire Line
+	1000 5350 1200 5350
+Wire Wire Line
+	1000 5250 1200 5250
+$Comp
+L power:GND #PWR?
+U 1 1 5EB349D4
+P 1000 5550
+AR Path="/5EB349D4" Ref="#PWR?"  Part="1" 
+AR Path="/5E48BEC6/5EB349D4" Ref="#PWR?"  Part="1" 
+AR Path="/5E4BE137/5EB349D4" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 1000 5300 50  0001 C CNN
+F 1 "GND" V 1005 5422 50  0000 R CNN
+F 2 "" H 1000 5550 50  0001 C CNN
+F 3 "" H 1000 5550 50  0001 C CNN
+	1    1000 5550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1900 5350 2100 5350
+Wire Wire Line
+	1900 5250 2100 5250
+$Comp
+L power:GND #PWR?
+U 1 1 5EB438B6
+P 1900 5550
+AR Path="/5EB438B6" Ref="#PWR?"  Part="1" 
+AR Path="/5E48BEC6/5EB438B6" Ref="#PWR?"  Part="1" 
+AR Path="/5E4BE137/5EB438B6" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 1900 5300 50  0001 C CNN
+F 1 "GND" V 1905 5422 50  0000 R CNN
+F 2 "" H 1900 5550 50  0001 C CNN
+F 3 "" H 1900 5550 50  0001 C CNN
+	1    1900 5550
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC

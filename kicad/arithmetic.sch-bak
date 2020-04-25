@@ -801,13 +801,13 @@ Wire Notes Line
 	5300 4500 5300 750 
 Wire Notes Line
 	5300 750  1950 750 
-Text Label 1000 5450 0    50   Italic 0
--X1
-Text Label 1900 5450 0    50   Italic 0
--X2
 Text Label 1900 5550 0    50   Italic 0
--Y1
+-X1
+Text Label 1000 5450 0    50   Italic 0
+-X2
 Text Label 1000 5550 0    50   Italic 0
+-Y1
+Text Label 1900 5450 0    50   Italic 0
 -Y2
 Wire Wire Line
 	1000 5150 1200 5150
