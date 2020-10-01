@@ -2156,4 +2156,6 @@ F 3 "" H 1900 5550 50  0001 C CNN
 	1    1900 5550
 	0    1    1    0   
 $EndComp
+Text Notes 2400 6250 0    50   ~ 0
+Next revision:\nVoltage regulator reference resistors from 1210 to 0603
 $EndSCHEMATC
