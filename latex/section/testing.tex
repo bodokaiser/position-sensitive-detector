@@ -1,10 +1,12 @@
-\section{Electrical testing}
+\section{Testing}
+
+\subsection{Electronics}
 
 With the electrical testing, we want to confirm that the solder connections and components work as expected.
 The most basic check is that the supply voltages are correct.
 More elaborated checks concern the operational amplifiers but are out of the scope of this document.
 
-\subsection{Arithmetic board I}
+\subsubsection{Arithmetic board I}
 
 Leave the arithmetic board unpowered and measure the resistance between the supply lines through the test points TP1 (+12 V), TP2 (GND), and TP3 (-12 V).
 There should be very high resistance between any of these test points.
@@ -25,7 +27,7 @@ If the op-amps are very hot, there is a short.
 You can additionally check if the op-amps work by grounding the inverting input.
 Because the op-amp's non-inverting input is connected with the ground, the op-amp output should be a virtual ground.
 
-\subsection{Detector board}
+\subsubsection{Detector board}
 
 Have the detector board unplugged and measure the resistance between GND (you can use the center pin of the headers), TP5 (+ 5V), and TP6 (-5 V). If the resistance is high, proceed. Otherwise, find the short.
 
@@ -36,10 +38,11 @@ If the preceding checks are successful, mount the detector board on the arithmet
 
 Finally, confirm that the voltage reference (U3) outputs 10 V and that the op-amps have the correct supply voltage.
 
-\subsection{Arithmetic board II}
+\subsubsection{Arithmetic board II}
 
 Leave the detector board mounted on the arithmetic board.
 Measure the voltage at the outputs of the operational amplifiers of the arithmetic board.
 For the summing amplifier (U5), we expect an increase in voltage when illuminating the photodiode with the laser pointer.
 For the difference amplifiers (U3, U4), we expect the voltage to change when moving the laser pointer's focal spot on the photodiode.
 
+\subsection{Optics}

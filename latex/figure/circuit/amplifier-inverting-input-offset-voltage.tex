@@ -1,0 +1,17 @@
+\documentclass{standalone}
+
+\ifstandalone
+	\usepackage{amsmath}
+	\usepackage{circuitikz}
+\fi
+
+
+\begin{document}
+	\begin{circuitikz}
+		\draw (0, 0) node[op amp](opamp){};
+		\draw (opamp.-) |- (-1, 2) to[generic, l=$Z_f$] (1,2) -| (opamp.out);
+		\draw (opamp.out) -- +(1, 0) node[ocirc, label=$V_\text{out}$]{};
+		\draw (opamp.+) -- ++(0, -.5) node(node1){} to[voltage source, l=$V_\text{offset}$] ++(0, -2) node[ground](gnd1){};
+		\draw (opamp.-) node[circ]{} -- +(-2, 0) node(node2){} -- (node2 |- node1) to[generic, l=$Z_\text{in}$] (node2 |- gnd1) node[ground]{};
+	\end{circuitikz}
+\end{document}

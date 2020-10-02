@@ -1,0 +1,24 @@
+\documentclass{standalone}
+
+\ifstandalone
+	\usepackage{amsmath}
+	\usepackage{circuitikz}
+\fi
+
+
+\begin{document}
+	\begin{circuitikz}
+		\draw (-3, -2) to[current source, l=$I_p$] ++(0, 4);
+		\draw (-1, -2) node[circ]{} to[current source, l=$I_d$] ++(0, 4) node[circ]{};
+		\draw (1, -2) node[circ]{} to[resistor, l=$R_d$] ++(0, 4) node[circ]{};
+		\draw (3, -2) to[capacitor, l=$C_d$] ++(0, 4);
+		\draw (-3, -2) -- ++(6, 0);
+		\draw (-3, 2) -- ++(6, 0);
+		\draw (0, -2) -- ++(0, -1) node[ocirc, label=$V_b$, rotate=180]{};
+		\draw (0, 2) -- ++(0, 3) node(node)[circ]{};
+		\draw (node) to[resistor, label=$R_1$] ++(2, 2) node[ocirc, label=Y1, rotate=-10]{};
+		\draw (node) to[resistor, label=$R_2$] ++(-2, 2) node[ocirc, label=X1, rotate=10]{};
+		\draw (node) to[resistor, label=$R_3$] ++(2, -2) node[ocirc, label=X2, rotate=-150]{};
+		\draw (node) to[resistor, label=$R_4$] ++(-2, -2) node[ocirc, label=Y2, rotate=150]{};
+	\end{circuitikz}
+\end{document}

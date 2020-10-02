@@ -1,3 +1,34 @@
 \section{Introduction}
 
-% motivate why we need a position-sensitive device
+We define a position-sensitive device as a device that outputs voltages proportional to the center of mass coordinates of a light beam incident on a sensitive area.
+
+The present document summarizes the insights acquired on the journey of building such a device.
+
+\subsection{Motivation}
+
+Position-sensitive devices are used in a wide range of industrial and commercial applications, including displacement sensing and beam alignment, see Ref.~\cite[p.~22]{Maekynen00}.
+
+We are interested in using a position-sensitive device for beam pointing alignment in our quantum optics laboratory.
+
+The beam pointing refers to a laser beam's spatial focus and can change through thermal and mechanical effects.
+Uncompensated changes in beam alignment can quickly degrade the overall performance of an optical system.
+Therefore, it is crucial to align the beam pointing to ensure the optical system's proper operation at hand.
+
+\subsection{Overview}
+
+This document is organized as follows. The first section discusses the details of the electrical schematic and should be used as a reference to adjust parameters.
+ The second, third, and fourth sections are relevant for the assembly of the position-sensitive device.
+The last section discusses the testing procedures for quality control.
+The appendix contains more details, including references, about the theory of the (position-sensitive) photodiode and operational amplifiers.
+
+\subsection{Requirements}
+
+The requirements are specified rather loose. The only hard requirement concerns the connectors and voltages of the power supply. The power connector should be a LEMO4 whose pin configuration is compatible with the 15V dual-voltage power supplies used in the labs. Features that would be nice to have are:
+\begin{enumerate}
+	\item The device should be sensible with optical powers that are safe to operate, i.e., P < 1 uW. There is no preferred wavelength.
+	\item For easy integration into existing optical setups, the device should be as compact as possible. Additional space, if needed, should be occupied by elonging the height. The sensitive area of the detector should be on the bottom. The connectors should be on the top to avoid cables blocking the beam path.
+	\item It should be possible to mount different detector sizes on the device.
+\end{enumerate}
+The range of the output voltages of the device can be chosen for the optimal signal-to-noise ratio.
+
+

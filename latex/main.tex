@@ -21,6 +21,7 @@
   backend=biber,
   sorting=none
 ]{biblatex}
+\usepackage{csquotes}
 \usepackage[american]{circuitikz}
 \usepackage{glossaries}
 \usepackage[subpreambles=true]{standalone}
@@ -31,6 +32,8 @@
 \newglossaryentry{s5990}{name=S5990, description={Hamamatsu two-dimensional PSD}}
 \newacronym{psd}{PSD}{position-sensitive detector}
 \newacronym{gbp}{GBP}{gain-bandwidth-product}
+
+\pgfplotsset{compat=1.17}
 
 \title{Position-sensitive device}
 \author{Bodo Kaiser}
@@ -43,10 +46,14 @@
 \tableofcontents
 
 \include{section/introduction}
-\include{section/circuit-theory}
+\include{section/schematic}
+\include{section/commissioning}
 \include{section/manufacturing}
-\include{section/electrical-testing}
-\include{section/optical-testing}
+\include{section/testing}
+
+\appendix
+\include{appendix/photodiode}
+\include{appendix/operational-amplifier}
 
 \printglossaries
 \printbibliography
