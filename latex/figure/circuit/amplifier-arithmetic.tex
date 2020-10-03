@@ -1,0 +1,27 @@
+\documentclass{standalone}
+
+\ifstandalone
+	\usepackage{siunitx}
+	\usepackage{amsmath}
+	\usepackage{circuitikz}
+\fi
+
+
+\begin{document}
+	\begin{circuitikz}
+		\draw (0, 0) node[op amp, label={[yshift=-1cm]30:OPA187}](opamp){};
+		% output port
+		\draw (opamp.out) -- ++(2, 0) node(output)[ocirc, label=$V_\text{out}$]{};
+		% feedback impedance
+		\draw (opamp.-) node[circ]{} -- ++(0, 2) node(feedbackA)[circ]{} to[resistor, l=$R_f$, a=\SI{10}{\kilo\ohm}] (opamp.out |- feedbackA) node(feedbackB)[circ]{} -- (opamp.out) node[circ]{};
+		\draw (feedbackA) -- ++(0, 2) node(feedbackD)[]{} to[capacitor, l=$C_f$, a=\SI{5}{\pico\farad}] (opamp.out |- feedbackD) node(feedbackC)[]{} -- (feedbackB);
+		% compensation impedance
+		\draw (opamp.+) node[circ]{} to[capacitor, l_=$C_f$, a^=\SI{5}{\pico\farad}] ++(0, -3) node(compensationB)[ground]{};
+		\draw (opamp.+) -- ++(-2.5, 0) node[circ](compensationA){} to[resistor, l_=$R_f$, a^=\SI{10}{\kilo\ohm}] ++(0, -3) node[ground](compensationD){};
+		% input ports
+		\draw (feedbackA) -- ++(-1, 0) node(inputA)[circ]{} -- ++(0, 2) node(inputB)[]{} to[resistor, l_=$R_1$, a^=\SI{10}{\kilo\ohm}] ++(-3, 0) node(inputC)[ocirc, label=$V_1$]{};
+		\draw (inputA) to[resistor, l_=$R_2$, a^=\SI{10}{\kilo\ohm}] ++(-3, 0) node[ocirc, label=$V_2$]{};
+		\draw (compensationA) -- ++(-2, 0) node(inputC)[circ]{} to[resistor, l_=$R_4$, a^=\SI{10}{\kilo\ohm}] ++(-3, 0) node[ocirc, label=$V_4$]{};
+		\draw (inputC) -- ++(0, 2) to[resistor, l_=$R_3$, a^=\SI{10}{\kilo\ohm}] ++(-3, 0) node[ocirc, label=$V_3$]{};
+	\end{circuitikz}
+\end{document}
