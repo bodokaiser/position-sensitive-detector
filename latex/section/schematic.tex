@@ -15,13 +15,15 @@ In the following section, we give a very brief summary of the design and the cho
 
 \subsection{Voltage regulator}
 
-The voltage
+We use two voltage regulators to maintain a constant voltage of \SI{\pm12}{\volt} from the external \SI{\pm15}{\volt} power supply. The \SI{\pm12}{\volt} voltage powers most components except the transimpedance amplifiers of the detector.
+Using a dedicated pair of voltage regulators to power the transimpedance amplifiers decreases the load on the primary voltage regulator.
 
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/circuit/voltage-regulator}
 	\caption{Dual supply voltage regulator.}\label{fig:voltage_regulator_dual}
 \end{figure}
+\Cref{fig:voltage_regulator_dual} shows the circuitry of the primary voltage regulators that output \SI{\pm12}{\volt}.
 
 \subsection{Voltage reference}
 
