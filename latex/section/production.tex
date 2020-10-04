@@ -40,27 +40,21 @@ There might be errors, e.g., wrong casing sizes in the \path{BOM.xlsx} as it is 
 
 \subsection{Manufacturing}
 
-After you sourced the components, you can place them using the solder paste on the PCB.
+In the manufacturing process, we solder the components onto the PCB.
+We recommend to proceed in the following steps:
 
-Put on rubber gloves as the solder paste is potentially hazardous. Take out the solder paste from the fridge and let it reach room temperature. It is possible to use the cold solder paste directly, but it makes the handling more difficult as the paste is less fluid.
-
-Place the solder paste onto the contacts of the PCB. Generally speaking, it is better to have too much solder paste then too less. If there is a small overlap between the contacts, this is fine as the solder will shrink when transitioning to a liquid phase in the oven.
-
-Now, place the SMD components onto the solder with a tweezer. For me, it works best to start with the larger components and then progress to the smaller ones. You can check the components as placed in the generated HTML BOM.
-
-%\subsection{Reflow soldering}
-
-Start the oven and adjust the frame on which you place the board with the screw to the appropriate size. Use an empty PCB for this.
-After that, select the profile SMD180 and follow the instructions of the oven.
-
-\subsection{Quality control}
-
-Inspect the board for misplaced components and unmelted solder. You can use the solder heat gun to melt the remaining solder paste or remove misplaced components. However, you might blow away small capacitors.
-You can fix other defects by hand soldering.
-
-% \subsection{Hand soldering}
-
-Some components, for example, the SMA mounts or the pin headers, have to be soldered by hand. Before soldering these components by hand, jump to the electrical testing section. Only, if your board passes the electrical tests, proceed with hand soldering the missing parts.
+\begin{enumerate}
+    \item Put on rubber gloves as the solder paste is potentially hazardous.
+    \item  Take out the solder paste from the fridge and let it reach room temperature\footnote{It is possible to use the cold solder paste directly, but it makes the handling more difficult as the paste is less fluid.}.
+    \item Place the solder paste onto the contacts of the \gls{pcb}\footnote{Generally speaking, it is better to have too much solder paste then too less. If there is a small overlap between the contacts, this is fine as the solder will shrink when transitioning to a liquid phase in the oven.}.
+    \item Place the \gls{smd} components onto the solder with a tweezer\footnote{Start with the larger components and then progress to the smaller ones}.
+    \item Start the oven and adjust the frame on which you place the board with the screw to the appropriate size. Use an empty \gls{pcb} for this.
+    \item Select the profile SMD180 and follow the instructions of the oven.
+    \item Inspect the board for misplaced components and unmelted solder, and fix them by hand soldering\footnote{You can use the solder heat gun to melt the remaining solder paste or remove misplaced components. 
+However, you might blow away small capacitors.}.
+	\item Perform electrical testing as described in the next section.
+	\item Solder remaining components, for example, the \gls{sma} mounts or the pin headers, by hand.
+\end{enumerate}
 
 \subsection{Electrical testing}
 
@@ -68,42 +62,31 @@ With the electrical testing, we want to confirm that the solder connections and 
 The most basic check is that the supply voltages are correct.
 More elaborated checks concern the operational amplifiers but are out of the scope of this document.
 
-% \subsubsection{Arithmetic board I}
+For the arithmetic perform the following checks in the given order.
+Skipping steps might lead to permanent damage!
+\begin{todolist}
+	\item Leave the arithmetic board unpowered and check for high resistance between the supply lines through the test points TP1 (\SI{+12}{\volt}), TP2 (GND), and TP3 (\SI{-12}{\volt})\footnote{If there is low resistance ($>\SI{10}{\kilo\ohm}$), you probably have a short through soldering.}.
+	\item Configure the power supply to provide a dual voltage of \SI{\pm15}{\volt}\footnote{Alternatively, use two single voltage sources set to \SI{15}{\volt} and connect the negative port of one of the voltage sources with the other one's positive voltage.}. If possible, limit the current of the voltage sources.
+	\item Confirm that the output voltages are correct with the multimeter.
+	\item Connect the power supply with the arithmetic board but double-check the polarity.
+	\item The voltage between TP2 and TP1 should read around \SI{+12}{\volt} while the voltage between TP2 and TP3 should read about \SI{-12}{\volt}.
+	\item Confirm that the supply voltages reach the op-amps.
+	\item Check the temperature of the \gls{ic}s. If any \gls{ic} is very hot, there is a short.
+	\item Check if the op-amps work by grounding the inverting input and confirming that the output voltage changes to \SI{0}{\volt}.
+\end{todolist}
 
-Leave the arithmetic board unpowered and measure the resistance between the supply lines through the test points TP1 (+12 V), TP2 (GND), and TP3 (-12 V).
-There should be very high resistance between any of these test points.
-Otherwise, there is a short.
+For the detector perform the following checks in the given order.
+Skipping steps might lead to permanent damage!
+\begin{todolist}
+	\item Leave the detector board unplugged and confirm high resistance between GND (you can use the middle pin of the headers), TP5 (\SI{+5}{\volt}), and TP6 (\SI{-5}{\volt}).
+	\item Confirm a change of the voltage between the photodiode and GND's outer pins while illuminating the sensitive area of the photodiode with a laser pointer.
+	\item Mount the detector board on the arithmetic board, and measure the detector board's supply voltages.
+	\item Confirm that the voltage reference (U3) outputs \SI{10}{\volt} and that the op-amps have the correct supply voltage of \SI{\pm5}{\volt}.
+\end{todolist}
 
-If no short is detected, you can configure the power supply to provide a dual voltage of +- 15 V.
-Alternatively, use two single voltage sources set to 15 V and connect the negative port of one of the voltage sources with the other one's positive voltage.
-Confirm that the output voltages are correct with the multimeter. If possible, limit the current of the voltage sources.
-You can set the current limit as low as possible and increase from there until the voltage becomes stable.
-You might need to adjust the limit when connecting the voltages with the arithmetic board.
-
-Connect the power supply with the arithmetic board but double-check the polarity.
-The voltage between TP2 (GND) and TP1 (+12 V) should read around + 12 V while the voltage between TP2 (GND) and TP3 (- 12 V) should read about - 12 V.
-
-Confirm that the supply voltages reach the op-amps.
-Check the temperature of the op-amps.
-If the op-amps are very hot, there is a short.
-You can additionally check if the op-amps work by grounding the inverting input.
-Because the op-amp's non-inverting input is connected with the ground, the op-amp output should be a virtual ground.
-
-% \subsubsection{Detector board}
-
-Have the detector board unplugged and measure the resistance between GND (you can use the center pin of the headers), TP5 (+ 5V), and TP6 (-5 V). If the resistance is high, proceed. Otherwise, find the short.
-
-Measure the voltage between the photodiode and GND's outer pins while illuminating the sensitive area of the photodiode with a laser pointer.
-You should detect a small voltage.
-
-If the preceding checks are successful, mount the detector board on the arithmetic board, and measure the detector board's supply voltages.
-
-Finally, confirm that the voltage reference (U3) outputs 10 V and that the op-amps have the correct supply voltage.
-
-% \subsubsection{Arithmetic board II}
-
-Leave the detector board mounted on the arithmetic board.
-Measure the voltage at the outputs of the operational amplifiers of the arithmetic board.
-For the summing amplifier (U5), we expect an increase in voltage when illuminating the photodiode with the laser pointer.
+Finally, we test the arithmetic amplifiers on the arithmetic board.
+\begin{todolist}
+	\item Mount the detector onto the arithmetic board.
+	\item Measure the voltage at the outputs of the operational amplifiers of the arithmetic board. For the summing amplifier (U5), we expect an increase in voltage when illuminating the photodiode with the laser pointer.
 For the difference amplifiers (U3, U4), we expect the voltage to change when moving the laser pointer's focal spot on the photodiode.
-
+\end{todolist}

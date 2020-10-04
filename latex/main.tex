@@ -11,6 +11,7 @@
 \usepackage{booktabs}
 \usepackage{float}
 \usepackage{multirow}
+\usepackage{enumitem}
 \usepackage{physics}
 \usepackage{siunitx}
 \usepackage{hyperref}
@@ -30,15 +31,22 @@
 
 \makeglossaries
 \newglossaryentry{s5990}{name=S5990, description={Hamamatsu two-dimensional PSD}}
+\newacronym{ic}{IC}{integrated circuit}
 \newacronym{psd}{PSD}{position-sensitive detector}
 \newacronym{gbp}{GBP}{gain-bandwidth-product}
 \newacronym{pcb}{PCB}{printed circuit board}
 \newacronym{bom}{BOM}{bill of materials}
+\newacronym{smd}{SMD}{surface mounted device}
+\newacronym{sma}{SMA}{SubMiniature version A}
 \newacronym{html}{HTML}{hypertext markup language}
 
 \pgfplotsset{compat=1.17}
 
 \graphicspath{{image/}}
+
+% https://tex.stackexchange.com/questions/247681/how-to-create-checkbox-todo-list/313337
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
 
 \title{Position-sensitive device}
 \author{Bodo Kaiser}
