@@ -44,14 +44,25 @@ wherein $f_u$ is the \gls{gbp} of the operational amplifier,
 We use two voltage regulators to maintain a constant voltage of \SI{\pm12}{\volt} from the external \SI{\pm15}{\volt} power supply. The \SI{\pm12}{\volt} voltage powers most components except the transimpedance amplifiers of the detector.
 Using a dedicated pair of voltage regulators to power the transimpedance amplifiers decreases the load on the primary voltage regulator.
 
+\Cref{fig:voltage_regulator} shows the circuitry of the primary voltage regulators that output \SI{\pm12}{\volt}.
+The positive voltage regulator U1 of type LM317 and the negative voltage regulator U2 of type LM337 have an internal reference voltage of \SI{1.25}{\volt}.
+
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/circuit/voltage-regulator}
 	\caption{Dual supply voltage regulator}\label{fig:voltage_regulator}
 \end{figure}
-\Cref{fig:voltage_regulator} shows the circuitry of the primary voltage regulators that output \SI{\pm12}{\volt}.
-The positive voltage regulator U1 of type LM317 and the negative voltage regulator U2 of type LM337 have an internal reference voltage of \SI{1.25}{\volt}.
-Voltage divider comprising
+
+The voltage divider comprising R1 and R2 fixes the output voltage according to
+\begin{equation}
+	V_\text{out}=\SI{1.25}{\volt}\left(1+\frac{R_2}{R_1}\right).
+\end{equation}
+With $R1 = \SI{240}{\ohm}$ and $R2 = \SI{2.2}{\kilo\ohm}$, the output voltage is about \SI{12.7}{\volt}, which leaves enough space for potential voltage drops in, for example, the operational amplifiers.
+
+Diodes D1 and D3 ensure that the capacitors C3 and C5 can discharge over the external power supply.
+
+The application notes of one of the voltage regulator's datasheets describe the presented design.
+That is also the reason for not using fixed voltage regulators in this case.
 
 \subsection{Voltage reference}
 
