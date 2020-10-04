@@ -1,17 +1,43 @@
 \section{Schematic}
 
-The present section discusses some critical sections of the electrical schematics and should read for reference if parameters need to be adjusted.
+The present section discusses the critical sections of the electrical schematics and should be consulted for reference if parameters, for example, bandwidth or gain, need to be adjusted.
 
 \subsection{Photodiode frontend}
 
-The design of the operational amplifier circuits is critical for the performance of the detector.
-In the following section, we give a very brief summary of the design and the chosen parameters, which should be sufficient for someone familiar with operational amplifiers.
+The photodiode frontend is responsible for converting the photocurrent to a voltage.
+The most simple frontend, a resistor, has limited bandwidth.
+Using a transimpedance amplifier, we can decouple the output voltage from the voltage swing across the diode.
+The bandwidth is now limited by the amplifier gain.
 
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/circuit/amplifier-transimpedance-input-capacitance}
  	\caption{Transimpedance amplifier for photodiode}\label{fig:transimpedance_amplifier}
 \end{figure}
+
+\Cref{fig:transimpedance_amplifier} shows a transimpedance amplifier frontend circuit representing the photodiode by a current source with capacitance.
+The current source relates to the power of the incident light by
+\begin{equation}
+I_\text{in} = S(\lambda) P,
+\end{equation}
+wherein $S(\lambda)$ is the spectral responsivity, also known as photosensitivity, and $P$ is the power of the light beam.
+The photodiode's datasheet specifies the capacitance $C_\text{in}$.
+
+The operational amplifier's output voltage in the transimpedance configuration is equal to
+\begin{equation}
+	V_\text{out} = - R_f I_\text{in}.
+\end{equation}
+
+A feedback capacitance
+\begin{equation}
+	C_f\geq\sqrt{\frac{C_\text{in}}{2\pi R_f f_u}},
+	\label{eq:feedback_capacitance}
+\end{equation}
+wherein $f_u$ is the \gls{gbp} of the operational amplifier,
+ is sufficient for stability.
+ In general, the input capacitance of the operational amplifier adds to the input capacitance.
+ In practice, solder joints and \gls{pcb} traces may add to the capacitance such that a slightly higher value than given by \eqref{eq:feedback_capacitance} is recommended.
+ However, if the feedback capacitance is too high, we remove high-frequency components of our signal, which might be of interest.
 
 \subsection{Voltage regulator}
 
@@ -24,6 +50,8 @@ Using a dedicated pair of voltage regulators to power the transimpedance amplifi
 	\caption{Dual supply voltage regulator}\label{fig:voltage_regulator}
 \end{figure}
 \Cref{fig:voltage_regulator} shows the circuitry of the primary voltage regulators that output \SI{\pm12}{\volt}.
+The positive voltage regulator U1 of type LM317 and the negative voltage regulator U2 of type LM337 have an internal reference voltage of \SI{1.25}{\volt}.
+Voltage divider comprising
 
 \subsection{Voltage reference}
 
