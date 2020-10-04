@@ -66,16 +66,47 @@ That is also the reason for not using fixed voltage regulators in this case.
 
 \subsection{Voltage reference}
 
+Reverse biasing the photodiode decreases it's capacitance and thereby increases the bandwidth.
+The reverse bias voltage needs to be well controlled not to cause any side-effects.
+Therefore, we utilize a voltage reference to supply a highly-regulated reverse voltage for the photodiode.
+
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/circuit/voltage-reference}
 	\caption{Voltage reference to reverse bias the photodiode}\label{fig:voltage_reference}
 \end{figure}
 
+\Cref{fig:voltage_reference} shows the schematic of the reverse-bias voltage reference.
+The capacitors C1 and C3 intercept voltage fluctuations. 
+Resistor R1 forms a low-pass with capacitor C2 that suppresses frequencies above 160 Hz.
+
 \subsection{Analog arithmetic}
+
+Finally, we need to add and subtract the four different voltage signals of the position-sensitive photodiode to obtain quantities proportional to the incident light beam's center-of-mass.
+We achieve immutability of the input signals for addition and subtraction with the summing amplifier.
+We extend the summing amplifier to allow negative signs, i.e., subtraction.
 
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/circuit/amplifier-arithmetic}
 	\caption{Summing and difference amplifier}\label{fig:amplifier_arithmetic}
 \end{figure}
+
+\Cref{fig:amplifier_arithmetic} shows such an arithmetic amplifier.
+According to \cite[p. 5]{Tietze15} the output voltage is given by
+\begin{equation}
+	V_\text{out}=-\frac{R_1}{R_f}V_1-\frac{R_2}{R_f}V_2+\frac{R_3}{R_f}V_3+\frac{R_4}{R_f}V_4.
+	\label{eq:arithmetic_amplifier_output_voltage}
+\end{equation}
+
+It is an excellent directive to have a well-controlled the bandwidth.
+On this account, we include capacitor $C_f$ to control the frequency response of the amplifier. 
+For the resistor and capacitor configuration used in \cref{fig:amplifier_arithmetic}, the bandwidth is equal to
+\begin{equation}
+	\frac{1}{2\pi R_fC_f}\approx\SI{3}{\mega\hertz},
+\end{equation}
+magnitudes more than the bandwidth of our transimpedance amplifiers.
+We place an additional capacitor with feedback capacitance at the non-inverting input of the operational amplifier to obtain a symmetric frequency response for the positive terms in \eqref{eq:arithmetic_amplifier_output_voltage}.
+
+The value of the resistors is \SI{10}{\kilo\ohm} to limit the current flow.
+
