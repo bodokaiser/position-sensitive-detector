@@ -1,0 +1,59 @@
+\section{Measurement}
+
+In the present section, we will perform some measurements with the \gls{psd}.
+In particular, we want to determine the spatial resolution and discuss the noise characteristics.
+
+\subsection{Electrical setup}
+
+\Cref{tab:equipment} lists the equipment required for the electrical setup.
+The electric devices are connected as follows.
+The \gls{psd} is connected with the power supply through the LEMO4 cable.
+The DIFFX, DIFFY, and SUM output voltages of the \gls{psd} are conencted to the oscilloscope's first three input channels.
+It is essential to use shielded cables to avoid receiving \SI{50}{\hertz} noise from surroudning switching power supplies.
+
+\begin{table}[htb]
+  \centering
+  \begin{tabular}{ccl}
+    \toprule
+      Device & Amount \\
+    \midrule
+      \gls{psd} & 1\\
+      Oscilloscope & 1\\
+      \SI{\pm15}{\volt} voltage supply & 1\\
+      Shielded LEMO4 cable & 1\\
+      Shielded \acrshort{sma} cable & 3\\
+      \acrshort{sma} to \acrshort{bnc} adapters & 3\\
+    \bottomrule
+  \end{tabular}
+  \captionsetup{width=.8\textwidth}
+  \caption{Electrical equipment required to operate the \gls{psd}}\label{tab:equipment}
+\end{table}
+
+You can configure the oscilloscope to show the first two input channels in X-Y mode.
+In X-Y mode, the signal on the coordinate grid corresponds to the position of the incident light spot.
+Suppose your light source shows strong intensity fluctuations.
+In that case, you can use the oscilloscope's arithmetic operation to divide the DIFFX and DIFFY signals by the SUM signal.
+
+\subsection{Optical setup}
+
+\Cref{fig:optical_setup} shows an optical setup for spatial resolution measurements.
+The arrangement comprises a laser source, two mirrors, a lens, and the \gls{psd}.
+Using two mirrors instead of one allows more freedom in positioning the other optics.
+The lens focuses the laser beam onto the sensitive area of the \gls{psd}.
+
+\begin{figure}[htb]
+	\centering
+	\includestandalone[mode=buildnew]{figure/optic/setup}
+	\caption{Optical setup for testing}\label{fig:optical_setup}
+\end{figure}
+
+\subsection{Protocol}
+
+% TODO: figure of the sensitive area with the different positions
+% TODO: describe steps (oscilloscope settings, mirror adjustments)
+
+\subsection{Evaluation}
+
+% TODO: estimate noise
+% TODO: spatial resolution
+% TODO: spot size (Gaussian optics)
