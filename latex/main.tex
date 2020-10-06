@@ -18,16 +18,11 @@
 \usepackage{cleveref}
 \usepackage{subcaption}
 \usepackage{pgfplots}
-\usepackage[
-  backend=biber,
-  sorting=none
-]{biblatex}
+\usepackage[backend=bibtex]{biblatex}
 \usepackage{csquotes}
 \usepackage[american]{circuitikz}
 \usepackage{glossaries}
 \usepackage[subpreambles=true]{standalone}
-
-\addbibresource{literature.bib}
 
 \makeglossaries
 \newglossaryentry{s5990}{name=S5990, description={Hamamatsu two-dimensional PSD}}
@@ -45,6 +40,8 @@
 \pgfplotsset{compat=1.17}
 
 \graphicspath{{image/}}
+
+\bibliography{literature.bib}
 
 % https://tex.stackexchange.com/questions/247681/how-to-create-checkbox-todo-list/313337
 \newlist{todolist}{itemize}{2}
