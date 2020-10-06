@@ -3,9 +3,9 @@
 The photocurrents created by our detector are in the range of microampere where they are vulnerable to noise.
 Using a preamplifier, we can increase the amplitude of the signal for an improved signal-to-noise ratio.
 The typical photocurrent preamplifier is based on the transimpedance (current-to-voltage) amplifier design using a voltage-feedback operational amplifier.
-Converting the current to a voltage signal has the benefit that the voltage signal can be easily visualized with an oscilloscope.
-Furthermore, the voltage-feedback operational amplifier design appears to be more common than the current-feedback operational amplifier, as manufacturers offer much more choice and they are more prominent in the literature.
-That said, current-feedback operational amplifiers are reported to be a viable solution for high-speed and high-bandwidth applications, see Ref.~\cite[p.~110]{Jung05} for an overview of the benefits of current-feedback amplifiers and Ref.~\cite[Ch.~9]{Carter17} for a comparison with voltage-feedback amplifiers.
+Converting the current signal to a voltage has some benefits. First, an oscilloscope can monitor voltages but not currents.
+Second, the voltage-feedback operational amplifier is more common than the current-feedback operational amplifier. As a consequence, manufacturers offer a broader product catalog, and there are mentions in the literature.
+That said, current-feedback operational amplifiers are a viable solution for high-speed and high-bandwidth applications. Read Ref.~\cite[p.~110]{Jung05} for an overview of the benefits of current-feedback amplifiers, and Ref.~\cite[Ch.~9]{Carter17} for comparison with voltage-feedback amplifiers.
 An embodiment of current-feedback operational amplifiers for high-accuracy applications can be found in Ref.~\cite[p.~143]{Noorlag74}.
 
 In the following, we will always refer to the voltage-feedback operational amplifier if not noted otherwise.
@@ -14,27 +14,27 @@ Well-written introductions to this topic can be found in \cite[Ch.~1]{Jung05} an
 
 \subsection{Basic design}
 
-The basic design of a transimpedance amplifier is illustrated in~\Cref{fig:basic_transimpedance}.
+\Cref{fig:basic_transimpedance} illustrates of a basic transimpedance amplifier design.
 Ignoring imperfections of the photodiode, we can represent the photodiode as a current source.
-The non-inverting input of the operational amplifier is connected to ground.
+The non-inverting input of the operational amplifier is connected to the ground.
 The inverting input is coupled with the output of the operational amplifier via a feedback impedance $Z_f$.
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/circuit/amplifier-transimpedance-basic}
 	\caption{Basic transimpedance amplifier using voltage feedback operational amplifier.}\label{fig:basic_transimpedance}
 \end{figure}
-The ideal operation amplifier has zero input current, thus, in the node of the inverting input of the operational amplifier Kirchhoff's law states that the current going through the feedback impedance has to cancel the current of the current source $I_\text{in}$.
+The ideal operation amplifier has zero input current. Thus, in the node of the inverting input of the operational amplifier, Kirchhoff's law states that the current going through the feedback impedance has to cancel the current source $I_\text{in}$.
 The current through the feedback impedance $Z_f$ can be expressed in terms of the feedback impedance $Z_f$ and the output voltage $V_\text{out}$ of the operational amplifier through the use of Ohm's law, yielding,
 \begin{equation}
 	V_\text{out}=-Z_fI_\text{in}
 	\label{eq:transimpedance}.
 \end{equation}
 Given a maximum current $I_\text{in}$ and a desired maximum output voltage $V_\text{out}$, \Cref{eq:transimpedance} determines the feedback impedance.
-Limitations arise for real operational amplifiers where the output voltage is limited to be below the supply voltage of the operational amplifier.
+Limitations arise for real operational amplifiers where the output voltage is limited to be below the operational amplifier's supply voltage.
 
 
 Aside from photodiode applications, it is more common to find the inverting (voltage-to-voltage) operational amplifier in the literature.
-By using the source transformation on the current source with a parallel impedance in the transimpedance amplifier circuit, we can recover the inverting operational amplifier circuit, and thereby easily use results obtained for the inverting amplifier design.
+Using the source transformation on the current source with a parallel impedance in the transimpedance amplifier circuit, we can recover the inverting operational amplifier circuit, thereby quickly obtain results for the inverting amplifier configuration.
 \begin{figure}[H]
 	\begin{subfigure}[t]{.5\textwidth}
 		\centering
@@ -62,15 +62,15 @@ In \Cref{fig:input_offset_voltage_transimpedance} we amended the basic transimpe
 	\includestandalone[mode=buildnew]{figure/circuit/amplifier-transimpedance-input-offset-voltage}
 	\caption{Input offset voltage in the transimpedance amplifier.}\label{fig:input_offset_voltage_transimpedance}
 \end{figure}
-In order to estimate the output offset $V_\text{out}$ caused by the input offset voltage $V_\text{offset}$ we adapt the picture of the inverting amplifier.
+We adapt the inverting amplifier's picture to estimate the output offset $V_\text{out}$ caused by the input offset voltage $V_\text{offset}$.
 \Cref{fig:input_offset_voltage_inverting} shows an inverting amplifier circuit with input impedance $Z_\text{in}$ and input offset voltage $V_\text{offset}$ at the non-inverting input of the operational amplifier.
-According to the superposition theorem, we can replace the input voltage source with a short circuit to estimate the contribution of the input offset voltage source.
+According to the superposition theorem, we can replace the input voltage source with a short circuit to estimate the input offset voltage source's contribution.
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/circuit/amplifier-inverting-input-offset-voltage}
 	\caption{Input offset voltage in the inverting amplifier.}\label{fig:input_offset_voltage_inverting}
 \end{figure}
-From \Cref{fig:input_offset_voltage_inverting} we identify input and feedback impedance as a voltage divider in which the input and output nodes are exchanged.
+In \Cref{fig:input_offset_voltage_inverting}, we identify input and feedback impedance as a voltage divider with exchanged input and output nodes.
 The respective transfer function reads,
 \begin{equation}
 	V_\text{out}=-\frac{R_f+R_\text{in}}{R_\text{in}}V_\text{offset}=-\left(1+\frac{R_f}{R_\text{in}}\right)V_\text{offset}
@@ -78,24 +78,24 @@ The respective transfer function reads,
 \end{equation}
 Comparing \Cref{eq:input_offset_voltage} with \Cref{eq:transimpedance} discloses a difference in gain.
 The gain of the input signal in Eq. 1 is commonly referred to as signal gain. 
-The gain of a signal applied directly to the inputs of the operational amplifier is referred to as noise gain.
+The gain of a signal applied directly to the operational amplifier's inputs is referred to as noise gain.
 In the case of the position-sensitive detector, the input resistance is of order \SI{10}{\kilo\ohm}.
-Using a feedback resistance of $R_f=\SI{100}{\kilo\ohm}$ we find that the input offset voltage experiences a gain of 11.
+Using a feedback resistance of $R_f=\SI{100}{\kilo\ohm}$, we find that the input offset voltage experiences a gain of 11.
 
 One approach to compensate for the input offset voltage as described is depicted in \Cref{fig:input_offset_voltage_compensation}, see also Ref~\cite[p.~54]{Jung05}.
 A potentiometer with maximum resistance Rp connects the positive and negative supply voltage.
 The wiper of the potentiometer is connected with a first resistor R1 to a node.
-The node is connected with a second resistor R2 and an optional bypass capacitor to ground.
-Finally, the equivalent input offset voltage source connects the node with the non-inverting input of the operational amplifier.
+The node is connected with a second resistor R2, and an optional bypass capacitor to ground.
+Finally, the equivalent input offset voltage source connects the node with the operational amplifier's non-inverting input.
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/circuit/offset-compensation}
 	\caption{Input offset voltage compensation using adjustable potentiometer.}\label{fig:input_offset_voltage_compensation}
 \end{figure}
 Let $0\leq x\geq1$ be the position of the potentiometer.
-For $x=1/2$ the resistance of the potentiometer is $R_p/2$ and there is no offset compensation.
-For $x<1/2$ the input offset compensation is negative to compensate for a positive input offset voltage.
-For $x>1/2$ the input offset compensation is positive to compensate for a negative input offset voltage.
+For $x=1/2$, the potentiometer's resistance is $R_p/2$ and there is no offset compensation.
+For $x<1/2$, the input offset compensation is negative to compensate for a positive input offset voltage.
+For $x>1/2$, the input offset compensation is positive to compensate for a negative input offset voltage.
 The maximum input offset compensation is obtained for $x=0$ and $x=1$.
 Using circuit analysis techniques, we obtain,
 \begin{equation}
@@ -107,29 +107,29 @@ The maximum absolute value of the compensation voltage follows to be,
 	V_c(0)=V_c(1)=\pm\frac{R_2}{R_1+R_2}V_\text{supply}.
 \end{equation}
 Given a maximum input offset voltage of \SI{100}{\micro\volt} and a supply voltage of \SI{15}{\volt}, we find approximate resistor values $R_1=\SI{3}{\mega\ohm}$ and $R_2=\SI{2}{\ohm}$.
-The resistor value of the potentiometer $R_p$ should be chosen sufficiently large such to limit the current.
+The resistor value of the potentiometer $R_p$ should be sufficiently large to limit the current.
 For example, a potentiometer resistance of $R_p=\SI{15}{\kilo\ohm}$ would limit the current to \SI{2}{\milli\ampere} with a heat dissipation of \SI{60}{\milli\watt}.
-In practice, one should aim for a slightly higher maximum compensation voltage in order to handle resistor mismatches.
+In practice, one should aim for a slightly higher maximum compensation voltage to handle resistor mismatches.
 
 That said, there are some practical arguments against the use of the described input offset voltage compensation.
 The first argument is that the low resistance of $R_2$ acts as a dominant source for thermal current noise density of about \SI{100}{\pico\ampere\per\sqrt\hertz}.
-As this current noise contributes to the input of the transimpedance amplifier it gets amplified by the feedback impedance $Z_f$, yielding up to \SI{110}{\micro\volt\per\sqrt\hertz} in voltage noise density, which --- depending on the bandwidth --- surpasses the actual input offset voltage to compensate.
-The second argument is that high-precision potentiometers with large dynamic range get very large and difficult to accommodate on a printed circuit board.
+As this current noise contributes to the transimpedance amplifier's input, it gets amplified by the feedback impedance $Z_f$, yielding up to \SI{110}{\micro\volt\per\sqrt\hertz} in voltage noise density, which --- depending on the bandwidth --- surpasses the actual input offset voltage to compensate.
+The second argument is that high-precision potentiometers with large dynamic range get very large and complicated to accommodate on a printed circuit board.
 
 \subsection{Input bias current}
 
 In addition to the input offset voltage $V_\text{offset}$, there is a second effect that causes an offset in the output voltage $V_\text{out}$.
-This second effect stems from the small amount of current that is drawn from the inputs of the operational amplifier.
+This second effect stems from the small amount of current drawn from the inputs of the operational amplifier.
 We highlighted the input currents in \Cref{fig:input_bias_current} where they are represented by the current flows $i_+$ and $i_-$ directly pointing into the inputs of the operational amplifier in the transimpedance circuit.
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/circuit/amplifier-transimpedance-input-bias-current}
 	\caption{Input bias current offset in the transimpedance amplifier.}\label{fig:input_bias_current}
 \end{figure}
-Input bias currents for high-precision operational amplifier are in the range of picoamperes.
+Input bias currents for high-precision operational amplifiers are in the range of picoamperes.
 These small currents are usually difficult to measure and may differ between inputs.
-The datasheet of the operational amplifier, therefore, doesn't report the input bias current per terminal but the mean $I_\text{bias}$ and the difference between the input currents $I_\text{offset}$.
-The relationship between the mean input bias current $I_\text{bias}$ and the input offset current $I_\text{offset}$ with respect to the actual input bias currents $i_+,i_-$ is given below.
+The datasheet of the operational amplifier doesn't report the input bias current per terminal. Instead, the mean $I_\text{bias}$ and the difference between the input currents $I_\text{offset}$ are specified.
+The relationship between the mean input bias current $I_\text{bias}$ and the input offset current $I_\text{offset}$ for the actual input bias currents $i_+,i_-$ is given below.
 \begin{align}
 	i_+=I_\text{bias}+\frac{1}{2}I_\text{offset} &&
 	I_\text{offset}=i_+-i_- \\
@@ -145,7 +145,7 @@ According to Ref.~\cite[p.~57]{Jung05} and Ref.~\cite[p.~25]{Graeme96} the effec
 \end{figure}
 Following the argumentation from Ref.~\cite[p.~383]{Terrel96}, the input bias current at the inverting input of the operational amplifier $i_-$ develops a voltage of $Z_fi_-$ over the feedback impedance $Z_f$.
 The input bias current at the non-inverting input $i_-$ develops the voltage $Z_ci_-$ over the compensation resistor $Z_c$.
-The voltage $Z_ci_-$ propagates through the voltage divider comprising the feedback and input impedance analogue to the input offset voltage.
+The voltage $Z_ci_-$ propagates through the voltage divider comprising the feedback and input impedance analog to the input offset voltage.
 According to the superposition theorem, both of these contributions add and yield,
 \begin{equation}
 	V_\text{out}=i_+Z_c\left(1+\frac{Z_f}{Z_\text{in}}\right)-i_-Z_f
@@ -158,15 +158,15 @@ If $i_+\approx i_-$ we can choose,
 \end{equation}
  to compensate for the output voltage offset caused by the input bias currents.
 The condition $i_+\approx i_-$ is usually satisfied if the input offset current $I_\text{offset}$ reported in the datasheet is less than the mean input bias current $I_\text{bias}$.
-High-precision operational amplifier usually have compensated bias currents that do not satisfy this condition.
-In this case, there is no generic formula for the value of the compensation impedance $Z_c$ in terms of input and feedback impedance and one needs to perform impedance matching on a per-device basis.
-One should keep in mind that high-precision operational amplifier have input bias currents in the range of \si{\pico\ampere}.
-Using \Cref{eq:input_bias_current} one should therefore first check if the output voltage offset due to input bias currents is even worth compensating compared to other offset and noise contributions.
+High-precision operational amplifiers usually have compensated bias currents that do not satisfy this condition.
+In this case, there is no generic formula for the value of the compensation impedance $Z_c$ in terms of input and feedback impedance, and one needs to perform impedance matching on a per-device basis.
+One should keep in mind that high-precision operational amplifiers have input bias currents in the range of \si{\pico\ampere}.
+Using \Cref{eq:input_bias_current}, one should first check if the output voltage offset due to input bias currents is even worth compensating compared to other offset and noise contributions.
 
 \subsection{Stability and bandwidth}\label{sec:opamp_stability_bandwidth}
 
 The outputs of the transimpedance and inverting amplifier designs have a phase shift of \SI{180}{\degree}.
-If an additional phase shift of \SI{180}{\degree} accumulates because of the inherent bandwidth limitations of the operational amplifier and the gain is equal or greater than unity, the conditions for oscillations are met and the amplifier will become unstable, see Ref.~\cite[p.~395]{Terrel96}.
+If an additional phase shift of \SI{180}{\degree} accumulates because of the inherent bandwidth limitations of the operational amplifier and the gain is equal or greater than unity, the conditions for oscillations are met, and the amplifier will become unstable, see Ref.~\cite[p.~395]{Terrel96}.
 By artificially limiting the bandwidth with an additional frequency pole, we can flatten out the frequency response at high frequencies, and thereby stabilize the amplifier, see Ref.~\cite[p.~184]{Kay12}.
 
 \Cref{fig:bode_gain} shows a Bode plot of the open-loop (black) and noise gain (red) of an operational amplifier.
@@ -176,17 +176,17 @@ The noise gain separates into a compensated (solid) and uncompensated (dotted) b
 	\includestandalone[mode=buildnew]{figure/plot/bode-operational-amplifier}
 	\caption{Bode plot of the open-loop and closed-loop gain of the amplifier.}\label{fig:bode_gain}
 \end{figure}
-With the uncompensated branch we would observe instability due to oscillations.
-The compensated branch is obtained through addition of a feedback capacitor.
+With the uncompensated branch, we would observe instability due to oscillations.
+Through the addition of a feedback capacitor, we obtain the compensated branch.
 According to Ref.~\cite[p.~113]{Jung05}, Ref.~\cite[p.~693]{Hobbs11} and Ref.~\cite[Ch.~3]{Graeme96} the value for the feedback capacitance is given by,
 \begin{equation}
 	C_f\geq\sqrt{\frac{C_\text{in}}{2\pi R_f f_u}}
 	\label{eq:feedback_capacitance_approximation},
 \end{equation}
 wherein $R_f$ denotes the feedback resistance and $f_u$ the unity-gain-bandwidth of the operational amplifier.
-The capacitance should be chosen larger to ensure design margin.
-The unity-gain-bandwidth of the operational amplifier denotes the frequency where the open-loop gain equals unity and is reported in the datasheet as \gls{gbp} of the operational amplifier.
-$C_\text{in}$ in \Cref{eq:feedback_capacitance_approximation} represents the sum of the input capacities of the amplifier circuit and the capacitance of the signal source.
+The capacitance should be larger to ensure the design margin.
+The unity-gain-bandwidth of the operational amplifier denotes the frequency where the open-loop gain equals unity. In the datasheet of the operational amplifier, said frequency is reported as \gls{gbp}.
+$C_\text{in}$ in \Cref{eq:feedback_capacitance_approximation} represents the sum of the amplifier circuit's input capacities and the capacitance of the signal source.
 According to Ref.~\cite[p.~185]{Carter17} a more exact formula for the feedback capacitance is given by,
 \begin{align}
 	C_f\geq\frac{C_\text{aux}}{2}\left(1+\sqrt{1+\frac{4C_\text{in}}{C_\text{aux}}}\right) &&
@@ -196,7 +196,7 @@ According to Ref.~\cite[p.~185]{Carter17} a more exact formula for the feedback 
 which is also valid if not $C_\text{in}\gg C_f$.
 
 \Cref{fig:capacitive_transimpedance} illustrates the transimpedance amplifier with capacitive elements.
-Parallel to the current source $I_\text{in}$ we find the input capacitance $C_\text{in}$ comprising source capacitance and operational amplifier capacitance.
+Parallel to the current source $I_\text{in}$, we find the input capacitance $C_\text{in}$ comprising source capacitance and operational amplifier capacitance.
 Parallel to the feedback resistance $R_f$ we find the feedback capacitance $C_f$ with value given in \Cref{eq:feedback_capacitance_exact} or \Cref{eq:feedback_capacitance_approximation}.
 \begin{figure}[H]
 	\centering
@@ -207,13 +207,13 @@ Parallel to the feedback resistance $R_f$ we find the feedback capacitance $C_f$
 % TODO: definition open-loop gain, closed-loop gain
 % TODO: why is rate of closure important for stability (relation with phase margin?)
 
-As noted earlier, the bandwidth is reduced through the additional feedback capacitor.
-The new bandwidth is now given by the RC pole formed by the feedback impedance,
+As noted earlier, the bandwidth reduces with an additional feedback capacitor.
+The new bandwidth is now given by the RC pole formed by the feedback impedance
 \begin{equation}
 	BW=\frac{1}{2\pi R_fC_f}.
 \end{equation}
 Given a unity-gain-bandwidth of the operational amplifier of $f_u=\SI{10}{\mega\hertz}$ and a feedback resistance of $R_f=\SI{100}{\kilo\ohm}$ \Cref{eq:feedback_capacitance_approximation} yields a minimum feedback capacitance of $C_f=\SI{4}{\pico\farad}$.
-Together with $R_f$ this feedback capacitance limits the bandwidth to about \SI{400}{\kilo\hertz}.
+Together with $R_f$, the feedback capacitance limits the bandwidth to about \SI{400}{\kilo\hertz}.
 
 % \subsection{Signal-to-noise ratio}
 
