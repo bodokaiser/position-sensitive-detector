@@ -1,41 +1,44 @@
-\section{Theory of photodiode operation}
+\section{Position-sensitive photodiode}
+
+The present section gives an introduction to the semiconductor theory for a position-sensitive photodiode.
+We start from the description of a p-n junction and extend the description to the position-sensitive photodiode.
+After that, we discuss the evolution of position-sensitive photodiode designs.
+Finally, we derive an analytical relation between the photocurrents and the light focus's position on the sensitive area.
 
 \subsection{Transverse photodiodes}
 
 The purpose of the following section is to recall the mechanics of the (transverse) photoeffect observed in an illuminated p-n junction.
-Figures and the description thereof is largely based on Ref.~\cite{Simon13}.
+Figures and the description thereof are primarily based on Ref.~\cite{Simon13}.
 A subtle difference in the depicted figures and the figures of Ref.~\cite{Simon13} is that we exchanged the order of p- and n-type semiconductors.
 We found this order to be more intuitive when referring to a p-n junction.
-
-\Cref{fig:pn_junction_separated} shows a separated p- and n-type semiconductor.
-In the upper half, we see an illustration of the p- and n-type semiconductor with their respective mobile charge carriers.
-The p-type semiconductor has an excess of positive charge carriers (holes) which are depicted as white circles.
-The n-type semiconductor has an excess of negative charge carriers (electrons) which are depicted as black circles.
-The excess charge carriers form due to the implantation of acceptor and donator ions.
-These are depicted as circles with plus and minus sign in \Cref{fig:pn_junction_separated}.
-The implanted ions have more or fewer electrons than the atoms of the semiconductor material.
-Therefore donating an electron or accepting an electron and effectively forming a hole as an absence of negative charge.
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/diagram/pn-junction-separated}
 	\caption{Separated p- and n-type semiconductor with holes (white) and electrons (black).}\label{fig:pn_junction_separated}
 \end{figure}
-The lower half of \Cref{fig:pn_junction_separated} shows the energy band structure of both p- and n-type semiconductor.
-The lower energy band represents the valence band made up of the electrons that are tightly bound to a single atomic core.
+\Cref{fig:pn_junction_separated} shows a separated p- and n-type semiconductor.
+We see an illustration of the p- and n-type semiconductors with their respective mobile charge carriers in the upper half.
+The p-type semiconductor has an excess of positive charge carriers (holes), depicted as white circles.
+The n-type semiconductor has an excess of negative charge carriers (electrons), depicted as black circles.
+The excess charge carriers form due to the implantation of acceptor and donator ions and are indicated as circles with plus and minus sign in \Cref{fig:pn_junction_separated}.
+The implanted ions have more or fewer electrons than the atoms of the semiconductor material.
+Therefore donating an electron or accepting an electron and effectively forming a hole as an absence of negative charge.
+The lower half of \Cref{fig:pn_junction_separated} shows the energy band structure of both p- and n-type semiconductors.
+The lower energy band represents the valence band made up of the tightly bound electrons.
 The upper energy band represents the conduction band made up of electrons that are are not bound to a single atomic core but shared across the lattice.
 Charge carriers in the conduction band can move freely and thereby contribute to the conductivity of the material.
-For an undoped (intrinsic) semiconductor the chemical potential is in the center of the band gap between the conduction and valence band.
-Through doping, the chemical potential is shifted in the p- and n-type semiconductor.
+For an undoped (intrinsic) semiconductor, the chemical potential is in the center of the bandgap between the conduction and valence band.
+Doping shifts the chemical potential in the p- and n-type semiconductors.
 In the p-type semiconductor, acceptor ions can take up electrons from the conduction band, thereby decreasing the chemical potential.
-In the n-type semiconductor, donator ions contribute electrons to the conduction band, thereby increasing the chemical potential.
+In the n-type semiconductor, donator ions contribute electrons to the conduction band, increasing the chemical potential.
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/diagram/pn-junction-combined}
 	\caption{Combined p- and n-type semiconductor with holes (white) and electrons (black).}\label{fig:pn_junction_combined}
 \end{figure}
-In \Cref{fig:pn_junction_combined} the p- and n-type semiconductor are brought into contact with each other, forming a p-n junction.
-In close proximity of the junction holes and energies recombine due to a diffusion process, leaving an electrically charged area.
-The electrically charged area creates an electrostatic potential across the junction as illustrated in the lower part of \Cref{fig:pn_junction_combined}.
+In \Cref{fig:pn_junction_combined} the p- and n-type semiconductors are brought into contact with each other, forming a p-n junction.
+Close to the junction, holes and electrons recombine due to a diffusion process, leaving an electrically charged area.
+The electrically charged area creates an electrostatic potential across the junction, as illustrated in the lower part of \Cref{fig:pn_junction_combined}.
 We refer to this area as the depletion region.
 In \Cref{fig:pn_junction_combined} the depletion region expands between the dashed lines around the junction.
 \begin{figure}[H]
@@ -45,11 +48,9 @@ In \Cref{fig:pn_junction_combined} the depletion region expands between the dash
 \end{figure}
 The energy band diagram in \Cref{fig:pn_junction} accounts for the shift in energy due to the electrostatic potential.
 The chemical potentials of both sides of the junction are now aligned.
-The energy required to excite an electron on the p-type side from the valence to the conduction band and the energy required to excite a hole from the conduction to the valence band are equal to the band gap of the semiconductor.
-
-% TODO: motivate reverse bias (photoconductive mode) vs. unbiased (photovoltaic) mode by measurement vs. energy conversion application 
-If one applies a reverse bias voltage across the p-n junction, the effective energy gap between conduction and valence band is reduced, the electrostatic potential increases and the depletion region broadens.
-The situation of an applied reverse voltage is depicted in \Cref{fig:pn_junction_reverse}.
+The energy required to excite an electron on the p-type side from the valence to the conduction band and the energy needed to excite a hole from the conduction to the valence band are equal to the bandgap of the semiconductor.
+Suppose one applies a reverse bias voltage across the p-n junction. In that case, the effective energy gap between conduction and valence band is reduced, the electrostatic potential increases, and the depletion region broadens.
+\Cref{fig:pn_junction_reverse} depicts the situation of an applied reverse voltage.
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/diagram/pn-junction-energy-reverse}
@@ -66,7 +67,7 @@ Using the proportionality of the reverse bias saturation current, we can write,
 	I_\text{diode}\propto e^{\left(eV-E_\text{gap}\right)/k_BT}-e^{-E_\text{gap}/k_BT}\label{eq:diode_current_prop},
 \end{equation} 
 which discloses the two effects contributing to the diode current.
-The left-hand side of the proportionality of \Cref{eq:diode_current_prop} represents the current contribution due intra-band excitation of charge carriers, whereas the right-hand side represents the current contribution due to inter-band excitation.
+The left-hand side of the proportionality of \Cref{eq:diode_current_prop} represents the current contribution due to intra-band excitation of charge carriers, whereas the right-hand side represents the current contribution due to inter-band excitation.
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/plot/diode-current-voltage}
@@ -74,12 +75,11 @@ The left-hand side of the proportionality of \Cref{eq:diode_current_prop} repres
 \end{figure}
 In \Cref{fig:pn_junction_iv} we see the current-voltage characteristics of the p-n junction under different levels of illumination.
 For negative voltages, the p-n junction is operated under reverse bias.
-If the reverse bias voltage exceeds the breakdown voltage the p-n junction starts to conduct.
-The current before the breakdown occurs is the reverse saturation current.
-For different levels of illumination, the curve is shifted downwards.
+If the reverse bias voltage exceeds the breakdown voltage, the p-n junction starts to conduct.
+The reverse saturation current is the amount of current necessary for the breakdown. The curve shifts downwards with increasing illumination.
 The separation between the non-illuminated (top curve) and illuminated curves represent the respective photocurrent.
 
-The conversion rate of photons to photoelectrons depends on the type of the band gap, i.e. direct or indirect, the wavelength $\lambda$ of the photon and the temperature $T$.
+The conversion rate of photons to photoelectrons depends on the type of the bandgap, i.e., direct or indirect, the wavelength $\lambda$ of the photon, and the temperature $T$.
 Most photodiodes report a wavelength $\lambda$ dependent responsitivity $R$ which can be used to convert the radiant flux $P$ of the incident light to the generated photocurrent $I_\text{photo}$,
 \begin{equation}
 	I_\text{photo}=R(\lambda)P
@@ -93,24 +93,23 @@ For silicon-based p-n junctions, the responsitivity $R(\lambda)$ is between \SI{
 	\caption{Energy diagram of a reverse biased p-n junction under illumination.}\label{fig:pn_junction_illumination}
 \end{figure}
 \Cref{fig:pn_junction_illumination} shows a p-n junction under reverse bias where a photon excites an electron-hole pair in the depletion region.
-Due to the electrostatic potential, the electron is accelerated to the right side.
-Analogue the hole is accelerated to the left side and in addition to the diode current, \Cref{eq:diode_current}, a photocurrent can be measured across the junction.
+Due to the electrostatic potential, the electrons are accelerated to the right. Analogue, the holes are accelerated to the left. The photocurrent, a diode current, \Cref{eq:diode_current}, flows across the junction.
 
 \subsection{Lateral photodiodes}
 
-In the previous section, we discussed the transversal photoeffect that is usually associated with the illumination of the p-n junction.
+In the previous section, we discussed the transversal photoeffect associated with the p-n junction's illumination.
 In addition to the transversal photoeffect, the lateral photoeffect was first discovered by W. Schottky~\cite{Schottky30} in 1930 and later rediscovered in 1957 by J. Wallmark~\cite{Wallmark57}.
-In the present section, we summarize important results from Ref.~\cite{Noorlag74} and Ref.~\cite{Woltring75} with focus on the tetralateral photodiode which is the most common commercially available design.
+In the present section, we summarize key results from Ref.~\cite{Noorlag74}, and Ref.~\cite{Woltring75}. The focus of our summary is on the most common position-sensitive photodiode design, the tetralateral photodiode.
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/diagram/pn-junction-lateral-cross-section}
 	\caption{Cross section of a lateral photodiode.}\label{fig:lateral_photodiode_cross_section}
 \end{figure}
-\Cref{fig:lateral_photodiode_cross_section} depicts the cross-section of a lateral photodiode with a p-type semiconductor as the top, an n-type semiconductor as the middle layer and a resistive material as the bottom layer.
-An electric contact embedded into the top layer can be used as a common cathode.
-The common cathode can be connected to the ground or a positive voltage for reverse bias operation.
+\Cref{fig:lateral_photodiode_cross_section} depicts the cross-section of a lateral photodiode with a p-type semiconductor as the top, an n-type semiconductor as the middle layer, and a resistive material as the bottom layer.
+The photodiode's common cathode is an electric contact into the top layer.
+One can ground or apply a positive voltage to the common cathode. If we apply a positive voltage, we say that the photodiode is reverse-biased.
 In contrast to the transversal photodiode, the lateral photodiode has two anode contacts positioned at the opposite sites embedded into the resistive layer.
-The photocurrent measured at each of the anode contacts follows an almost linear relationship with the center-of-mass of the incident light spot.
+An almost linear relation between the photocurrent at each of the anode contacts and the incident light spot's center-of-mass exists.
 Therefore the lateral photodiode can be used to measure the spatial coordinate of an incident light spot.
 
 The dynamics of the lateral photodiode are guided by the Lucovsky~\cite{Lucovsky60} equation,
@@ -118,7 +117,7 @@ The dynamics of the lateral photodiode are guided by the Lucovsky~\cite{Lucovsky
 	\nabla^2V=\frac{\rho}{w}J_s\left(e^{eV/k_BT}-1\right)-\frac{\rho_d}{w}J_p\label{eq:lucovsky_exact},
 \end{equation}
 wherein $V$ is the diode voltage, $\rho$ is the resistance per unit length of the resistive layer, $J_s$ is the reverse-bias saturation current and $J_p$ is the photocurrent generated due photon induced electron-hole excitation.
-\Cref{eq:lucovsky_exact} can be obtained by combination of the current density continuity equation with Ohm's law and the Schottky equation, \Cref{eq:diode_current}.
+\Cref{eq:lucovsky_exact} can be obtained by a combination of the current density continuity equation with Ohm's law and the Schottky equation, \Cref{eq:diode_current}.
 
 According to Ref.~\cite{Woltring75}, operation of the lateral in fully reverse-bias has the following benefits:
 \begin{enumerate}
@@ -127,8 +126,8 @@ According to Ref.~\cite{Woltring75}, operation of the lateral in fully reverse-b
 	\item Improved linearity of the position.
 	\item Reduced temperature dependence.
 \end{enumerate}
-In electronic engineering literature, e.g. Ref.~\cite[p.~258]{Jung05}, one is sometimes discouraged from operating a photodiode under reverse-bias for highest sensitivity as the reverse-bias increased the diode leakage (dark) current.
-We believe that as long as the dark current is significantly smaller than the typical photocurrent, the photodiode should always be operated in reverse-bias mode as recommended Ref.~\cite{Noorlag74,Woltring75,Wang89,Hobbs11}.
+In electronic engineering literature, e.g., Ref.~\cite[p.~258]{Jung05}, one is sometimes discouraged from operating a photodiode under reverse-bias for the highest sensitivity as the reverse-bias increased the diode leakage (dark) current.
+We believe that as long as the dark current is significantly smaller than the typical photocurrent, the photodiode should always be operated in the reverse-bias mode as recommended by Ref.~\cite{Noorlag74,Woltring75,Wang89,Hobbs11}.
 
 Assuming a fully reverse-biased lateral photodiode, we have $eV/k_BT\ll1$ and \Cref{eq:lucovsky_exact} simplifies to a linear second order differential (Poisson) equation,
 \begin{equation}
@@ -137,20 +136,20 @@ Assuming a fully reverse-biased lateral photodiode, we have $eV/k_BT\ll1$ and \C
 \end{equation}
 which can be solved using variable separation and a product Ansatz.
 The solution of \Cref{eq:lucovsky_reverse_bias} depends on the imposed boundary conditions.
-The Dirichlet boundary condition, $V=0$, should be used if an electrical contact terminates the semiconductor, otherwise, the Neumann boundary condition, $\pdv{V}{n}=0$, should be assumed.
+The Dirichlet boundary condition, $V=0$, should be used if an electrical contact terminates the semiconductor. Otherwise, the Neumann boundary condition, $\pdv{V}{n}=0$, should be assumed.
 \begin{figure}[H]
 	\centering
 	\includestandalone[mode=buildnew]{figure/diagram/pn-junction-lateral-contacts}
 	\caption{Contact configurations of a lateral photodiode.}\label{fig:lateral_photodiode_contacts}
 \end{figure}
 In \Cref{fig:lateral_photodiode_contacts} we present three different contact configurations.
-The left contact configuration was used by Wallmark~\cite{Wallmark57} and comprises four small electronic contacts.
-Assuming that the contact size is small compared to the surface of the photodiode, the von Neumann boundary condition have to be used.
+The left contact configuration, used by Wallmark, comprises four small contacts, see Ref.~\cite{Wallmark57}.
+Assuming that the contact size is small compared to the photodiode's surface, we need to use the von Neumann boundary condition.
 The middle contact configuration receives great attention from Noorlag~\cite{Noorlag74}.
-On two opposite sides of the photodiode an electric contact terminates the boundary while the remaining sides are left empty.
+On two opposite sides of the photodiode, an electric contact terminates the boundary while the remaining sides are left empty.
 For two-dimensional position detection, one can create two electric contacts at another layer.
-Mathematically we can express this configuration as combination of Neumann and Dirichlet boundary conditions.
-Finally, the tetralateral configuration where each side on the same layer is terminated by electric contacts can be modelled by Dirichlet boundary conditions on all sides.
+Mathematically we can express this configuration as a combination of Neumann and Dirichlet boundary conditions.
+For the tetralateral configuration, we need to apply the Dirichlet boundary conditions for all sides.
 For a rectangular tetralateral photodiode of width $l$, the explicit boundary conditions are,
 \begin{align}
 	V(0, y)=V(l,y)=0, && V(x,0)=V(x,l)=0.
@@ -165,11 +164,11 @@ the general solution of the Lucovsky equation, \Cref{eq:lucovsky_reverse_bias}, 
 	V^*_p(x,y)=I_p\frac{\rho}{w}\sum_{n\in\mathbb{Z}}\sum_{m\in\mathbb{Z}}\frac{\sin(m\pi x/l)\sin(m\pi x^*/l)\sin(n\pi y/l)\sin(n\pi y^*/l)}{(m^2+n^2)\pi^2}
 	\label{eq:lucovsky_solution}.
 \end{equation}
-The current that flows through the $x1$ contact is given by,
+The current that flows through the $x1$ contact is given by
 \begin{equation}
 	I_{x1}(x^*,y^*)=\frac{w}{\rho}\int_0^l\dd{y}\eval{\pdv{V}{x}}_{x=0},
 \end{equation}
-respective,
+respective
 \begin{equation}
 	I_{x1}(x^*,y^*)=\frac{2}{\pi}I_p\sum_{n\in\mathbb{Z}}\frac{\sin[(2n-1)\pi y^*/l]}{2n-1}\frac{\sinh[\abs{2n-1}\pi(1-x^*/l)]}{\sinh(\abs{2n-1}\pi)}
 	\label{eq:lucovsky_current}.
@@ -189,9 +188,9 @@ Using the difference between two opposite contacts and normalizing for the total
 \end{equation}
 which indeed is linear in $x$.
 
-According to Ref.~\cite[p.~41]{Noorlag74}, the tetralateral photodiode has benefits in manufacturing, although its linearity is below the duallateral photodiode, but still better than the Wallmark type, see Ref.~\cite{Woltring75}.
-Recent contact configurations have improved upon the tetralateral design in order to improve the linearity.
-For example, the commercially availble pin-cushion tetralateral photodiode, discussed in Ref.~\cite{Doke87,Wang89}, shows good linearity over a large area.
+According to Ref.~\cite[p.~41]{Noorlag74}, the tetralateral photodiode has benefits in manufacturing, although its linearity is below the dual lateral photodiode, still better than the Wallmark type, see Ref.~\cite{Woltring75}.
+Recent contact configurations have improved upon the tetralateral design to improve the linearity.
+For example, the commercially available pin-cushion tetralateral photodiode, discussed in Ref.~\cite{Doke87,Wang89}, shows good linearity over a large area.
 The center-of-mass of an incident light spot at $(x^*,y^*)$ can be recovered from the anode currents via,
 \begin{align}
 	\frac{\left(I_{x2}+I_{y1}\right)-\left(I_{x1}+I_{y2}\right)}{I_{x1}+I_{x2}+I_{y1}+I_{y2}}=\frac{2x^*}{l} &&
@@ -202,7 +201,7 @@ The datasheet~\cite{HamamatsuS5990} of the \gls{s5990}, a pin-cushion tetralater
 \subsection{Equivalent circuit}
 
 In the previous section, we described the physics behind the lateral photodiode.
-In the current section, we want to ignore microscopic details and concentrate on the electrical properties of real tetralateral photodiodes.
+In the current section, we want to ignore microscopic details and concentrate on real tetralateral photodiodes' electrical properties.
 
 In \Cref{fig:tetralateral_photodiode_equivalent} the equivalent circuit of a tetralateral photodiode is depicted.
 The tetralateral photodiode has four anode connections X1, X2, Y1, and Y2 which are connected to the junction via position-dependent resistances $R_1$, $R_2$, $R_3$, and $R_4$.
@@ -234,10 +233,9 @@ The thermal noise is given by,
 \end{equation}
 wherein $B$ denotes the bandwidth to consider.
 At room temperature $T=\SI{300}{\kelvin}$ and an interelectrode resistance of $R_d=\SI{10}{\kilo\ohm}$, we find a noise current density due to thermal noise of $i_t=\SI{2}{\pico\ampere\per\sqrt\hertz}$.
-If we estimate for the complete bandwidth supported by the detector we find a root-mean-squared noise current of $I_t=\SI{2}{\nano\ampere}$.
+If we estimate for the complete bandwidth supported by the detector, we find a root-mean-squared noise current of $I_t=\SI{2}{\nano\ampere}$.
 A more realistic bandwidth incoporating later analog components would be $B=\SI{10}{\kilo\hertz}$, yielding $I_t=\SI{200}{\pico\ampere}$.
 
 % TODO: noise propagation from detector to anodes
 In any case, we cannot say for sure how these noise sources propagate into position detection noise.
-For instance, if the noise propagates in same proportions over the anodes, any error should cancel out when calculating the position.
-Further research has to be conducted.
+For instance, if the noise propagates in the same proportions over the anodes, any error should cancel out when calculating the position.
