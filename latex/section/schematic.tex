@@ -21,12 +21,23 @@ The current source relates to the power of the incident light by
 I_\text{in} = S(\lambda) P,
 \end{equation}
 wherein $S(\lambda)$ is the spectral responsivity, also known as photosensitivity, and $P$ is the power of the light beam.
-The photodiode's datasheet specifies the capacitance $C_\text{in}$.
+
+A class 2 laser can be operated without safety googles.
+For a Class 2 laser, the beam power is limited to $P\leq\SI{1}{\milli\watt}$. With $S=\SI{0.6}{\ampere\per\watt}$, the photocurrent is limited to $I_\text{in}\leq\SI{0.6}{\milli\ampere}$.
 
 The operational amplifier's output voltage in the transimpedance configuration is equal to
 \begin{equation}
 	V_\text{out} = - R_f I_\text{in}.
+	\label{eq:transimpedance_amplifier_output_voltage}
 \end{equation}
+The operational amplifier's output voltage is determined by it's supply voltages.
+For a rail-to-rail operational amplifier it is equal to the supply voltage.
+For example, if the supply voltage is \SI{\pm5}{\volt}, \eqref{eq:transimpedance_amplifier_output_voltage} gives us a value for the feedback resistance,
+\begin{equation}
+	R_f\geq\abs{\frac{V_\text{out}}{I_\text{in}}}=\abs{\frac{V_\text{supply}}{I_\text{in}}}
+	\label{eq:feedback_resistance}.
+\end{equation}
+Using the previous estimated photocurrent of a class 2 laser, $I_\text{in}=\SI{0.6}{\milli\ampere}$, $V_\text{supply}=\SI{\pm5}{\volt}$, and \eqref{eq:feedback_resistance}, we find that $R_f\approx\SI{9}{\kilo\ohm}$ would make our transimpedance amplifier saturate at the maximal expected light power.
 
 A feedback capacitance
 \begin{equation}
@@ -38,6 +49,10 @@ wherein $f_u$ is the \gls{gbp} of the operational amplifier,
  In general, the input capacitance of the operational amplifier adds to the input capacitance.
  In practice, solder joints and \gls{pcb} traces may add to the capacitance such that a slightly higher value than given by \eqref{eq:feedback_capacitance} is recommended.
  However, if the feedback capacitance is too high, we remove high-frequency components of our signal, which might be of interest.
+ 
+The photodiode's datasheet specifies the capacitance $C_\text{in}$ to be about \SI{90}{\pico\farad} if reverse-biased at \SI{10}{\volt}.
+The differential- and common-mode input capacitance of the OPA847 operational amplifier add up to a total input capacitance of \SI{98}{\pico\farad}.
+Using $R_f=\SI{10}{\kilo\ohm}$ and \gls{gbp} of $f_u=\SI{10}{\mega\hertz}$, a feedback capacitance of at least $C_f=\SI{12.5}{\pico\farad}$ should be choosen.
 
 \subsection{Voltage regulator}
 
