@@ -163,7 +163,7 @@ In this case, there is no generic formula for the value of the compensation impe
 One should keep in mind that high-precision operational amplifier have input bias currents in the range of \si{\pico\ampere}.
 Using \Cref{eq:input_bias_current} one should therefore first check if the output voltage offset due to input bias currents is even worth compensating compared to other offset and noise contributions.
 
-\subsection{Stability and bandwidth}
+\subsection{Stability and bandwidth}\label{sec:opamp_stability_bandwidth}
 
 The outputs of the transimpedance and inverting amplifier designs have a phase shift of \SI{180}{\degree}.
 If an additional phase shift of \SI{180}{\degree} accumulates because of the inherent bandwidth limitations of the operational amplifier and the gain is equal or greater than unity, the conditions for oscillations are met and the amplifier will become unstable, see Ref.~\cite[p.~395]{Terrel96}.

@@ -1,0 +1,43 @@
+\section{Troubleshooting}
+
+In this section, we record phenomena and their respective origin that we found during debugging\footnote{In the following, we use the term "noise" in the generic sense of (strong) unwanted signal instead of the strict statistical sense. Of course, random noise, e.g., thermal or shot noise, will always be present.}.
+
+\subsection{Shorts}
+
+The most common sources for shorts we experienced originated from the soldering process.
+More precisely, this means displaced components and adverse solder joints.
+The best strategy to find shorts is by using a microscope and scrutinizing the solder points.
+If this doesn't help, one needs to remove components step-by-step.
+As we had most problems with capacitors, we recommend starting with the capacitors.
+
+Alternative strategies for finding shorts include using an \gls{ir} camera to detect hot spots on the \gls{pcb}.
+However, this won't work for shorts caused by unwanted solder.
+A very advanced technique measures the voltage drop across the components to narrow down the short.
+Consult your electrical engineer for details.
+
+\subsection{\SI{50}{\hertz} noise}
+
+\SI{50}{\hertz} noise is a characteristic of switching power supplies.
+We found that unisolated banana cables connected to a laboratory power supply act as an antenna.
+We highly recommend using isolated LEMO4 cables for power supply.
+
+\subsection{Power supply noise}
+
+When searching for noise sources, always check that the power supply provides clean voltages.
+More than once did we experience defect photodiode power supplies where this was not the case.
+
+\subsection{Unstable operational amplifiers}
+
+If the feedback capacitance is too small, operational amplifiers can become unstable.
+Unstable operational amplifiers behave as high-frequency oscillators.
+For more details on operational amplifier stability consult \cref{sec:opamp_stability_bandwidth}.
+One can quickly check if an operational amplifier is a source for oscillations by grounding the input pins.
+Grounded input pins should yield a zero output voltage of the operational amplifier, i.e., make the oscillations vanish.
+
+\subsection{Malfunctioning capacitors}
+
+Broken capacitors are the most difficult to find troublemakers. 
+We found one of them at the voltage regulator and another at the voltage reference.
+In both cases, the supply voltage was highly unstable and oscillating.
+We believe that using high-capacitance with a small casing size, e.g., 0603, increases the risk of malfunction.
+For this reason, we use large casing sizes, e.g., 1210, for high-capacitance capacitors in the recent design.
