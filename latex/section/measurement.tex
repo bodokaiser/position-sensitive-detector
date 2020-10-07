@@ -47,13 +47,108 @@ The lens focuses the laser beam onto the sensitive area of the \gls{psd}.
 	\caption{Optical setup for testing}\label{fig:optical_setup}
 \end{figure}
 
-\subsection{Protocol}
+\subsection{Grid scan}
 
-% TODO: figure of the sensitive area with the different positions
+\begin{figure}[htb]
+	\centering
+	\includegraphics{figure/plot/grid-measurement}
+	\caption{Spatial scan over $3\times 3$ grid by adjusting the mirrors.}\label{fig:grid_scan}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics{figure/plot/diffx}
+	\caption{DIFFX signal for the grid scan.}\label{fig:grid_scan_diffx}
+\end{figure}
+\begin{figure}[htb]
+	\centering
+	\includegraphics{figure/plot/diffy}
+	\caption{DIFFY signal for the grid scan.}\label{fig:grid_scan_diffy}
+\end{figure}
+\begin{figure}[htb]
+	\centering
+	\includegraphics{figure/plot/sum}
+	\caption{SUM signal for the grid scan.}\label{fig:grid_scan_sum}
+\end{figure}
+
+\begin{align}
+	\frac{(I_2+I_3)-(I_1+I_4)}{I_1+I_2+I_3+I_4}=\frac{2x}{L},
+	&&
+	\frac{(I_2+I_4)-(I_1+I_3)}{I_1+I_2+I_3+I_4}=\frac{2y}{L}
+	\label{eq:position_conversion_photocurrent}
+\end{align}
+\begin{align}
+	x=\frac{L}{2}\frac{\text{DIFFX}}{\text{SUM}}\ \si{\milli\meter}, &&
+	y=\frac{L}{2}\frac{\text{DIFFY}}{\text{SUM}}\ \si{\milli\meter}.
+	\label{eq:position_conversion_voltages}
+\end{align}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics{figure/plot/x}
+	\caption{Converted x position of the grid scan.}\label{fig:grid_scan_x}
+\end{figure}
+\begin{figure}[htb]
+	\centering
+	\includegraphics{figure/plot/y}
+	\caption{Converted y position of the grid scan.}\label{fig:grid_scan_y}
+\end{figure}
+
 % TODO: describe steps (oscilloscope settings, mirror adjustments)
 
-\subsection{Evaluation}
+\subsection{Resolution}
 
 % TODO: estimate noise
 % TODO: spatial resolution
-% TODO: spot size (Gaussian optics)
+
+\begin{table}[htb]
+  \centering
+  \begin{tabular}{lcccc}
+    \toprule
+      Measurement &
+      $x$ \si{\milli\meter} &
+      $\Delta x$ \si{\milli\meter} &
+      $y$ \si{\milli\meter} &
+      $\Delta y$ \si{\milli\meter}\\
+    \midrule
+      Top & \num{-0.01} & \num{+1.30} & \num{+1.96} & \num{+1.67} \\      
+      Left & \num{1.87} & \num{+2.19} & \num{-0.01} & \num{+1.50} \\      
+      Right & \num{-1.80} & \num{+1.38} & \num{+0.01} & \num{+1.61} \\
+      Bottom & \num{0.02} & \num{+1.24} & \num{-1.92} & \num{+2.11} \\
+      Upper left & \num{+1.86} & \num{+2.03} & \num{+2.01} & \num{+2.50} \\
+      Upper right & \num{-1.97} & \num{+1.75} & \num{+2.00} & \num{+1.65} \\
+      Lower left & \num{+1.90} & \num{+2.26} & \num{-2.07} & \num{+2.56} \\
+      Lower right & \num{-1.68} & \num{+1.78} & \num{-1.96} & \num{+1.87} \\
+    \bottomrule
+  \end{tabular}
+  \captionsetup{width=.8\textwidth}
+  \caption{Position statistics of $3\times 3$ grid scan}\label{tab:grid_scan_position_statistics}
+\end{table}
+
+\begin{equation}
+	z_R=\frac{\pi w_0^2}{\lambda}
+	\label{eq:rayleigh_length}
+\end{equation}
+
+\begin{equation}
+	w^\prime_0=\frac{w_0}{\sqrt{(1-s/f)^2+(z_R/f)^2}}
+	\label{eq:beam_waist_thin_lens}
+\end{equation}
+
+\begin{table}[htb]
+  \centering
+  \begin{tabular}{lcc}
+    \toprule
+      Signal &
+      Mean \si{\milli\volt} &
+      Standard deviation \si{\micro\meter} \\
+    \midrule
+      DIFFX & \num{0.1} & \num{17} \\
+      DIFFY & \num{0.4} & \num{17} \\
+      SUM & \num{1.2} & \num{32} \\
+    \bottomrule
+  \end{tabular}
+  \captionsetup{width=.8\textwidth}
+  \caption{Signal statistics obtained without illumination}\label{tab:grid_scan_signal_statistics}
+\end{table}
+
