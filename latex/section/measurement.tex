@@ -57,18 +57,8 @@ The lens focuses the laser beam onto the sensitive area of the \gls{psd}.
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics{figure/plot/diffx}
-	\caption{DIFFX signal for the grid scan.}\label{fig:grid_scan_diffx}
-\end{figure}
-\begin{figure}[htb]
-	\centering
-	\includegraphics{figure/plot/diffy}
-	\caption{DIFFY signal for the grid scan.}\label{fig:grid_scan_diffy}
-\end{figure}
-\begin{figure}[htb]
-	\centering
-	\includegraphics{figure/plot/sum}
-	\caption{SUM signal for the grid scan.}\label{fig:grid_scan_sum}
+	\includegraphics[scale=0.7]{figure/plot/voltages}
+	\caption{Timeseries of the voltage signals captured during the grid scan.}\label{fig:grid_scan_voltages}
 \end{figure}
 
 \begin{align}
@@ -85,13 +75,8 @@ The lens focuses the laser beam onto the sensitive area of the \gls{psd}.
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics{figure/plot/x}
-	\caption{Converted x position of the grid scan.}\label{fig:grid_scan_x}
-\end{figure}
-\begin{figure}[htb]
-	\centering
-	\includegraphics{figure/plot/y}
-	\caption{Converted y position of the grid scan.}\label{fig:grid_scan_y}
+	\includegraphics[scale=0.7]{figure/plot/positions}
+	\caption{Voltage signals of the grid scan converted to positions.}\label{fig:grid_scan_x}
 \end{figure}
 
 % TODO: describe steps (oscilloscope settings, mirror adjustments)
@@ -106,11 +91,12 @@ The lens focuses the laser beam onto the sensitive area of the \gls{psd}.
   \begin{tabular}{lcccc}
     \toprule
       Measurement &
-      $x$ \si{\milli\meter} &
-      $\Delta x$ \si{\milli\meter} &
-      $y$ \si{\milli\meter} &
-      $\Delta y$ \si{\milli\meter}\\
+      $x$ (\si{\milli\meter}) &
+      $\Delta x$ (\si{\milli\meter}) &
+      $y$ (\si{\milli\meter}) &
+      $\Delta y$ (\si{\milli\meter}) \\
     \midrule
+      Center & \num{0.01} & \num{+1.08} & \num{-0.01} & \num{+1.03} \\      
       Top & \num{-0.01} & \num{+1.30} & \num{+1.96} & \num{+1.67} \\      
       Left & \num{1.87} & \num{+2.19} & \num{-0.01} & \num{+1.50} \\      
       Right & \num{-1.80} & \num{+1.38} & \num{+0.01} & \num{+1.61} \\
@@ -140,8 +126,8 @@ The lens focuses the laser beam onto the sensitive area of the \gls{psd}.
   \begin{tabular}{lcc}
     \toprule
       Signal &
-      Mean \si{\milli\volt} &
-      Standard deviation \si{\micro\meter} \\
+      Mean (\si{\milli\volt}) &
+      Standard deviation (\si{\micro\meter}) \\
     \midrule
       DIFFX & \num{0.1} & \num{17} \\
       DIFFY & \num{0.4} & \num{17} \\
