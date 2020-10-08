@@ -40,5 +40,37 @@ The range of the output voltages of the device can be chosen for the optimal sig
 
 \subsection{Specification}
 
-% TODO: list specifications of the final device
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.2]{detector.jpg}
+	\caption{\gls{psd} on optical mount with connected cables}\label{fig:detector}
+\end{figure}
+\Cref{fig:detector} shows an image of the \gls{psd}.
+The output voltage signals can be tapped from the upper \gls{sma} connectors.
+The upper left connector gives the SUM voltage which reflects the total intensity of the optical signal.
+The upper center connector gives the DIFFX voltage which reflects the difference proportional to the horizontal position on the sensitive area.
+The upper right connector gives the DIFFY voltage which is proportional to the vertical position.
+The SUM voltage is required to normalize the difference signals.
+The DIFFX voltage increases when moving the light beam on the sensitive area to the right while the DIFFY voltage increases while moving the light beam to the bottom.
+The device is powered by a 3-pin connector.
+The outer (left) cable is the positive \SI{+15}{\volt} supply while the opposite cable is negative \SI{-15}{\volt} supply.
+The center cable of the 3-pin connector has to reference ground.
+The power connector has no polarity protection so be careful!
 
+\begin{table}[htb]
+  \centering
+  \begin{tabular}{lcccc}
+    \toprule
+      Parameter & Minimum & Typical & Maximum \\
+    \midrule
+      Output voltages & \SI{-13}{\volt} & \SIrange{-2}{+2}{\volt} & \SI{+13}{\volt} \\
+      Supply voltages & \SI{\pm13}{\volt} & \SI{\pm15}{\volt} & \SI{\pm37}{\volt} \\
+      Spatial resolution & \SI{5.0}{\micro\meter} & \SI{2}{\micro\meter} & \SI{1}{\micro\meter} \\
+      Bandwidth & & \SI{1400}{\kilo\hertz} & \\
+    \bottomrule
+  \end{tabular}
+  \captionsetup{width=.8\textwidth}
+  \caption{Specifications of the presented \gls{psd}}\label{tab:specifications}
+\end{table}
+\Cref{tab:specifications} summarizes the specifications of the presented \gls{psd}.
+These specifications are only a rough estimate and we only assembled one \gls{psd} so far.
